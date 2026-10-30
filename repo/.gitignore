@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+share/python-wheels/
+*.egg-info/
+*.egg
+.deps/
+
+# VSCode
+.vscode/
+
+# DS Store
+.DS_Store
+
+# Benchmark traces
+traces/lmsys_*
+traces/*_alpaca_poisson*
+
+# QRF models
+assets/qrf/
+
+# Benchmark results
+benchmark/utils/*.png
+batch_result/
+result/
+fig/
+
+# Simulation
+simulate.sh
+simulator.py
+simulation_*_*.txt
+
+# Helper scripts
+test-connection/

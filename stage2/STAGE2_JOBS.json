@@ -1,0 +1,27 @@
+{
+  "jobs": [
+    {
+      "logical_id": "S0_S1_B_controlled_semantics",
+      "kind": "CPU_controlled_gate",
+      "max_successful_commits": 1,
+      "GPU_model_load": false
+    },
+    {
+      "logical_id": "S2_B_public_chain0_native_qualification",
+      "kind": "B_only_GPU_qualification",
+      "chain_indices": [0],
+      "max_attempts": 3,
+      "max_successful_commits": 1,
+      "depends_on": "S0_S1_B_controlled_semantics"
+    },
+    {
+      "logical_id": "S3_AB_public_chain0_small_pair",
+      "kind": "A_then_B_matched_small_pair",
+      "chain_indices": [0],
+      "max_attempts": 2,
+      "max_successful_commits": 1,
+      "depends_on": "S2_B_public_chain0_native_qualification"
+    }
+  ],
+  "forbidden": ["C", "HOLDOUT", "additional seeds", "performance matrix", "old GMAX-core-only launchers"]
+}

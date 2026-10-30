@@ -1,0 +1,45 @@
+{
+  "schema": "chain-slo-v42-git-freeze/v1",
+  "frozen_date": "2026-10-30",
+  "mechanism_version": "v3_chain_dynamic_v42",
+  "github_repository": "Xiaotangyuan-xty/chain-slo-v42",
+  "visibility": "private",
+  "tag": "v42-frozen-2026-10-30",
+  "source_origin": "Mac local filesystem only; no server-side GitHub upload",
+  "source_local_root": "/Users/xuetianyou/Desktop/mmqm/outputs/idea3_full_jitserve_compare_20261027T121314Z_v1",
+  "qualified_source_count": 70,
+  "qualification_receipt": "stage7_dynamic/receipts/CPU_QUALIFICATION_V44.json",
+  "qualification_sha256": "01aee665e3c0b3d522bd8ed08c52b828fd360390c32da79751e1b47e61949054",
+  "comparison_receipt": "stage7_dynamic/receipts/FULL_DYNAMIC_COMPARISON_V3_FULL_B_GPU0_42_V3_FULL_C_GPU0_42.json",
+  "comparison_sha256": "836cebb0c48704768bff8013efea1f68c25d4f83f2a3d9541bb20725f9c8b5a0",
+  "official_commit": "84584a119b892cf90c65e2b3f5bac67250d39d27",
+  "official_source_count": 1297,
+  "result": {
+    "comparison_valid": true,
+    "B_attained": 3,
+    "C_attained": 4,
+    "scope": "One frozen six-chain DEV comparison; no statistical superiority claim"
+  },
+  "unrelated_upstream_data_not_included": [
+    {
+      "path": "repo/traces/burst/BurstGPT_1.csv",
+      "size": 52283111,
+      "sha256": "4bb3783693d0a435686fbfc885615d2349bd067239079fa4b749f2e679e12122",
+      "reason": "Unrelated upstream dataset; not used by the frozen v42 workload"
+    },
+    {
+      "path": "repo/traces/lmsys.json",
+      "size": 7964970,
+      "sha256": "134099f6cebab24ad48530701dd47e1d7c20c820d3ed9c460ffe4f811a2fcb0a",
+      "reason": "Unrelated upstream dataset; not used by the frozen v42 workload"
+    }
+  ],
+  "external_runtime_assets": [
+    "Qwen2.5-7B-Instruct model weights",
+    "Frozen Python/CUDA/native binary runtime and library contract",
+    "QRF model/vectorizer pickle files and external Python libraries",
+    "External PERFORMANCE.json and older PREDICTOR.json referenced by support fixtures",
+    "Large raw runtime traces and generated attempt outputs"
+  ],
+  "qualified_source_bytes_modified": false
+}

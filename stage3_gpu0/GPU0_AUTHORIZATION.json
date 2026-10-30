@@ -1,0 +1,13 @@
+{
+  "instruction": "Continue P3 on physical GPU0 after the compound fixes, only when no other compute process is present.",
+  "physical_gpu_index": 0,
+  "gpu_uuid": "GPU-ff8c7d5c-f75c-26e1-43de-b40ca283f938",
+  "forbidden_gpu_indices": [1, 2],
+  "required_order": [
+    "B full JITServe on GPU0",
+    "C v2_compound_stage_v1 on GPU0",
+    "Independent B/C comparison and stop decision"
+  ],
+  "formal_matrix_authorized": false,
+  "HOLDOUT_authorized": false
+}

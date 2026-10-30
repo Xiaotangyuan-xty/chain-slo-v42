@@ -1,0 +1,18 @@
+{
+  "schema": "gpu-execution-authorization/v2-stage7-iterative",
+  "user_instruction": "持续优化后使用 GPU0 跑同一小规模完整 B/C；未获胜则读 trace、修复并继续",
+  "recorded_utc": "2026-10-29",
+  "physical_gpu_index": 0,
+  "gpu_uuid": "GPU-ff8c7d5c-f75c-26e1-43de-b40ca283f938",
+  "preflight": {
+    "memory_used_mib": 0,
+    "compute_processes": []
+  },
+  "authorized_scope": "After each frozen stage7 CPU qualification, iterative fixed-output six-main-chain full-B then C qualification pairs on GPU0; no formal matrix or HOLDOUT",
+  "other_process_rule": "Stop without launching if GPU0 has any compute process at controller preflight",
+  "forbidden_gpu_indices": [1, 2],
+  "max_attempt_wall_seconds": 3600,
+  "max_successful_pairs": null,
+  "automatic_retry": "only_after_trace_analysis_new_mechanism_version_and_CPU_gate",
+  "only_registered_processes_may_be_signaled": true
+}

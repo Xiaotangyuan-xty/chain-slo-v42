@@ -1,0 +1,80 @@
+{
+  "stage": "small_fixed_action_fixed_output_backend_calibration",
+  "parent_study": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1",
+  "physical_gpu_index": 2,
+  "gpu_uuid": "GPU-e085e0e1-a283-82f2-325b-01981b51f984",
+  "forbidden_gpu_indices": [0, 1],
+  "other_process_rule": "If GPU2 has any other compute process at preflight, stop without launching.",
+  "arms": {
+    "A": "Official vendored vLLM GPU executor and default FCFS scheduler",
+    "B": "The exact stage2 scheduler-managed PyTorch executor and explicit KV ledger with the same default FCFS scheduler"
+  },
+  "not_jitserve_policy_comparison": true,
+  "model": "/home/taig/models/Qwen2.5-7B-Instruct",
+  "dtype": "bfloat16",
+  "input": {
+    "trace": "repo/traces/deepresearch_filter.jsonl",
+    "sha256": "5240ba938ab499adfd6b05f1454e51e29512d06f0fe99d326802f2e483d3d59d",
+    "actual_prompt_token_ids": true,
+    "warmup": {
+      "stage": 0,
+      "request_index_within_stage": 0,
+      "output_tokens": 8
+    },
+    "cases": [
+      {
+        "name": "decode_single",
+        "stage": 0,
+        "request_indices_within_stage": [0],
+        "output_tokens_per_request": 64
+      },
+      {
+        "name": "mixed_two_request_batch",
+        "stage": 1,
+        "request_indices_within_stage": [0, 1],
+        "output_tokens_per_request": 32
+      },
+      {
+        "name": "prefill_single",
+        "stage": 2,
+        "request_indices_within_stage": [0],
+        "output_tokens_per_request": 16
+      }
+    ],
+    "case_order": ["decode_single", "mixed_two_request_batch", "prefill_single"]
+  },
+  "execution": {
+    "arm_order": ["A", "B"],
+    "attempt_limit_per_arm": 2,
+    "successful_pair_limit": 1,
+    "scheduling_policy": "fcfs",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k_input": 1,
+    "ignore_eos": true,
+    "min_tokens": 0,
+    "max_num_seqs": 2,
+    "max_num_batched_tokens": 2048,
+    "max_model_len": 8192,
+    "num_gpu_blocks_override": 512,
+    "gpu_kv_tokens": 8192,
+    "swap_space_gib": 1,
+    "enable_chunked_prefill": true,
+    "enable_prefix_caching": false,
+    "enforce_eager": true,
+    "disable_async_output_proc": true,
+    "seed": 42,
+    "max_attempt_wall_seconds": 1200,
+    "no_automatic_retry": true
+  },
+  "required_outcomes": [
+    "Every main request emits exactly the frozen output token count; warmup is reported separately.",
+    "A and B execute the same request IDs, prompt hashes, batch sizes, prefill chunks and output counts.",
+    "Record per-case wall time, scheduler/engine steps, execute_model time, forward time where available, KV/recompute/swap accounting and run order.",
+    "Record token-ID divergence separately; it is not hidden by equal output lengths.",
+    "All registered processes exit and only study-owned GPU2 resources are checked for release."
+  ],
+  "interpretation": "Tiny backend calibration only. It does not estimate a JITServe policy effect, a C mechanism effect, statistical equivalence or general system superiority.",
+  "next_gate": "Implement and semantically accept C on the exact B backend, then run a small B/C comparison. Do not restore the formal public-trace/DEV matrix until that small B/C result exists and is interpretable.",
+  "C_and_HOLDOUT_authorized": false
+}

@@ -1,0 +1,28 @@
+{
+  "comparison_valid": true,
+  "decision": "STOP_SLO_CRITERION_NOT_MET",
+  "failed_checks": [],
+  "official_scaled_attained": {
+    "B": 3,
+    "C": 3
+  },
+  "mean_JCT": {
+    "B": 268.70546094017726,
+    "C": 343.177722608981
+  },
+  "candidates": {
+    "total": 160,
+    "accepted": 9,
+    "executed": 9,
+    "distinguished_multi_goal": 10,
+    "over_capacity_distinguished": 10,
+    "fallbacks": {
+      "degenerate": 89,
+      "baseline_evaluation_timeout": 58,
+      "no_model_gain": 1,
+      "None": 9,
+      "conservative_evaluation_cap": 3
+    }
+  },
+  "receipt": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage7_dynamic/receipts/FULL_DYNAMIC_COMPARISON_V3_FULL_B_GPU0_41_V3_FULL_C_GPU0_41.json"
+}

@@ -1,0 +1,13 @@
+{
+  "instruction": "The user explicitly authorized GPU2 again after the CPU-only interval.",
+  "physical_gpu_index": 2,
+  "gpu_uuid": "GPU-e085e0e1-a283-82f2-325b-01981b51f984",
+  "other_gpus_authorized": false,
+  "required_order": [
+    "Finish and pass the current CPU controlled semantic gate.",
+    "Run B native qualification only after the controlled gate passes.",
+    "Run the frozen A→B small pair only after B qualification passes."
+  ],
+  "C_authorized": false,
+  "performance_matrix_authorized": false
+}

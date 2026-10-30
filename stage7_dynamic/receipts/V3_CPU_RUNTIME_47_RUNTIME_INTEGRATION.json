@@ -1,0 +1,123 @@
+{
+  "schema": "stage7-real-vllm-runtime-integration/v1",
+  "attempt": "V3_CPU_RUNTIME_47",
+  "gate": "PASS",
+  "checks": {
+    "real_vllm_dynamic_batch_above_four": {
+      "pass": true,
+      "actual": {
+        "max_batch": 6,
+        "sizes": [
+          1,
+          6
+        ]
+      },
+      "expected": "real vLLM scheduler and stage7 executor produce a batch above four"
+    },
+    "candidate_views_have_real_frame_members_and_host": {
+      "pass": true,
+      "actual": {
+        "candidates": 1,
+        "frame": [],
+        "members": [],
+        "host": []
+      },
+      "expected": "every candidate has official frame, member progress and host KV state"
+    },
+    "model_action_execution_closed": {
+      "pass": true,
+      "actual": {
+        "accepted": [
+          1
+        ],
+        "scheduled": [
+          1
+        ],
+        "executed": [
+          1
+        ],
+        "completed_leases": [
+          1
+        ]
+      },
+      "expected": "every natural model action has matching execution and a complete matching lease"
+    },
+    "no_forced_empty_spin_or_evaluation_timeout": {
+      "pass": true,
+      "actual": {
+        "forced_not_scheduled": 0,
+        "timeouts": 0
+      },
+      "expected": "no forced admission failure or repeated evaluation timeout in the controlled runtime"
+    },
+    "all_calls_complete_and_reset_once": {
+      "pass": true,
+      "actual": {
+        "unfinished": false,
+        "resets": [
+          {
+            "n": 2,
+            "kind": "v2_chain_reset",
+            "monotonic": 14078696.83051278,
+            "collection_id": 0,
+            "previous_history": 1
+          }
+        ]
+      },
+      "expected": "warmup, six main chains and follow-up stage complete with one chain reset"
+    },
+    "kv_release": {
+      "pass": true,
+      "actual": 0,
+      "expected": "no tracked KV owners"
+    }
+  },
+  "details": {
+    "candidate_summaries": [
+      {
+        "n": 10,
+        "anchor": "5:stage:0",
+        "eligible": [
+          "0:stage:0",
+          "1:stage:0",
+          "2:stage:0",
+          "3:stage:0",
+          "4:stage:0",
+          "5:stage:0"
+        ],
+        "fallback": null,
+        "accepted": true,
+        "resource_infeasible": null
+      }
+    ],
+    "steps": 74,
+    "unfinished": false,
+    "max_batch": 6,
+    "batch_sizes": [
+      1,
+      6
+    ],
+    "candidates": 1,
+    "accepted": 1,
+    "scheduled": 1,
+    "executed": 1,
+    "candidate_seconds": 0.0,
+    "timeouts": 0,
+    "frame_violations": [],
+    "missing_member_progress": [],
+    "missing_host_kv": [],
+    "forced_not_scheduled": 0,
+    "resets": [
+      {
+        "n": 2,
+        "kind": "v2_chain_reset",
+        "monotonic": 14078696.83051278,
+        "collection_id": 0,
+        "previous_history": 1
+      }
+    ],
+    "scheduler_type": "v2_slo_scheduler.V2SLOScheduler",
+    "tracked_block_owners": 0
+  },
+  "gpu_used": false
+}

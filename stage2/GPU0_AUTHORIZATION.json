@@ -1,0 +1,14 @@
+{
+  "instruction": "After the CPU controlled gate passes, use physical GPU0 for this experiment; do not use or operate GPU1 or GPU2.",
+  "supersedes": "GPU2_RESUME_AUTHORIZATION.json and all earlier stage2 GPU index settings.",
+  "physical_gpu_index": 0,
+  "gpu_uuid": "GPU-ff8c7d5c-f75c-26e1-43de-b40ca283f938",
+  "forbidden_gpu_indices": [1, 2],
+  "required_order": [
+    "Pass the CPU controlled semantic gate before any GPU launch.",
+    "Run B qualification on physical GPU0.",
+    "Run the A→B small pair on physical GPU0 only after B qualifies."
+  ],
+  "C_authorized": false,
+  "performance_matrix_authorized": false
+}

@@ -1,0 +1,535 @@
+{
+  "schema": "small-full-dynamic-bc-comparison/v3",
+  "comparison_valid": true,
+  "mechanism_won": false,
+  "win_criterion": {
+    "official_scaled_attained": {
+      "B": 3,
+      "C": 3
+    },
+    "native_request_goodput": {
+      "B": 0.045031853304115105,
+      "C": 0.05015084865512001
+    },
+    "mean_JCT": {
+      "B": 267.69460472775,
+      "C": 311.82317145665485
+    },
+    "rule": "C official scaled attained > B; JCT, goodput and overheads are reported without a performance threshold"
+  },
+  "decision": "STOP_SLO_CRITERION_NOT_MET",
+  "attempts": {
+    "B": "V3_FULL_B_GPU0_40",
+    "C": "V3_FULL_C_GPU0_40"
+  },
+  "checks": {
+    "complete_warmup_and_40_main_calls_B": {
+      "pass": true,
+      "actual": {
+        "calls": 7,
+        "warmup": 1,
+        "main": 6,
+        "IDs": [
+          2,
+          3,
+          5,
+          1,
+          4,
+          0
+        ]
+      },
+      "expected": "one complete chain0 warmup and six complete main chains with 40 calls"
+    },
+    "controller_B": {
+      "pass": true,
+      "actual": {
+        "failure": null,
+        "client": 0
+      },
+      "expected": "success"
+    },
+    "backend_release_B": {
+      "pass": true,
+      "actual": {
+        "owners": 0,
+        "evictions": 0
+      },
+      "expected": "no owners or autonomous evictions"
+    },
+    "arrival_contract_B": {
+      "pass": true,
+      "actual": {
+        "actual": {
+          "2": 2.9755375403910875,
+          "3": 3.9851822294294834,
+          "5": 5.987930096685886,
+          "1": 2.0120686255395412,
+          "4": 5.020544655621052,
+          "0": 0.9895035494118929
+        },
+        "target": [
+          0.988,
+          2.01,
+          2.973,
+          3.9819999999999993,
+          5.0169999999999995,
+          5.983999999999999
+        ],
+        "max_error": 0.0039300966858872854
+      },
+      "expected": "all six arrivals within 0.5 seconds of the frozen seed-42 plan"
+    },
+    "dynamic_batch_accounting_B": {
+      "pass": true,
+      "actual": {
+        "batches": 9858,
+        "max_batch": 11,
+        "over_four": 1240
+      },
+      "expected": "full B and C both execute real batches above the removed four-request limit"
+    },
+    "complete_warmup_and_40_main_calls_C": {
+      "pass": true,
+      "actual": {
+        "calls": 7,
+        "warmup": 1,
+        "main": 6,
+        "IDs": [
+          1,
+          2,
+          3,
+          0,
+          5,
+          4
+        ]
+      },
+      "expected": "one complete chain0 warmup and six complete main chains with 40 calls"
+    },
+    "controller_C": {
+      "pass": true,
+      "actual": {
+        "failure": null,
+        "client": 0
+      },
+      "expected": "success"
+    },
+    "backend_release_C": {
+      "pass": true,
+      "actual": {
+        "owners": 0,
+        "evictions": 0
+      },
+      "expected": "no owners or autonomous evictions"
+    },
+    "arrival_contract_C": {
+      "pass": true,
+      "actual": {
+        "actual": {
+          "1": 2.0122709088027477,
+          "2": 2.975553635507822,
+          "3": 3.9850573390722275,
+          "0": 0.9893239997327328,
+          "5": 5.988277573138475,
+          "4": 5.020715111866593
+        },
+        "target": [
+          0.988,
+          2.01,
+          2.973,
+          3.9819999999999993,
+          5.0169999999999995,
+          5.983999999999999
+        ],
+        "max_error": 0.0042775731384763205
+      },
+      "expected": "all six arrivals within 0.5 seconds of the frozen seed-42 plan"
+    },
+    "dynamic_batch_accounting_C": {
+      "pass": true,
+      "actual": {
+        "batches": 9197,
+        "max_batch": 11,
+        "over_four": 1245
+      },
+      "expected": "full B and C both execute real batches above the removed four-request limit"
+    },
+    "matched_arrivals_across_arms": {
+      "pass": true,
+      "actual": 0.00034747645258903503,
+      "expected": "same-ID arrival offsets differ by at most 0.5 seconds"
+    },
+    "official_native_goodput_B": {
+      "pass": true,
+      "actual": {
+        "official_scaled_collections": 3,
+        "recomputed_scaled_collections": 3,
+        "official_goodput": 0.045031853304115105,
+        "recomputed_goodput": 0.045031853304115105
+      },
+      "expected": "official scaled-SLO collection count and native request goodput reproduced"
+    },
+    "official_native_goodput_C": {
+      "pass": true,
+      "actual": {
+        "official_scaled_collections": 3,
+        "recomputed_scaled_collections": 3,
+        "official_goodput": 0.05015084865512001,
+        "recomputed_goodput": 0.05015084865512001
+      },
+      "expected": "official scaled-SLO collection count and native request goodput reproduced"
+    },
+    "same_output_length_and_stop_reason": {
+      "pass": true,
+      "actual": [],
+      "expected": "all same-ID requests have equal output-token counts and stop reasons"
+    },
+    "C_received_SLO_and_stage_count_deadline": {
+      "pass": true,
+      "actual": [],
+      "expected": "each chain goal uses the received scaled request SLO times its actual stage count"
+    },
+    "supported_multi_goal_discrimination": {
+      "pass": true,
+      "actual": {
+        "distinguished_multi_goal": 7,
+        "over_capacity_distinguished": 6
+      },
+      "expected": "at least one distinguishable multi-goal candidate"
+    },
+    "over_capacity_candidate": {
+      "pass": true,
+      "actual": 6,
+      "expected": "at least one distinguishable candidate above four real request slots"
+    },
+    "accepted_model_action_executed": {
+      "pass": true,
+      "actual": {
+        "accepted": 7,
+        "executed": 7,
+        "projection_matches": 7,
+        "witnesses": [
+          {
+            "id": 1,
+            "anchor": "1:stage:1",
+            "selected": [
+              "9c4f1bcea90346d5b474cb410770acbc",
+              "803c4cd4425842fb8183ede01486a35d",
+              "111db6b9816149b6bac2baac133d235b",
+              "f9ab8b3b4e124a4fae133f7c3ab0a7b7",
+              "4a5666fde3d94fe88ef9aa70a69b5d7c",
+              "26022377993a44ff8e1b579e67bcd717",
+              "f054822264554cb4a98ea2935d7f2869",
+              "34436fa0855c41e79387ccca10a55624",
+              "a5faddf53533404e857f4e6465d49410"
+            ]
+          },
+          {
+            "id": 2,
+            "anchor": "2:stage:1",
+            "selected": [
+              "f9ab8b3b4e124a4fae133f7c3ab0a7b7",
+              "4a5666fde3d94fe88ef9aa70a69b5d7c",
+              "26022377993a44ff8e1b579e67bcd717",
+              "803c4cd4425842fb8183ede01486a35d",
+              "212bb1566d8f4f15b5328f777bb9591d",
+              "111db6b9816149b6bac2baac133d235b",
+              "f054822264554cb4a98ea2935d7f2869",
+              "34436fa0855c41e79387ccca10a55624",
+              "a5faddf53533404e857f4e6465d49410"
+            ]
+          },
+          {
+            "id": 3,
+            "anchor": "1:stage:3",
+            "selected": [
+              "b911ce6ffa49444287af6f9c0b037733",
+              "9544b9a0e5f64de9b3a3f4ee69f8400a",
+              "803c4cd4425842fb8183ede01486a35d",
+              "df278de3a9ed49e48d5edfc92a0a79c9"
+            ]
+          },
+          {
+            "id": 4,
+            "anchor": "5:stage:3",
+            "selected": [
+              "1d1a20bb87b347339cbc39155b845985",
+              "e64f43d7d67f410a828f8a38696db29f",
+              "24b30344a4a04931930e31b65cd30697"
+            ]
+          },
+          {
+            "id": 5,
+            "anchor": "1:stage:4",
+            "selected": [
+              "9b9eee65b06b42358f0eac7cf5d6ef79"
+            ]
+          },
+          {
+            "id": 6,
+            "anchor": "1:stage:5",
+            "selected": [
+              "d4aee549c41d4ee39be35a7d635e1e64"
+            ]
+          },
+          {
+            "id": 7,
+            "anchor": "2:stage:3",
+            "selected": [
+              "24b30344a4a04931930e31b65cd30697",
+              "556b7cce23804f34b263c81567991007"
+            ]
+          }
+        ]
+      },
+      "expected": "zero actions is a valid conservative decision; accepted actions need matching execution"
+    },
+    "complete_lease_and_no_forced_spin": {
+      "pass": true,
+      "actual": {
+        "completed_leases": 6,
+        "forced_not_scheduled": 0
+      },
+      "expected": "accepted actions need a complete matching lease; no forced action may fail its own admission"
+    },
+    "compound_reset_and_no_hold": {
+      "pass": true,
+      "actual": {
+        "resets": 1,
+        "holds": 0
+      },
+      "expected": {
+        "resets": 1,
+        "holds": 0
+      }
+    },
+    "stage7_launch_sha": {
+      "pass": true,
+      "actual": {
+        "bad": []
+      },
+      "expected": "all full-B/C stage7 files match"
+    },
+    "full_dynamic_arm_identity": {
+      "pass": true,
+      "actual": {
+        "B": "B-full",
+        "C": "C-full-dynamic"
+      },
+      "expected": "B-full and C-full-dynamic both retain official prediction and graph matching"
+    },
+    "dynamic_performance_calibration": {
+      "pass": true,
+      "actual": {
+        "observations": 1240,
+        "factor_keys": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          8,
+          10,
+          11
+        ]
+      },
+      "expected": "C records real B>4 decode observations and uses them in the performance model"
+    },
+    "official_source_1297": {
+      "pass": true,
+      "actual": {
+        "bad": []
+      },
+      "expected": "all 1297 match"
+    },
+    "GPU0_release": {
+      "pass": true,
+      "actual": {
+        "gpu": "0, GPU-ff8c7d5c-f75c-26e1-43de-b40ca283f938, 0 MiB",
+        "own_remaining": [],
+        "all_gpu_processes": ""
+      },
+      "expected": "no study-owned process; foreign processes untouched"
+    }
+  },
+  "primary_unscaled_strict": {
+    "attained": {
+      "B": 0,
+      "C": 0
+    },
+    "fraction": {
+      "B": 0.0,
+      "C": 0.0
+    },
+    "per_chain": {
+      "B": {
+        "2": false,
+        "3": false,
+        "5": false,
+        "1": false,
+        "4": false,
+        "0": false
+      },
+      "C": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "0": false,
+        "5": false,
+        "4": false
+      }
+    },
+    "gained": [],
+    "lost": [],
+    "call_goodput": {
+      "B": 0.0,
+      "C": 0.0
+    }
+  },
+  "official_scaled_slo": {
+    "per_chain": {
+      "B": {
+        "2": true,
+        "3": true,
+        "5": true,
+        "1": false,
+        "4": false,
+        "0": false
+      },
+      "C": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "0": false,
+        "5": false,
+        "4": false
+      }
+    },
+    "gained": [
+      1
+    ],
+    "lost": [
+      5
+    ],
+    "native_request_goodput": {
+      "B": 0.045031853304115105,
+      "C": 0.05015084865512001
+    }
+  },
+  "JCT": {
+    "per_chain": {
+      "B": {
+        "2": 151.5340918637812,
+        "3": 217.76608411036432,
+        "5": 224.4635205361992,
+        "1": 279.4959632959217,
+        "4": 334.2065560091287,
+        "0": 398.701412551105
+      },
+      "C": {
+        "1": 201.6555086169392,
+        "2": 227.1563144363463,
+        "3": 302.9219586569816,
+        "0": 375.21674973890185,
+        "5": 370.2387117110193,
+        "4": 393.749785579741
+      }
+    },
+    "mean": {
+      "B": 267.69460472775,
+      "C": 311.82317145665485
+    },
+    "C_over_B_relative": 0.16484667957273308,
+    "P90": {
+      "B": 366.45398428011686,
+      "C": 384.4832676593214
+    },
+    "P95": {
+      "B": 382.57769841561094,
+      "C": 389.1165266195312
+    }
+  },
+  "request_latency_P90_P95": {
+    "B": [
+      86.1862047130242,
+      125.33097951970971
+    ],
+    "C": [
+      116.025768365711,
+      157.44510019812728
+    ]
+  },
+  "candidates": {
+    "total": 133,
+    "accepted": 7,
+    "executed": 7,
+    "distinguished_multi_goal": 7,
+    "over_capacity_distinguished": 6,
+    "fallbacks": {
+      "degenerate": 75,
+      "baseline_evaluation_timeout": 41,
+      "no_model_gain": 10,
+      "None": 7
+    }
+  },
+  "engine": {
+    "B": {
+      "graph_share_wall_seconds": 0.25600809790194035,
+      "schedule_wall_seconds": 1.4023862555623055,
+      "ticks": 9860,
+      "official_frames": 197,
+      "scheduled_groups": 21750,
+      "prefill_groups": 71,
+      "prefill_chunks": 40,
+      "preempted": 1,
+      "ignored": 0,
+      "swap_in_block_groups": 209,
+      "swap_out_block_groups": 209,
+      "engine_steps": 9860,
+      "engine_step_wall_seconds": 527.5078939795494
+    },
+    "C": {
+      "graph_share_wall_seconds": 0.2585477251559496,
+      "schedule_wall_seconds": 17.794065199792385,
+      "ticks": 9199,
+      "official_frames": 183,
+      "max_num_seqs": 32,
+      "dynamic_over_four_ticks": 9199,
+      "scheduled_groups": 21749,
+      "prefill_groups": 70,
+      "prefill_chunks": 39,
+      "preempted": 29,
+      "ignored": 0,
+      "swap_in_block_groups": 4819,
+      "swap_out_block_groups": 4819,
+      "engine_steps": 9199,
+      "engine_step_wall_seconds": 528.1957231443375,
+      "performance_observations": 9173,
+      "dynamic_performance_observations": 1240
+    }
+  },
+  "kv": {
+    "B": {
+      "actual_forward_query_tokens": 95207,
+      "necessary_prefill_tokens": 73528,
+      "productive_decode_queries": 21679,
+      "recompute_tokens": 0,
+      "swap_bytes_in": 191700992,
+      "swap_bytes_out": 191700992
+    },
+    "C": {
+      "actual_forward_query_tokens": 95207,
+      "necessary_prefill_tokens": 73528,
+      "productive_decode_queries": 21679,
+      "recompute_tokens": 0,
+      "swap_bytes_in": 4407861248,
+      "swap_bytes_out": 4407861248
+    }
+  },
+  "scope": "One six-chain full-dynamic B/C development pair; complete official policy semantics in the shared backend, not statistical superiority evidence",
+  "ablation_allowed": false,
+  "formal_matrix_allowed": false,
+  "holdout_allowed": false
+}

@@ -1,0 +1,12 @@
+{
+  "kind": "native CUDA UUID compatibility only",
+  "source": "repo/third_party/vllm/vllm/platforms/cuda.py",
+  "cuda_platform_source_sha256": "336f626e0f4dee9e65beb83de15500802a748d640f998458924ee5e8a0db5be6",
+  "physical_gpu_index": 2,
+  "gpu_uuid": "GPU-e085e0e1-a283-82f2-325b-01981b51f984",
+  "allowed_changes": [
+    "Resolve the single visible logical device to physical GPU2 after asserting the exact UUID mask.",
+    "Suppress only the heterogeneity warning because exactly one GPU is visible."
+  ],
+  "scheduling_or_prediction_semantics_changed": false
+}

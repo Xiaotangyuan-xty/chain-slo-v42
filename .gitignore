@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+.venv/
+venv/
+*.pem
+*.key
+*.pkl
+*.safetensors
+*.bin
+*.so
+stage*/attempts/
+stage*/controlled/
+runtime/

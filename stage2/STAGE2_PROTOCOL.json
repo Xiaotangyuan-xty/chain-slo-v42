@@ -1,0 +1,30 @@
+{
+  "stage": "B_full_semantic_acceptance_and_AB_small_end_to_end",
+  "ordered_gates": [
+    {
+      "gate": "S0_provenance_and_CPU_interfaces",
+      "required": "Frozen source/assets match; executor imports and interface probes pass without loading a GPU model; official scheduler/source paths are confirmed."
+    },
+    {
+      "gate": "S1_controlled_semantics",
+      "required": "Prediction, share, subdeadline, snapshots, ordered frame membership, admission, preemption, routing, finish and KV accounting all meet STAGE2_FREEZE tolerances. Core-only agreement is insufficient."
+    },
+    {
+      "gate": "S2_B_native_qualification",
+      "required": "B completes the official client warmup and main execution with all 14 calls, actual prediction/graph lifecycle, official SLOScheduler frames, real prompt tokens, coherent finish and KV accounting, and GPU0 release."
+    },
+    {
+      "gate": "S3_AB_small_pair",
+      "required": "A and B run the same chain0 under the matched stage2 configuration in A→B order; independent metrics and material differences are reported."
+    }
+  ],
+  "stop_rule": "Do not advance past any failed gate. In particular, a B integration that only reproduces GMAX priority/frame code cannot enter S2 or S3.",
+  "controlled_state_evidence": {
+    "prediction_and_graph": "Use identical public RequestInfo/prompt/history and controlled readiness timing; retain actual integer predictions, share and deadline calculations.",
+    "frames": "Retain exact waiting/running order, ordered selected request IDs, schedule count, priority snapshots and official frame membership.",
+    "preemption_and_kv": "Retain official block tables, queue transitions, swap-in/out maps, B token ledger and restoration witnesses.",
+    "finish": "Retain token counts, stop reasons, sequence statuses, freed IDs and backend release events."
+  },
+  "AB_not_algorithm_claim": "A↔B measures native-backend/harness differences. It is not B↔C and cannot establish the frozen v2 mechanism advantage.",
+  "data_rule": "Raw prompts, token IDs, detailed events and model/KV state stay on the server. Mac receives only lightweight metrics, acceptance and manifests."
+}

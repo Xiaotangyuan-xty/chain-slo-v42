@@ -1,0 +1,141 @@
+{
+  "study_id": "idea3_full_jitserve_compare_20261027T121314Z_v1",
+  "study_root": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1",
+  "scope": "stage0_readonly_and_stage1_A_native_smoke_only",
+  "official": {
+    "repository": "https://github.com/UIUC-MLSys/JITServe",
+    "commit": "84584a119b892cf90c65e2b3f5bac67250d39d27",
+    "source_files_verified": 1297,
+    "jitserve_tree": "df7ca37744e6032fae38966df242642a2b20868e",
+    "vendored_vllm_tree": "f3f3136f615dff3b2649db5bece2da52405c8ace",
+    "benchmark_tree": "377ab84411ec3eb15b3527f8283999984c6b9a45"
+  },
+  "arms": {
+    "A": "official native JITServe full stack with observation-only audit wrappers",
+    "B": "future full JITServe lifecycle in the shared harness; not implemented or authorized for performance in this study stage",
+    "C": "future frozen v2_frozen in exactly the same shared harness as B; not authorized for performance in this study stage"
+  },
+  "backend_boundary": {
+    "A": "new-study official source and official vendored vLLM loaded through the existing native CUDA environment",
+    "B_C_requirement": "B and C must later use exactly the same real backend, model, inputs, deadlines, KV quota, batch limit, routing, fairness constraints, event clocks and accounting; this is a future gate, not an asserted equivalence",
+    "attribution": "A-B measures harness/backend differences, B-C compares mechanisms, and A-C remains a system-aggregate comparison"
+  },
+  "runtime": {
+    "python": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/slo_declaration_robustness/gpu_closed_loop_20261013T122407Z_v1/env/bin/python",
+    "library_contract": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/slo_declaration_robustness/gpu_closed_loop_20261013T122407Z_v1/BUILD_ENV_V4.json",
+    "reuse_only": ["PATH", "LD_LIBRARY_PATH", "CUDA_HOME"],
+    "new_environment_variables": {
+      "HF_HUB_OFFLINE": "1",
+      "TRANSFORMERS_OFFLINE": "1",
+      "VLLM_NO_USAGE_STATS": "1",
+      "DO_NOT_TRACK": "1",
+      "PYTHONUNBUFFERED": "1"
+    },
+    "pythonpath_entries": [
+      "programs",
+      "repo/benchmark",
+      "repo",
+      "repo/third_party/vllm",
+      "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_two_gate_native_gpu01_20261024T111500Z_v1/native_predictor_deps",
+      "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_finite_h4_confirm_gpu01_20261018T114337Z_resume_v1/deps"
+    ],
+    "sklearn_deps": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_two_gate_native_gpu01_20261024T111500Z_v1/native_predictor_deps",
+    "support_deps": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_finite_h4_confirm_gpu01_20261018T114337Z_resume_v1/deps",
+    "native_binary_manifest": "manifests/native_binary_reuse.json",
+    "native_binary_policy": "Reuse only three registered compiled extensions and two generated flash-attention Python support files from the source-identical old deployment; no shared environment modification and no pip vLLM replacement.",
+    "expected_versions": {
+      "torch": "2.5.0+cu121",
+      "torch_cuda": "12.1",
+      "sklearn": "1.5.1",
+      "joblib": "1.4.2",
+      "scipy": "1.13.1",
+      "quantile_forest": "1.4.1"
+    }
+  },
+  "model": {
+    "path": "/home/taig/models/Qwen2.5-7B-Instruct",
+    "dtype_argument": "auto",
+    "resolved_dtype": "bfloat16",
+    "max_model_len": 8192,
+    "max_output_len": 1024
+  },
+  "qrf": {
+    "revision": "1e587124a9671f54f4c659f97bccbbe890b3d8af",
+    "model": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_two_gate_native_gpu01_20261024T111500Z_v1/native_assets/qrf_model/0_qrf_lmsys_chat_qwen25_7b.pkl",
+    "vectorizer": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_two_gate_native_gpu01_20261024T111500Z_v1/native_assets/qrf_vectorizer/0_qrf_lmsys_chat_qwen25_7b.pkl",
+    "prediction_enabled": true,
+    "single_thread_patch": false,
+    "snapshot_refresh": false
+  },
+  "input": {
+    "public_trace": "repo/traces/deepresearch_filter.jsonl",
+    "public_trace_sha256": "5240ba938ab499adfd6b05f1454e51e29512d06f0fe99d326802f2e483d3d59d",
+    "public_trace_chains": 200,
+    "training_graphs": "repo/traces/deepresearch_training.json",
+    "training_graphs_sha256": "c617759c3ec553cc76b973977d58342e606d9fbf04fa241da30dc4f1138beca6",
+    "training_graph_count": 394,
+    "trace_semantics": "fixed public prompt and graph replay, not live online agent behavior",
+    "smoke_chain_indices": [0],
+    "expected_stages_per_chain_execution": 6,
+    "expected_requests_per_stage": [1, 2, 1, 1, 1, 1],
+    "expected_calls_per_chain_execution": 7,
+    "official_client_warmup_executions": 1,
+    "official_client_main_executions": 1,
+    "expected_total_chain_executions": 2,
+    "expected_total_calls_including_warmup": 14
+  },
+  "deadline": {
+    "slo_constraint_seconds": [2.0, 0.1, 20.0],
+    "source": "official DeepResearch benchmark script",
+    "collection_id": 0,
+    "collection_multiplier": 1,
+    "whole_chain_deadline_seconds": 120.0,
+    "rule": "finish <= deadline; late work is not discarded"
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 18080,
+    "prediction_host": "127.0.0.1",
+    "prediction_port": 65433,
+    "scheduling_policy": "jitserve",
+    "graph_structure_type": "deepresearch",
+    "graph_matching_mode": "online",
+    "stage_ratio_method": "execution_time",
+    "use_all_node": false,
+    "use_total_deadline": false,
+    "enable_chunked_prefill": true,
+    "penalty_factor": 100,
+    "max_num_seqs": 32,
+    "gpu_memory_utilization": 0.9,
+    "disable_prediction": false,
+    "disable_graph_matching": false,
+    "use_default_length": false
+  },
+  "client": {
+    "arrival_rate": 1.0,
+    "burst": false,
+    "seed": 42,
+    "temperature": 0.0,
+    "is_stream": false,
+    "ignore_eos": false
+  },
+  "resources": {
+    "physical_gpu_index": 2,
+    "gpu_uuid": "GPU-e085e0e1-a283-82f2-325b-01981b51f984",
+    "server_cuda_visible_devices": "GPU-e085e0e1-a283-82f2-325b-01981b51f984",
+    "predictor_and_client_cuda_visible_devices": "",
+    "other_gpus_authorized": false,
+    "max_A_attempts": 3,
+    "max_attempt_wall_seconds": 1800,
+    "max_total_GPU_wall_seconds": 3600,
+    "storage_root": "/mnt/sda1"
+  },
+  "stop_rules": [
+    "Stop immediately rather than using any physical GPU other than GPU2.",
+    "Do not start B or C performance runs in this study stage.",
+    "Preserve every failed or partial attempt; do not rerun a successful logical commit.",
+    "No automatic retry, no added seeds, no HOLDOUT, and no formal performance matrix.",
+    "If A cannot pass the native smoke gate within the frozen attempt budget, stop at stage1.",
+    "Do not signal or modify any process not registered by this study controller."
+  ]
+}

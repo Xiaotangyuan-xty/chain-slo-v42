@@ -1,0 +1,514 @@
+{
+  "schema": "small-full-dynamic-bc-comparison/v3",
+  "comparison_valid": true,
+  "mechanism_won": true,
+  "win_criterion": {
+    "official_scaled_attained": {
+      "B": 3,
+      "C": 4
+    },
+    "native_request_goodput": {
+      "B": 0.04504167410328177,
+      "C": 0.05084131862694301
+    },
+    "mean_JCT": {
+      "B": 267.69612191896886,
+      "C": 310.53254505215835
+    },
+    "rule": "C official scaled attained > B; JCT, goodput and overheads are reported without a performance threshold"
+  },
+  "decision": "SMALL_FULL_DYNAMIC_C_WIN",
+  "attempts": {
+    "B": "V3_FULL_B_GPU0_42",
+    "C": "V3_FULL_C_GPU0_42"
+  },
+  "checks": {
+    "complete_warmup_and_40_main_calls_B": {
+      "pass": true,
+      "actual": {
+        "calls": 7,
+        "warmup": 1,
+        "main": 6,
+        "IDs": [
+          2,
+          3,
+          5,
+          1,
+          4,
+          0
+        ]
+      },
+      "expected": "one complete chain0 warmup and six complete main chains with 40 calls"
+    },
+    "controller_B": {
+      "pass": true,
+      "actual": {
+        "failure": null,
+        "client": 0
+      },
+      "expected": "success"
+    },
+    "backend_release_B": {
+      "pass": true,
+      "actual": {
+        "owners": 0,
+        "evictions": 0
+      },
+      "expected": "no owners or autonomous evictions"
+    },
+    "arrival_contract_B": {
+      "pass": true,
+      "actual": {
+        "actual": {
+          "2": 2.976084614172578,
+          "3": 3.985605761408806,
+          "5": 5.989391393959522,
+          "1": 2.012539865449071,
+          "4": 5.021204769611359,
+          "0": 0.9894690215587616
+        },
+        "target": [
+          0.988,
+          2.01,
+          2.973,
+          3.9819999999999993,
+          5.0169999999999995,
+          5.983999999999999
+        ],
+        "max_error": 0.00539139395952315
+      },
+      "expected": "all six arrivals within 0.5 seconds of the frozen seed-42 plan"
+    },
+    "dynamic_batch_accounting_B": {
+      "pass": true,
+      "actual": {
+        "batches": 9860,
+        "max_batch": 11,
+        "over_four": 1241
+      },
+      "expected": "full B and C both execute real batches above the removed four-request limit"
+    },
+    "complete_warmup_and_40_main_calls_C": {
+      "pass": true,
+      "actual": {
+        "calls": 7,
+        "warmup": 1,
+        "main": 6,
+        "IDs": [
+          1,
+          2,
+          5,
+          3,
+          4,
+          0
+        ]
+      },
+      "expected": "one complete chain0 warmup and six complete main chains with 40 calls"
+    },
+    "controller_C": {
+      "pass": true,
+      "actual": {
+        "failure": null,
+        "client": 0
+      },
+      "expected": "success"
+    },
+    "backend_release_C": {
+      "pass": true,
+      "actual": {
+        "owners": 0,
+        "evictions": 0
+      },
+      "expected": "no owners or autonomous evictions"
+    },
+    "arrival_contract_C": {
+      "pass": true,
+      "actual": {
+        "actual": {
+          "1": 2.0124466326087713,
+          "2": 2.9762723557651043,
+          "5": 5.989671915769577,
+          "3": 3.986157948151231,
+          "4": 5.021664323285222,
+          "0": 0.9893993381410837
+        },
+        "target": [
+          0.988,
+          2.01,
+          2.973,
+          3.9819999999999993,
+          5.0169999999999995,
+          5.983999999999999
+        ],
+        "max_error": 0.005671915769577929
+      },
+      "expected": "all six arrivals within 0.5 seconds of the frozen seed-42 plan"
+    },
+    "dynamic_batch_accounting_C": {
+      "pass": true,
+      "actual": {
+        "batches": 12867,
+        "max_batch": 6,
+        "over_four": 525
+      },
+      "expected": "full B and C both execute real batches above the removed four-request limit"
+    },
+    "matched_arrivals_across_arms": {
+      "pass": true,
+      "actual": 0.0005521867424249649,
+      "expected": "same-ID arrival offsets differ by at most 0.5 seconds"
+    },
+    "official_native_goodput_B": {
+      "pass": true,
+      "actual": {
+        "official_scaled_collections": 3,
+        "recomputed_scaled_collections": 3,
+        "official_goodput": 0.04504167410328177,
+        "recomputed_goodput": 0.04504167410328177
+      },
+      "expected": "official scaled-SLO collection count and native request goodput reproduced"
+    },
+    "official_native_goodput_C": {
+      "pass": true,
+      "actual": {
+        "official_scaled_collections": 4,
+        "recomputed_scaled_collections": 4,
+        "official_goodput": 0.05084131862694301,
+        "recomputed_goodput": 0.05084131862694301
+      },
+      "expected": "official scaled-SLO collection count and native request goodput reproduced"
+    },
+    "same_output_length_and_stop_reason": {
+      "pass": true,
+      "actual": [],
+      "expected": "all same-ID requests have equal output-token counts and stop reasons"
+    },
+    "C_received_SLO_and_stage_count_deadline": {
+      "pass": true,
+      "actual": [],
+      "expected": "each chain goal uses the received scaled request SLO times its actual stage count"
+    },
+    "supported_multi_goal_discrimination": {
+      "pass": true,
+      "actual": {
+        "distinguished_multi_goal": 9,
+        "over_capacity_distinguished": 6
+      },
+      "expected": "at least one distinguishable multi-goal candidate"
+    },
+    "over_capacity_candidate": {
+      "pass": true,
+      "actual": 6,
+      "expected": "at least one distinguishable candidate above four real request slots"
+    },
+    "accepted_model_action_executed": {
+      "pass": true,
+      "actual": {
+        "accepted": 7,
+        "executed": 7,
+        "projection_matches": 7,
+        "witnesses": [
+          {
+            "id": 1,
+            "anchor": "1:stage:3",
+            "selected": [
+              "0022059a1c0944ecbe31814c2b32a941",
+              "968d6516f38f49889f6e1a96e6164b2d",
+              "e290dee69cf44d63959478cf9f89c78b",
+              "734c1c72748943b094f09028aaf1a6bc",
+              "e2e05fc4a63e4da4934d88ed1b5d2637",
+              "0c7666fe699a462d9cdcc235dee8345b"
+            ]
+          },
+          {
+            "id": 2,
+            "anchor": "1:stage:4",
+            "selected": [
+              "55cc70725d5643c694cd141b24ce2897"
+            ]
+          },
+          {
+            "id": 3,
+            "anchor": "5:stage:3",
+            "selected": [
+              "5564ab9d395d4fe381ba9c808990a03e",
+              "28e05f17ddbe44378c65ff29c0521e5c"
+            ]
+          },
+          {
+            "id": 4,
+            "anchor": "2:stage:3",
+            "selected": [
+              "28fba506004f4b78bd934c935941c6e7",
+              "41c11e0998d1445fb00144a4484eec86"
+            ]
+          },
+          {
+            "id": 5,
+            "anchor": "3:stage:0",
+            "selected": [
+              "19489d7b912241578d3d00b07f49adef"
+            ]
+          },
+          {
+            "id": 6,
+            "anchor": "3:stage:2",
+            "selected": [
+              "fce368d7574c4ae09c063dacf44fdc0c"
+            ]
+          },
+          {
+            "id": 7,
+            "anchor": "3:stage:3",
+            "selected": [
+              "54f6a6089bb64faf94b718e8b7be884a"
+            ]
+          }
+        ]
+      },
+      "expected": "zero actions is a valid conservative decision; accepted actions need matching execution"
+    },
+    "complete_lease_and_no_forced_spin": {
+      "pass": true,
+      "actual": {
+        "completed_leases": 4,
+        "forced_not_scheduled": 0
+      },
+      "expected": "accepted actions need a complete matching lease; no forced action may fail its own admission"
+    },
+    "compound_reset_and_no_hold": {
+      "pass": true,
+      "actual": {
+        "resets": 1,
+        "holds": 0
+      },
+      "expected": {
+        "resets": 1,
+        "holds": 0
+      }
+    },
+    "stage7_launch_sha": {
+      "pass": true,
+      "actual": {
+        "bad": []
+      },
+      "expected": "all full-B/C stage7 files match"
+    },
+    "full_dynamic_arm_identity": {
+      "pass": true,
+      "actual": {
+        "B": "B-full",
+        "C": "C-full-dynamic"
+      },
+      "expected": "B-full and C-full-dynamic both retain official prediction and graph matching"
+    },
+    "dynamic_performance_calibration": {
+      "pass": true,
+      "actual": {
+        "observations": 521,
+        "factor_keys": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "expected": "C records real B>4 decode observations and uses them in the performance model"
+    },
+    "official_source_1297": {
+      "pass": true,
+      "actual": {
+        "bad": []
+      },
+      "expected": "all 1297 match"
+    },
+    "GPU0_release": {
+      "pass": true,
+      "actual": {
+        "gpu": "0, GPU-ff8c7d5c-f75c-26e1-43de-b40ca283f938, 0 MiB",
+        "own_remaining": [],
+        "all_gpu_processes": ""
+      },
+      "expected": "no study-owned process; foreign processes untouched"
+    }
+  },
+  "primary_unscaled_strict": {
+    "attained": {
+      "B": 0,
+      "C": 0
+    },
+    "fraction": {
+      "B": 0.0,
+      "C": 0.0
+    },
+    "per_chain": {
+      "B": {
+        "2": false,
+        "3": false,
+        "5": false,
+        "1": false,
+        "4": false,
+        "0": false
+      },
+      "C": {
+        "1": false,
+        "2": false,
+        "5": false,
+        "3": false,
+        "4": false,
+        "0": false
+      }
+    },
+    "gained": [],
+    "lost": [],
+    "call_goodput": {
+      "B": 0.0,
+      "C": 0.0
+    }
+  },
+  "official_scaled_slo": {
+    "per_chain": {
+      "B": {
+        "2": true,
+        "3": true,
+        "5": true,
+        "1": false,
+        "4": false,
+        "0": false
+      },
+      "C": {
+        "1": true,
+        "2": true,
+        "5": true,
+        "3": true,
+        "4": false,
+        "0": false
+      }
+    },
+    "gained": [
+      1
+    ],
+    "lost": [],
+    "native_request_goodput": {
+      "B": 0.04504167410328177,
+      "C": 0.05084131862694301
+    }
+  },
+  "JCT": {
+    "per_chain": {
+      "B": {
+        "2": 151.62216372042894,
+        "3": 217.79258740879595,
+        "5": 224.56109108030796,
+        "1": 279.4894226882607,
+        "4": 334.097419321537,
+        "0": 398.6140472944826
+      },
+      "C": {
+        "1": 163.1652926541865,
+        "2": 184.9887831285596,
+        "5": 214.52146940119565,
+        "3": 347.929105900228,
+        "4": 442.2130585964769,
+        "0": 510.37756063230336
+      }
+    },
+    "mean": {
+      "B": 267.69612191896886,
+      "C": 310.53254505215835
+    },
+    "C_over_B_relative": 0.16001884086373133,
+    "P90": {
+      "B": 366.3557333080098,
+      "C": 476.29530961439013
+    },
+    "P95": {
+      "B": 382.4848903012462,
+      "C": 493.33643512334675
+    }
+  },
+  "request_latency_P90_P95": {
+    "B": [
+      86.12489605415612,
+      125.25437941458054
+    ],
+    "C": [
+      155.50263708550483,
+      215.60403718976303
+    ]
+  },
+  "candidates": {
+    "total": 220,
+    "accepted": 7,
+    "executed": 7,
+    "distinguished_multi_goal": 9,
+    "over_capacity_distinguished": 6,
+    "fallbacks": {
+      "degenerate": 89,
+      "baseline_evaluation_timeout": 96,
+      "no_model_gain": 2,
+      "conservative_evaluation_cap": 26,
+      "None": 7
+    }
+  },
+  "engine": {
+    "B": {
+      "graph_share_wall_seconds": 0.2720644548535347,
+      "schedule_wall_seconds": 1.4192203171551228,
+      "ticks": 9862,
+      "official_frames": 197,
+      "scheduled_groups": 21751,
+      "prefill_groups": 72,
+      "prefill_chunks": 41,
+      "preempted": 1,
+      "ignored": 0,
+      "swap_in_block_groups": 209,
+      "swap_out_block_groups": 209,
+      "engine_steps": 9862,
+      "engine_step_wall_seconds": 527.5184528883547
+    },
+    "C": {
+      "graph_share_wall_seconds": 0.2633513826876879,
+      "schedule_wall_seconds": 15.624637002125382,
+      "ticks": 12970,
+      "official_frames": 259,
+      "max_num_seqs": 32,
+      "dynamic_over_four_ticks": 12970,
+      "scheduled_groups": 21749,
+      "prefill_groups": 70,
+      "prefill_chunks": 39,
+      "preempted": 6,
+      "ignored": 0,
+      "swap_in_block_groups": 704,
+      "swap_out_block_groups": 704,
+      "engine_steps": 12970,
+      "engine_step_wall_seconds": 637.9849521070719,
+      "performance_observations": 12843,
+      "dynamic_performance_observations": 521
+    }
+  },
+  "kv": {
+    "B": {
+      "actual_forward_query_tokens": 95207,
+      "necessary_prefill_tokens": 73528,
+      "productive_decode_queries": 21679,
+      "recompute_tokens": 0,
+      "swap_bytes_in": 191643648,
+      "swap_bytes_out": 191643648
+    },
+    "C": {
+      "actual_forward_query_tokens": 95207,
+      "necessary_prefill_tokens": 73528,
+      "productive_decode_queries": 21679,
+      "recompute_tokens": 0,
+      "swap_bytes_in": 642998272,
+      "swap_bytes_out": 642998272
+    }
+  },
+  "scope": "One six-chain full-dynamic B/C development pair; complete official policy semantics in the shared backend, not statistical superiority evidence",
+  "ablation_allowed": false,
+  "formal_matrix_allowed": false,
+  "holdout_allowed": false
+}

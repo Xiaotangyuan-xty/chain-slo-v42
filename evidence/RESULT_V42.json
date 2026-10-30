@@ -1,0 +1,37 @@
+{
+  "mechanism_version": "v3_chain_dynamic_v42",
+  "comparison_valid": true,
+  "mechanism_won": true,
+  "decision": "SMALL_FULL_DYNAMIC_C_WIN",
+  "win_criterion": {
+    "official_scaled_attained": {
+      "B": 3,
+      "C": 4
+    },
+    "native_request_goodput": {
+      "B": 0.04504167410328177,
+      "C": 0.05084131862694301
+    },
+    "mean_JCT": {
+      "B": 267.69612191896886,
+      "C": 310.53254505215835
+    },
+    "rule": "C official scaled attained > B; JCT, goodput and overheads are reported without a performance threshold"
+  },
+  "gained": [
+    1
+  ],
+  "lost": [],
+  "cpu_qualification_sha256": "01aee665e3c0b3d522bd8ed08c52b828fd360390c32da79751e1b47e61949054",
+  "comparison_sha256": "836cebb0c48704768bff8013efea1f68c25d4f83f2a3d9541bb20725f9c8b5a0",
+  "postflight_gpu0": {
+    "gpu": "0, GPU-ff8c7d5c-f75c-26e1-43de-b40ca283f938, 0 MiB",
+    "processes": ""
+  },
+  "qualified_file_count": 70,
+  "checks_passed": 25,
+  "statistical_superiority_claim": false,
+  "formal_matrix_run": false,
+  "holdout_run": false,
+  "additional_seeds_run": false
+}

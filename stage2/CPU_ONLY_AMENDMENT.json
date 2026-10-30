@@ -1,0 +1,18 @@
+{
+  "effective_instruction": "Use CPU only until the user explicitly authorizes GPU again.",
+  "supersedes": "All stage2 GPU execution permissions in STAGE2_FREEZE and STAGE2_JOBS are suspended.",
+  "currently_allowed": [
+    "Read-only source and manifest inspection",
+    "CPU-only implementation, syntax checks and import checks with CUDA_VISIBLE_DEVICES empty",
+    "Controlled-state semantic comparisons using fake/no-GPU backends and CPU predictor/graph assets",
+    "Lightweight CPU-side audit and report preparation"
+  ],
+  "currently_forbidden": [
+    "GPU model loading or CUDA inference",
+    "Starting GPU workers, native servers or executors",
+    "GPU telemetry or operations",
+    "B GPU qualification and A/B end-to-end GPU comparison",
+    "Any C execution"
+  ],
+  "resume_gate": "Explicit later user instruction authorizing GPU use; at that point re-check the frozen stage2 gates and physical GPU2 restriction before execution."
+}

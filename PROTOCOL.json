@@ -1,0 +1,40 @@
+{
+  "study_id": "idea3_full_jitserve_compare_20261027T121314Z_v1",
+  "authorized_work": [
+    "Read the six specified historical reports and verify code, environment, assets, traces, versions, SHA256 and live processes.",
+    "Run only arm A on public trace chain 0 with the official benchmark warmup and one main execution.",
+    "Independently audit the smoke and release all study-owned resources."
+  ],
+  "explicitly_not_authorized": [
+    "B or C implementation/performance matrix",
+    "HOLDOUT or additional seeds",
+    "Old launch/controller scripts",
+    "Parameter sweeps or performance claims"
+  ],
+  "preflight": {
+    "official_commit": "84584a119b892cf90c65e2b3f5bac67250d39d27",
+    "source_comparison": "All 1297 tracked jitserve and vendored-vLLM files match among official commit, new study and old deployment.",
+    "GPU": "physical GPU2 only, UUID GPU-e085e0e1-a283-82f2-325b-01981b51f984",
+    "ports": [18080, 65433],
+    "network": "offline model/tokenizer use; no dependency installation"
+  },
+  "execution_order": [
+    "Start the official QRF socket predictor on CPU and wait for its listening state.",
+    "Start official jitserve.server through the observation-only native launcher on physical GPU2 and wait for /health.",
+    "Run the official DeepResearch benchmark main logic with chain 0; preserve warmup and main results separately.",
+    "Drain prediction callbacks, stop only registered process groups, and verify GPU2 memory release.",
+    "Evaluate the gate from raw client and server records after cleanup."
+  ],
+  "acceptance_gate": {
+    "startup": "QRF predictor and official server load successfully; /health succeeds; official client exits zero.",
+    "compound": "Each of the warmup and main executions completes all 6 stages and 7 calls with per-stage request counts [1,2,1,1,1,1]; 14 total calls including warmup.",
+    "prediction": "Every assigned call has submit, worker begin and eventual ready records; SequenceGroup assignment snapshots and at least one real COLLECTIVE allocation read are recorded.",
+    "graph": "All 394 official training graphs load; every call has a finite online stage share; collection completion updates real graph state. Two finished graphs are expected after warmup plus main. Zero medoids is valid below the official 100-finished-graph clustering threshold and must not be misreported as formed clustering.",
+    "scheduler": "The actual scheduler is SLOScheduler, official frame activity is observed, chunked prefill is enabled, and all admissions/preemptions/chunks are auditable.",
+    "metrics": "Official main denominator is one collection, six stages and seven calls. Recomputed strict chain SLO and native SLO goodput match the official metrics. The independent whole-path denominator additionally retains the warmup execution.",
+    "provenance": "All loaded JITServe/vLLM source paths are under the new-study official repo; source and asset manifests match.",
+    "cleanup": "All study-owned predictor/server/client processes exit and only study-owned GPU2 memory is verified released; foreign processes are untouched."
+  },
+  "interpretation": "This is a qualification smoke only. It supplies no A/B/C performance conclusion, no algorithm advantage claim, and no evidence of real online-agent task quality.",
+  "failure_policy": "Any unmet required gate leaves A unqualified. Preserve the attempt, diagnose within the frozen A-only budget, and stop without B/C if A cannot pass."
+}

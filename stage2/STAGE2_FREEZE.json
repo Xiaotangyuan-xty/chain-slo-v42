@@ -1,0 +1,128 @@
+{
+  "stage": "B_full_semantic_acceptance_and_AB_small_end_to_end",
+  "parent_study": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1",
+  "stage1_final_receipt_sha256": "324ddde8378930d13c894d222909f3965314cab7aa4f7eeeb66e9a850e0d8958",
+  "authorized_by_latest_user_instruction": true,
+  "scope": [
+    "Controlled-state A/B comparisons of prediction, stage share, subdeadline, snapshots, ordered frame membership, admission, preemption, routing, finish and KV accounting.",
+    "If and only if controlled semantics pass, one A/B public-chain0 end-to-end pair on physical GPU0.",
+    "No C run and no performance matrix."
+  ],
+  "official_commit": "84584a119b892cf90c65e2b3f5bac67250d39d27",
+  "A_identity": "Official native AsyncLLMEngine and vendored vLLM executor with the stage2 matched resource configuration.",
+  "B_identity": "The same official server, RequestInfo, SequenceGroup, GraphMatchContext, SLOScheduler and output processing, with the study-owned asynchronous PyTorch executor and explicit KV ledger. B is not a GMAX-core-only adapter.",
+  "shared_backend_for_future_C": "The exact B executor, explicit KV ledger, model, prompt tokens, generation path and audit interfaces are the required backend for any future C. C is not authorized now.",
+  "public_input": {
+    "trace": "repo/traces/deepresearch_filter.jsonl",
+    "sha256": "5240ba938ab499adfd6b05f1454e51e29512d06f0fe99d326802f2e483d3d59d",
+    "chain_indices": [0],
+    "actual_prompt_token_ids": true,
+    "synthetic_token_substitution": false,
+    "cross_stage_prompt_concatenation": false,
+    "official_client_warmup_and_main": true,
+    "expected_calls_including_warmup": 14,
+    "semantics": "fixed public prompt/graph replay, not live online-agent behavior"
+  },
+  "matched_resources": {
+    "physical_gpu_index": 0,
+    "gpu_uuid": "GPU-ff8c7d5c-f75c-26e1-43de-b40ca283f938",
+    "gpu_memory_utilization": 0.9,
+    "model": "/home/taig/models/Qwen2.5-7B-Instruct",
+    "dtype": "bfloat16",
+    "single_engine": true,
+    "max_num_seqs": 4,
+    "max_num_batched_tokens": 2048,
+    "max_model_len": 8192,
+    "max_output_len": 1024,
+    "block_size": 16,
+    "num_gpu_blocks_override": 512,
+    "gpu_kv_tokens": 8192,
+    "swap_space_gib": 1,
+    "cpu_block_rule": "floor(swap_space_bytes / official CacheEngine.get_cache_block_size) for both A and B",
+    "enable_chunked_prefill": true,
+    "enable_prefix_caching": false,
+    "enforce_eager": true,
+    "disable_async_output_proc": true,
+    "scheduling_policy": "jitserve",
+    "penalty_factor": 100,
+    "schedule_interval": 50,
+    "top_k_selection": 3,
+    "search_strategy": "sliding_window",
+    "max_swaps_per_iter": 3
+  },
+  "graph_and_prediction": {
+    "prediction_enabled": true,
+    "graph_structure_type": "deepresearch",
+    "graph_matching_mode": "online",
+    "stage_ratio_method": "execution_time",
+    "use_total_deadline": false,
+    "use_all_node": false,
+    "use_default_length": false,
+    "snapshot_refresh": false,
+    "qrf_revision": "1e587124a9671f54f4c659f97bccbbe890b3d8af",
+    "training_graphs_sha256": "c617759c3ec553cc76b973977d58342e606d9fbf04fa241da30dc4f1138beca6"
+  },
+  "generation_and_deadline": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 1,
+    "seed": 42,
+    "ignore_eos": false,
+    "is_stream": true,
+    "arrival_rate": 1.0,
+    "slo_constraint_seconds": [2.0, 0.1, 20.0],
+    "whole_chain_deadline_seconds": 120.0,
+    "strict_rule": "finish <= deadline"
+  },
+  "controlled_fixtures": [
+    "chain0 stage0/stage1 prediction and graph state",
+    "pre-ready and post-ready request_info/SequenceGroup snapshots",
+    "four-group ordered official frame with a nontrivial waiting/running boundary",
+    "small-cache admission and preemption with swap-out/swap-in witnesses",
+    "single-engine routing, finish status and KV release"
+  ],
+  "semantic_tolerances": {
+    "prediction_value": "exact integer equality",
+    "stage_share": "exact floating-point equality",
+    "subdeadline_seconds": "absolute error <= 1e-9",
+    "snapshot": "exact value and version equality; prediction callback updates request_info only",
+    "ordered_frame_members": "exact ordered request-ID list",
+    "admission_and_preemption": "exact queue, request-ID and preemption-mode transitions",
+    "routing": "exact single-engine assignment",
+    "finish": "exact sequence status, finish reason and freed request IDs",
+    "kv": "identical official block accounting; B token ledger must explain every computed/GPU/host/recomputed/swapped token without silent LRU eviction"
+  },
+  "AB_end_to_end": {
+    "pairs": 1,
+    "order": ["A", "B"],
+    "attempt_limit": 2,
+    "successful_pair_limit": 1,
+    "metrics": [
+      "strict chain SLO and same-ID stage/call completion",
+      "collection/stage/request latency and TTFT/TPOT where available",
+      "output token counts and stop reasons",
+      "backend/policy/prediction/graph wall time",
+      "official KV blocks and B GPU/host/recompute/swap token ledger",
+      "run order and GPU UUID"
+    ],
+    "material_harness_difference": [
+      "Any strict chain-SLO or same-ID completion disagreement is material and blocks mechanism interpretation.",
+      "Relative collection-latency difference above 10% is a material harness warning, not a statistical equivalence test.",
+      "Output-token or stop-reason disagreement is reported as a generation/harness boundary and blocks an unqualified A≈B claim."
+    ],
+    "interpretation": "One qualification block only; no significance, general superiority or C mechanism claim."
+  },
+  "budgets_and_stops": {
+    "B_qualification_attempt_limit": 3,
+    "max_attempt_wall_seconds": 2400,
+    "max_stage2_gpu_wall_seconds": 7200,
+    "no_automatic_retry": true,
+    "no_added_seeds": true,
+    "no_HOLDOUT": true,
+    "no_C": true,
+    "failed_or_partial_attempts_preserved": true,
+    "stop_if_B_full_semantics_fail": true,
+    "stop_without_mechanism_claim_if_AB_materially_differs": true,
+    "only_registered_processes_may_be_signaled": true
+  }
+}
