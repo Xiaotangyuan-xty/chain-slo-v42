@@ -1,0 +1,35 @@
+test_away_releases_previous_stage_before_future_prefill (__main__.RolloutTests.test_away_releases_previous_stage_before_future_prefill) ... ok
+test_baseline_on_time_chain_is_protected (__main__.RolloutTests.test_baseline_on_time_chain_is_protected) ... ok
+test_baseline_timeout_is_safe_and_not_repeated (__main__.RolloutTests.test_baseline_timeout_is_safe_and_not_repeated) ... ok
+test_best_of_all_evaluated_and_partial_timeout (__main__.RolloutTests.test_best_of_all_evaluated_and_partial_timeout) ... ok
+test_calibrated_rescue_risk_margin_and_frame_lease (__main__.RolloutTests.test_calibrated_rescue_risk_margin_and_frame_lease) ... ok
+test_cohort_drains_when_all_urgent_chains_are_no_longer_attainable (__main__.RolloutTests.test_cohort_drains_when_all_urgent_chains_are_no_longer_attainable) ... ok
+test_compound_member_progress_and_future_width (__main__.RolloutTests.test_compound_member_progress_and_future_width) ... ok
+test_current_and_future_prefill_enter_timeline (__main__.RolloutTests.test_current_and_future_prefill_enter_timeline) ... ok
+test_deadline_rescue_prefers_attainable_chain_without_rollout (__main__.RolloutTests.test_deadline_rescue_prefers_attainable_chain_without_rollout) ... ok
+test_dynamic_performance_observation_updates_large_batch_factor (__main__.RolloutTests.test_dynamic_performance_observation_updates_large_batch_factor) ... ok
+test_dynamic_slots_swap_resume_and_member_progress (__main__.RolloutTests.test_dynamic_slots_swap_resume_and_member_progress) ... ok
+test_evaluation_cost_changes_finish_and_good (__main__.RolloutTests.test_evaluation_cost_changes_finish_and_good) ... ok
+test_first_plan_prefill_can_shrink_around_decode_members (__main__.RolloutTests.test_first_plan_prefill_can_shrink_around_decode_members) ... ok
+test_first_step_pauses_background_but_can_reclaim_its_kv (__main__.RolloutTests.test_first_step_pauses_background_but_can_reclaim_its_kv) ... ok
+test_first_step_uses_native_order_and_defers_hopeless_before_mlfq (__main__.RolloutTests.test_first_step_uses_native_order_and_defers_hopeless_before_mlfq) ... ok
+test_full_state_cache_and_no_admit_degenerate (__main__.RolloutTests.test_full_state_cache_and_no_admit_degenerate) ... ok
+test_future_long_prefill_respects_token_budget (__main__.RolloutTests.test_future_long_prefill_respects_token_budget) ... ok
+test_incumbent_rescue_uses_least_laxity (__main__.RolloutTests.test_incumbent_rescue_uses_least_laxity) ... ok
+test_later_deadline_deferral_requires_frame_and_recovery_reserve (__main__.RolloutTests.test_later_deadline_deferral_requires_frame_and_recovery_reserve) ... ok
+test_model_eviction_moves_resident_and_recomputes_when_host_is_full (__main__.RolloutTests.test_model_eviction_moves_resident_and_recomputes_when_host_is_full) ... ok
+test_observed_member_outputs_use_critical_path (__main__.RolloutTests.test_observed_member_outputs_use_critical_path) ... ok
+test_official_frame_gate (__main__.RolloutTests.test_official_frame_gate) ... ok
+test_prediction_modes_and_away_alignment (__main__.RolloutTests.test_prediction_modes_and_away_alignment) ... ok
+test_rescue_allows_earlier_deadline_eviction_when_recovery_is_safe (__main__.RolloutTests.test_rescue_allows_earlier_deadline_eviction_when_recovery_is_safe) ... ok
+test_rescue_allows_eviction_of_hopeless_chain (__main__.RolloutTests.test_rescue_allows_eviction_of_hopeless_chain) ... ok
+test_rescue_allows_safe_later_deadline_eviction (__main__.RolloutTests.test_rescue_allows_safe_later_deadline_eviction) ... ok
+test_rescue_only_cap_does_not_run_rollout_without_rescue (__main__.RolloutTests.test_rescue_only_cap_does_not_run_rollout_without_rescue) ... ok
+test_rescue_rejects_attainable_chain_eviction (__main__.RolloutTests.test_rescue_rejects_attainable_chain_eviction) ... ok
+test_rescue_uses_earliest_deadline_instead_of_shortest_work (__main__.RolloutTests.test_rescue_uses_earliest_deadline_instead_of_shortest_work) ... ok
+test_rollout_respects_custom_forced_disablement (__main__.RolloutTests.test_rollout_respects_custom_forced_disablement) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.020s
+
+OK

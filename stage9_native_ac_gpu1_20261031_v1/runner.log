@@ -1,0 +1,221 @@
+{"phase": "START", "arm": "C", "mode": "compat", "attempt": "NATIVE_C_COMPAT_GPU1_01"}
+{
+  "gate": "PASS",
+  "receipt": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage9_native_ac_gpu1_20261031_v1/receipts/C_COMPATIBILITY_GATE.json",
+  "failed_checks": [],
+  "metrics": {
+    "jct": {
+      "1": 132.43427561596036,
+      "2": 160.7193027008325,
+      "0": 164.78366801142693
+    },
+    "official_scaled_attained": 2,
+    "official_scaled_per_chain": {
+      "1": true,
+      "2": true,
+      "0": false
+    },
+    "strict_attained": 0,
+    "strict_per_chain": {
+      "1": false,
+      "2": false,
+      "0": false
+    },
+    "arrivals": {
+      "1": 2.0126430448144674,
+      "2": 2.976688776165247,
+      "0": 0.9894635882228613
+    },
+    "episode_duration": 165.7731315996498,
+    "request_goodput": 0.08445276906399213,
+    "mean_jct": 152.64574877607325,
+    "jct_p90": 163.97079494930804,
+    "jct_p95": 164.37723148036747
+  }
+}
+{"phase": "PASS", "arm": "C", "mode": "compat", "attempt": "NATIVE_C_COMPAT_GPU1_01"}
+{"phase": "START", "arm": "A", "mode": "full", "attempt": "FULL_A_GPU1_01"}
+{
+  "gate": "PASS",
+  "receipt": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage9_native_ac_gpu1_20261031_v1/receipts/RUN_GATE_FULL_A_GPU1_01.json",
+  "failed_checks": [],
+  "metrics": {
+    "jct": {
+      "2": 83.16771740280092,
+      "1": 121.2772447168827,
+      "5": 153.03392001613975,
+      "4": 159.81781404651701,
+      "3": 192.21615931391716,
+      "0": 240.81397121027112
+    },
+    "official_scaled_attained": 4,
+    "official_scaled_per_chain": {
+      "2": true,
+      "1": true,
+      "5": true,
+      "4": false,
+      "3": true,
+      "0": false
+    },
+    "strict_attained": 0,
+    "strict_per_chain": {
+      "2": false,
+      "1": false,
+      "5": false,
+      "4": false,
+      "3": false,
+      "0": false
+    },
+    "arrivals": {
+      "2": 2.975934272632003,
+      "1": 2.012540640309453,
+      "5": 5.989479422569275,
+      "4": 5.021171206608415,
+      "3": 3.9854748230427504,
+      "0": 0.9893450476229191
+    },
+    "episode_duration": 241.80331625789404,
+    "request_goodput": 0.10752540702241585,
+    "mean_jct": 158.3878044510881,
+    "jct_p90": 216.51506526209414,
+    "jct_p95": 228.66451823618263
+  }
+}
+{"phase": "PASS", "arm": "A", "mode": "full", "attempt": "FULL_A_GPU1_01"}
+{"phase": "START", "arm": "C", "mode": "full", "attempt": "FULL_C_V43_GPU1_01"}
+{
+  "gate": "PASS",
+  "receipt": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage9_native_ac_gpu1_20261031_v1/receipts/RUN_GATE_FULL_C_V43_GPU1_01.json",
+  "failed_checks": [],
+  "metrics": {
+    "jct": {
+      "4": 119.23376054689288,
+      "1": 156.86129854805768,
+      "2": 194.1629107799381,
+      "5": 225.60008862614632,
+      "3": 266.53795910067856,
+      "0": 276.2468006629497
+    },
+    "official_scaled_attained": 5,
+    "official_scaled_per_chain": {
+      "4": true,
+      "1": true,
+      "2": true,
+      "5": true,
+      "3": true,
+      "0": false
+    },
+    "strict_attained": 1,
+    "strict_per_chain": {
+      "4": true,
+      "1": false,
+      "2": false,
+      "5": false,
+      "3": false,
+      "0": false
+    },
+    "arrivals": {
+      "4": 5.023876523599029,
+      "1": 2.012367583811283,
+      "2": 2.9759817514568567,
+      "5": 5.99126878939569,
+      "3": 3.98716607876122,
+      "0": 0.989422831684351
+    },
+    "episode_duration": 277.23622349463403,
+    "request_goodput": 0.11903206436744267,
+    "mean_jct": 206.4404697107772,
+    "jct_p90": 271.3923798818141,
+    "jct_p95": 273.8195902723819
+  }
+}
+{"phase": "PASS", "arm": "C", "mode": "full", "attempt": "FULL_C_V43_GPU1_01"}
+{
+  "gate": "PASS",
+  "receipt": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage9_native_ac_gpu1_20261031_v1/receipts/AC_COMPARISON.json",
+  "failed_checks": [],
+  "metrics": {
+    "A": {
+      "jct": {
+        "2": 83.16771740280092,
+        "1": 121.2772447168827,
+        "5": 153.03392001613975,
+        "4": 159.81781404651701,
+        "3": 192.21615931391716,
+        "0": 240.81397121027112
+      },
+      "official_scaled_attained": 4,
+      "official_scaled_per_chain": {
+        "2": true,
+        "1": true,
+        "5": true,
+        "4": false,
+        "3": true,
+        "0": false
+      },
+      "strict_attained": 0,
+      "strict_per_chain": {
+        "2": false,
+        "1": false,
+        "5": false,
+        "4": false,
+        "3": false,
+        "0": false
+      },
+      "arrivals": {
+        "2": 2.975934272632003,
+        "1": 2.012540640309453,
+        "5": 5.989479422569275,
+        "4": 5.021171206608415,
+        "3": 3.9854748230427504,
+        "0": 0.9893450476229191
+      },
+      "episode_duration": 241.80331625789404,
+      "request_goodput": 0.10752540702241585,
+      "mean_jct": 158.3878044510881,
+      "jct_p90": 216.51506526209414,
+      "jct_p95": 228.66451823618263
+    },
+    "C": {
+      "jct": {
+        "4": 119.23376054689288,
+        "1": 156.86129854805768,
+        "2": 194.1629107799381,
+        "5": 225.60008862614632,
+        "3": 266.53795910067856,
+        "0": 276.2468006629497
+      },
+      "official_scaled_attained": 5,
+      "official_scaled_per_chain": {
+        "4": true,
+        "1": true,
+        "2": true,
+        "5": true,
+        "3": true,
+        "0": false
+      },
+      "strict_attained": 1,
+      "strict_per_chain": {
+        "4": true,
+        "1": false,
+        "2": false,
+        "5": false,
+        "3": false,
+        "0": false
+      },
+      "arrivals": {
+        "4": 5.023876523599029,
+        "1": 2.012367583811283,
+        "2": 2.9759817514568567,
+        "5": 5.99126878939569,
+        "3": 3.98716607876122,
+        "0": 0.989422831684351
+      },
+      "episode_duration": 277.23622349463403,
+      "request_goodput": 0.11903206436744267,
+      "mean_jct": 206.4404697107772,
+      "jct_p90": 271.3923798818141,
+      "jct_p95": 273.8195902723819
+    }
+  }
+}

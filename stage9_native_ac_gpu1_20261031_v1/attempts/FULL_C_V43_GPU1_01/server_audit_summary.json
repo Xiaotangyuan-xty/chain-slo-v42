@@ -1,0 +1,44 @@
+{
+  "failure": null,
+  "event_counts": {
+    "events": 647,
+    "launcher_start": 1,
+    "prediction_submit": 47,
+    "prediction_worker_begin": 47,
+    "prediction_submit_return": 47,
+    "graph_stage_share": 47,
+    "sequence_group_assign": 47,
+    "scheduler_step": 317,
+    "prediction_ready": 47,
+    "graph_completion": 47
+  },
+  "scheduler_stats": {
+    "ticks": 10750,
+    "official_frames": 215,
+    "scheduled_groups": 21749,
+    "prefill_groups": 70,
+    "prefill_chunks": 40,
+    "preempted": 32,
+    "ignored": 0,
+    "swap_in_block_groups": 2740,
+    "swap_out_block_groups": 2740
+  },
+  "base_graphs": 394,
+  "clustering": {
+    "n_requests": 7,
+    "n_clusters": 0,
+    "cluster_sizes": [],
+    "medoids": []
+  },
+  "use_prediction": true,
+  "use_graph_matching": true,
+  "use_default_length": false,
+  "source_paths": {
+    "server": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/jitserve/server.py",
+    "sequence_group": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/sequence.py",
+    "scheduler": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/jitserve/scheduler/slo_scheduler.py",
+    "policy": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/jitserve/scheduler/policy.py",
+    "graph": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/jitserve/request_analyzer/graph_context.py"
+  },
+  "wall": 1793384392.7535179
+}

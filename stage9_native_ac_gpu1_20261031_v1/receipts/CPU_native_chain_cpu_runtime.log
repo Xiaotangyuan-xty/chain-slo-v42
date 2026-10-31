@@ -1,0 +1,18 @@
+test_deadline_capture_uses_received_metadata_only (__main__.NativeRuntime.test_deadline_capture_uses_received_metadata_only) ... /mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+ok
+test_real_chunked_prefill_decode_swap_resume_and_release (__main__.NativeRuntime.test_real_chunked_prefill_decode_swap_resume_and_release) ... INFO 10-30 18:00:50 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 10-30 18:00:50 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 10-30 18:00:50 scheduler.py:1573] Collection ID: 101, Request ID: 1: (False, 14098954.778186344, 1793383250.0456674) is preempted by PreemptionMode.SWAP mode.
+ok
+test_compound_barrier_and_cap (__main__.Reservations.test_compound_barrier_and_cap) ... ok
+test_late_work_drains_after_on_time (__main__.Reservations.test_late_work_drains_after_on_time) ... ok
+test_oversized_compound_makes_progress (__main__.Reservations.test_oversized_compound_makes_progress) ... ok
+test_progress_overrides_underprediction (__main__.Reservations.test_progress_overrides_underprediction) ... ok
+test_whole_chain_edf_not_member_reward_or_id (__main__.Reservations.test_whole_chain_edf_not_member_reward_or_id) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 4.198s
+
+OK

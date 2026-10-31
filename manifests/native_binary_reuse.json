@@ -1,0 +1,38 @@
+{
+  "source_commit": "84584a119b892cf90c65e2b3f5bac67250d39d27",
+  "tracked_source_files_verified_identical": 1297,
+  "kind": "compiled extensions and generated flash-attention runtime support",
+  "shared_environment_modified": false,
+  "files": [
+    {
+      "path": "repo/third_party/vllm/vllm/_C.abi3.so",
+      "source": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/slo_declaration_robustness/gpu_runtime_20261014T050639Z_v1/deployment_v2/repo/third_party/vllm/vllm/_C.abi3.so",
+      "size": 229089280,
+      "sha256": "35b729f50fcb5c03767b430e411c618221e9854c2f506f18f4f609a6c401acde"
+    },
+    {
+      "path": "repo/third_party/vllm/vllm/_moe_C.abi3.so",
+      "source": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/slo_declaration_robustness/gpu_runtime_20261014T050639Z_v1/deployment_v2/repo/third_party/vllm/vllm/_moe_C.abi3.so",
+      "size": 39562488,
+      "sha256": "0508c9f4a08188ddb395652b62ffbe290c92dfd8a83ddbf1f22d111a1a9d3925"
+    },
+    {
+      "path": "repo/third_party/vllm/vllm/vllm_flash_attn/__init__.py",
+      "source": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/slo_declaration_robustness/gpu_runtime_20261014T050639Z_v1/deployment_v2/repo/third_party/vllm/vllm/vllm_flash_attn/__init__.py",
+      "size": 347,
+      "sha256": "39ea319bd2de4e0643e72c43f7d333f1b9da5434e102b53fe58e5947b3cd5c6d"
+    },
+    {
+      "path": "repo/third_party/vllm/vllm/vllm_flash_attn/flash_attn_interface.py",
+      "source": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/slo_declaration_robustness/gpu_runtime_20261014T050639Z_v1/deployment_v2/repo/third_party/vllm/vllm/vllm_flash_attn/flash_attn_interface.py",
+      "size": 47716,
+      "sha256": "e043f01797f503f38665b843419c24d93d14aee9b02ebff7d25fb296b5594ab6"
+    },
+    {
+      "path": "repo/third_party/vllm/vllm/vllm_flash_attn/vllm_flash_attn_c.abi3.so",
+      "source": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/slo_declaration_robustness/gpu_runtime_20261014T050639Z_v1/deployment_v2/repo/third_party/vllm/vllm/vllm_flash_attn/vllm_flash_attn_c.abi3.so",
+      "size": 146395888,
+      "sha256": "e27883424a13664e6c63656d77b0cc51dfe60a0cb2e99f71b2fee6a337a2ae70"
+    }
+  ]
+}

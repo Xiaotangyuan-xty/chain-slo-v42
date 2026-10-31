@@ -1,0 +1,40 @@
+{
+  "schema": "chain-slo-v43-git-freeze/v1",
+  "created_at": "2026-10-31T10:13:57.028627+08:00",
+  "mechanism_version": "v43_native_chain_deadline_reservation",
+  "repository": "Xiaotangyuan-xty/chain-slo-v42",
+  "visibility": "private",
+  "branch": "v43",
+  "tag": "v43-frozen-2026-10-31",
+  "parent_v42_commit": "b2b86c50003b0e1c867bef10f68a6c63876342f4",
+  "v42_tag_must_remain": "v42-frozen-2026-10-30",
+  "stage": "stage9_native_ac_gpu1_20261031_v1",
+  "upload_origin": "Mac local Git push only; no server GitHub upload",
+  "stage_qualified_files": 14,
+  "qualified_base_files_present": 1369,
+  "external_native_binary_sha256": {
+    "repo/third_party/vllm/vllm/_C.abi3.so": "35b729f50fcb5c03767b430e411c618221e9854c2f506f18f4f609a6c401acde",
+    "repo/third_party/vllm/vllm/_moe_C.abi3.so": "0508c9f4a08188ddb395652b62ffbe290c92dfd8a83ddbf1f22d111a1a9d3925",
+    "repo/third_party/vllm/vllm/vllm_flash_attn/vllm_flash_attn_c.abi3.so": "e27883424a13664e6c63656d77b0cc51dfe60a0cb2e99f71b2fee6a337a2ae70"
+  },
+  "code_changed_from_qualification": false,
+  "qualification_sha256": "562e750f5994f495eac16f64f085b8b9c134e1a60a8c693c1aadac9507d6d0aa",
+  "comparison_sha256": "6c93302fc4bc2d440956dde747bd18ced3ae60bfc57772cb358f5733d2cbdc0a",
+  "final_audit_sha256": "5806ace48c03463d27eed9e5e2be9b6fd196bb402b402b50cc4051bd2bd0f639",
+  "result": {
+    "A_scaled_attained": 4,
+    "C_scaled_attained": 5,
+    "A_strict_attained": 0,
+    "C_strict_attained": 1,
+    "scope": "One fixed six-chain DEV replay; chain4 margin 0.766239 seconds",
+    "full_output_token_sequence_hash_matches": 19,
+    "requests_per_arm": 47
+  },
+  "external_assets": [
+    "Model weights",
+    "Frozen CUDA/Python runtime and 3 compiled extensions",
+    "QRF model/vectorizer and external performance/predictor assets",
+    "Large raw runtime traces"
+  ],
+  "historical_metadata": "Root FREEZE/PREPARE retain old GPU metadata. Use the stage9 GPU1 authorization. Original experiment report predates this GitHub upload. The stage9 bytes are preserved."
+}

@@ -1,0 +1,161 @@
+{
+  "schema": "native-A-shared-BC-small-comparison/v1",
+  "date": "2026-10-31",
+  "physical_gpu_index": 1,
+  "gpu_uuid": "GPU-f5874940-7f3b-ad3e-b810-bc7dda423d1a",
+  "http_port": 18080,
+  "prediction_port": 65433,
+  "trace": "repo/traces/deepresearch_filter.jsonl",
+  "trace_sha256": "5240ba938ab499adfd6b05f1454e51e29512d06f0fe99d326802f2e483d3d59d",
+  "stage_counts": {
+    "0": 6,
+    "1": 6,
+    "2": 4,
+    "3": 6,
+    "4": 6,
+    "5": 6
+  },
+  "requests_per_stage": {
+    "0": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "1": [
+      1,
+      1,
+      1,
+      3,
+      1,
+      1
+    ],
+    "2": [
+      1,
+      3,
+      1,
+      1
+    ],
+    "3": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "4": [
+      1,
+      1,
+      1,
+      2,
+      1,
+      1
+    ],
+    "5": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "target_arrivals": [
+    0.988,
+    2.01,
+    2.973,
+    3.9819999999999993,
+    5.0169999999999995,
+    5.983999999999999
+  ],
+  "generation": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 1,
+    "seed": 42,
+    "ignore_eos": true,
+    "is_stream": true,
+    "max_output_len": 1024,
+    "arrival_rate": 1.0,
+    "burst": false,
+    "slo_constraint_seconds": [
+      2.0,
+      0.1,
+      20.0
+    ],
+    "whole_chain_rule": "Primary strict chain rule: arrival + 20 * actual chain stage_num; finish <= deadline",
+    "scheduler_request_slo_rule": "Both arms receive the official client request SLO scaled by collection_id % 4 + 1; C chain-goal deadline uses this received value times actual stage_num",
+    "official_native_goodput_rule": "Reproduce the official request goodput using the official scaled collection-SLO convention; report it separately from primary unscaled strict-chain attainment and strict-chain call goodput",
+    "target_main_arrival_offsets_seconds": [
+      0.988,
+      2.01,
+      2.973,
+      3.9819999999999993,
+      5.0169999999999995,
+      5.983999999999999
+    ]
+  },
+  "resources": {
+    "model": "/home/taig/models/Qwen2.5-7B-Instruct",
+    "dtype": "bfloat16",
+    "gpu_memory_utilization": 0.9,
+    "single_engine": true,
+    "max_num_seqs": 32,
+    "max_num_batched_tokens": 2048,
+    "max_model_len": 8192,
+    "num_gpu_blocks_override": 512,
+    "gpu_kv_tokens": 8192,
+    "swap_space_gib": 1,
+    "enable_chunked_prefill": true,
+    "enable_prefix_caching": false,
+    "enforce_eager": true,
+    "disable_async_output_proc": true,
+    "penalty_factor": 100,
+    "schedule_interval": 50,
+    "top_k_selection": 3,
+    "search_strategy": "sliding_window",
+    "max_swaps_per_iter": 3,
+    "physical_gpu_index": 1,
+    "gpu_uuid": "GPU-f5874940-7f3b-ad3e-b810-bc7dda423d1a",
+    "device_must_be_authorized_and_idle_before_launch": true
+  },
+  "workloads": {
+    "compat": {
+      "selection": "First three original public trace chains, no outcome filtering",
+      "main_chain_count": 3,
+      "main_call_count": 21
+    },
+    "full": {
+      "selection": "First six original public trace chains, frozen v42 DEV input",
+      "main_chain_count": 6,
+      "main_call_count": 40
+    }
+  },
+  "attempts": {
+    "compat": "NATIVE_A_COMPAT_GPU1_01",
+    "A": "FULL_A_GPU1_01",
+    "B": "FULL_B_GPU1_01",
+    "C": "FULL_C_GPU1_01"
+  },
+  "C_version": "v3_chain_dynamic_v42",
+  "C_qualification_sha256": "01aee665e3c0b3d522bd8ed08c52b828fd360390c32da79751e1b47e61949054",
+  "A_semantics": "Native official AsyncLLMEngine/GPUExecutor/SLOScheduler/SLOPolicy/QRF/GraphMatchContext. No chain-level scheduling changes; only GPU identity and read-only audit wrappers.",
+  "comparability": "Same physical GPU1, public prompts, arrival plan, per-chain deadlines, target outputs, seed, BF16 model, KV/token/sequence caps. Native-vs-shared backend differences remain a system boundary.",
+  "stop_rules": [
+    "Compatibility A must pass before full A/B/C",
+    "Full A must pass before B; B before C",
+    "Stop if GPU1 is busy; never signal others",
+    "Preserve failed/partial attempts",
+    "No HOLDOUT, matrix, added seeds, or resource changes"
+  ],
+  "allowed_arms": [
+    "A",
+    "B",
+    "C"
+  ],
+  "formal_matrix_allowed": false,
+  "holdout_allowed": false
+}

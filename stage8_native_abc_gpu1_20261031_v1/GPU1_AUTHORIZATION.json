@@ -1,0 +1,14 @@
+{
+  "schema": "gpu-execution-authorization/stage8",
+  "user_instruction": "本轮 A 兼容性验证及通过后的 A/B/C 对照全部使用物理 GPU1",
+  "physical_gpu_index": 1,
+  "gpu_uuid": "GPU-f5874940-7f3b-ad3e-b810-bc7dda423d1a",
+  "forbidden_gpu_indices": [
+    0,
+    2
+  ],
+  "max_attempt_wall_seconds": 3600,
+  "predictor_cold_start_seconds": 900,
+  "preflight_requires_no_compute_process_and_zero_MiB": true,
+  "only_registered_processes_may_be_signaled": true
+}

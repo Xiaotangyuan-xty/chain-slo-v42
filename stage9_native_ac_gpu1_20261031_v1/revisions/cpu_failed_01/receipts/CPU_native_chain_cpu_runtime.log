@@ -1,0 +1,54 @@
+test_deadline_capture_uses_received_metadata_only (__main__.NativeRuntime.test_deadline_capture_uses_received_metadata_only) ... ERROR
+test_real_chunked_prefill_decode_swap_resume_and_release (__main__.NativeRuntime.test_real_chunked_prefill_decode_swap_resume_and_release) ... INFO 10-30 18:00:08 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+WARNING 10-30 18:00:09 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 10-30 18:00:09 scheduler.py:1573] Collection ID: 101, Request ID: 1: (False, 14098914.060841609, 1793383209.3283317) is preempted by PreemptionMode.SWAP mode.
+ok
+test_compound_barrier_and_cap (__main__.Reservations.test_compound_barrier_and_cap) ... FAIL
+test_late_work_drains_after_on_time (__main__.Reservations.test_late_work_drains_after_on_time) ... FAIL
+test_oversized_compound_makes_progress (__main__.Reservations.test_oversized_compound_makes_progress) ... ok
+test_progress_overrides_underprediction (__main__.Reservations.test_progress_overrides_underprediction) ... ok
+test_whole_chain_edf_not_member_reward_or_id (__main__.Reservations.test_whole_chain_edf_not_member_reward_or_id) ... ok
+
+======================================================================
+ERROR: test_deadline_capture_uses_received_metadata_only (__main__.NativeRuntime.test_deadline_capture_uses_received_metadata_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage9_native_ac_gpu1_20261031_v1/programs/controlled_native.py", line 104, in test_deadline_capture_uses_received_metadata_only
+    from native_chain import install
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage9_native_ac_gpu1_20261031_v1/programs/native_chain.py", line 9, in <module>
+    from jitserve.scheduler.policy import SLOPolicy
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/jitserve/scheduler/policy.py", line 6, in <module>
+    from vllm.sequence import SequenceGroup
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/__init__.py", line 4, in <module>
+    from vllm.engine.async_llm_engine import AsyncLLMEngine
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/engine/async_llm_engine.py", line 12, in <module>
+    from vllm.core.scheduler import SchedulerOutputs
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 21, in <module>
+    from jitserve.scheduler.policy import BasePolicy
+ImportError: cannot import name 'BasePolicy' from partially initialized module 'jitserve.scheduler.policy' (most likely due to a circular import) (/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/jitserve/scheduler/policy.py)
+
+======================================================================
+FAIL: test_compound_barrier_and_cap (__main__.Reservations.test_compound_barrier_and_cap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage9_native_ac_gpu1_20261031_v1/programs/controlled_native.py", line 25, in test_compound_barrier_and_cap
+    self.assertEqual(chosen, {'0','1','2'})
+AssertionError: Items in the second set but not the first:
+'2'
+
+======================================================================
+FAIL: test_late_work_drains_after_on_time (__main__.Reservations.test_late_work_drains_after_on_time)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage9_native_ac_gpu1_20261031_v1/programs/controlled_native.py", line 31, in test_late_work_drains_after_on_time
+    self.assertEqual(reserve([late, ready], 10, 100, 32)[0], {'ready'})
+AssertionError: Items in the second set but not the first:
+'ready'
+
+----------------------------------------------------------------------
+Ran 7 tests in 4.247s
+
+FAILED (failures=2, errors=1)

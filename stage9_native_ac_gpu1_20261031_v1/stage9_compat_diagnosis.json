@@ -1,0 +1,496 @@
+{
+  "NATIVE_C_COMPAT_GPU1_01": {
+    "path": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage9_native_ac_gpu1_20261031_v1/attempts/NATIVE_C_COMPAT_GPU1_01",
+    "spans": {
+      "warmup": {
+        "execute_await_wall": 99.63830784708261,
+        "calls": 3238,
+        "groups": 3919,
+        "swap_in_blocks": 0,
+        "swap_out_blocks": 0,
+        "mean_batch_per_execute": 1.2103150092649784
+      },
+      "main": {
+        "execute_await_wall": 144.17972149513662,
+        "calls": 4512,
+        "groups": 10123,
+        "swap_in_blocks": 1861,
+        "swap_out_blocks": 1861,
+        "mean_batch_per_execute": 2.243572695035461
+      }
+    },
+    "chains": [
+      {
+        "phase": "warmup",
+        "chain": 0,
+        "jct": 112.47565882652998,
+        "stages": [
+          {
+            "stage": 0,
+            "latency": 2.1797652281820774,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 375,
+                "output_tokens": 66,
+                "engine_latency": 2.1122313365340233,
+                "first_forward_wait": 0.005138900130987167,
+                "execute_await_wall": 2.008514855057001,
+                "outside_execute_await": 0.10371648147702217,
+                "largest_forward_gap": 0.002891823649406433,
+                "mean_batch_when_executed": 1.0
+              }
+            ]
+          },
+          {
+            "stage": 1,
+            "latency": 28.519685765728354,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 138,
+                "output_tokens": 682,
+                "engine_latency": 23.04941832087934,
+                "first_forward_wait": 0.008164593949913979,
+                "execute_await_wall": 20.818747024983168,
+                "outside_execute_await": 2.2306712958961725,
+                "largest_forward_gap": 0.01090770773589611,
+                "mean_batch_when_executed": 1.998533724340176
+              },
+              {
+                "member": 1,
+                "input_tokens": 146,
+                "output_tokens": 830,
+                "engine_latency": 27.96164538525045,
+                "first_forward_wait": 0.043903497979044914,
+                "execute_await_wall": 25.25208673812449,
+                "outside_execute_await": 2.7095586471259594,
+                "largest_forward_gap": 0.01090770773589611,
+                "mean_batch_when_executed": 1.8204819277108433
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "latency": 4.882085260003805,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 2933,
+                "output_tokens": 137,
+                "engine_latency": 4.788975762203336,
+                "first_forward_wait": 0.026860101148486137,
+                "execute_await_wall": 4.51935207284987,
+                "outside_execute_await": 0.26962368935346603,
+                "largest_forward_gap": 0.00405491329729557,
+                "mean_batch_when_executed": 1.0
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "latency": 34.14654841646552,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 214,
+                "output_tokens": 1024,
+                "engine_latency": 33.19442454725504,
+                "first_forward_wait": 0.004525188356637955,
+                "execute_await_wall": 30.690269434824586,
+                "outside_execute_await": 2.5041551124304533,
+                "largest_forward_gap": 0.004370871931314468,
+                "mean_batch_when_executed": 1.0
+              }
+            ]
+          },
+          {
+            "stage": 4,
+            "latency": 5.674472481012344,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 4662,
+                "output_tokens": 151,
+                "engine_latency": 5.547599824145436,
+                "first_forward_wait": 0.027928799390792847,
+                "execute_await_wall": 5.225297765806317,
+                "outside_execute_await": 0.32230205833911896,
+                "largest_forward_gap": 0.002832230180501938,
+                "mean_batch_when_executed": 1.0
+              }
+            ]
+          },
+          {
+            "stage": 5,
+            "latency": 37.072882963344455,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 4510,
+                "output_tokens": 1024,
+                "engine_latency": 34.746150797232985,
+                "first_forward_wait": 0.02733777090907097,
+                "execute_await_wall": 31.90294947475195,
+                "outside_execute_await": 2.843201322481036,
+                "largest_forward_gap": 0.005557078868150711,
+                "mean_batch_when_executed": 1.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "phase": "main",
+        "chain": 0,
+        "jct": 164.78366801142693,
+        "stages": [
+          {
+            "stage": 0,
+            "latency": 2.2400369253009558,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 375,
+                "output_tokens": 66,
+                "engine_latency": 2.2201477959752083,
+                "first_forward_wait": 0.007249433547258377,
+                "execute_await_wall": 2.0772068928927183,
+                "outside_execute_await": 0.14294090308248997,
+                "largest_forward_gap": 0.006709786131978035,
+                "mean_batch_when_executed": 1.5909090909090908
+              }
+            ]
+          },
+          {
+            "stage": 1,
+            "latency": 32.3191330190748,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 138,
+                "output_tokens": 682,
+                "engine_latency": 25.73500583693385,
+                "first_forward_wait": 0.024319127202033997,
+                "execute_await_wall": 21.419600151479244,
+                "outside_execute_await": 4.315405685454607,
+                "largest_forward_gap": 0.017722338438034058,
+                "mean_batch_when_executed": 5.964809384164223
+              },
+              {
+                "member": 1,
+                "input_tokens": 146,
+                "output_tokens": 830,
+                "engine_latency": 31.332703050225973,
+                "first_forward_wait": 0.022147901356220245,
+                "execute_await_wall": 26.007457775995135,
+                "outside_execute_await": 5.325245274230838,
+                "largest_forward_gap": 0.017722338438034058,
+                "mean_batch_when_executed": 5.614457831325301
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "latency": 5.4612783920019865,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 2933,
+                "output_tokens": 137,
+                "engine_latency": 5.344452017918229,
+                "first_forward_wait": 0.031427737325429916,
+                "execute_await_wall": 4.634327199310064,
+                "outside_execute_await": 0.7101248186081648,
+                "largest_forward_gap": 0.005908891558647156,
+                "mean_batch_when_executed": 3.0
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "latency": 40.67207713238895,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 214,
+                "output_tokens": 1024,
+                "engine_latency": 39.744267171248794,
+                "first_forward_wait": 0.3212899789214134,
+                "execute_await_wall": 34.20271551050246,
+                "outside_execute_await": 5.541551660746336,
+                "largest_forward_gap": 0.12233052588999271,
+                "mean_batch_when_executed": 2.3994140625
+              }
+            ]
+          },
+          {
+            "stage": 4,
+            "latency": 5.840412322431803,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 4662,
+                "output_tokens": 151,
+                "engine_latency": 5.690121773630381,
+                "first_forward_wait": 0.1491055078804493,
+                "execute_await_wall": 5.231615049764514,
+                "outside_execute_await": 0.45850672386586666,
+                "largest_forward_gap": 0.0028750374913215637,
+                "mean_batch_when_executed": 1.0
+              }
+            ]
+          },
+          {
+            "stage": 5,
+            "latency": 78.25053547136486,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 4510,
+                "output_tokens": 1024,
+                "engine_latency": 76.14632280915976,
+                "first_forward_wait": 0.19848560355603695,
+                "execute_await_wall": 32.03363030962646,
+                "outside_execute_await": 44.112692499533296,
+                "largest_forward_gap": 41.04100202396512,
+                "mean_batch_when_executed": 1.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "phase": "main",
+        "chain": 1,
+        "jct": 132.43427561596036,
+        "stages": [
+          {
+            "stage": 0,
+            "latency": 0.8377249483019114,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 333,
+                "output_tokens": 24,
+                "engine_latency": 0.8258927557617426,
+                "first_forward_wait": 0.021889282390475273,
+                "execute_await_wall": 0.7531771454960108,
+                "outside_execute_await": 0.07271561026573181,
+                "largest_forward_gap": 0.0036114659160375595,
+                "mean_batch_when_executed": 2.0
+              }
+            ]
+          },
+          {
+            "stage": 1,
+            "latency": 8.654814258217812,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 134,
+                "output_tokens": 242,
+                "engine_latency": 8.58449868671596,
+                "first_forward_wait": 0.029518337920308113,
+                "execute_await_wall": 7.549800267443061,
+                "outside_execute_await": 1.0346984192728996,
+                "largest_forward_gap": 0.009511910378932953,
+                "mean_batch_when_executed": 5.309917355371901
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "latency": 5.585717251524329,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 878,
+                "output_tokens": 148,
+                "engine_latency": 5.537583511322737,
+                "first_forward_wait": 0.014724429696798325,
+                "execute_await_wall": 4.690122295171022,
+                "outside_execute_await": 0.8474612161517143,
+                "largest_forward_gap": 0.007289139553904533,
+                "mean_batch_when_executed": 5.445945945945946
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "latency": 41.00163541547954,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 170,
+                "output_tokens": 298,
+                "engine_latency": 11.857506373897195,
+                "first_forward_wait": 0.04612385481595993,
+                "execute_await_wall": 9.389949560165405,
+                "outside_execute_await": 2.4675568137317896,
+                "largest_forward_gap": 0.010600699111819267,
+                "mean_batch_when_executed": 6.6610738255033555
+              },
+              {
+                "member": 1,
+                "input_tokens": 184,
+                "output_tokens": 883,
+                "engine_latency": 34.05479068867862,
+                "first_forward_wait": 0.04547566547989845,
+                "execute_await_wall": 28.114858835935593,
+                "outside_execute_await": 5.93993185274303,
+                "largest_forward_gap": 0.10733475722372532,
+                "mean_batch_when_executed": 4.380520951302378
+              },
+              {
+                "member": 2,
+                "input_tokens": 167,
+                "output_tokens": 1023,
+                "engine_latency": 40.06844025850296,
+                "first_forward_wait": 0.04512722045183182,
+                "execute_await_wall": 33.328471541404724,
+                "outside_execute_await": 6.739968717098236,
+                "largest_forward_gap": 0.10733475722372532,
+                "mean_batch_when_executed": 4.190615835777126
+              }
+            ]
+          },
+          {
+            "stage": 4,
+            "latency": 1.4129459764808416,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 5540,
+                "output_tokens": 13,
+                "engine_latency": 1.3325955159962177,
+                "first_forward_wait": 0.11004830151796341,
+                "execute_await_wall": 1.1714985966682434,
+                "outside_execute_await": 0.16109691932797432,
+                "largest_forward_gap": 0.004123644903302193,
+                "mean_batch_when_executed": 2.0
+              }
+            ]
+          },
+          {
+            "stage": 5,
+            "latency": 74.94112980738282,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 5389,
+                "output_tokens": 936,
+                "engine_latency": 73.34860561788082,
+                "first_forward_wait": 0.1883232779800892,
+                "execute_await_wall": 30.054011043161154,
+                "outside_execute_await": 43.29459457471967,
+                "largest_forward_gap": 33.60974835604429,
+                "mean_batch_when_executed": 1.6087420042643923
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "phase": "main",
+        "chain": 2,
+        "jct": 160.7193027008325,
+        "stages": [
+          {
+            "stage": 0,
+            "latency": 2.490892371162772,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 348,
+                "output_tokens": 72,
+                "engine_latency": 2.4725449085235596,
+                "first_forward_wait": 0.014351585879921913,
+                "execute_await_wall": 2.250387664884329,
+                "outside_execute_await": 0.22215724363923073,
+                "largest_forward_gap": 0.00368642620742321,
+                "mean_batch_when_executed": 3.888888888888889
+              }
+            ]
+          },
+          {
+            "stage": 1,
+            "latency": 30.081925397738814,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 140,
+                "output_tokens": 234,
+                "engine_latency": 8.563794368878007,
+                "first_forward_wait": 0.026047233492136,
+                "execute_await_wall": 7.373355815187097,
+                "outside_execute_await": 1.1904385536909103,
+                "largest_forward_gap": 0.015985948964953423,
+                "mean_batch_when_executed": 5.9914529914529915
+              },
+              {
+                "member": 1,
+                "input_tokens": 142,
+                "output_tokens": 515,
+                "engine_latency": 19.433707730844617,
+                "first_forward_wait": 0.021037887781858444,
+                "execute_await_wall": 16.207148300483823,
+                "outside_execute_await": 3.226559430360794,
+                "largest_forward_gap": 0.017722338438034058,
+                "mean_batch_when_executed": 6.211650485436893
+              },
+              {
+                "member": 2,
+                "input_tokens": 138,
+                "output_tokens": 772,
+                "engine_latency": 29.380687369033694,
+                "first_forward_wait": 0.019486993551254272,
+                "execute_await_wall": 24.210145357996225,
+                "outside_execute_await": 5.170542011037469,
+                "largest_forward_gap": 0.017722338438034058,
+                "mean_batch_when_executed": 5.726683937823834
+              }
+            ]
+          },
+          {
+            "stage": 2,
+            "latency": 16.504364538937807,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 4095,
+                "output_tokens": 13,
+                "engine_latency": 16.439273050054908,
+                "first_forward_wait": 5.3499548975378275,
+                "execute_await_wall": 1.0556218288838863,
+                "outside_execute_await": 15.383651221171021,
+                "largest_forward_gap": 9.964327711611986,
+                "mean_batch_when_executed": 3.0
+              }
+            ]
+          },
+          {
+            "stage": 3,
+            "latency": 111.64191757515073,
+            "members": [
+              {
+                "member": 0,
+                "input_tokens": 3943,
+                "output_tokens": 1024,
+                "engine_latency": 109.93343936093152,
+                "first_forward_wait": 0.023661794140934944,
+                "execute_await_wall": 32.08309518173337,
+                "outside_execute_await": 77.85034417919815,
+                "largest_forward_gap": 73.30545034818351,
+                "mean_batch_when_executed": 1.271219512195122
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "event_sha256": "facfaddec50f4abffce65318db57ca1f78ca74e5239bc21e9597a418cb08b0cb",
+    "client_sha256": "5822fb8c4230b5bc42bfbcb1cafe4752d7e9046f0c146c65e5a911f7c6c29eb5",
+    "caveat": "execute_await_wall includes native executor/Python wait; it is not a CUDA timing. Per-member execute wall overlaps inside a batch; do not sum it as GPU time."
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "mode": "full",
+  "workload": {
+    "selection": "First six original public trace chains, frozen v42 DEV input",
+    "main_chain_count": 6,
+    "main_call_count": 40
+  },
+  "generation": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 1,
+    "seed": 42,
+    "ignore_eos": true,
+    "is_stream": true,
+    "max_output_len": 1024,
+    "arrival_rate": 1.0,
+    "burst": false,
+    "slo_constraint_seconds": [
+      2.0,
+      0.1,
+      20.0
+    ],
+    "whole_chain_rule": "Primary strict chain rule: arrival + 20 * actual chain stage_num; finish <= deadline",
+    "scheduler_request_slo_rule": "Both arms receive the official client request SLO scaled by collection_id % 4 + 1; C chain-goal deadline uses this received value times actual stage_num",
+    "official_native_goodput_rule": "Reproduce the official request goodput using the official scaled collection-SLO convention; report it separately from primary unscaled strict-chain attainment and strict-chain call goodput",
+    "target_main_arrival_offsets_seconds": [
+      0.988,
+      2.01,
+      2.973,
+      3.9819999999999993,
+      5.0169999999999995,
+      5.983999999999999
+    ]
+  },
+  "trace_sha256": "5240ba938ab499adfd6b05f1454e51e29512d06f0fe99d326802f2e483d3d59d",
+  "measurement": "Client monotonic start/end; official send/simulator are unchanged"
+}
