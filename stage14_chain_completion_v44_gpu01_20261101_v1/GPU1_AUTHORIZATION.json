@@ -1,0 +1,16 @@
+{
+  "schema": "gpu-execution-authorization/stage14",
+  "user_instruction": "核验stage13后改进C，并在GPU0运行原生A、GPU1运行改进C；GPU2禁止，顺序运行，保留冻结v43。",
+  "physical_gpu_index": 1,
+  "gpu_uuid": "GPU-f5874940-7f3b-ad3e-b810-bc7dda423d1a",
+  "forbidden_gpu_indices": [
+    0,
+    2
+  ],
+  "max_attempt_wall_seconds": 28800,
+  "predictor_cold_start_seconds": 900,
+  "http_request_timeout_seconds": 27000,
+  "preflight_requires_no_compute_process_and_zero_MiB": true,
+  "only_registered_processes_may_be_signaled": true,
+  "runtime_budget_scope": "Expanded solely for full200-chain replay and draining; declared SLO deadlines unchanged."
+}

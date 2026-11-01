@@ -1,0 +1,17 @@
+{
+  "state": "COMPATIBILITY_RUNNING",
+  "server_stage": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage14_chain_completion_v44_gpu01_20261101_v1",
+  "runner_pid": 92713,
+  "runner_pgid": 92713,
+  "runner_start_ticks": 1420330325,
+  "sequence": [
+    "COMPAT_C_V44_GPU1_01",
+    "FULL_TRACE_A_GPU0_V44_01",
+    "FULL_TRACE_C_V44_GPU1_01"
+  ],
+  "A_gpu": 0,
+  "C_gpu": 1,
+  "GPU2_forbidden": true,
+  "full_chains_per_arm": 200,
+  "new_C_outcome_proven": false
+}

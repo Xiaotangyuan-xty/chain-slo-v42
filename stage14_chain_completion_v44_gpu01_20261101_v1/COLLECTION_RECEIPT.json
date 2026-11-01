@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "574c509bc106a22b05294fcbc5422d6470da6f85ec4a234c6f97273d5da2b072",
+  "archive_bytes": 1550198,
+  "server_packet": {
+    "archive": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage14_chain_completion_v44_gpu01_20261101_v1/FULL_TRACE_LIGHT_DELIVERY.zip",
+    "archive_sha256": "574c509bc106a22b05294fcbc5422d6470da6f85ec4a234c6f97273d5da2b072",
+    "bytes": 1550198,
+    "state": "COMPLETED",
+    "A": 7,
+    "C": 45
+  },
+  "collection_origin": "Mac pulls light results over SSH; no server GitHub upload",
+  "raw_traces_transferred": false
+}

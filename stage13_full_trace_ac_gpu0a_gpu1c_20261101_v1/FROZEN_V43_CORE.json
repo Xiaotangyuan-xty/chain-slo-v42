@@ -1,0 +1,28 @@
+{
+  "commit": "122091e2df4615eb7f0b1aa1ed438d913fabd3f1",
+  "tag": "v43-frozen-2026-10-31",
+  "files": {
+    "programs/native_chain.py": "d054063108ad1aa1f6c2c609e9f662b44a18b0f5585cf1ca4dc7bed573af4018",
+    "programs/deadline_reservation.py": "999fe20b219f1202b7609bf608126439b728285ac385f1b46a7973f2c05739ee"
+  },
+  "frozen_stage9_files": {
+    "stage9_native_ac_gpu1_20261031_v1/programs/a_server.py": "5d756ebb8d17987ddb58910ba0e432d46fcc3fd5863b232ff74aae379c6b7733",
+    "stage9_native_ac_gpu1_20261031_v1/programs/abc_observation.py": "e83cdbca96bd420a8e078e31894f77ecb904d48b7c4575a2e20d9b2b2b41b7ec",
+    "stage9_native_ac_gpu1_20261031_v1/programs/c_server.py": "0941156423c21436a26096747943072ce72c6d0bb0253f62d58989f63fda7dc1",
+    "stage9_native_ac_gpu1_20261031_v1/programs/client.py": "6a5090e271f832236fb651cb1dfe699c5b506206b673771b996d656659ede3af",
+    "stage9_native_ac_gpu1_20261031_v1/programs/controlled_native.py": "07178d84d2501cb1fd4aab155fd36e21fa56b434330d093328a032a78c7269c1",
+    "stage9_native_ac_gpu1_20261031_v1/programs/controller.py": "89cfb202fa85633be19320c77b71ec650801cf63e9af0e343fc1e84795d6a09c",
+    "stage9_native_ac_gpu1_20261031_v1/programs/deadline_reservation.py": "999fe20b219f1202b7609bf608126439b728285ac385f1b46a7973f2c05739ee",
+    "stage9_native_ac_gpu1_20261031_v1/programs/gpu1_platform.py": "8570693cae717e940e9d1ca6cfad69d75b7f024a181161067e64abd745e83f96",
+    "stage9_native_ac_gpu1_20261031_v1/programs/native_chain.py": "d054063108ad1aa1f6c2c609e9f662b44a18b0f5585cf1ca4dc7bed573af4018",
+    "stage9_native_ac_gpu1_20261031_v1/programs/offline_compare.py": "78320d3bb76c492b81e2450163bc1418b16aeae1068b9b5e9a5bf0b6a3def2e4",
+    "stage9_native_ac_gpu1_20261031_v1/programs/qualify_cpu.py": "49372b61f76d8fbc90fde0badf926b15f22073878ff32e46577a4ef167c938fa",
+    "stage9_native_ac_gpu1_20261031_v1/programs/run_experiments.py": "8b134924b20a3534124938f738be9c78d5137bb295ab50a41bfc8b565dddc78a",
+    "stage9_native_ac_gpu1_20261031_v1/PROTOCOL.json": "21a7a519d93b33cf64eb4679c03ef37bc5b1db8bbd4cff1bc547e0a68c4939be",
+    "stage9_native_ac_gpu1_20261031_v1/GPU1_AUTHORIZATION.json": "8c94499a2c6f7f702b45af70499d94465f9fa1cb8b5a170a25892d3704bb4b82"
+  },
+  "launcher_normalized_sha256": {
+    "a_server.py": "5d756ebb8d17987ddb58910ba0e432d46fcc3fd5863b232ff74aae379c6b7733",
+    "c_server.py": "0941156423c21436a26096747943072ce72c6d0bb0253f62d58989f63fda7dc1"
+  }
+}

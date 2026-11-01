@@ -1,0 +1,36 @@
+{
+  "schema": "chain-slo-v44-git-freeze/v1",
+  "created_at": "2026-11-01T10:48:49.627610+08:00",
+  "repository": "Xiaotangyuan-xty/chain-slo-v42",
+  "visibility": "private",
+  "branch": "v44",
+  "tag": "v44-frozen-2026-11-01",
+  "parent_commit": "122091e2df4615eb7f0b1aa1ed438d913fabd3f1",
+  "stage": "stage14_chain_completion_v44_gpu01_20261101_v1",
+  "mechanism_version": "v44_native_chain_completion_density",
+  "upload_origin": "Mac local Git push only",
+  "qualified_stage_files": 22,
+  "qualified_base_files_present": 1402,
+  "external_native_binary_sha256": {
+    "repo/third_party/vllm/vllm/_C.abi3.so": "35b729f50fcb5c03767b430e411c618221e9854c2f506f18f4f609a6c401acde",
+    "repo/third_party/vllm/vllm/_moe_C.abi3.so": "0508c9f4a08188ddb395652b62ffbe290c92dfd8a83ddbf1f22d111a1a9d3925",
+    "repo/third_party/vllm/vllm/vllm_flash_attn/vllm_flash_attn_c.abi3.so": "e27883424a13664e6c63656d77b0cc51dfe60a0cb2e99f71b2fee6a337a2ae70"
+  },
+  "code_changed_from_qualification": false,
+  "result": {
+    "A": 7,
+    "C": 45,
+    "chains": 200,
+    "scope": "One full fixed-length DEV-informed replay; A0 then C1; repeatability unproven"
+  },
+  "external_assets": [
+    "Model weights",
+    "CUDA/Python runtime and three compiled extensions",
+    "External QRF/performance assets",
+    "Large raw runtime traces"
+  ],
+  "prior_tags_preserved": [
+    "v42-frozen-2026-10-30",
+    "v43-frozen-2026-10-31"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "pid": 92713,
+  "pgid": 92713,
+  "start_ticks": 1420330325,
+  "created_utc": "2026-10-31T23:16:38.524824+00:00",
+  "stage": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage14_chain_completion_v44_gpu01_20261101_v1",
+  "sequence": [
+    "COMPAT_C_V44_GPU1_01",
+    "FULL_TRACE_A_GPU0_V44_01",
+    "FULL_TRACE_C_V44_GPU1_01"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "gpu-execution-authorization/stage13",
+  "user_instruction": "本轮完整200链trace第04次顺序尝试：仅优化客户端流式响应解析并保持后台日志与有限回放GC设置；原生A在物理GPU0先运行并通过gate，随后冻结v43 C在物理GPU1运行；禁止并行，机制不变",
+  "physical_gpu_index": 0,
+  "gpu_uuid": "GPU-ff8c7d5c-f75c-26e1-43de-b40ca283f938",
+  "forbidden_gpu_indices": [
+    1,
+    2
+  ],
+  "max_attempt_wall_seconds": 28800,
+  "predictor_cold_start_seconds": 900,
+  "http_request_timeout_seconds": 27000,
+  "preflight_requires_no_compute_process_and_zero_MiB": true,
+  "only_registered_processes_may_be_signaled": true,
+  "runtime_budget_scope": "Expanded solely for full200-chain replay and draining; declared SLO deadlines unchanged."
+}

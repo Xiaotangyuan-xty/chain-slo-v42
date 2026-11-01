@@ -1,0 +1,357 @@
+{
+  "created_utc": "2026-11-01T02:41:12.012546+00:00",
+  "arms": {
+    "A": {
+      "metrics": {
+        "official_scaled_attained": 7,
+        "strict_attained": 1,
+        "mean_jct": 2503.815337429773,
+        "jct_p90": 4754.30433646515,
+        "jct_p95": 5099.708525353484,
+        "episode_duration": 5616.386657997966,
+        "request_goodput": 0.008012268873247562
+      },
+      "receipt_differences": {},
+      "main_chains": 200,
+      "total_requests": 1204,
+      "attained_ids": [
+        1,
+        3,
+        7,
+        9,
+        10,
+        11,
+        13
+      ],
+      "attainment_by_deadline": {
+        "80.0": {
+          "total": 13,
+          "attained": 0
+        },
+        "120.0": {
+          "total": 37,
+          "attained": 0
+        },
+        "160.0": {
+          "total": 15,
+          "attained": 2
+        },
+        "240.0": {
+          "total": 53,
+          "attained": 1
+        },
+        "320.0": {
+          "total": 22,
+          "attained": 1
+        },
+        "360.0": {
+          "total": 32,
+          "attained": 1
+        },
+        "480.0": {
+          "total": 28,
+          "attained": 2
+        }
+      },
+      "attainment_by_stages": {
+        "4": {
+          "total": 68,
+          "attained": 3
+        },
+        "6": {
+          "total": 132,
+          "attained": 4
+        }
+      },
+      "attained_completions_by_time": {
+        "120": 3,
+        "200": 5,
+        "300": 6,
+        "480": 7,
+        "600": 7,
+        "700": 7
+      },
+      "last_attained_completion_seconds": 393.8176857382059,
+      "snapshot_windows": {},
+      "execution_windows": {
+        "0-200s": {
+          "execute_calls": 4924,
+          "groups": 23545,
+          "swap_out_blocks": 2184,
+          "swap_in_blocks": 2184,
+          "mean_batch": 4.781681559707555
+        },
+        "200-700s": {
+          "execute_calls": 10095,
+          "groups": 99166,
+          "swap_out_blocks": 10803,
+          "swap_in_blocks": 10803,
+          "mean_batch": 9.823278850916296
+        },
+        "700s-end": {
+          "execute_calls": 126274,
+          "groups": 382567,
+          "swap_out_blocks": 25045,
+          "swap_in_blocks": 25045,
+          "mean_batch": 3.0296577284318227
+        }
+      }
+    },
+    "C": {
+      "metrics": {
+        "official_scaled_attained": 45,
+        "strict_attained": 14,
+        "mean_jct": 2855.4032758980616,
+        "jct_p90": 4977.8081876721235,
+        "jct_p95": 5212.754769564605,
+        "episode_duration": 5692.152791673318,
+        "request_goodput": 0.03654153491878675
+      },
+      "receipt_differences": {},
+      "main_chains": 200,
+      "total_requests": 1204,
+      "attained_ids": [
+        3,
+        6,
+        7,
+        11,
+        13,
+        19,
+        25,
+        27,
+        31,
+        42,
+        46,
+        65,
+        66,
+        67,
+        71,
+        73,
+        74,
+        75,
+        79,
+        81,
+        89,
+        90,
+        91,
+        95,
+        103,
+        114,
+        118,
+        119,
+        122,
+        127,
+        131,
+        135,
+        146,
+        147,
+        151,
+        159,
+        166,
+        167,
+        169,
+        171,
+        173,
+        174,
+        175,
+        191,
+        195
+      ],
+      "attainment_by_deadline": {
+        "80.0": {
+          "total": 13,
+          "attained": 0
+        },
+        "120.0": {
+          "total": 37,
+          "attained": 0
+        },
+        "160.0": {
+          "total": 15,
+          "attained": 8
+        },
+        "240.0": {
+          "total": 53,
+          "attained": 12
+        },
+        "320.0": {
+          "total": 22,
+          "attained": 13
+        },
+        "360.0": {
+          "total": 32,
+          "attained": 0
+        },
+        "480.0": {
+          "total": 28,
+          "attained": 12
+        }
+      },
+      "attainment_by_stages": {
+        "4": {
+          "total": 68,
+          "attained": 33
+        },
+        "6": {
+          "total": 132,
+          "attained": 12
+        }
+      },
+      "attained_completions_by_time": {
+        "120": 9,
+        "200": 19,
+        "300": 31,
+        "480": 38,
+        "600": 42,
+        "700": 45
+      },
+      "last_attained_completion_seconds": 670.244081152603,
+      "snapshot_windows": {
+        "0-200s": {
+          "snapshots": 496,
+          "snapshot_mean_free_gpu": 108.15927419354838,
+          "snapshot_mean_reserved": 442.4475806451613,
+          "snapshot_mean_selected": 8.389112903225806,
+          "modes": {
+            "completion_density_horizon": 496
+          }
+        },
+        "200-700s": {
+          "snapshots": 555,
+          "snapshot_mean_free_gpu": 108.87387387387388,
+          "snapshot_mean_reserved": 962.1711711711712,
+          "snapshot_mean_selected": 21.742342342342344,
+          "modes": {
+            "completion_density_horizon": 504,
+            "native_work_conserving_drain": 51
+          }
+        },
+        "700s-end": {
+          "snapshots": 3960,
+          "snapshot_mean_free_gpu": 140.2760101010101,
+          "snapshot_mean_reserved": 16011.805303030304,
+          "snapshot_mean_selected": 117.82020202020202,
+          "modes": {
+            "native_work_conserving_drain": 3960
+          }
+        }
+      },
+      "execution_windows": {
+        "0-200s": {
+          "execute_calls": 4394,
+          "groups": 33760,
+          "swap_out_blocks": 2442,
+          "swap_in_blocks": 1556,
+          "mean_batch": 7.683204369594902
+        },
+        "200-700s": {
+          "execute_calls": 11399,
+          "groups": 65583,
+          "swap_out_blocks": 3485,
+          "swap_in_blocks": 3780,
+          "mean_batch": 5.753399421001842
+        },
+        "700s-end": {
+          "execute_calls": 125025,
+          "groups": 405934,
+          "swap_out_blocks": 19951,
+          "swap_in_blocks": 20542,
+          "mean_batch": 3.2468226354729053
+        }
+      }
+    }
+  },
+  "baseline_cross_run": {
+    "old_A": 16,
+    "new_A": 7,
+    "a_launcher_byte_identical": true,
+    "resource_differences": {},
+    "client_contract_differences": [],
+    "engine_signature_differences_excluding_output_sequence": [],
+    "output_sequences_equal": 383,
+    "A_retained": [
+      3,
+      7,
+      9,
+      10,
+      11
+    ],
+    "A_lost": [
+      2,
+      6,
+      62,
+      67,
+      95,
+      179,
+      186,
+      194,
+      195,
+      197,
+      198
+    ],
+    "A_added": [
+      1,
+      13
+    ],
+    "lost_chain_times": [
+      {
+        "chain": 2,
+        "old_jct": 128.523518987,
+        "new_jct": 294.3667422551662
+      },
+      {
+        "chain": 6,
+        "old_jct": 135.12853888608515,
+        "new_jct": 254.05143325775862
+      },
+      {
+        "chain": 62,
+        "old_jct": 201.68743306957185,
+        "new_jct": 1459.710232624784
+      },
+      {
+        "chain": 67,
+        "old_jct": 204.9085023123771,
+        "new_jct": 1445.7495370861143
+      },
+      {
+        "chain": 95,
+        "old_jct": 204.48382126539946,
+        "new_jct": 1255.2056657318026
+      },
+      {
+        "chain": 179,
+        "old_jct": 237.82398391142488,
+        "new_jct": 5363.694525264204
+      },
+      {
+        "chain": 186,
+        "old_jct": 275.0212838537991,
+        "new_jct": 1843.0129536967725
+      },
+      {
+        "chain": 194,
+        "old_jct": 126.24943752586842,
+        "new_jct": 1510.0789251867682
+      },
+      {
+        "chain": 195,
+        "old_jct": 262.85795245319605,
+        "new_jct": 1158.606510573998
+      },
+      {
+        "chain": 197,
+        "old_jct": 105.70166907086968,
+        "new_jct": 2409.038169419393
+      },
+      {
+        "chain": 198,
+        "old_jct": 184.20062975212932,
+        "new_jct": 3769.4916162602603
+      }
+    ],
+    "interpretation": "Contracts/resources/launcher consistency does not establish timing repeatability. No replicated same-card estimate exists."
+  },
+  "gpu_state_now": "0, GPU-ff8c7d5c-f75c-26e1-43de-b40ca283f938, 0 MiB, 0 %\n1, GPU-f5874940-7f3b-ad3e-b810-bc7dda423d1a, 0 MiB, 0 %",
+  "gate": "PASS"
+}

@@ -1,0 +1,119 @@
+{
+  "duration": 5616.388263070956,
+  "total_collections": 200,
+  "completed_collections": 200,
+  "failed_collections": 0,
+  "total_stages": 1064,
+  "completed_stages": 1064,
+  "failed_stages": 0,
+  "total_requests": 1197,
+  "completed_requests": 1197,
+  "failed_requests": 0,
+  "total_input_tokens": 1725455,
+  "total_output_tokens": 504655,
+  "input_throughput": 307.2178986173843,
+  "output_throughput": 89.85400872625253,
+  "total_throughput": 397.07190734363684,
+  "mean_collection_latency": 2503.8152851064688,
+  "median_collection_latency": 2150.052251700312,
+  "percentiles_collection_latency": [
+    [
+      50.0,
+      2150.052251700312
+    ],
+    [
+      90.0,
+      4754.304269525409
+    ],
+    [
+      95.0,
+      5099.70846862914
+    ],
+    [
+      99.0,
+      5428.1541912446355
+    ]
+  ],
+  "mean_stage_latency": 470.64194115686854,
+  "median_stage_latency": 284.6919776070863,
+  "percentiles_stage_latency": [
+    [
+      50.0,
+      284.6919776070863
+    ],
+    [
+      90.0,
+      633.9537632649766
+    ],
+    [
+      95.0,
+      2502.608053627517
+    ],
+    [
+      99.0,
+      4322.122603784874
+    ]
+  ],
+  "mean_request_latency": 718.4147887886264,
+  "median_request_latency": 293.34456675872207,
+  "percentiles_request_latency": [
+    [
+      50.0,
+      293.34456675872207
+    ],
+    [
+      90.0,
+      3100.6459245279434
+    ],
+    [
+      95.0,
+      3826.3125444036
+    ],
+    [
+      99.0,
+      4565.883290249034
+    ]
+  ],
+  "mean_ttft_ms": 678592.4604821424,
+  "median_ttft_ms": 274792.03844070435,
+  "percentiles_ttft_ms": [
+    [
+      50.0,
+      274792.03844070435
+    ],
+    [
+      90.0,
+      3016696.1653232574
+    ],
+    [
+      95.0,
+      3706487.76750565
+    ],
+    [
+      99.0,
+      4489983.537015913
+    ]
+  ],
+  "slo_met_collections": 7,
+  "slo_met_ratio": 0.035,
+  "slo_met_requests": 150,
+  "slo_goodput": 0.008012266583470616,
+  "slo_token_goodput": 34.37191144161486,
+  "time_window_request_goodput": {
+    "0.0": 0.39999999999999997,
+    "60.0": 0.2333333333333333,
+    "120.0": 0.03333333333333333,
+    "180.0": 0.05,
+    "240.0": 0.016666666666666666,
+    "360.0": 0.016666666666666666
+  },
+  "time_window_token_goodput": {
+    "0.0": 947.8833333333333,
+    "60.0": 1196.8833333333334,
+    "120.0": 323.98333333333335,
+    "180.0": 364.81666666666666,
+    "240.0": 201.26666666666668,
+    "360.0": 182.6
+  },
+  "total_service_gain": 7392.0
+}

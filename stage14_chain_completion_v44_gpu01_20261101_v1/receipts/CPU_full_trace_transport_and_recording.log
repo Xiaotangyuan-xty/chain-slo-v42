@@ -1,0 +1,15 @@
+test_arm_authorizations_launchers_and_sequential_order (__main__.FullTraceChecks.test_arm_authorizations_launchers_and_sequential_order) ... ok
+test_complete_trace_and_original_arrival_prefix (__main__.FullTraceChecks.test_complete_trace_and_original_arrival_prefix) ... ok
+test_gpu0_and_gpu1_adapters_only_change_device_functions (__main__.FullTraceChecks.test_gpu0_and_gpu1_adapters_only_change_device_functions) ... ok
+test_http_timeout_does_not_change_slo_or_served_time (__main__.FullTraceChecks.test_http_timeout_does_not_change_slo_or_served_time) ... ok
+test_incremental_call_jsonl_matches_final_json (__main__.FullTraceChecks.test_incremental_call_jsonl_matches_final_json) ... ok
+test_optimized_response_matches_official_stream_and_nonstream (__main__.FullTraceChecks.test_optimized_response_matches_official_stream_and_nonstream) ... ok
+test_optimized_single_request_transport_signature_and_payload (__main__.FullTraceChecks.test_optimized_single_request_transport_signature_and_payload) ... ok
+test_output_ids_recorded_without_changing_outputs (__main__.FullTraceChecks.test_output_ids_recorded_without_changing_outputs) ... ok
+test_received_deadline_and_failed_chain_metrics (__main__.FullTraceChecks.test_received_deadline_and_failed_chain_metrics) ... ok
+test_writer_errors_are_recorded_and_explicit (__main__.FullTraceChecks.test_writer_errors_are_recorded_and_explicit) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.012s
+
+OK
