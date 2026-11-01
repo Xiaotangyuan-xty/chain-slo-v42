@@ -1,0 +1,21 @@
+{
+  "gate": "PASS",
+  "fit_graphs": 295,
+  "cal_graphs": 99,
+  "cal_stage_states": 506,
+  "exact_full_graph_signature_overlap_with_evaluation": 0,
+  "model_sha256": "7d1d668028a01a9da525845e2d3e4320563b615ebac72125c9d3448cd6f761f7",
+  "current_stage_max_output_MAE_tokens": {
+    "4stages_stage0": 9.785511363636363,
+    "4stages_stage1": 194.0127840909091,
+    "4stages_stage2": 11.495028409090908,
+    "4stages_stage3": 235.1171875,
+    "6stages_stage0": 12.322159090909091,
+    "6stages_stage1": 166.125,
+    "6stages_stage2": 21.636931818181818,
+    "6stages_stage3": 195.44204545454545,
+    "6stages_stage4": 42.11875,
+    "6stages_stage5": 140.29204545454544
+  },
+  "scope": "FIT-only empirical heuristic; CAL reports errors without tuning or coverage claims. Runtime has no evaluation trace reader."
+}

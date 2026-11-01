@@ -1,0 +1,146 @@
+{
+  "schema": "stage7-dynamic-batch-gate/v1",
+  "gate": "PASS",
+  "checks": {
+    "executor_passes_complete_metadata_once": {
+      "pass": true,
+      "actual": {
+        "backend_batch_calls": [
+          [
+            "executor-0",
+            "executor-1",
+            "executor-2",
+            "executor-3",
+            "executor-4",
+            "executor-5"
+          ]
+        ],
+        "samples_per_group": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "computed_requests": [
+          "executor-0",
+          "executor-1",
+          "executor-2",
+          "executor-3",
+          "executor-4",
+          "executor-5"
+        ]
+      },
+      "expected": "six scheduler groups produce one complete backend.step_batch call"
+    },
+    "backend_executes_ragged_batch_above_four": {
+      "pass": true,
+      "actual": {
+        "logits_requests": [
+          "backend-0",
+          "backend-1",
+          "backend-2",
+          "backend-3",
+          "backend-4",
+          "backend-5"
+        ],
+        "batch_records": [
+          {
+            "B": 6,
+            "S": 18,
+            "wall": 0.00021756626665592194,
+            "cuda": 0.0
+          }
+        ],
+        "kv_lengths": {
+          "backend-0": 3,
+          "backend-1": 4,
+          "backend-2": 5,
+          "backend-3": 3,
+          "backend-4": 4,
+          "backend-5": 5
+        },
+        "decode_queries": 6
+      },
+      "expected": "one six-request ragged decode preserves tokens, KV and outputs"
+    },
+    "duplicate_request_ids_remain_rejected": {
+      "pass": true,
+      "actual": "ValueError: batch boundary",
+      "expected": "ValueError: batch boundary"
+    },
+    "batch_kv_quota_remains_enforced": {
+      "pass": true,
+      "actual": "RuntimeError: batch cannot fit common KV quota",
+      "expected": "RuntimeError: batch cannot fit common KV quota"
+    },
+    "prefix_identity_remains_enforced": {
+      "pass": true,
+      "actual": "RuntimeError: GPU prefix witness mismatch",
+      "expected": "RuntimeError: GPU prefix witness mismatch"
+    }
+  },
+  "details": {
+    "executor": {
+      "backend_batch_calls": [
+        [
+          "executor-0",
+          "executor-1",
+          "executor-2",
+          "executor-3",
+          "executor-4",
+          "executor-5"
+        ]
+      ],
+      "samples_per_group": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "computed_requests": [
+        "executor-0",
+        "executor-1",
+        "executor-2",
+        "executor-3",
+        "executor-4",
+        "executor-5"
+      ]
+    },
+    "backend": {
+      "logits_requests": [
+        "backend-0",
+        "backend-1",
+        "backend-2",
+        "backend-3",
+        "backend-4",
+        "backend-5"
+      ],
+      "batch_records": [
+        {
+          "B": 6,
+          "S": 18,
+          "wall": 0.00021756626665592194,
+          "cuda": 0.0
+        }
+      ],
+      "kv_lengths": {
+        "backend-0": 3,
+        "backend-1": 4,
+        "backend-2": 5,
+        "backend-3": 3,
+        "backend-4": 4,
+        "backend-5": 5
+      },
+      "decode_queries": 6
+    },
+    "duplicate_error": "ValueError: batch boundary",
+    "overflow_error": "RuntimeError: batch cannot fit common KV quota",
+    "prefix_error": "RuntimeError: GPU prefix witness mismatch"
+  },
+  "gpu_used": false,
+  "real_model_generation_equivalence_proven": false
+}

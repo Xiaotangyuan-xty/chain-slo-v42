@@ -1,0 +1,18 @@
+{
+  "pid": 1283008,
+  "pgid": 1283008,
+  "proc_start_ticks": 1421696935,
+  "utc": "2026-11-01T03:04:24.626676+00:00",
+  "server_stage": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage15_stable_chain_v45_parallel_20261101_v2",
+  "scope": "Three fixed-candidate parallel A/C full200 pairs with counterbalancedGPU0/1; GPU2 forbidden",
+  "files_sha256": {
+    "MATRIX.json": "b8d1af0cb621bc9019f7abb37c341605731c660793e682be643db711f426912b",
+    "run_matrix.py": "dd536114b486a2626931fc0f5899f0c10023f9090dca70be1320069dc92bd70b",
+    "postprocess_round.py": "69dd3ba5978e35ca775462e1ec65e44951eab76f342b35086733da9f2cb357e3",
+    "round01/receipts/CPU_QUALIFICATION.json": "4a87d8225e65b8254051b109f7d9209c71928209feb61f47618c5ad4f91d5a17",
+    "round02/receipts/CPU_QUALIFICATION.json": "0dd8cd03af8d481a9c73cbb84df03e15ec0395267ae8d739b1ba221020cec4b7",
+    "round03/receipts/CPU_QUALIFICATION.json": "4741e02a07e9c2f5e5c3e6708de67159ae26c79d8d5c4e1678ceda80558a15a5"
+  },
+  "previous_failed_stage_preserved": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage15_stable_chain_v45_parallel_20261101_v1",
+  "upload_to_github_on_server": false
+}

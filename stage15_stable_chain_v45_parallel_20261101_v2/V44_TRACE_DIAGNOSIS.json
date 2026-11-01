@@ -1,0 +1,13 @@
+{
+  "counts": {
+    "active_snapshots": 1000,
+    "with_lease_holds": 84,
+    "over_capacity": 134,
+    "over_capacity_with_lease_holds": 77
+  },
+  "max_horizon_block_excess": 219,
+  "compound_stages_seen": 21,
+  "compound_first_plan_partial": 0,
+  "partial_examples": [],
+  "interpretation": "Block excess is a short-horizon estimate, not physical allocation. 77 of134 over-capacity snapshots include extra lease holds; between-frame growth can also contribute. No partial compound first-plan membership was observed among21 active compound stages, so neighbor-cache refresh is a defensive correction, not a demonstrated explanation of this run."
+}

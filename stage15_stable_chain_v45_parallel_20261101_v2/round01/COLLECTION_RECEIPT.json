@@ -1,0 +1,13 @@
+{
+  "server_packet": {
+    "archive": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage15_stable_chain_v45_parallel_20261101_v2/round01/FULL_TRACE_LIGHT_DELIVERY.zip",
+    "archive_sha256": "13990f3165c1a184346b0b4aeb91f335742ea5104fec98fe918b4fe57e4afeaa",
+    "bytes": 1552314,
+    "state": "COMPLETED",
+    "A": 12,
+    "C": 43
+  },
+  "sha256_verified": true,
+  "raw_traces_transferred": false,
+  "origin": "Mac pulls light evidence; no GitHub write"
+}

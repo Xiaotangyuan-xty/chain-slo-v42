@@ -1,0 +1,9 @@
+{
+  "phase": "FAILED_PRESERVED",
+  "utc": "2026-11-01T03:01:14.248445+00:00",
+  "elapsed_seconds": 23.064429530873895,
+  "controller_pid": 1264226,
+  "attempt": "COMPAT_C_V45_R01_GPU1",
+  "arm": "C",
+  "gpu_released": true
+}

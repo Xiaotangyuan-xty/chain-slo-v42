@@ -1,0 +1,16 @@
+{
+  "schema": "gpu-execution-authorization/stage15",
+  "user_instruction": "User authorized GPU0/GPU1 parallel A/C tests and mechanism iteration; GPU2 forbidden.",
+  "physical_gpu_index": 0,
+  "gpu_uuid": "GPU-ff8c7d5c-f75c-26e1-43de-b40ca283f938",
+  "forbidden_gpu_indices": [
+    1,
+    2
+  ],
+  "max_attempt_wall_seconds": 28800,
+  "predictor_cold_start_seconds": 900,
+  "http_request_timeout_seconds": 27000,
+  "preflight_requires_no_compute_process_and_zero_MiB": true,
+  "only_registered_processes_may_be_signaled": true,
+  "runtime_budget_scope": "Expanded solely for full200-chain replay and draining; declared SLO deadlines unchanged."
+}

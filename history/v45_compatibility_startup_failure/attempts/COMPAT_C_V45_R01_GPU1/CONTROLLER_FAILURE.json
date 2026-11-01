@@ -1,0 +1,5 @@
+{
+  "type": "RuntimeError",
+  "error": "Server exited during startup with 1",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage15_stable_chain_v45_parallel_20261101_v1/round01/programs/controller.py\", line 246, in main\n    raise RuntimeError(f\"Server exited during startup with {server.returncode}\")\nRuntimeError: Server exited during startup with 1\n"
+}

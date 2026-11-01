@@ -1,0 +1,31 @@
+{
+  "failure": {
+    "type": "AssertionError",
+    "error": "",
+    "traceback": "Traceback (most recent call last):\n  File \"/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage15_stable_chain_v45_parallel_20261101_v1/round01/programs/c_server.py\", line 285, in main\n    asyncio.run(server.run_server(args))\n  File \"/usr/lib/python3.12/asyncio/runners.py\", line 194, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/base_events.py\", line 687, in run_until_complete\n    return future.result()\n           ^^^^^^^^^^^^^^^\n  File \"/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/jitserve/server.py\", line 388, in run_server\n    app = await init_app(args, llm_engine)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage15_stable_chain_v45_parallel_20261101_v1/round01/programs/c_server.py\", line 236, in observed_init_app\n    observation.engine_ready(server.engine)\n  File \"/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage15_stable_chain_v45_parallel_20261101_v1/round01/programs/abc_observation.py\", line 51, in engine_ready\n    assert native and getattr(policy, 'version', None) == 'v44_native_chain_completion_density'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  "event_counts": {
+    "events": 2,
+    "launcher_start": 1,
+    "server_exit": 1
+  },
+  "scheduler_stats": {},
+  "base_graphs": 394,
+  "clustering": {
+    "n_requests": 0,
+    "n_clusters": 0,
+    "cluster_sizes": [],
+    "medoids": []
+  },
+  "use_prediction": true,
+  "use_graph_matching": true,
+  "use_default_length": false,
+  "source_paths": {
+    "server": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/jitserve/server.py",
+    "sequence_group": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/sequence.py",
+    "scheduler": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/jitserve/scheduler/slo_scheduler.py",
+    "policy": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/jitserve/scheduler/policy.py",
+    "graph": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/jitserve/request_analyzer/graph_context.py"
+  },
+  "wall": 1793502072.1852696
+}

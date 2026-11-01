@@ -1,0 +1,62 @@
+{
+  "schema": "chain-slo-v45-git-freeze/v1",
+  "created_at": "2026-11-01T20:40:50.409261+08:00",
+  "repository": "Xiaotangyuan-xty/chain-slo-v42",
+  "visibility": "private",
+  "branch": "v45",
+  "tag": "v45-frozen-2026-11-01",
+  "parent_commit": "cbf2e2b46555a0b63b0952d1a48185c747bf3a68",
+  "stage": "stage15_stable_chain_v45_parallel_20261101_v2",
+  "mechanism_version": "v45_native_chain_stable_admission",
+  "upload_origin": "Mac local Git push only; no server GitHub upload",
+  "qualified_rounds": {
+    "round01": {
+      "stage_files": 25,
+      "base_files": 1427,
+      "base_present": 1424
+    },
+    "round02": {
+      "stage_files": 25,
+      "base_files": 1427,
+      "base_present": 1424
+    },
+    "round03": {
+      "stage_files": 25,
+      "base_files": 1427,
+      "base_present": 1424
+    }
+  },
+  "external_native_binary_sha256": {
+    "repo/third_party/vllm/vllm/_C.abi3.so": "35b729f50fcb5c03767b430e411c618221e9854c2f506f18f4f609a6c401acde",
+    "repo/third_party/vllm/vllm/_moe_C.abi3.so": "0508c9f4a08188ddb395652b62ffbe290c92dfd8a83ddbf1f22d111a1a9d3925",
+    "repo/third_party/vllm/vllm/vllm_flash_attn/vllm_flash_attn_c.abi3.so": "e27883424a13664e6c63656d77b0cc51dfe60a0cb2e99f71b2fee6a337a2ae70"
+  },
+  "code_changed_from_qualification": false,
+  "result": {
+    "A": [
+      12,
+      9,
+      14
+    ],
+    "C": [
+      43,
+      44,
+      43
+    ],
+    "main_chains_per_arm_per_round": 200,
+    "requests_including_warmup_per_arm": 1204,
+    "all_three_pairs_valid_and_C_wins": true,
+    "scope": "Same200 DEV-informed fixed-length chains and arrival seed42, three parallel pairs with middle GPU crossover; not heldout/generalization/semantic equivalence or causal v45-over-v44 evidence"
+  },
+  "external_assets": [
+    "Model weights",
+    "Frozen CUDA/Python runtime and three compiled extensions",
+    "External QRF/performance assets",
+    "Large raw runtime traces"
+  ],
+  "prior_tags_preserved": [
+    "v42-frozen-2026-10-30",
+    "v43-frozen-2026-10-31",
+    "v44-frozen-2026-11-01"
+  ]
+}

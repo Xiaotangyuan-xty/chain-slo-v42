@@ -1,0 +1,9 @@
+{
+  "phase": "CLEANUP_COMPLETE",
+  "utc": "2026-11-01T04:44:16.455093+00:00",
+  "elapsed_seconds": 5663.917550321668,
+  "controller_pid": 1311635,
+  "attempt": "FULL_A_R01_GPU0",
+  "arm": "A",
+  "gpu_released": true
+}

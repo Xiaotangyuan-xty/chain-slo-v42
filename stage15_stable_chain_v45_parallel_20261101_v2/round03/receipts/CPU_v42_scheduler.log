@@ -1,0 +1,50 @@
+test_compound_eviction_and_slot_failure_are_atomic (__main__.FirstStepTests.test_compound_eviction_and_slot_failure_are_atomic) ... ok
+test_prefill_shrinks_at_planning_and_never_expands_afterwards (__main__.FirstStepTests.test_prefill_shrinks_at_planning_and_never_expands_afterwards) ... ok
+test_retained_waiting_swapped_and_swap_limit (__main__.FirstStepTests.test_retained_waiting_swapped_and_swap_limit) ... ok
+test_running_kv_pressure_evicts_lower_priority_running (__main__.FirstStepTests.test_running_kv_pressure_evicts_lower_priority_running) ... ok
+test_trace_5540_forced_execution_and_no_kv_leak (__main__.FirstStepTests.test_trace_5540_forced_execution_and_no_kv_leak) ... ok
+test_trace_5540_infeasible_does_not_evict_or_spin (__main__.FirstStepTests.test_trace_5540_infeasible_does_not_evict_or_spin) ... ok
+test_collective_allocation_matches_official_sum (__main__.OfficialPathTests.test_collective_allocation_matches_official_sum) ... ok
+test_custom_forced_is_disabled_by_default (__main__.OfficialPathTests.test_custom_forced_is_disabled_by_default) ... ok
+test_dynamic_batch_slots_are_not_fixed_four (__main__.OfficialPathTests.test_dynamic_batch_slots_are_not_fixed_four) ... ok
+test_feasibility_uses_the_same_resident_order_as_execution (__main__.OfficialPathTests.test_feasibility_uses_the_same_resident_order_as_execution) ... ok
+test_first_dispatch_witness_does_not_override_later_live_order (__main__.OfficialPathTests.test_first_dispatch_witness_does_not_override_later_live_order) ... ok
+test_host_defer_returns_empty_outputs_and_restores_official (__main__.OfficialPathTests.test_host_defer_returns_empty_outputs_and_restores_official) ... ok
+test_host_full_preemption_defers_without_recompute_or_swap (__main__.OfficialPathTests.test_host_full_preemption_defers_without_recompute_or_swap) ... ok
+test_mixed_queue_compound_is_deferred_to_official_frame (__main__.OfficialPathTests.test_mixed_queue_compound_is_deferred_to_official_frame) ... ok
+test_no_model_compound_uses_official_all_paths (__main__.OfficialPathTests.test_no_model_compound_uses_official_all_paths) ... ok
+test_official_nonframe_frame_and_dynamic_adjust_are_restored (__main__.OfficialPathTests.test_official_nonframe_frame_and_dynamic_adjust_are_restored) ... ok
+test_paused_compound_remains_a_kv_victim_without_execution (__main__.OfficialPathTests.test_paused_compound_remains_a_kv_victim_without_execution) ... ok
+test_resident_set_feasibility_requires_every_member (__main__.OfficialPathTests.test_resident_set_feasibility_requires_every_member) ... ok
+test_resident_set_goal_keys_map_to_request_ids (__main__.OfficialPathTests.test_resident_set_goal_keys_map_to_request_ids) ... ok
+test_resident_set_order_reaches_real_planner (__main__.OfficialPathTests.test_resident_set_order_reaches_real_planner) ... ok
+test_trace_5540_forced_frame_executes_and_releases_kv (__main__.OfficialPathTests.test_trace_5540_forced_frame_executes_and_releases_kv) ... ok
+test_trace_5540_forced_frame_explicitly_infeasible (__main__.OfficialPathTests.test_trace_5540_forced_frame_explicitly_infeasible) ... ok
+test_waiting_compound_enters_process_list_without_pending_swap (__main__.OfficialPathTests.test_waiting_compound_enters_process_list_without_pending_swap) ... ok
+test_active_model_lease_executes_and_decrements_off_frame (__main__.PolicyTests.test_active_model_lease_executes_and_decrements_off_frame) ... ok
+test_admission_pause_preserves_an_unfinished_bounded_lease (__main__.PolicyTests.test_admission_pause_preserves_an_unfinished_bounded_lease) ... ok
+test_attainable_deadline_overrides_virtual_eligibility (__main__.PolicyTests.test_attainable_deadline_overrides_virtual_eligibility) ... ok
+test_completed_model_lease_renews_without_replan (__main__.PolicyTests.test_completed_model_lease_renews_without_replan) ... ok
+test_deadline_class_preserves_native_order_without_model_action (__main__.PolicyTests.test_deadline_class_preserves_native_order_without_model_action) ... ok
+test_fallback_anchor_is_reevaluated_on_every_official_frame (__main__.PolicyTests.test_fallback_anchor_is_reevaluated_on_every_official_frame) ... ok
+test_far_deadline_chain_is_deferred_behind_native_urgent_chain (__main__.PolicyTests.test_far_deadline_chain_is_deferred_behind_native_urgent_chain) ... ok
+test_forced_has_scheduled_and_executed_witness (__main__.PolicyTests.test_forced_has_scheduled_and_executed_witness) ... ok
+test_forced_override_of_model_lease_is_audited (__main__.PolicyTests.test_forced_override_of_model_lease_is_audited) ... ok
+test_hopeless_admission_pauses_then_drains_every_call (__main__.PolicyTests.test_hopeless_admission_pauses_then_drains_every_call) ... ok
+test_infeasible_or_nonframe_forced_does_not_take_over (__main__.PolicyTests.test_infeasible_or_nonframe_forced_does_not_take_over) ... ok
+test_lease_yields_to_more_urgent_attainable_chain (__main__.PolicyTests.test_lease_yields_to_more_urgent_attainable_chain) ... ok
+test_no_model_compound_does_not_activate_permanent_custom_path (__main__.PolicyTests.test_no_model_compound_does_not_activate_permanent_custom_path) ... ok
+test_nonfinal_anchor_does_not_yield_lease (__main__.PolicyTests.test_nonfinal_anchor_does_not_yield_lease) ... ok
+test_nonframe_no_model_skips_expensive_view (__main__.PolicyTests.test_nonframe_no_model_skips_expensive_view) ... ok
+test_pending_action_uses_trace_and_selector_signature_is_dynamic (__main__.PolicyTests.test_pending_action_uses_trace_and_selector_signature_is_dynamic) ... ok
+test_recovery_metadata_does_not_replace_native_priority (__main__.PolicyTests.test_recovery_metadata_does_not_replace_native_priority) ... ok
+test_resident_set_has_real_priority_effect (__main__.PolicyTests.test_resident_set_has_real_priority_effect) ... ok
+test_running_protection_progress_is_initialized (__main__.PolicyTests.test_running_protection_progress_is_initialized) ... ok
+test_safe_cohort_releases_incumbent_only_at_completed_lease_boundary (__main__.PolicyTests.test_safe_cohort_releases_incumbent_only_at_completed_lease_boundary) ... ok
+test_safe_later_chain_is_held_until_urgent_cohort_completes (__main__.PolicyTests.test_safe_later_chain_is_held_until_urgent_cohort_completes) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 0.037s
+
+OK
+{"gate": "PASS", "gpu_used": false, "runtime_vllm": false}

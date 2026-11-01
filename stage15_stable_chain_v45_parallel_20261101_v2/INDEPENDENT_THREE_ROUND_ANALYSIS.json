@@ -1,0 +1,915 @@
+{
+  "created_utc": "2026-11-01T08:59:16.021863+00:00",
+  "rounds": [
+    {
+      "round": 1,
+      "A_gpu": 0,
+      "C_gpu": 1,
+      "arms": {
+        "A": {
+          "metrics": {
+            "official_scaled_attained": 12,
+            "strict_attained": 2,
+            "mean_jct": 2481.109024554696,
+            "jct_p90": 4538.299547651783,
+            "jct_p95": 5104.50148875229,
+            "episode_duration": 5513.379517273977,
+            "request_goodput": 0.013603271780042964
+          },
+          "metric_differences": {},
+          "main_chains": 200,
+          "requests_including_warmup": 1204,
+          "max_arrival_error": 0.09291726695001756,
+          "attained_ids": [
+            1,
+            3,
+            6,
+            7,
+            10,
+            11,
+            163,
+            175,
+            183,
+            191,
+            194,
+            199
+          ],
+          "by_stages": {
+            "4": {
+              "total": 68,
+              "attained": 3
+            },
+            "6": {
+              "total": 132,
+              "attained": 9
+            }
+          },
+          "by_deadline": {
+            "80.0": {
+              "total": 13,
+              "attained": 0
+            },
+            "120.0": {
+              "total": 37,
+              "attained": 0
+            },
+            "160.0": {
+              "total": 15,
+              "attained": 0
+            },
+            "240.0": {
+              "total": 53,
+              "attained": 2
+            },
+            "320.0": {
+              "total": 22,
+              "attained": 2
+            },
+            "360.0": {
+              "total": 32,
+              "attained": 2
+            },
+            "480.0": {
+              "total": 28,
+              "attained": 6
+            }
+          },
+          "win_margin_seconds": {
+            "min": 72.08877448923886,
+            "median": 232.64712201990187,
+            "within_1s": 0,
+            "within_5s": 0
+          },
+          "attained_completions_by_time": {
+            "120": 2,
+            "200": 4,
+            "300": 6,
+            "480": 12,
+            "600": 12,
+            "700": 12
+          },
+          "last_attained_completion_seconds": 447.69294702634215,
+          "scheduler_stats": {
+            "ticks": 142674,
+            "official_frames": 2853,
+            "scheduled_groups": 509197,
+            "prefill_groups": 1868,
+            "prefill_chunks": 998,
+            "preempted": 829,
+            "ignored": 0,
+            "swap_in_block_groups": 38235,
+            "swap_out_block_groups": 38235
+          }
+        },
+        "C": {
+          "metrics": {
+            "official_scaled_attained": 43,
+            "strict_attained": 14,
+            "mean_jct": 2868.0363847180643,
+            "jct_p90": 5001.780811891705,
+            "jct_p95": 5213.630928613152,
+            "episode_duration": 5639.039428366348,
+            "request_goodput": 0.03440302244104056
+          },
+          "metric_differences": {},
+          "main_chains": 200,
+          "requests_including_warmup": 1204,
+          "max_arrival_error": 0.2170607870966137,
+          "attained_ids": [
+            6,
+            11,
+            13,
+            19,
+            25,
+            27,
+            31,
+            42,
+            46,
+            55,
+            65,
+            66,
+            67,
+            71,
+            73,
+            74,
+            75,
+            79,
+            81,
+            89,
+            90,
+            91,
+            95,
+            103,
+            114,
+            118,
+            119,
+            122,
+            127,
+            135,
+            146,
+            147,
+            151,
+            159,
+            162,
+            166,
+            167,
+            169,
+            173,
+            174,
+            175,
+            191,
+            195
+          ],
+          "by_stages": {
+            "4": {
+              "total": 68,
+              "attained": 35
+            },
+            "6": {
+              "total": 132,
+              "attained": 8
+            }
+          },
+          "by_deadline": {
+            "80.0": {
+              "total": 13,
+              "attained": 0
+            },
+            "120.0": {
+              "total": 37,
+              "attained": 0
+            },
+            "160.0": {
+              "total": 15,
+              "attained": 8
+            },
+            "240.0": {
+              "total": 53,
+              "attained": 13
+            },
+            "320.0": {
+              "total": 22,
+              "attained": 14
+            },
+            "360.0": {
+              "total": 32,
+              "attained": 0
+            },
+            "480.0": {
+              "total": 28,
+              "attained": 8
+            }
+          },
+          "win_margin_seconds": {
+            "min": 10.238324275240302,
+            "median": 134.68938673846424,
+            "within_1s": 0,
+            "within_5s": 0
+          },
+          "attained_completions_by_time": {
+            "120": 9,
+            "200": 19,
+            "300": 31,
+            "480": 36,
+            "600": 42,
+            "700": 43
+          },
+          "last_attained_completion_seconds": 638.1863094717264,
+          "scheduler_stats": {
+            "ticks": 143924,
+            "official_frames": 2878,
+            "scheduled_groups": 509198,
+            "prefill_groups": 2168,
+            "prefill_chunks": 1021,
+            "preempted": 831,
+            "ignored": 0,
+            "swap_in_block_groups": 24026,
+            "swap_out_block_groups": 24026
+          }
+        }
+      },
+      "formal_comparison_valid": true,
+      "formal_audit_gate": "PASS",
+      "C_admission_trace": {
+        "counts": {
+          "active_snapshots": 919,
+          "extra_lease_hold_snapshots": 0,
+          "estimated_over_capacity": 59
+        },
+        "max_estimated_block_excess": 36,
+        "snapshot_mean_free_gpu_first200": 114.33739837398375,
+        "outside_selected_execution_calls": 0,
+        "interpretation": "Horizon estimates can exceed capacity between planning frames; this is not physical over-allocation or a causal ablation."
+      },
+      "overlap": {
+        "both": 4,
+        "A_only": 8,
+        "C_only": 39,
+        "neither": 149
+      },
+      "net_C_gain": 31
+    },
+    {
+      "round": 2,
+      "A_gpu": 1,
+      "C_gpu": 0,
+      "arms": {
+        "A": {
+          "metrics": {
+            "official_scaled_attained": 9,
+            "strict_attained": 1,
+            "mean_jct": 2423.6527473078204,
+            "jct_p90": 4611.865618163719,
+            "jct_p95": 5032.906775340996,
+            "episode_duration": 5576.332570504397,
+            "request_goodput": 0.01004244264343341
+          },
+          "metric_differences": {},
+          "main_chains": 200,
+          "requests_including_warmup": 1204,
+          "max_arrival_error": 0.09662551254032792,
+          "attained_ids": [
+            1,
+            3,
+            5,
+            6,
+            7,
+            10,
+            11,
+            194,
+            199
+          ],
+          "by_stages": {
+            "4": {
+              "total": 68,
+              "attained": 3
+            },
+            "6": {
+              "total": 132,
+              "attained": 6
+            }
+          },
+          "by_deadline": {
+            "80.0": {
+              "total": 13,
+              "attained": 0
+            },
+            "120.0": {
+              "total": 37,
+              "attained": 0
+            },
+            "160.0": {
+              "total": 15,
+              "attained": 0
+            },
+            "240.0": {
+              "total": 53,
+              "attained": 3
+            },
+            "320.0": {
+              "total": 22,
+              "attained": 2
+            },
+            "360.0": {
+              "total": 32,
+              "attained": 2
+            },
+            "480.0": {
+              "total": 28,
+              "attained": 2
+            }
+          },
+          "win_margin_seconds": {
+            "min": 9.778398407623172,
+            "median": 158.6400446370244,
+            "within_1s": 0,
+            "within_5s": 0
+          },
+          "attained_completions_by_time": {
+            "120": 2,
+            "200": 4,
+            "300": 7,
+            "480": 9,
+            "600": 9,
+            "700": 9
+          },
+          "last_attained_completion_seconds": 413.4590436723083,
+          "scheduler_stats": {
+            "ticks": 144503,
+            "official_frames": 2890,
+            "scheduled_groups": 509207,
+            "prefill_groups": 2015,
+            "prefill_chunks": 1014,
+            "preempted": 951,
+            "ignored": 0,
+            "swap_in_block_groups": 43456,
+            "swap_out_block_groups": 43456
+          }
+        },
+        "C": {
+          "metrics": {
+            "official_scaled_attained": 44,
+            "strict_attained": 16,
+            "mean_jct": 3107.0086821774953,
+            "jct_p90": 5769.828814027831,
+            "jct_p95": 6135.369362234603,
+            "episode_duration": 6804.037844922394,
+            "request_goodput": 0.029247338791407
+          },
+          "metric_differences": {},
+          "main_chains": 200,
+          "requests_including_warmup": 1204,
+          "max_arrival_error": 0.21878837727010136,
+          "attained_ids": [
+            3,
+            6,
+            11,
+            13,
+            19,
+            25,
+            27,
+            31,
+            42,
+            46,
+            55,
+            65,
+            66,
+            67,
+            71,
+            73,
+            74,
+            75,
+            79,
+            81,
+            89,
+            90,
+            91,
+            103,
+            107,
+            114,
+            118,
+            119,
+            122,
+            127,
+            135,
+            146,
+            147,
+            151,
+            159,
+            166,
+            167,
+            169,
+            171,
+            173,
+            174,
+            175,
+            191,
+            194
+          ],
+          "by_stages": {
+            "4": {
+              "total": 68,
+              "attained": 35
+            },
+            "6": {
+              "total": 132,
+              "attained": 9
+            }
+          },
+          "by_deadline": {
+            "80.0": {
+              "total": 13,
+              "attained": 0
+            },
+            "120.0": {
+              "total": 37,
+              "attained": 0
+            },
+            "160.0": {
+              "total": 15,
+              "attained": 8
+            },
+            "240.0": {
+              "total": 53,
+              "attained": 12
+            },
+            "320.0": {
+              "total": 22,
+              "attained": 15
+            },
+            "360.0": {
+              "total": 32,
+              "attained": 1
+            },
+            "480.0": {
+              "total": 28,
+              "attained": 8
+            }
+          },
+          "win_margin_seconds": {
+            "min": 15.621045306324959,
+            "median": 132.74564890936017,
+            "within_1s": 0,
+            "within_5s": 0
+          },
+          "attained_completions_by_time": {
+            "120": 8,
+            "200": 20,
+            "300": 31,
+            "480": 37,
+            "600": 43,
+            "700": 44
+          },
+          "last_attained_completion_seconds": 632.279739798978,
+          "scheduler_stats": {
+            "ticks": 146259,
+            "official_frames": 2925,
+            "scheduled_groups": 509193,
+            "prefill_groups": 1797,
+            "prefill_chunks": 1007,
+            "preempted": 842,
+            "ignored": 0,
+            "swap_in_block_groups": 31546,
+            "swap_out_block_groups": 31546
+          }
+        }
+      },
+      "formal_comparison_valid": true,
+      "formal_audit_gate": "PASS",
+      "C_admission_trace": {
+        "counts": {
+          "active_snapshots": 913,
+          "extra_lease_hold_snapshots": 0,
+          "estimated_over_capacity": 64
+        },
+        "max_estimated_block_excess": 40,
+        "snapshot_mean_free_gpu_first200": 117.80081300813008,
+        "outside_selected_execution_calls": 0,
+        "interpretation": "Horizon estimates can exceed capacity between planning frames; this is not physical over-allocation or a causal ablation."
+      },
+      "overlap": {
+        "both": 4,
+        "A_only": 5,
+        "C_only": 40,
+        "neither": 151
+      },
+      "net_C_gain": 35
+    },
+    {
+      "round": 3,
+      "A_gpu": 0,
+      "C_gpu": 1,
+      "arms": {
+        "A": {
+          "metrics": {
+            "official_scaled_attained": 14,
+            "strict_attained": 1,
+            "mean_jct": 2683.6455131086336,
+            "jct_p90": 5576.538351904786,
+            "jct_p95": 6093.472472274302,
+            "episode_duration": 6728.815884543583,
+            "request_goodput": 0.013375310239463437
+          },
+          "metric_differences": {},
+          "main_chains": 200,
+          "requests_including_warmup": 1204,
+          "max_arrival_error": 0.20589624786376248,
+          "attained_ids": [
+            1,
+            3,
+            7,
+            9,
+            10,
+            11,
+            13,
+            163,
+            175,
+            178,
+            183,
+            191,
+            198,
+            199
+          ],
+          "by_stages": {
+            "4": {
+              "total": 68,
+              "attained": 4
+            },
+            "6": {
+              "total": 132,
+              "attained": 10
+            }
+          },
+          "by_deadline": {
+            "80.0": {
+              "total": 13,
+              "attained": 0
+            },
+            "120.0": {
+              "total": 37,
+              "attained": 0
+            },
+            "160.0": {
+              "total": 15,
+              "attained": 2
+            },
+            "240.0": {
+              "total": 53,
+              "attained": 1
+            },
+            "320.0": {
+              "total": 22,
+              "attained": 2
+            },
+            "360.0": {
+              "total": 32,
+              "attained": 3
+            },
+            "480.0": {
+              "total": 28,
+              "attained": 6
+            }
+          },
+          "win_margin_seconds": {
+            "min": 27.1614401191473,
+            "median": 178.63902644999325,
+            "within_1s": 0,
+            "within_5s": 0
+          },
+          "attained_completions_by_time": {
+            "120": 3,
+            "200": 5,
+            "300": 7,
+            "480": 12,
+            "600": 14,
+            "700": 14
+          },
+          "last_attained_completion_seconds": 492.6201224476099,
+          "scheduler_stats": {
+            "ticks": 145717,
+            "official_frames": 2914,
+            "scheduled_groups": 509183,
+            "prefill_groups": 1944,
+            "prefill_chunks": 979,
+            "preempted": 779,
+            "ignored": 0,
+            "swap_in_block_groups": 32122,
+            "swap_out_block_groups": 32122
+          }
+        },
+        "C": {
+          "metrics": {
+            "official_scaled_attained": 43,
+            "strict_attained": 17,
+            "mean_jct": 3029.428216986414,
+            "jct_p90": 5762.670416746847,
+            "jct_p95": 6114.947102665248,
+            "episode_duration": 6696.451155629009,
+            "request_goodput": 0.029418567450372968
+          },
+          "metric_differences": {},
+          "main_chains": 200,
+          "requests_including_warmup": 1204,
+          "max_arrival_error": 0.2040394166857027,
+          "attained_ids": [
+            3,
+            11,
+            13,
+            19,
+            25,
+            27,
+            31,
+            42,
+            46,
+            65,
+            66,
+            67,
+            71,
+            73,
+            74,
+            75,
+            79,
+            81,
+            89,
+            90,
+            91,
+            95,
+            103,
+            114,
+            118,
+            119,
+            122,
+            127,
+            135,
+            146,
+            147,
+            151,
+            159,
+            166,
+            167,
+            169,
+            171,
+            173,
+            174,
+            175,
+            191,
+            194,
+            195
+          ],
+          "by_stages": {
+            "4": {
+              "total": 68,
+              "attained": 32
+            },
+            "6": {
+              "total": 132,
+              "attained": 11
+            }
+          },
+          "by_deadline": {
+            "80.0": {
+              "total": 13,
+              "attained": 0
+            },
+            "120.0": {
+              "total": 37,
+              "attained": 0
+            },
+            "160.0": {
+              "total": 15,
+              "attained": 8
+            },
+            "240.0": {
+              "total": 53,
+              "attained": 11
+            },
+            "320.0": {
+              "total": 22,
+              "attained": 13
+            },
+            "360.0": {
+              "total": 32,
+              "attained": 1
+            },
+            "480.0": {
+              "total": 28,
+              "attained": 10
+            }
+          },
+          "win_margin_seconds": {
+            "min": 24.62040557526052,
+            "median": 153.7932275570929,
+            "within_1s": 0,
+            "within_5s": 0
+          },
+          "attained_completions_by_time": {
+            "120": 9,
+            "200": 20,
+            "300": 31,
+            "480": 37,
+            "600": 41,
+            "700": 43
+          },
+          "last_attained_completion_seconds": 639.7002003602684,
+          "scheduler_stats": {
+            "ticks": 141537,
+            "official_frames": 2830,
+            "scheduled_groups": 509190,
+            "prefill_groups": 1810,
+            "prefill_chunks": 1003,
+            "preempted": 795,
+            "ignored": 0,
+            "swap_in_block_groups": 30124,
+            "swap_out_block_groups": 30124
+          }
+        }
+      },
+      "formal_comparison_valid": true,
+      "formal_audit_gate": "PASS",
+      "C_admission_trace": {
+        "counts": {
+          "active_snapshots": 912,
+          "extra_lease_hold_snapshots": 0,
+          "estimated_over_capacity": 62
+        },
+        "max_estimated_block_excess": 33,
+        "snapshot_mean_free_gpu_first200": 115.458,
+        "outside_selected_execution_calls": 0,
+        "interpretation": "Horizon estimates can exceed capacity between planning frames; this is not physical over-allocation or a causal ablation."
+      },
+      "overlap": {
+        "both": 5,
+        "A_only": 9,
+        "C_only": 38,
+        "neither": 148
+      },
+      "net_C_gain": 29
+    }
+  ],
+  "errors": [],
+  "qualified_source_audit": {
+    "unique_files_checked": 1502,
+    "mismatches": []
+  },
+  "aggregate": {
+    "A": {
+      "attainment_counts": [
+        12,
+        9,
+        14
+      ],
+      "mean_attained": 11.666666666666666,
+      "mean_attainment_rate": 0.058333333333333334,
+      "mean_jct": 2529.4690949903834,
+      "mean_episode_duration": 5939.509324107319,
+      "all_three_attained_ids": [
+        1,
+        3,
+        7,
+        10,
+        11,
+        199
+      ],
+      "ever_attained_unique_ids": [
+        1,
+        3,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        13,
+        163,
+        175,
+        178,
+        183,
+        191,
+        194,
+        198,
+        199
+      ],
+      "swap_out_blocks": 113813
+    },
+    "C": {
+      "attainment_counts": [
+        43,
+        44,
+        43
+      ],
+      "mean_attained": 43.333333333333336,
+      "mean_attainment_rate": 0.21666666666666667,
+      "mean_jct": 3001.4910946273244,
+      "mean_episode_duration": 6379.84280963925,
+      "all_three_attained_ids": [
+        11,
+        13,
+        19,
+        25,
+        27,
+        31,
+        42,
+        46,
+        65,
+        66,
+        67,
+        71,
+        73,
+        74,
+        75,
+        79,
+        81,
+        89,
+        90,
+        91,
+        103,
+        114,
+        118,
+        119,
+        122,
+        127,
+        135,
+        146,
+        147,
+        151,
+        159,
+        166,
+        167,
+        169,
+        173,
+        174,
+        175,
+        191
+      ],
+      "ever_attained_unique_ids": [
+        3,
+        6,
+        11,
+        13,
+        19,
+        25,
+        27,
+        31,
+        42,
+        46,
+        55,
+        65,
+        66,
+        67,
+        71,
+        73,
+        74,
+        75,
+        79,
+        81,
+        89,
+        90,
+        91,
+        95,
+        103,
+        107,
+        114,
+        118,
+        119,
+        122,
+        127,
+        135,
+        146,
+        147,
+        151,
+        159,
+        162,
+        166,
+        167,
+        169,
+        171,
+        173,
+        174,
+        175,
+        191,
+        194,
+        195
+      ],
+      "swap_out_blocks": 85696
+    }
+  },
+  "all_three_valid_and_C_wins": true,
+  "gpu_state_now": {
+    "0": {
+      "state": "0, GPU-ff8c7d5c-f75c-26e1-43de-b40ca283f938, 4 MiB, 0 %",
+      "compute_processes": ""
+    },
+    "1": {
+      "state": "1, GPU-f5874940-7f3b-ad3e-b810-bc7dda423d1a, 4 MiB, 0 %",
+      "compute_processes": ""
+    }
+  },
+  "ports_free_now": {
+    "18080": true,
+    "18081": true,
+    "65433": true,
+    "65434": true
+  },
+  "scope": "Three repeated observations of the same200 DEV-informed chains/arrivalseed42, not600 unique chains. GPU assignment crossed once, same host, fixed-length replay. No heldout/generalization/semantic-equivalence or v45-over-v44 causal claim.",
+  "gate": "PASS"
+}

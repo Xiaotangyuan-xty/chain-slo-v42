@@ -1,0 +1,25 @@
+{
+  "arm": "C",
+  "device": {
+    "physical_gpu_index": 1,
+    "expected_uuid": "GPU-f5874940-7f3b-ad3e-b810-bc7dda423d1a",
+    "actual_uuid": "GPU-f5874940-7f3b-ad3e-b810-bc7dda423d1a",
+    "mask": "GPU-f5874940-7f3b-ad3e-b810-bc7dda423d1a",
+    "cuda_platform_sha256": "336f626e0f4dee9e65beb83de15500802a748d640f998458924ee5e8a0db5be6",
+    "adapted_functions": [
+      "warn_if_different_devices",
+      "device_id_to_physical_device_id"
+    ],
+    "scheduling_or_prediction_semantics_changed": false
+  },
+  "resources": null,
+  "stats": {},
+  "requests": [],
+  "observation_only": true,
+  "scheduling_changes": true,
+  "reservation_events": 0,
+  "final_kv_free": {
+    "gpu_blocks": 512,
+    "cpu_blocks": 1170
+  }
+}

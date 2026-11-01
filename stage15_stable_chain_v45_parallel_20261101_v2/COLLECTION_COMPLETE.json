@@ -1,0 +1,9 @@
+{
+  "rounds_collected": [
+    "round01",
+    "round02",
+    "round03"
+  ],
+  "matrix_state": "COMPLETED",
+  "raw_traces_transferred": false
+}

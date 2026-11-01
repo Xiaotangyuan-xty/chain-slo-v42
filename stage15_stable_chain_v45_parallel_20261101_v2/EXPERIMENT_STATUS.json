@@ -1,0 +1,160 @@
+{
+  "matrix": {
+    "state": "COMPLETED",
+    "started_utc": "2026-11-01T03:04:24.665149+00:00",
+    "rounds": [
+      {
+        "round": 1,
+        "directory": "round01",
+        "A_gpu": 0,
+        "C_gpu": 1,
+        "attempts": {
+          "compat": "COMPAT_C_V45_R01_GPU1",
+          "A": "FULL_A_R01_GPU0",
+          "C": "FULL_C_V45_R01_GPU1"
+        },
+        "valid": true,
+        "controller_runner_returncode": 0,
+        "postprocess_returncode": 0,
+        "A": 12,
+        "C": 43,
+        "C_win": true
+      },
+      {
+        "round": 2,
+        "directory": "round02",
+        "A_gpu": 1,
+        "C_gpu": 0,
+        "attempts": {
+          "compat": "COMPAT_C_V45_R02_GPU0",
+          "A": "FULL_A_R02_GPU1",
+          "C": "FULL_C_V45_R02_GPU0"
+        },
+        "valid": true,
+        "controller_runner_returncode": 0,
+        "postprocess_returncode": 0,
+        "A": 9,
+        "C": 44,
+        "C_win": true
+      },
+      {
+        "round": 3,
+        "directory": "round03",
+        "A_gpu": 0,
+        "C_gpu": 1,
+        "attempts": {
+          "compat": "COMPAT_C_V45_R03_GPU1",
+          "A": "FULL_A_R03_GPU0",
+          "C": "FULL_C_V45_R03_GPU1"
+        },
+        "valid": true,
+        "controller_runner_returncode": 0,
+        "postprocess_returncode": 0,
+        "A": 14,
+        "C": 43,
+        "C_win": true
+      }
+    ],
+    "stable_win_proven": true,
+    "scope": "Fixed200 public DEV-informed replay, same arrival seed42; not generalization or semantic equivalence",
+    "candidate_source_fingerprints": {
+      "programs/a_server.py": "6093bcc06f3a93f24d46ea78877ac0ea3a5fcbb4c6e73a553883ddb03a324cd5",
+      "programs/abc_observation.py": "de81351de786444963d84fa143e8cc34de2e128ac3585a13fcaa6d0520e3ff5a",
+      "programs/c_server.py": "0941156423c21436a26096747943072ce72c6d0bb0253f62d58989f63fda7dc1",
+      "programs/chain_admission.py": "1a056f059f083de1031cf2225e59d529431f89867dd4c96a9c832622496deeac",
+      "programs/chain_forecast.py": "46eb7ae45ce593b23c830aed88487ccd14baca4965956e27f5a90ee1b89e2ac6",
+      "programs/client.py": "32400604bf9d3543612067b651cd97ed01d06b68a079e7c3e540931559c40a3b",
+      "programs/controlled_full_trace.py": "930918f29755983085f7bb90be6a1337b5df5c86f2dc4f466be4dbd99b9ec618",
+      "programs/controlled_native.py": "774cec5f8d08b9f77f6c5967e7522a61158343c227f314b39fec5345192596d3",
+      "programs/controlled_stability.py": "dd0796f0cde21bcfd6282391636cda45744c4110088f5038697daed885cd98d2",
+      "programs/controller.py": "4dbd4b7961d2e0b964373f7ce752049c7438fef8cd51198298bd87d4b8f5d768",
+      "programs/gpu0_platform.py": "41b3f9de4b6b4743307cfe161788d4f52b2ea99c65a9c66f8b31d837cb6ac24c",
+      "programs/gpu1_platform.py": "8cfc4f01e2a4fa1806703403c4d54370083b1a820afcca24567cc6f01f813609",
+      "programs/native_chain.py": "029291ba57d2e8be7974084dac81bf1115208f4939ac520ec8be05ae1cfa69ec",
+      "programs/offline_compare.py": "8eb9229778a4b0a0e69f80ae1fe7087aa626b7edfb81a7b5ba21a140d0dd7e65",
+      "programs/predictor_server.py": "f37c991e1498f65b7f64e2ffa739c77faff2e5f2d6e6bf20f46dbdd874701a59",
+      "programs/qualify_cpu.py": "3c3e4bb341ca53c9d15e8621052fdafb856f5206a84b4958e0b6ae21bf826086",
+      "programs/run_experiments.py": "0f2a8486c44d5185234e2b224c440d927ccd317654d9cc4d9d3f443d44bab6fa",
+      "programs/transport_isolation.py": "d0cac752e2e458df604413ac9c296d3b999f0b5d1213dbf3e7cbe779b4637184",
+      "programs/validate_forecast.py": "8c0691dcfadc878f120946e632c3a86746b8260c2aabfe1b9269c45adf99bc0f",
+      "assets/CHAIN_MODEL.json": "7d1d668028a01a9da525845e2d3e4320563b615ebac72125c9d3448cd6f761f7"
+    },
+    "matrix_sha256": "b8d1af0cb621bc9019f7abb37c341605731c660793e682be643db711f426912b",
+    "active_round": null,
+    "phase": "DONE",
+    "completed_utc": "2026-11-01T08:49:19.186584+00:00"
+  },
+  "packets": {
+    "round01": {
+      "archive": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage15_stable_chain_v45_parallel_20261101_v2/round01/FULL_TRACE_LIGHT_DELIVERY.zip",
+      "archive_sha256": "13990f3165c1a184346b0b4aeb91f335742ea5104fec98fe918b4fe57e4afeaa",
+      "bytes": 1552314,
+      "state": "COMPLETED",
+      "A": 12,
+      "C": 43
+    },
+    "round02": {
+      "archive": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage15_stable_chain_v45_parallel_20261101_v2/round02/FULL_TRACE_LIGHT_DELIVERY.zip",
+      "archive_sha256": "c0cf5c1f98ef3c633c3055cc57c162e6e42bcba5f44bdb9b839898c1f927deb0",
+      "bytes": 1551646,
+      "state": "COMPLETED",
+      "A": 9,
+      "C": 44
+    },
+    "round03": {
+      "archive": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage15_stable_chain_v45_parallel_20261101_v2/round03/FULL_TRACE_LIGHT_DELIVERY.zip",
+      "archive_sha256": "6fb25636343ab9c45d2a6fab6dfaa7837479848aae7d126064e931a81c2fe3ef",
+      "bytes": 1551296,
+      "state": "COMPLETED",
+      "A": 14,
+      "C": 43
+    }
+  },
+  "controllers": {
+    "FULL_A_R01_GPU0": {
+      "phase": "CLEANUP_COMPLETE",
+      "utc": "2026-11-01T04:44:16.455093+00:00",
+      "elapsed_seconds": 5663.917550321668
+    },
+    "COMPAT_C_V45_R01_GPU1": {
+      "phase": "CLEANUP_COMPLETE",
+      "utc": "2026-11-01T03:09:51.606078+00:00",
+      "elapsed_seconds": 326.1079663038254
+    },
+    "FULL_C_V45_R01_GPU1": {
+      "phase": "CLEANUP_COMPLETE",
+      "utc": "2026-11-01T04:46:25.672002+00:00",
+      "elapsed_seconds": 5793.134511539713
+    },
+    "FULL_A_R02_GPU1": {
+      "phase": "CLEANUP_COMPLETE",
+      "utc": "2026-11-01T06:27:45.386283+00:00",
+      "elapsed_seconds": 5725.801776375622
+    },
+    "FULL_C_V45_R02_GPU0": {
+      "phase": "CLEANUP_COMPLETE",
+      "utc": "2026-11-01T06:48:16.772693+00:00",
+      "elapsed_seconds": 6957.188114359975
+    },
+    "COMPAT_C_V45_R02_GPU0": {
+      "phase": "CLEANUP_COMPLETE",
+      "utc": "2026-11-01T04:52:18.632536+00:00",
+      "elapsed_seconds": 325.3205434214324
+    },
+    "COMPAT_C_V45_R03_GPU1": {
+      "phase": "CLEANUP_COMPLETE",
+      "utc": "2026-11-01T06:54:09.765870+00:00",
+      "elapsed_seconds": 325.46052529476583
+    },
+    "FULL_C_V45_R03_GPU1": {
+      "phase": "CLEANUP_COMPLETE",
+      "utc": "2026-11-01T08:48:19.698244+00:00",
+      "elapsed_seconds": 6848.963373433799
+    },
+    "FULL_A_R03_GPU0": {
+      "phase": "CLEANUP_COMPLETE",
+      "utc": "2026-11-01T08:48:48.545546+00:00",
+      "elapsed_seconds": 6877.810707818717
+    }
+  }
+}

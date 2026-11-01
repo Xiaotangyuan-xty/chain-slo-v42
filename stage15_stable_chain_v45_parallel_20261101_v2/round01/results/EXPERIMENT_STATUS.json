@@ -1,0 +1,9 @@
+{
+  "state": "COMPLETED",
+  "comparison_valid": true,
+  "A_attained": 12,
+  "C_attained": 43,
+  "C_strictly_more": true,
+  "completed_at_Asia_Shanghai": "2026-11-01T12:46:52.219256+08:00",
+  "server_stage": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage15_stable_chain_v45_parallel_20261101_v2/round01"
+}

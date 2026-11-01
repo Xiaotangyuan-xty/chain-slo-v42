@@ -1,0 +1,9 @@
+{
+  "phase": "CLEANUP_COMPLETE",
+  "utc": "2026-11-01T06:54:09.765870+00:00",
+  "elapsed_seconds": 325.46052529476583,
+  "controller_pid": 2966139,
+  "attempt": "COMPAT_C_V45_R03_GPU1",
+  "arm": "C",
+  "gpu_released": true
+}
