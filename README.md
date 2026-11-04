@@ -1,3 +1,14 @@
+# chain-slo: v46 candidate and preserved v45 evidence
+
+v46 adds complete declared-work accounting, cap-bounded prediction backoff, execution-based cadence, bounded residency protection and joint foreground/chain KV admission. Its new controlled studies compare original A, explicitly stage-budget-corrected A*, and v46 on pure200 and frozen mixed workloads. Results are pending; old v45 numbers below remain attributed to v45.
+
+- Implementation and protocol: `stage21_v46_controlled_ac_20261104_v1/`
+- Candidate source verification: `python3 verify_v46_freeze.py`
+- CPU evidence: `evidence/v46/`
+- Main metric: complete-chain SLO attainment; no JCT constraint; arrival error<=0.5seconds.
+
+Historical release documentation follows. Use older version tags to verify their original complete snapshots.
+
 # chain-slo: v45 frozen snapshot
 
 私有仓库 `Xiaotangyuan-xty/chain-slo-v42` 的 `v45` 分支与 `v45-frozen-2026-11-01` 标签。

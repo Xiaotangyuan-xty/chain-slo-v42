@@ -1,0 +1,11 @@
+test_installer_uses_same_native_alias_and_restores_source_bytes (__main__.SafeStatisticsCPU.test_installer_uses_same_native_alias_and_restores_source_bytes) ... /mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+ok
+test_last_token_interval_reproduction_and_cpu_fix (__main__.SafeStatisticsCPU.test_last_token_interval_reproduction_and_cpu_fix) ... ok
+test_numerical_equivalence_and_overflow_reproduction (__main__.SafeStatisticsCPU.test_numerical_equivalence_and_overflow_reproduction) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 4.295s
+
+OK

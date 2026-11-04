@@ -1,0 +1,11 @@
+{"CPU_full_trace_main_roots": 1800, "CPU_calls_including_warmup": 2408, "connections": 2408, "max_arrival_error_seconds": 0.007453098038036288, "all_payload_contracts_match_old_client": true, "attempts_per_request": 1, "arrival_window_seconds": 24.0, "production_arrival_window_unchanged": 3600.0}
+test_01_old_pooled_connection_failure_reproduced_new_client_passes (__main__.ConnectionCPU.test_01_old_pooled_connection_failure_reproduced_new_client_passes) ... ok
+test_02_connection_failure_propagates_once_without_retry (__main__.ConnectionCPU.test_02_connection_failure_propagates_once_without_retry) ... ok
+test_03_actual_five_second_idle_close_boundary (__main__.ConnectionCPU.test_03_actual_five_second_idle_close_boundary) ... ok
+test_04_full_frozen_request_contract_no_loss_or_duplicate (__main__.ConnectionCPU.test_04_full_frozen_request_contract_no_loss_or_duplicate) ... ok
+test_05_source_delta_and_production_workload_bytes (__main__.ConnectionCPU.test_05_source_delta_and_production_workload_bytes) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 60.969s
+
+OK
