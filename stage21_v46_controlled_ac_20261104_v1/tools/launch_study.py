@@ -11,7 +11,11 @@ def main(root,study,mode,commit):
  assert mode in ['pilot','matrix'];case=study/'pilot_gpu2'if mode=='pilot'else study
  assert not(case/'LONG_RUNNER_LAUNCH.json').exists()
  if mode=='matrix':
-  pilot=study/'pilot_gpu2';assert read(pilot/'CALIBRATION_STATUS.json')['state']=='COMPLETED'
+  pilot=study/'pilot_gpu2'
+  if read(pilot/'CALIBRATION_STATUS.json')['state']!='COMPLETED':
+   repaired=read(study/'pilot_postprocess_repair/PROMOTION.json')
+   assert repaired['gate']=='PASS'and repaired['GPU_rerun']is False
+   assert repaired['pilot_gate_sha256']==sha(pilot/'receipts/RUN_GATE_PILOT_V46_GPU2_01.json')
   audit=read(pilot/'attempts/PILOT_V46_GPU2_01/V46_DECISION_AUDIT.json');assert audit['joint_selection_observed']and not audit['bad']
   stages=[Path(c['stage'])for c in read(study/'MATRIX.json')['cases']]
  else:stages=[case]

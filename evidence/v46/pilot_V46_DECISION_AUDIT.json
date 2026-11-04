@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "stage_budget_variant_correct": true,
+    "shared_execution_observer_present": true,
+    "v46_decision_accounting_complete": true,
+    "v46_no_global_native_bypass": true
+  },
+  "bad": [],
+  "plans": 241,
+  "joint_selection_observed": true
+}

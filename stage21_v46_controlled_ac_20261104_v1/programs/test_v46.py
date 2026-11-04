@@ -58,6 +58,14 @@ class AdmissionContract(unittest.TestCase):
         for _ in range(100):c.observe(.001,[],10)
         self.assertEqual(c.token_seconds,.05);self.assertEqual(c.decode_batches,1);self.assertEqual(c.transition_batches,100)
 
+class DecisionAuditContract(unittest.TestCase):
+    def test_borrowed_foreground_slot_is_not_mistaken_for_a_chain(self):
+        from validate_v46 import joint_selected
+        kinds={'f1':0,'f2':1,'chain':2}
+        self.assertFalse(joint_selected(['f1','f2'],kinds))
+        self.assertTrue(joint_selected(['f1','chain'],kinds))
+        self.assertFalse(joint_selected(['chain'],kinds))
+
 class BudgetContract(unittest.TestCase):
     def ctx(self,times=None):return S(collection_deepresearch_unfinished_dict={1:S(convert_to_unfinished_graph=lambda *a:None)},_encode_prompt_len=len,dynamic_clustering=S(find_best_match=lambda _:S(times=times)if times else None))
     def test_first_stage_has_positive_budget_last_stage_gets_full_budget(self):
@@ -66,6 +74,13 @@ class BudgetContract(unittest.TestCase):
     def test_histories_only_with_equal_depth_and_nonnegative_times(self):
         self.assertEqual(cumulative_ratio(self.ctx([100,1,1,1]),4,[1]*4,'p',1,0),100/103)
         self.assertEqual(cumulative_ratio(self.ctx([100,1,1,1,1,1]),4,[1]*4,'p',1,0),.25)
+
+class RunnerPathsContract(unittest.TestCase):
+    def test_matrix_and_pilot_resolve_same_study_root(self):
+        from case_runner import study_root
+        root=Path('/study/v46')
+        self.assertEqual(study_root(root/'cases/pure_b1'),root)
+        self.assertEqual(study_root(root/'pilot_gpu2'),root)
 
 class NativeIntegration(unittest.TestCase):
     def scheduler(self):

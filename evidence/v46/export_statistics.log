@@ -6,6 +6,6 @@ test_last_token_interval_reproduction_and_cpu_fix (__main__.SafeStatisticsCPU.te
 test_numerical_equivalence_and_overflow_reproduction (__main__.SafeStatisticsCPU.test_numerical_equivalence_and_overflow_reproduction) ... ok
 
 ----------------------------------------------------------------------
-Ran 3 tests in 4.295s
+Ran 3 tests in 4.074s
 
 OK

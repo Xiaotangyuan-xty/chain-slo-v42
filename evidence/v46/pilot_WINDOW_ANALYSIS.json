@@ -1,0 +1,104 @@
+{
+  "schema": "mixed-window-accounting/v1",
+  "gate": "PASS",
+  "arms": {
+    "C": {
+      "arrival_window_seconds": 18.0,
+      "finite_replay_seconds": 111.08661363273859,
+      "all_admitted_compound_chains": 2,
+      "eventually_attained_compound_chains": 2,
+      "arrival_window_request_completion_credit_by_type": {
+        "0": {
+          "completed_jobs": 3,
+          "attained_jobs": 3,
+          "completed_calls": 3,
+          "output_tokens": 208,
+          "input_tokens": 312,
+          "gated_weighted_tokens": 1976,
+          "official_formula_weighted_tokens": 1952,
+          "gated_weighted_tokens_per_second": 109.77777777777777,
+          "official_formula_weighted_tokens_per_second": 108.44444444444444
+        },
+        "1": {
+          "completed_jobs": 3,
+          "attained_jobs": 3,
+          "completed_calls": 3,
+          "output_tokens": 143,
+          "input_tokens": 514,
+          "gated_weighted_tokens": 1658,
+          "official_formula_weighted_tokens": 1658,
+          "gated_weighted_tokens_per_second": 92.11111111111111,
+          "official_formula_weighted_tokens_per_second": 92.11111111111111
+        },
+        "2": {
+          "completed_calls": 4,
+          "output_tokens": 229,
+          "input_tokens": 1679,
+          "gated_weighted_tokens": 3511,
+          "official_formula_weighted_tokens": 3511,
+          "gated_weighted_tokens_per_second": 195.05555555555554,
+          "official_formula_weighted_tokens_per_second": 195.05555555555554
+        }
+      },
+      "full_drained_request_credit_by_type": {
+        "0": {
+          "completed_calls": 4,
+          "output_tokens": 1008,
+          "input_tokens": 374,
+          "gated_weighted_tokens": 1976,
+          "official_formula_weighted_tokens": 8406
+        },
+        "1": {
+          "completed_calls": 4,
+          "output_tokens": 161,
+          "input_tokens": 585,
+          "gated_weighted_tokens": 1873,
+          "official_formula_weighted_tokens": 1873
+        },
+        "2": {
+          "completed_calls": 11,
+          "output_tokens": 4400,
+          "input_tokens": 15058,
+          "gated_weighted_tokens": 50258,
+          "official_formula_weighted_tokens": 50258
+        }
+      },
+      "root_backlog_during_arrivals": [
+        {
+          "offset_seconds": 0.0,
+          "inflight_roots_by_type": {}
+        },
+        {
+          "offset_seconds": 18.0,
+          "inflight_roots_by_type": {
+            "2": 2,
+            "0": 1
+          }
+        }
+      ],
+      "arrival_cohorts_300s": [
+        {
+          "arrival_bucket_start": 0,
+          "by_type": {
+            "0": {
+              "admitted": 4,
+              "eventually_attained": 3
+            },
+            "1": {
+              "admitted": 4,
+              "eventually_attained": 4
+            },
+            "2": {
+              "admitted": 2,
+              "eventually_attained": 2
+            }
+          }
+        }
+      ]
+    }
+  },
+  "primary_rule": "Every admitted compound chain is evaluated after full drain against its own actual received chain SLO, including late-arriving chains completing after the arrival window.",
+  "window_credit_rule": "Credit a request at client completion within the arrival window. Collective credits are conditional on eventual whole-chain attainment. This is completion-based credit, not individual token delivery timestamps.",
+  "cohort_rule": "300-second planned-arrival cohorts; the final endpoint belongs to the last cohort. Every admitted root is included.",
+  "official_formula_rule": "Literal cumulative-TBT token formula with actual engine input/output lengths; source benchmark retokenization and exact paper workload are not claimed."
+}

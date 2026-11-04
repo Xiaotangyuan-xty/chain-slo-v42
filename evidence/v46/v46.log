@@ -1,17 +1,18 @@
-INFO 11-04 15:53:23 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
-WARNING 11-04 15:53:23 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
-INFO 11-04 15:53:23 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -403.33333333333337, 0.3, 100.0) is preempted by PreemptionMode.SWAP mode.
-INFO 11-04 15:53:23 scheduler.py:1573] Collection ID: 4, Request ID: 4: (1, 0, -0.01818181818181818, 2000, 100.0) is preempted by PreemptionMode.SWAP mode.
-INFO 11-04 15:53:23 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
-INFO 11-04 15:53:23 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
-WARNING 11-04 15:53:23 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
-INFO 11-04 15:53:23 scheduler.py:1573] Collection ID: 1, Request ID: 1: (1, 0, -0.06, 2000, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-04 16:15:19 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-04 16:15:19 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-04 16:15:19 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -403.33333333333337, 0.3, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-04 16:15:19 scheduler.py:1573] Collection ID: 4, Request ID: 4: (1, 0, -0.01818181818181818, 2000, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-04 16:15:19 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-04 16:15:19 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-04 16:15:19 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-04 16:15:19 scheduler.py:1573] Collection ID: 1, Request ID: 1: (1, 0, -0.06, 2000, 100.0) is preempted by PreemptionMode.SWAP mode.
 test_oversized_first_member_not_unconditionally_accepted (__main__.AdmissionContract.test_oversized_first_member_not_unconditionally_accepted) ... ok
 test_protected_calls_charged_and_trimmed_when_capacity_is_insufficient (__main__.AdmissionContract.test_protected_calls_charged_and_trimmed_when_capacity_is_insufficient) ... ok
 test_sequence_limit_zero_admits_nothing (__main__.AdmissionContract.test_sequence_limit_zero_admits_nothing) ... ok
 test_transition_only_execution_does_not_distort_decode_cadence (__main__.AdmissionContract.test_transition_only_execution_does_not_distort_decode_cadence) ... ok
 test_first_stage_has_positive_budget_last_stage_gets_full_budget (__main__.BudgetContract.test_first_stage_has_positive_budget_last_stage_gets_full_budget) ... ok
 test_histories_only_with_equal_depth_and_nonnegative_times (__main__.BudgetContract.test_histories_only_with_equal_depth_and_nonnegative_times) ... ok
+test_borrowed_foreground_slot_is_not_mistaken_for_a_chain (__main__.DecisionAuditContract.test_borrowed_foreground_slot_is_not_mistaken_for_a_chain) ... ok
 test_capacity_waves_increase_duration_without_changing_work (__main__.ForecastContract.test_capacity_waves_increase_duration_without_changing_work) ... ok
 test_completed_members_not_charged_again (__main__.ForecastContract.test_completed_members_not_charged_again) ... ok
 test_cross_depth_donor_must_cover_every_declared_stage (__main__.ForecastContract.test_cross_depth_donor_must_cover_every_declared_stage) ... ok
@@ -27,8 +28,9 @@ ok
 test_native_joint_execution_serves_both_and_fully_releases_kv (__main__.NativeIntegration.test_native_joint_execution_serves_both_and_fully_releases_kv) ... ok
 test_prefill_protection_expires_even_without_output_progress (__main__.NativeIntegration.test_prefill_protection_expires_even_without_output_progress) ... ok
 test_unsupported_chain_does_not_stop_other_live_work (__main__.NativeIntegration.test_unsupported_chain_does_not_stop_other_live_work) ... ok
+test_matrix_and_pilot_resolve_same_study_root (__main__.RunnerPathsContract.test_matrix_and_pilot_resolve_same_study_root) ... ok
 
 ----------------------------------------------------------------------
-Ran 18 tests in 4.352s
+Ran 20 tests in 4.126s
 
 OK

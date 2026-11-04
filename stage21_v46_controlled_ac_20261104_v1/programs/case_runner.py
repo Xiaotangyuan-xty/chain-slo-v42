@@ -7,6 +7,7 @@ def read(p):return json.loads(p.read_text())
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def dump(p,d):
  t=p.with_suffix('.tmp');t.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n');os.replace(t,p)
+def study_root(stage):return stage.parent.parent if stage.parent.name=='cases'else stage.parent
 def main(root,stage):
  p=read(stage/'PROTOCOL.json');gpu=p['arm_devices']['A']['physical_gpu_index'];os.sched_setaffinity(0,set(p['cpu_affinity']['A']))
  q=read(stage/'receipts/CPU_QUALIFICATION.json');assert q['gate']=='PASS'
@@ -27,7 +28,7 @@ def main(root,stage):
    state['completed_arms'].append(label);save(completed_arms=state['completed_arms'])
   gates={a:read(stage/'receipts'/('RUN_GATE_'+p['attempts'][a]+'.json'))for a in p['planned_arms']}
   assert all(g['gate']=='PASS'for g in gates.values());signatures=[g['request_signatures']for g in gates.values()];assert all(s==signatures[0]for s in signatures)
-  study=stage.parent.parent
+  study=study_root(stage)
   subprocess.run([sys.executable,str(study/'common/programs/window_analysis.py'),str(stage),str(stage/'WINDOW_ANALYSIS.json')],check=True)
   dump(stage/'COMPARISON.json',{'gate':'PASS','GPU':gpu,'kind':p['workload_kind'],'metrics':{a:g['metrics']for a,g in gates.items()},'all_request_signatures_equal':True,
    'A_semantics':'Original native scheduling and original online stage allocator.','Astar_semantics':'Same native scheduling with explicitly corrected cumulative-through-current stage budget.',

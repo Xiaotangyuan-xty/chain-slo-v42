@@ -3,28 +3,28 @@
   "tests": {
     "v46": {
       "pass": true,
-      "log_sha256": "d76b94d12e5bac551cab20408a4444f5c21b1fe49fe70c243b1b59323f8af6d9",
-      "log_path": "cpu_attempts/attempt09/v46.log"
+      "log_sha256": "8906961d5f8265af62d640181db50df4b69f29d34e4b27cd0e191886849a944d",
+      "log_path": "cpu_attempts/attempt11/v46.log"
     },
     "native_v45_reference": {
       "pass": true,
-      "log_sha256": "8b1cf78045bdca6edde01ec9c786c4ffbf177be5b9b75ecb7e9193bceea3aef5",
-      "log_path": "cpu_attempts/attempt09/native_v45_reference.log"
+      "log_sha256": "db8347e4278b831d184124ff25dab6421b304640062afd40c4138166c622f023",
+      "log_path": "cpu_attempts/attempt11/native_v45_reference.log"
     },
     "export_statistics": {
       "pass": true,
-      "log_sha256": "a888b849091f276bb84d3b4f5820ec570861cf31a07a78cea68c95b8b252e26a",
-      "log_path": "cpu_attempts/attempt09/export_statistics.log"
+      "log_sha256": "12e188ed79742459a55faa85654356cde897d0d6dfa40f06c7fec9230ac520ff",
+      "log_path": "cpu_attempts/attempt11/export_statistics.log"
     },
     "lifetime_observer": {
       "pass": true,
-      "log_sha256": "87a6e7418283cfff9183e2eedb4c3698c6c4a0de3f84b0e57d1857f39cbac03f",
-      "log_path": "cpu_attempts/attempt09/lifetime_observer.log"
+      "log_sha256": "131dff6f5f7bc121fd0b4bdba1ea8695f8b40c11a538605d138d0a7438591c7e",
+      "log_path": "cpu_attempts/attempt11/lifetime_observer.log"
     },
     "fresh_transport_contract": {
       "pass": true,
-      "log_sha256": "5b5dd070872bed771dc011d7d63538639c2a7aed111fed7fc6281b1a8e3dc7ba",
-      "log_path": "cpu_attempts/attempt09/fresh_transport_contract.log"
+      "log_sha256": "bcedca6652d7f99fe870c3376416550cd004403958a3eb57c617d4845af12955",
+      "log_path": "cpu_attempts/attempt11/fresh_transport_contract.log"
     },
     "original_native_base_unchanged": {
       "pass": true
@@ -1570,7 +1570,7 @@
   "source_files": {
     "programs/client_recording.py": "29cec0ac7180b2e01647e00ac021b64ebb279ec96b2ef9fe2cb7db44907d2e9e",
     "programs/validate_forecast.py": "8c0691dcfadc878f120946e632c3a86746b8260c2aabfe1b9269c45adf99bc0f",
-    "programs/case_runner.py": "04ab838eb5e917361d6b4af5db958c7d442c96fc2e8ec56abb43984041f97d07",
+    "programs/case_runner.py": "cd1077be09326b7c7efadb2226dbc630ca24171fc6c331f61ab85c5aee65dc05",
     "programs/controlled_native.py": "774cec5f8d08b9f77f6c5967e7522a61158343c227f314b39fec5345192596d3",
     "programs/chain_admission.py": "1a056f059f083de1031cf2225e59d529431f89867dd4c96a9c832622496deeac",
     "programs/repair_pure_inputs.py": "46fde6bf251c74da660adfa1654954e8d89e47e73c4bd5d84cc1e87624b0330b",
@@ -1594,7 +1594,7 @@
     "programs/controlled_matrix.py": "1abcd7dd750b62e39e0a2aa977d8f7f5a4a7950f8b219b665d532cb97783e975",
     "programs/forecast_v46.py": "8f5d0747e31dc746686924bd1723497b427a1b9d53a64bc0b2b9c43d7ea211b2",
     "programs/build_cases.py": "ad16e66db41df258eb675775e4a48dc767b6dd7ada53c99edf086680c2f1c3e3",
-    "programs/test_v46.py": "28364eea6daafdff8e14d77fdb50ba7373c870774f245c870fef7dc628106856",
+    "programs/test_v46.py": "4d58bf7eab7eba378d84835451ed85f052e932c2fe67baef9e975e1a038ecb52",
     "programs/admission_v46.py": "c1a042f36f37b8367a194da2530da4c2ae9b7d520c6bc13682035354db2b06b1",
     "programs/test_safe_statistics.py": "59064ad7ff4f7148cd4c2e8ab324403dc34dbe2576458e6ef6f95c8e837e9cd5",
     "programs/abc_observation.py": "7d92fb337936dae4378bc8d892a4ba17a0872524172af273383996a5c1872729",
@@ -1608,9 +1608,9 @@
     "programs/scheduler_v46.py": "11e90a186782e4f78be9f045cf8e095e04a170217e518e17d34f2f1dd6267068",
     "programs/baseline_budget.py": "e3a0c9c307ee3d42985f4c41dc6e544797d6dbb29aeb39fc4f74ad0b3c30fbe2",
     "programs/window_analysis.py": "0dd3b8382fded7636321b37528ecfd618b3986c1746a7965d0ace69e000090cd",
-    "programs/validate_v46.py": "6b544b25e51ed31b077d5911c17f2e9b291e10d3204d3e154f1278fd1f6b98af",
+    "programs/validate_v46.py": "5ddbbb8aaf4773f13c42c5aebfe6e36b15d70a4533ea850e66db59484315b521",
     "programs/controlled_stability.py": "e63dc5ab81182add24c7bc898633742172c35791cb434e4d30fa4406e3441b4a",
     "programs/test_lifetime_observation.py": "64bab7f180e1c312dfcb3b0bb23772ef8c5d7fccc36d4f98499450b08b38ac34"
   },
-  "utc": "2026-11-04T15:54:42.290857+00:00"
+  "utc": "2026-11-04T16:16:36.913737+00:00"
 }

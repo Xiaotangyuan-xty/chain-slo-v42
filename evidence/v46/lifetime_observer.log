@@ -1,14 +1,14 @@
-INFO 11-04 15:53:39 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
-WARNING 11-04 15:53:39 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.RECOMPUTE mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
-INFO 11-04 15:53:39 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 14523323.992869476, 1793807619.2603576) is preempted by PreemptionMode.RECOMPUTE mode.
-INFO 11-04 15:53:39 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
-WARNING 11-04 15:53:39 scheduler.py:1564] Sequence group 2 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
-INFO 11-04 15:53:39 scheduler.py:1573] Collection ID: 2, Request ID: 2: (-525.0, 1.28) is preempted by PreemptionMode.SWAP mode.
-ERROR 11-04 15:53:39 scheduler.py:1581] Failed to swap out sequence group 2. Aborting the sequence group. Error: Aborted due to the lack of CPU swap space. Please increase the swap space to avoid this error.
-INFO 11-04 15:53:39 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
-WARNING 11-04 15:53:39 scheduler.py:1564] Sequence group 2 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
-INFO 11-04 15:53:39 scheduler.py:1573] Collection ID: 2, Request ID: 2: (-525.0, 1.28) is preempted by PreemptionMode.SWAP mode.
-ERROR 11-04 15:53:39 scheduler.py:1581] Failed to swap out sequence group 2. Aborting the sequence group. Error: Aborted due to the lack of CPU swap space. Please increase the swap space to avoid this error.
+INFO 11-04 16:15:34 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-04 16:15:34 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.RECOMPUTE mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-04 16:15:34 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 14524639.02905468, 1793808934.296534) is preempted by PreemptionMode.RECOMPUTE mode.
+INFO 11-04 16:15:34 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-04 16:15:34 scheduler.py:1564] Sequence group 2 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-04 16:15:34 scheduler.py:1573] Collection ID: 2, Request ID: 2: (-525.0, 1.28) is preempted by PreemptionMode.SWAP mode.
+ERROR 11-04 16:15:34 scheduler.py:1581] Failed to swap out sequence group 2. Aborting the sequence group. Error: Aborted due to the lack of CPU swap space. Please increase the swap space to avoid this error.
+INFO 11-04 16:15:34 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-04 16:15:34 scheduler.py:1564] Sequence group 2 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-04 16:15:34 scheduler.py:1573] Collection ID: 2, Request ID: 2: (-525.0, 1.28) is preempted by PreemptionMode.SWAP mode.
+ERROR 11-04 16:15:34 scheduler.py:1581] Failed to swap out sequence group 2. Aborting the sequence group. Error: Aborted due to the lack of CPU swap space. Please increase the swap space to avoid this error.
 test_actual_native_block_manager_recompute_path_preserves_prefix (__main__.LifetimeCPU.test_actual_native_block_manager_recompute_path_preserves_prefix) ... /mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
 No module named 'vllm._version'
   from vllm.version import __version__ as VLLM_VERSION
@@ -19,6 +19,6 @@ test_scheduler_decisions_and_KV_are_identical_with_observer (__main__.LifetimeCP
 test_unobserved_prefix_is_rejected_not_filled (__main__.LifetimeCPU.test_unobserved_prefix_is_rejected_not_filled) ... ok
 
 ----------------------------------------------------------------------
-Ran 5 tests in 4.418s
+Ran 5 tests in 4.160s
 
 OK

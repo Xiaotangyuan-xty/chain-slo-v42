@@ -1,0 +1,15 @@
+{
+  "gate": "PASS",
+  "utc": "2026-11-04T16:19:31.968270+00:00",
+  "GPU_rerun": false,
+  "original_failed_postprocessor_preserved": true,
+  "original_pilot_status": "FAILED_PRESERVED (GPU validity gate PASS; old window-path lookup failed)",
+  "pilot_gate_sha256": "e23a9a2a49a3bf2f5b0c69d05bfa2d7c94bfb63638937014c065b153e36292ae",
+  "new_decision_audit_sha256": "e01ad9157d0d1513812687b314b5e5ee2dea9a3f1bd3b00326bb52f34ac10b31",
+  "window_analysis_sha256": "233929ef8e4f1bedcf5d18774d71bcc612dd6628e7e582db9e1ab74114afce5a",
+  "runtime_core_source_bytes_unchanged": true,
+  "GPU_main_jobs": 10,
+  "GPU_main_calls": 19,
+  "joint_foreground_chain_selection_actual_roles_confirmed": true,
+  "promotion_has_no_reward_or_JCT_threshold": true
+}

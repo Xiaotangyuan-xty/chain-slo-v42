@@ -36,3 +36,7 @@ The primary outcome is complete-chain SLO attainment. JCT is reported, not const
 The initial preparation error that double-formatted pure prompts was rejected before any GPU run; the rejected CPU inputs remain on the server. Final pure inputs are checked against every Stage18 prompt/token hash, and mixed inputs are checked byte-for-byte against Stage20.
 
 Publication freezes implementation, not experimental success. No new performance claims are made here before complete validated results are collected.
+
+## Compatibility evidence
+
+The GPU2 pilot completed all10 mixed roots and19 main calls with full token/audit validity. The original postprocessor failed on a pilot-directory path; its failed state was preserved. CPU-only window accounting and an actual-request-type joint-selection audit were rerun into a separate repair receipt. No GPU attempt was repeated. Runner path regression and borrowed-foreground false-positive checks are included. Formal promotion depends only on structural validity, not attainment or JCT.
