@@ -1,0 +1,38 @@
+INFO 11-05 02:11:22 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-05 02:11:22 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-05 02:11:22 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-05 02:11:22 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -403.33333333333337, 0.3, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-05 02:11:22 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-05 02:11:22 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-05 02:11:22 scheduler.py:1564] Sequence group 2 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 2, Request ID: 2: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 2, Request ID: 2: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 2, Request ID: 2: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 2, Request ID: 2: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 2, Request ID: 2: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-05 02:11:22 scheduler.py:1564] Sequence group 2 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 2, Request ID: 2: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 2, Request ID: 2: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 2, Request ID: 2: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 2, Request ID: 2: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 scheduler.py:1573] Collection ID: 2, Request ID: 2: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:11:22 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.098s
+
+OK

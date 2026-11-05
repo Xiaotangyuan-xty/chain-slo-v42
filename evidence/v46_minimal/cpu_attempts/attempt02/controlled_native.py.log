@@ -1,0 +1,26 @@
+INFO 11-05 02:10:36 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-05 02:10:36 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.RECOMPUTE mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-05 02:10:36 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 14560341.473440057, 1793844636.7409167) is preempted by PreemptionMode.RECOMPUTE mode.
+INFO 11-05 02:10:36 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-05 02:10:36 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-05 02:10:36 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-05 02:10:36 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-05 02:10:36 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 14560341.503299873, 1793844636.7707598) is preempted by PreemptionMode.SWAP mode.
+test_cpu_full_native_recompute_preserves_output_prefix (__main__.NativeRuntime.test_cpu_full_native_recompute_preserves_output_prefix) ... /mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+ok
+test_drain_uses_frame_forecast_and_makes_progress (__main__.NativeRuntime.test_drain_uses_frame_forecast_and_makes_progress) ... ok
+test_observation_accepts_actual_candidate_engine_contract (__main__.NativeRuntime.test_observation_accepts_actual_candidate_engine_contract) ... ok
+test_public_chain_metadata_is_captured_before_stage_budget (__main__.NativeRuntime.test_public_chain_metadata_is_captured_before_stage_budget) ... ok
+test_residence_then_native_swap_resume (__main__.NativeRuntime.test_residence_then_native_swap_resume) ... ok
+test_completion_density_not_raw_deadline (__main__.PlanningTests.test_completion_density_not_raw_deadline) ... ok
+test_fit_only_asset_and_no_runtime_future_target_attributes (__main__.PlanningTests.test_fit_only_asset_and_no_runtime_future_target_attributes) ... ok
+test_horizon_replaces_full_length_reservation (__main__.PlanningTests.test_horizon_replaces_full_length_reservation) ... ok
+test_no_predicted_opportunity_returns_native_drain (__main__.PlanningTests.test_no_predicted_opportunity_returns_native_drain) ... ok
+test_survival_uses_only_observed_generated_prefix (__main__.PlanningTests.test_survival_uses_only_observed_generated_prefix) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 2.731s
+
+OK

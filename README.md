@@ -1,11 +1,23 @@
-# chain-slo: v46 candidate and preserved v45 evidence
+# chain-slo: v46 rebuilt from v45 with two scoped fixes
 
-v46 adds complete declared-work accounting, cap-bounded prediction backoff, execution-based cadence, bounded residency protection and joint foreground/chain KV admission. Its new controlled studies compare original A, explicitly stage-budget-corrected A*, and v46 on pure200 and frozen mixed workloads. Results are pending; old v45 numbers below remain attributed to v45.
+Current v46 adds only mixed foreground/chain coexistence and three remaining-work
+boundary fixes: unsubmitted siblings, public-cap-bounded residuals, and full-depth
+donor support. It retains v45's cadence, replan triggers, generated-token leases,
+chain admission and work-conserving drain. No A* budget adapter is installed.
+The pure-chain scheduler and chain admission source are byte-identical to v45.
 
-- Implementation and protocol: `stage21_v46_controlled_ac_20261104_v1/`
+- Current implementation and integration: `stage22_v46_v45_minimal_20261105_v1/`
 - Candidate source verification: `python3 verify_v46_freeze.py`
-- CPU evidence: `evidence/v46/`
+- Scope verification: `python3 stage22_v46_v45_minimal_20261105_v1/tools/verify_scope.py`
+- Current CPU evidence: `evidence/v46_minimal/`
 - Main metric: complete-chain SLO attainment; no JCT constraint; arrival error<=0.5seconds.
+
+No GPU experiment has been run for this revised candidate; no performance increase
+is claimed from CPU qualification. The broader candidate at commit `8f12c20` and
+`stage21_v46_controlled_ac_20261104_v1/` is superseded and preserved. Its observed
+30/200 pure-chain replay belongs to that older implementation. Its planned
+18-arm matrix stopped after three replays on an offline empty-class division
+error; formal mixed replays did not start. See `history/v46_superseded_20261105/`.
 
 Historical release documentation follows. Use older version tags to verify their original complete snapshots.
 

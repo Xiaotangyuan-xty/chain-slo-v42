@@ -1,0 +1,46 @@
+{
+  "gate": "PASS",
+  "tests": {
+    "test_boundaries.py": {
+      "pass": true,
+      "returncode": 0,
+      "log_sha256": "ad39657e9a93015fea4ac1851d18700cb486bc60497c740c21a23113b02c3119"
+    },
+    "controlled_native.py": {
+      "pass": true,
+      "returncode": 0,
+      "log_sha256": "efc032c345f4114ddd1825a6b04ec9912a2322c747a1de3a40b4fee69e721384"
+    },
+    "test_mixed_runtime.py": {
+      "pass": true,
+      "returncode": 0,
+      "log_sha256": "4080f11b36a098b067cbaa4890bc5fc6348f5f75fa3c6c78ff96dd05ba86dba3"
+    },
+    "test_install.py": {
+      "pass": true,
+      "returncode": 0,
+      "log_sha256": "7b59d7d2885abf23bfa35571e5dfa4f17b1997af7b606912847fb305d9a8fce0"
+    }
+  },
+  "GPU_used": false,
+  "CUDA_VISIBLE_DEVICES": "",
+  "model_execution": false,
+  "remote_directory": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_validation_v46_v45_minimal_20261105/attempt04",
+  "utc": "2026-11-05T02:13:15.279213+00:00",
+  "files": {
+    "FROZEN_V45_CORE.json": "cdc705c153d244003f5fe376a4e419dea62e27b7d852d9830850ad10e5f410f7",
+    "tools/verify_scope.py": "d9c666f2ff0eba177cf8e0d52e2dcfe2ad02d7491470b9be6000d46563eefae8",
+    "programs/chain_admission.py": "1a056f059f083de1031cf2225e59d529431f89867dd4c96a9c832622496deeac",
+    "programs/joint_admission.py": "20801938d14c66dc905687a8b7755c49d2468c3ae29c83ee21c8d90cfcc2a833",
+    "programs/native_chain.py": "029291ba57d2e8be7974084dac81bf1115208f4939ac520ec8be05ae1cfa69ec",
+    "programs/low_observation.py": "67110f2352be945379c7d6b66f3b14df35da5a4e0c128a99af4698520ee2fc99",
+    "programs/mixed_joint.py": "d882240795cfd24dc56b947ef43352d78aa6f33fc8a20b534bc4accf66049019",
+    "programs/install_v46.py": "48591baf4939427ffa8c33e45770545bd00161f6ac813ca74279b34c640fe155",
+    "programs/chain_forecast.py": "298506f9ff9e27dc090616974c2925eedc48ba07718f3eff1e529b3f81b93c97",
+    "programs/controlled_native.py": "774cec5f8d08b9f77f6c5967e7522a61158343c227f314b39fec5345192596d3",
+    "programs/test_install.py": "c8aba0fc8a2b10bacbbd0c4ab29e09d66ccad7890acf15879a06a2ed1ebc7c9a",
+    "programs/test_boundaries.py": "56ad1d93be6442c762f6db6f6a5bfc4f9f827cbd9c4bcab132495bdf88194c33",
+    "programs/test_mixed_runtime.py": "9a78c44252ff0e2b66ff05416e12b79b71b166ea31d74e124d18795dbaa74793",
+    "assets/CHAIN_MODEL.json": "7d1d668028a01a9da525845e2d3e4320563b615ebac72125c9d3448cd6f761f7"
+  }
+}

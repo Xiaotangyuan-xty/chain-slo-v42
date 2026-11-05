@@ -1,0 +1,15 @@
+{
+  "gate": "PASS",
+  "checks": {
+    "v45_bytes_unchanged:programs/native_chain.py": true,
+    "v45_bytes_unchanged:programs/chain_admission.py": true,
+    "v45_bytes_unchanged:programs/controlled_native.py": true,
+    "v45_bytes_unchanged:assets/CHAIN_MODEL.json": true,
+    "forecast_only_neighbors_and_estimate_changed": true,
+    "no_superseded_cadence_or_budget_or_scheduler_imports": true,
+    "no_future_evaluation_output_attributes": true,
+    "pure_chain_delegates_to_frozen_v45": true,
+    "no_event_key_or_wall_lease_added": true
+  },
+  "GPU_used": false
+}

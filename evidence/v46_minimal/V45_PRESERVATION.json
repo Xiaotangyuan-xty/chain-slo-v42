@@ -1,0 +1,7 @@
+{
+  "gate": "PASS",
+  "files_verified": 2016,
+  "README_source": "original v45 README from bfe0b0d; current root README intentionally identifies the active release",
+  "all_other_snapshot_paths_unchanged": true,
+  "GPU_used": false
+}

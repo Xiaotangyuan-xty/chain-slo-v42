@@ -1,0 +1,39 @@
+{
+  "gate": "FAIL",
+  "tests": {
+    "test_boundaries.py": {
+      "pass": true,
+      "returncode": 0,
+      "log_sha256": "ad39657e9a93015fea4ac1851d18700cb486bc60497c740c21a23113b02c3119"
+    },
+    "controlled_native.py": {
+      "pass": true,
+      "returncode": 0,
+      "log_sha256": "737f3f5fab52b058829d7fadbd74317f029284eb61357af5e80b82066e7609dd"
+    },
+    "test_mixed_runtime.py": {
+      "pass": false,
+      "returncode": 1,
+      "log_sha256": "ba4bcc105af875aa35b057ec9bff7bcd7403287f297f3d30762c4ea009669b75"
+    }
+  },
+  "GPU_used": false,
+  "CUDA_VISIBLE_DEVICES": "",
+  "model_execution": false,
+  "remote_directory": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_validation_v46_v45_minimal_20261105/attempt02",
+  "utc": "2026-11-05T02:10:42.307755+00:00",
+  "files": {
+    "FROZEN_V45_CORE.json": "cdc705c153d244003f5fe376a4e419dea62e27b7d852d9830850ad10e5f410f7",
+    "programs/chain_admission.py": "1a056f059f083de1031cf2225e59d529431f89867dd4c96a9c832622496deeac",
+    "programs/joint_admission.py": "20801938d14c66dc905687a8b7755c49d2468c3ae29c83ee21c8d90cfcc2a833",
+    "programs/native_chain.py": "029291ba57d2e8be7974084dac81bf1115208f4939ac520ec8be05ae1cfa69ec",
+    "programs/low_observation.py": "67110f2352be945379c7d6b66f3b14df35da5a4e0c128a99af4698520ee2fc99",
+    "programs/mixed_joint.py": "d507e28e403e6033320e01fe45dab9fd72e9c8bf15d1118411d1b99fd890b18c",
+    "programs/install_v46.py": "48591baf4939427ffa8c33e45770545bd00161f6ac813ca74279b34c640fe155",
+    "programs/chain_forecast.py": "298506f9ff9e27dc090616974c2925eedc48ba07718f3eff1e529b3f81b93c97",
+    "programs/controlled_native.py": "774cec5f8d08b9f77f6c5967e7522a61158343c227f314b39fec5345192596d3",
+    "programs/test_boundaries.py": "56ad1d93be6442c762f6db6f6a5bfc4f9f827cbd9c4bcab132495bdf88194c33",
+    "programs/test_mixed_runtime.py": "04f78f0f6bb767f04e9c618909691cf1ee8860f36fcf44eabf1c13d18307d0ba",
+    "assets/CHAIN_MODEL.json": "7d1d668028a01a9da525845e2d3e4320563b615ebac72125c9d3448cd6f761f7"
+  }
+}

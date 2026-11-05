@@ -1,0 +1,39 @@
+# chain-slo: v46 candidate and preserved v45 evidence
+
+v46 adds complete declared-work accounting, cap-bounded prediction backoff, execution-based cadence, bounded residency protection and joint foreground/chain KV admission. Its new controlled studies compare original A, explicitly stage-budget-corrected A*, and v46 on pure200 and frozen mixed workloads. Results are pending; old v45 numbers below remain attributed to v45.
+
+- Implementation and protocol: `stage21_v46_controlled_ac_20261104_v1/`
+- Candidate source verification: `python3 verify_v46_freeze.py`
+- CPU evidence: `evidence/v46/`
+- Main metric: complete-chain SLO attainment; no JCT constraint; arrival error<=0.5seconds.
+
+Historical release documentation follows. Use older version tags to verify their original complete snapshots.
+
+# chain-slo: v45 frozen snapshot
+
+私有仓库 `Xiaotangyuan-xty/chain-slo-v42` 的 `v45` 分支与 `v45-frozen-2026-11-01` 标签。
+代码、配置、训练图资产和实验轻量证据均从Mac本地整理、提交和push，没有在实验服务器上上传GitHub。
+
+v45 根据整链完成收益与剩余工作量排序，使用短期KV预算，将运行保护计入准入预算，并按可见分支特征变化刷新邻居预测缓存。
+
+| 完整200链并行轮次 | 原生A达标 | v45 C达标 | A/C GPU |
+|---|---:|---:|---|
+| 1 | 12 | 43 | 0/1 |
+| 2 | 9 | 44 | 1/0 |
+| 3 | 14 | 43 | 0/1 |
+
+三轮全部有效，原始客户端记录独立重算一致，C连续获胜；平均JCT较A高18.66%。
+这是同200条已用于开发的链、同seed42到达的重复验证，尚未证明新负载泛化、语义质量等价或v45比v44更强。
+完整输出序列仅372/386/388个请求（各1204）相同；固定长度回放的边界必须保留。
+
+- 冻结定义：`FREEZE_V45.json`
+- 当前全部源码、模型资产、协议、三轮回执及独立审计：`stage15_stable_chain_v45_parallel_20261101_v2/`
+- 机制入口：任一轮 `round01/programs/native_chain.py`、`chain_admission.py`、`chain_forecast.py`；三轮候选代码完全相同。
+- 完整结果分析：该目录下 `三轮结果分析与独立核验_2026-11-01.md`
+- 已保留启动兼容性失败证据：`history/v45_compatibility_startup_failure/`，不纳入三轮胜负。
+
+在CPU运行 `python3 verify_v45_freeze.py` 核验全部快照、三轮验收源码和已登记基础文件SHA，不启动GPU。
+每轮含25个验收文件，共75个不同路径；基础代码/契约1424个，另3份本地编译.so只登记SHA。
+模型权重、冻结运行环境、外部QRF pickle与性能资产、大型原始运行轨迹未上传；这是完整代码快照，非独立安装包。
+源码中的历史绝对路径和授权原样保留；复现实验应新建attempt、重新验收并确认设备与进程身份，不覆盖已有结果。
+v42/v43/v44标签保持原值。旧版verifier请在对应旧标签使用，本分支README已更新。

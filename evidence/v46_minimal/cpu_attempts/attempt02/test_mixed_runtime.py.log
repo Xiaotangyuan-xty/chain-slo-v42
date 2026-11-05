@@ -1,0 +1,114 @@
+INFO 11-05 02:10:41 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-05 02:10:41 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-05 02:10:41 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-05 02:10:41 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-05 02:10:41 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-05 02:10:41 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-05 02:10:41 scheduler.py:1564] Sequence group 2 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-05 02:10:41 scheduler.py:1573] Collection ID: 2, Request ID: 2: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:10:41 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:10:41 scheduler.py:1573] Collection ID: 2, Request ID: 2: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:10:41 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:10:41 scheduler.py:1573] Collection ID: 2, Request ID: 2: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:10:41 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:10:41 scheduler.py:1573] Collection ID: 2, Request ID: 2: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:10:41 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:10:41 scheduler.py:1573] Collection ID: 2, Request ID: 2: (0, -1.2, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-05 02:10:41 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-05 02:10:41 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-05 02:10:41 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-05 02:10:41 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.RECOMPUTE mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-05 02:10:41 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 14560346.390703836, 1793844641.6581628) is preempted by PreemptionMode.RECOMPUTE mode.
+INFO 11-05 02:10:41 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-05 02:10:41 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-05 02:10:41 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-05 02:10:41 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-05 02:10:41 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 14560346.40569729, 1793844641.673155) is preempted by PreemptionMode.SWAP mode.
+/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+EEEEEEE.....
+======================================================================
+ERROR: test_aborting_mixed_work_cleans_both_request_registries (__main__.MixedRuntime.test_aborting_mixed_work_cleans_both_request_registries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_validation_v46_v45_minimal_20261105/attempt02/programs/test_mixed_runtime.py", line 111, in test_aborting_mixed_work_cleans_both_request_registries
+    s=self.scheduler();s.add_seq_group(self.group(1,0));s.add_seq_group(self.group(2))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_foreground_only_uses_original_native_loop (__main__.MixedRuntime.test_foreground_only_uses_original_native_loop)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_validation_v46_v45_minimal_20261105/attempt02/programs/test_mixed_runtime.py", line 74, in test_foreground_only_uses_original_native_loop
+    s=self.scheduler();s.add_seq_group(self.group(1,0))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_joint_model_execution_serves_foreground_and_chains_and_frees_kv (__main__.MixedRuntime.test_joint_model_execution_serves_foreground_and_chains_and_frees_kv)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_validation_v46_v45_minimal_20261105/attempt02/programs/test_mixed_runtime.py", line 45, in test_joint_model_execution_serves_foreground_and_chains_and_frees_kv
+    for rid,kind in [(1,0),(2,1),(3,2),(4,2)]:s.add_seq_group(self.group(rid,kind))
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_mixed_does_not_call_global_native_scheduler (__main__.MixedRuntime.test_mixed_does_not_call_global_native_scheduler)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_validation_v46_v45_minimal_20261105/attempt02/programs/test_mixed_runtime.py", line 104, in test_mixed_does_not_call_global_native_scheduler
+    s=self.scheduler();s.add_seq_group(self.group(1,0));s.add_seq_group(self.group(2))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_no_wall_clock_lease_expiry_or_status_trigger_in_mixed_mode (__main__.MixedRuntime.test_no_wall_clock_lease_expiry_or_status_trigger_in_mixed_mode)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_validation_v46_v45_minimal_20261105/attempt02/programs/test_mixed_runtime.py", line 81, in test_no_wall_clock_lease_expiry_or_status_trigger_in_mixed_mode
+    s=self.scheduler();s.add_seq_group(self.group(1,0));chain=self.group(2);s.add_seq_group(chain)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_pure_chain_execution_trace_matches_v45_loop (__main__.MixedRuntime.test_pure_chain_execution_trace_matches_v45_loop)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_validation_v46_v45_minimal_20261105/attempt02/programs/test_mixed_runtime.py", line 70, in test_pure_chain_execution_trace_matches_v45_loop
+    self.assertEqual(trace(native_chain.NativeChainScheduler),trace(MixedScheduler))
+                                                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_validation_v46_v45_minimal_20261105/attempt02/programs/test_mixed_runtime.py", line 60, in trace
+    for rid in [1,2,3]:s.add_seq_group(self.group(rid))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_zero_probability_mixed_work_drains_without_active_preemption (__main__.MixedRuntime.test_zero_probability_mixed_work_drains_without_active_preemption)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_validation_v46_v45_minimal_20261105/attempt02/programs/test_mixed_runtime.py", line 95, in test_zero_probability_mixed_work_drains_without_active_preemption
+    s=self.scheduler();s.add_seq_group(self.group(1,0));s.add_seq_group(self.group(2))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.063s
+
+FAILED (errors=7)

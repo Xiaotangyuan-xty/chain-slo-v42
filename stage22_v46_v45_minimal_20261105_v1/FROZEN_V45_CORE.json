@@ -1,0 +1,6 @@
+{
+  "files": {
+    "programs/native_chain.py": "029291ba57d2e8be7974084dac81bf1115208f4939ac520ec8be05ae1cfa69ec"
+  },
+  "source": "v45 frozen round01; only used to verify the unchanged scheduler before its existing minimal-observation AST transform"
+}
