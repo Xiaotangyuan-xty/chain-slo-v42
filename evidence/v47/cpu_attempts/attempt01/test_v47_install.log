@@ -1,0 +1,24 @@
+test_public_installer_and_deadline_capture_before_native_budget (__main__.Installation.test_public_installer_and_deadline_capture_before_native_budget) ... ERROR
+
+======================================================================
+ERROR: test_public_installer_and_deadline_capture_before_native_budget (__main__.Installation.test_public_installer_and_deadline_capture_before_native_budget)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47_token_goodput_20261106/attempt01/stage30_v47_token_goodput_20261106_v1/programs/test_v47_install.py", line 11, in test_public_installer_and_deadline_capture_before_native_budget
+    from mixed_joint import MixedScheduler
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47_token_goodput_20261106/attempt01/stage30_v47_token_goodput_20261106_v1/programs/mixed_joint.py", line 6, in <module>
+    from jitserve.scheduler.policy import SLOPolicy
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/jitserve/scheduler/policy.py", line 6, in <module>
+    from vllm.sequence import SequenceGroup
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/__init__.py", line 4, in <module>
+    from vllm.engine.async_llm_engine import AsyncLLMEngine
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/engine/async_llm_engine.py", line 12, in <module>
+    from vllm.core.scheduler import SchedulerOutputs
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 21, in <module>
+    from jitserve.scheduler.policy import BasePolicy
+ImportError: cannot import name 'BasePolicy' from partially initialized module 'jitserve.scheduler.policy' (most likely due to a circular import) (/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/jitserve/scheduler/policy.py)
+
+----------------------------------------------------------------------
+Ran 1 test in 3.422s
+
+FAILED (errors=1)

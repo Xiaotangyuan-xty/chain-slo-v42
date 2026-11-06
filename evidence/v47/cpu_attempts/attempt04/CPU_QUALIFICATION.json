@@ -1,0 +1,72 @@
+{
+  "gate": "PASS",
+  "GPU_used": false,
+  "model_execution": false,
+  "CUDA_VISIBLE_DEVICES": "",
+  "CPU_affinity": [
+    28,
+    30,
+    84,
+    86
+  ],
+  "utc": "2026-11-06T14:44:26.162487+00:00",
+  "source_files": {
+    ".gitignore": "6feaded4e28ea86e001a6751b4e3d960e8b7c31b9616ff9936b79297086e809b",
+    "V46_ORIGIN.json": "d171b018df55ee84e69c0a34da2a3c164c8e0fa21229bfc878c3c9b19762e1a7",
+    "README.md": "c2052ad2ebe96d529eacdc9d41df2e9e6823edf587e92058dc6c1bf26f9e95c0",
+    "assets/CHAIN_MODEL.json": "7d1d668028a01a9da525845e2d3e4320563b615ebac72125c9d3448cd6f761f7",
+    "programs/test_v47_runtime.py": "5ad776428fc6ce11cc4f8f5b17cfde11bd2e1e7ad9b3fdc26c74e4da3429a354",
+    "programs/install_v47.py": "fbe6cdc03ad3aa2cc85bc82f2e0dd5bae327a2d1b3919cf1608363d46dcd00d9",
+    "programs/test_v47_install.py": "292d106cf4668a1f149d9177deb4ef3be60d396a25cf352b56455e284159715c",
+    "programs/controlled_native.py": "774cec5f8d08b9f77f6c5967e7522a61158343c227f314b39fec5345192596d3",
+    "programs/chain_admission.py": "d61f32065e9bf0c5bb69b37d4158c5181de2d342c794bae8db0c5e63eeb1e3b4",
+    "programs/token_reward.py": "721ab407bd4cfaf42a18fb0a493a3bd8d8050a609f698b8842d4e42271dbf995",
+    "programs/mixed_joint.py": "a16f8a23d0b90967bc633bc2251ea8dd45c3b20e3ebe00f1a745166177be9937",
+    "programs/chain_forecast.py": "6f5b11c4adc8aa58a9f1d0a46a889edfb7da14af0adb92c7b5e5a3b74f6f898b",
+    "programs/joint_admission.py": "20801938d14c66dc905687a8b7755c49d2468c3ae29c83ee21c8d90cfcc2a833",
+    "programs/test_mixed_runtime.py": "be75f82768ffd6499fca4e990acd325f2b6cb3d4e4637ed63dc7b161cb837f91",
+    "programs/native_chain.py": "5958c3e16ab19c3310244dba88892e9bbfe8882ad2a8439efea63b1369f3bf38",
+    "programs/test_boundaries.py": "e9d4da804bfcdc46a783970c0418327b42e3281eaeabd515c6b9b73efaf74a48",
+    "programs/test_v47_forecast.py": "45577320ca954e3e519a27a28b2d3699fe8f0b8ac426d45f04697aa7d456a63b"
+  },
+  "tests": {
+    "test_boundaries": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 16,
+      "log_sha256": "27aeba3f06b9768b07439464dd1a417ec055fc6e211e01b225ad0a3ae8e4ec21"
+    },
+    "test_v47_forecast": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 9,
+      "log_sha256": "b7b1e26c19638c97c4d73b9f564f438acd7c4bfe8c95be15edb87612011fb732"
+    },
+    "controlled_native": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 10,
+      "log_sha256": "187cd5bffe936eecb46a838aece8022cecf2a95f0417fab60b7bc947d56ddad0"
+    },
+    "test_mixed_runtime": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 8,
+      "log_sha256": "2fa01158af2a70ecb6fe896098ba8b1a47754ecbc27932798ff3c9f322953cdc"
+    },
+    "test_v47_runtime": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 7,
+      "log_sha256": "306ebd548b64783d6e0d1afabed54f0b2fd20a62db57c24377811eab90522fac"
+    },
+    "test_v47_install": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 1,
+      "log_sha256": "4a17f5d5f1e08ee1732f705eaec36fc84290c53e0c5e0748afaafa0b2421add4"
+    }
+  },
+  "python": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/slo_declaration_robustness/gpu_closed_loop_20261013T122407Z_v1/env/bin/python",
+  "stage": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47_token_goodput_20261106/attempt04/stage30_v47_token_goodput_20261106_v1"
+}

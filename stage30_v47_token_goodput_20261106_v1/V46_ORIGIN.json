@@ -1,0 +1,23 @@
+{
+  "parent_commit": "16c86bb43b1b11f01699ce57cbe5609d69fae31d",
+  "parent_stage": "stage22_v46_v45_minimal_20261105_v1",
+  "parent_files": {
+    "README.md": "fb824a926eea9de81b0d60931bf6db125ee75f5fbfcd0f88e0a4dcc58f99fa98",
+    "FROZEN_V45_CORE.json": "cdc705c153d244003f5fe376a4e419dea62e27b7d852d9830850ad10e5f410f7",
+    "tools/verify_scope.py": "d9c666f2ff0eba177cf8e0d52e2dcfe2ad02d7491470b9be6000d46563eefae8",
+    "programs/chain_admission.py": "1a056f059f083de1031cf2225e59d529431f89867dd4c96a9c832622496deeac",
+    "programs/joint_admission.py": "20801938d14c66dc905687a8b7755c49d2468c3ae29c83ee21c8d90cfcc2a833",
+    "programs/native_chain.py": "029291ba57d2e8be7974084dac81bf1115208f4939ac520ec8be05ae1cfa69ec",
+    "programs/low_observation.py": "67110f2352be945379c7d6b66f3b14df35da5a4e0c128a99af4698520ee2fc99",
+    "programs/mixed_joint.py": "d882240795cfd24dc56b947ef43352d78aa6f33fc8a20b534bc4accf66049019",
+    "programs/install_v46.py": "48591baf4939427ffa8c33e45770545bd00161f6ac813ca74279b34c640fe155",
+    "programs/chain_forecast.py": "298506f9ff9e27dc090616974c2925eedc48ba07718f3eff1e529b3f81b93c97",
+    "programs/controlled_native.py": "774cec5f8d08b9f77f6c5967e7522a61158343c227f314b39fec5345192596d3",
+    "programs/test_install.py": "c8aba0fc8a2b10bacbbd0c4ab29e09d66ccad7890acf15879a06a2ed1ebc7c9a",
+    "programs/test_boundaries.py": "56ad1d93be6442c762f6db6f6a5bfc4f9f827cbd9c4bcab132495bdf88194c33",
+    "programs/test_mixed_runtime.py": "9a78c44252ff0e2b66ff05416e12b79b71b166ea31d74e124d18795dbaa74793",
+    "assets/CHAIN_MODEL.json": "7d1d668028a01a9da525845e2d3e4320563b615ebac72125c9d3448cd6f761f7"
+  },
+  "model_asset_unchanged": true,
+  "not_a_GPU_run": true
+}

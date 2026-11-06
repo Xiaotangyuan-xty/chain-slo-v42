@@ -1,0 +1,9 @@
+test_public_installer_and_deadline_capture_before_native_budget (__main__.Installation.test_public_installer_and_deadline_capture_before_native_budget) ... /mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 4.128s
+
+OK
