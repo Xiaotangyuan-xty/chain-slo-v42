@@ -1,0 +1,23 @@
+INFO 11-07 17:54:13 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 17:54:13 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 17:54:13 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 17:54:13 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 17:54:13 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 17:54:13 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 17:54:13 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+{"CUDA_context_initialized": false, "engine_started": false, "exit_code": 0}
+/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+test_all_expired_calls_finish_without_losing_emitted_prefix_or_kv (__main__.ExpiredDrain.test_all_expired_calls_finish_without_losing_emitted_prefix_or_kv) ... ok
+test_expired_backlog_bypasses_forecast_and_expands_only_within_pool (__main__.ExpiredDrain.test_expired_backlog_bypasses_forecast_and_expands_only_within_pool) ... ok
+test_new_foreground_restores_limits_and_remains_executable (__main__.ExpiredDrain.test_new_foreground_restores_limits_and_remains_executable) ... ok
+test_new_live_root_exits_fast_drain_and_restores_prior_limit (__main__.ExpiredDrain.test_new_live_root_exits_fast_drain_and_restores_prior_limit) ... ok
+test_reused_root_id_cannot_reactivate_stale_deadline_heap_entry (__main__.ExpiredDrain.test_reused_root_id_cannot_reactivate_stale_deadline_heap_entry) ... ok
+test_unsubmitted_next_stage_keeps_root_credit_live (__main__.ExpiredDrain.test_unsubmitted_next_stage_keeps_root_credit_live) ... ok
+test_zero_model_probability_is_not_proof_of_expiry (__main__.ExpiredDrain.test_zero_model_probability_is_not_proof_of_expiry) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.061s
+
+OK

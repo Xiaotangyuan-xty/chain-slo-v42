@@ -1,0 +1,11 @@
+{"CUDA_context_initialized": false, "engine_started": false, "exit_code": 0}
+test_actual_installer_metadata_native_ToT_and_domain_registration (__main__.Installer.test_actual_installer_metadata_native_ToT_and_domain_registration) ... /mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+ok
+test_all_plan_events_survive_buffer_flush_at_exit (__main__.Installer.test_all_plan_events_survive_buffer_flush_at_exit) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 9.088s
+
+OK

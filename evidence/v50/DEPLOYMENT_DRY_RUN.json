@@ -1,0 +1,64 @@
+{
+  "gate": "PASS",
+  "CPU_only": true,
+  "GPU_launches": 0,
+  "formal_main_calls": 0,
+  "cases": [
+    {
+      "GPU": 0,
+      "method": "v50",
+      "stage": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v50_deployment_dry_run/prepublication05/gpu0/cases/01_llama8_mixed_v50_gpu0",
+      "CPU_gate": "PASS",
+      "workload_sha256": "4566c0f7294f79936903b010acbec567238b8ca12c1683a701dfd01bdd77fd09",
+      "formal_GPU_attempts": 0,
+      "exact_published_and_deployed_hashes_match": true
+    },
+    {
+      "GPU": 0,
+      "method": "A",
+      "stage": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v50_deployment_dry_run/prepublication05/gpu0/cases/02_llama8_mixed_A_gpu0",
+      "CPU_gate": "PASS",
+      "workload_sha256": "4566c0f7294f79936903b010acbec567238b8ca12c1683a701dfd01bdd77fd09",
+      "formal_GPU_attempts": 0,
+      "exact_published_and_deployed_hashes_match": true
+    },
+    {
+      "GPU": 0,
+      "method": "Astar",
+      "stage": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v50_deployment_dry_run/prepublication05/gpu0/cases/03_llama8_mixed_Astar_gpu0",
+      "CPU_gate": "PASS",
+      "workload_sha256": "4566c0f7294f79936903b010acbec567238b8ca12c1683a701dfd01bdd77fd09",
+      "formal_GPU_attempts": 0,
+      "exact_published_and_deployed_hashes_match": true
+    },
+    {
+      "GPU": 1,
+      "method": "v50",
+      "stage": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v50_deployment_dry_run/prepublication05/gpu1/cases/01_llama8_mixed_v50_gpu1",
+      "CPU_gate": "PASS",
+      "workload_sha256": "4566c0f7294f79936903b010acbec567238b8ca12c1683a701dfd01bdd77fd09",
+      "formal_GPU_attempts": 0,
+      "exact_published_and_deployed_hashes_match": true
+    },
+    {
+      "GPU": 1,
+      "method": "A",
+      "stage": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v50_deployment_dry_run/prepublication05/gpu1/cases/02_llama8_mixed_A_gpu1",
+      "CPU_gate": "PASS",
+      "workload_sha256": "4566c0f7294f79936903b010acbec567238b8ca12c1683a701dfd01bdd77fd09",
+      "formal_GPU_attempts": 0,
+      "exact_published_and_deployed_hashes_match": true
+    },
+    {
+      "GPU": 1,
+      "method": "Astar",
+      "stage": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v50_deployment_dry_run/prepublication05/gpu1/cases/03_llama8_mixed_Astar_gpu1",
+      "CPU_gate": "PASS",
+      "workload_sha256": "4566c0f7294f79936903b010acbec567238b8ca12c1683a701dfd01bdd77fd09",
+      "formal_GPU_attempts": 0,
+      "exact_published_and_deployed_hashes_match": true
+    }
+  ],
+  "unique_ports": 12,
+  "all_inputs_identical": true
+}

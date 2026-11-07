@@ -1,0 +1,32 @@
+{"CUDA_context_initialized": false, "engine_started": false, "exit_code": 0}
+test_context_prefill_are_not_collapsed_into_member_count (__main__.ObservationModel.test_context_prefill_are_not_collapsed_into_member_count) ... ok
+test_invalid_observations_only_are_rejected (__main__.ObservationModel.test_invalid_observations_only_are_rejected) ... ok
+test_long_prefill_swap_preempted_ignored_planned_samples_are_retained (__main__.ObservationModel.test_long_prefill_swap_preempted_ignored_planned_samples_are_retained) ... ok
+test_strata_and_samples_have_hard_storage_caps (__main__.ObservationModel.test_strata_and_samples_have_hard_storage_caps) ... ok
+test_cheap_pruning_precedes_expensive_factories_256_candidates (__main__.SetSearch.test_cheap_pruning_precedes_expensive_factories_256_candidates) ... ok
+test_empty_and_incumbent_are_explicit_and_budget_bounded (__main__.SetSearch.test_empty_and_incumbent_are_explicit_and_budget_bounded) ... ok
+test_integrated_paired_rollout_replaces_one_KV_heavy_resident_with_two (__main__.SetSearch.test_integrated_paired_rollout_replaces_one_KV_heavy_resident_with_two) ... ok
+test_missing_reference_model_falls_back_native_not_zero_gain (__main__.SetSearch.test_missing_reference_model_falls_back_native_not_zero_gain) ... ok
+test_one_for_two_escapes_KV_density_trap (__main__.SetSearch.test_one_for_two_escapes_KV_density_trap) ... ok
+test_pair_add_escapes_three_way_batching_trap (__main__.SetSearch.test_pair_add_escapes_three_way_batching_trap) ... ok
+test_reference_over_pool_capacity_never_omits_resident_losses (__main__.SetSearch.test_reference_over_pool_capacity_never_omits_resident_losses) ... ok
+test_zero_or_overrun_budget_returns_native_and_preserves_requests (__main__.SetSearch.test_zero_or_overrun_budget_returns_native_and_preserves_requests) ... ok
+test_completed_selected_root_allows_common_rolling_backfill (__main__.StageService.test_completed_selected_root_allows_common_rolling_backfill) ... ok
+test_current_congestion_is_not_applied_to_narrow_future_stage (__main__.StageService.test_current_congestion_is_not_applied_to_narrow_future_stage) ... ok
+test_current_stage_uses_mixed_batch_then_reduces_width_after_peer_finishes (__main__.StageService.test_current_stage_uses_mixed_batch_then_reduces_width_after_peer_finishes) ... ok
+test_each_donor_uses_own_completion_and_terminal_credit (__main__.StageService.test_each_donor_uses_own_completion_and_terminal_credit) ... ok
+test_event_limit_is_unknown_not_silent_zero_probability (__main__.StageService.test_event_limit_is_unknown_not_silent_zero_probability) ... ok
+test_full_prefix_is_conditional_not_paid_before_terminal (__main__.StageService.test_full_prefix_is_conditional_not_paid_before_terminal) ... ok
+test_future_prefill_has_service_cost_and_width_larger_than_slots_uses_waves (__main__.StageService.test_future_prefill_has_service_cost_and_width_larger_than_slots_uses_waves) ... ok
+test_latency_late_ttft_can_recover_cumulative_deadlines (__main__.StageService.test_latency_late_ttft_can_recover_cumulative_deadlines) ... ok
+test_latency_settlement_excludes_already_earned_prefix_and_first_output (__main__.StageService.test_latency_settlement_excludes_already_earned_prefix_and_first_output) ... ok
+test_paired_window_scenario_continuation_and_action_deltas (__main__.StageService.test_paired_window_scenario_continuation_and_action_deltas) ... ok
+test_planning_delay_consumes_deadline_slack (__main__.StageService.test_planning_delay_consumes_deadline_slack) ... ok
+test_small_prefill_still_requires_one_executor_iteration (__main__.StageService.test_small_prefill_still_requires_one_executor_iteration) ... ok
+test_switch_charge_only_displaced_actions_not_entire_incumbent (__main__.StageService.test_switch_charge_only_displaced_actions_not_entire_incumbent) ... ok
+test_width1_then32_rejects_flat_current_width_false_positive (__main__.StageService.test_width1_then32_rejects_flat_current_width_false_positive) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.006s
+
+OK

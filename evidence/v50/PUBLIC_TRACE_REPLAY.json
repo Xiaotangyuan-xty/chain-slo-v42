@@ -1,0 +1,29 @@
+{
+  "snapshots": {
+    "snapshots": 64,
+    "with_complete_comparison": 63,
+    "interventions": 12,
+    "complete_sets": 541,
+    "intervention": 12,
+    "no_completed_positive_gain": 40,
+    "gain_below_switch_margin": 12
+  },
+  "per_gpu": {
+    "0": {
+      "snapshots": 32,
+      "complete_comparison": 31,
+      "interventions": 4
+    },
+    "1": {
+      "snapshots": 32,
+      "complete_comparison": 32,
+      "interventions": 8
+    }
+  },
+  "mean_ms": 5.40172794717364,
+  "p95_ms": 9.241579100489616,
+  "max_ms": 10.402144864201546,
+  "source_membership_mismatches": 0,
+  "source_priority_is_public_corrected_budget_proxy": true,
+  "GPU_goodput_prediction_claim": false
+}

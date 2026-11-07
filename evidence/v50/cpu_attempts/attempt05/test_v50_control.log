@@ -1,0 +1,21 @@
+{"CUDA_context_initialized": false, "engine_started": false, "exit_code": 0}
+test_all_expired_work_returns_native_without_dropping_members (__main__.Control.test_all_expired_work_returns_native_without_dropping_members) ... ok
+test_anytime_keeps_complete_gain_when_next_search_times_out (__main__.Control.test_anytime_keeps_complete_gain_when_next_search_times_out) ... ok
+test_candidate_generation_includes_joint_add_and_one_for_two (__main__.Control.test_candidate_generation_includes_joint_add_and_one_for_two) ... ok
+test_cost_snapshot_index_retains_context_and_prefill_distinctions (__main__.Control.test_cost_snapshot_index_retains_context_and_prefill_distinctions) ... ok
+test_integrated_one_for_two_KV_replacement (__main__.Control.test_integrated_one_for_two_KV_replacement) ... ok
+test_joint_swap_reservation_prices_only_overflow_as_recompute (__main__.Control.test_joint_swap_reservation_prices_only_overflow_as_recompute) ... ok
+test_more_than12_foreground_residents_do_not_disable_comparison (__main__.Control.test_more_than12_foreground_residents_do_not_disable_comparison) ... ok
+test_unaffected_credit_constant_does_not_block_a_real_marginal_gain (__main__.Control.test_unaffected_credit_constant_does_not_block_a_real_marginal_gain) ... ok
+test_unsupported_live_root_has_no_silent_zero_loss (__main__.Control.test_unsupported_live_root_has_no_silent_zero_loss) ... ok
+test_foreground_analytic_credit_matches_explicit_token_schedule (__main__.Projection.test_foreground_analytic_credit_matches_explicit_token_schedule) ... ok
+test_future_narrow_stage_recovers_from_current_congestion (__main__.Projection.test_future_narrow_stage_recovers_from_current_congestion) ... ok
+test_planning_delay_reduces_slack (__main__.Projection.test_planning_delay_reduces_slack) ... ok
+test_prefill_minimum_iteration_and_partial_service (__main__.Projection.test_prefill_minimum_iteration_and_partial_service) ... ok
+test_weighted_CDF_interpolation_preserves_conditional_credit (__main__.Projection.test_weighted_CDF_interpolation_preserves_conditional_credit) ... ok
+test_width1_to32_is_4p6_seconds_and_not_two (__main__.Projection.test_width1_to32_is_4p6_seconds_and_not_two) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.007s
+
+OK

@@ -1,0 +1,14 @@
+{"CUDA_context_initialized": false, "engine_started": false, "exit_code": 0}
+test_actual_server_snapshot_handles_baseline_without_cost_model (__main__.Harness.test_actual_server_snapshot_handles_baseline_without_cost_model) ... ok
+test_all_harness_modules_parse_and_do_not_infer_root_from_parent_depth (__main__.Harness.test_all_harness_modules_parse_and_do_not_infer_root_from_parent_depth) ... ok
+test_explicit_root_is_required_and_protocol_mismatch_fails_early (__main__.Harness.test_explicit_root_is_required_and_protocol_mismatch_fails_early) ... ok
+test_full_native_metric_on_completed_nested_GPU_case_without_writes (__main__.Harness.test_full_native_metric_on_completed_nested_GPU_case_without_writes) ... /mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v50_window_projection_20261108/attempt05/stage43_v50_window_projection_20261108_v1/harness/alignment_metrics.py:23: ResourceWarning: unclosed file <_io.TextIOWrapper name='/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage42_v49pro_llama8_nativeToT_mixed_gpu01_20261107_v1/gpu0/cases/01_llama8_mixed_v49pro_gpu0/attempts/01_LLAMA8_MIXED_V49PRO_GPU0_01/LIFETIME_TIMINGS.jsonl' mode='r' encoding='UTF-8'>
+  for line in (attempt / 'LIFETIME_TIMINGS.jsonl').open():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_warmup_observer_and_budget_receipt_contract_all_three_methods (__main__.Harness.test_warmup_observer_and_budget_receipt_contract_all_three_methods) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 11.936s
+
+OK

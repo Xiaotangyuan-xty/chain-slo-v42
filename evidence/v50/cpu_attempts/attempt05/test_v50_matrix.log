@@ -1,0 +1,11 @@
+{"CUDA_context_initialized": false, "engine_started": false, "exit_code": 0}
+test_CPU_preview_cannot_be_launched_by_any_entry (__main__.Matrix.test_CPU_preview_cannot_be_launched_by_any_entry) ... ok
+test_baselines_keep_native_scheduler_and_final_gate_explicit_root (__main__.Matrix.test_baselines_keep_native_scheduler_and_final_gate_explicit_root) ... ok
+test_default_planner_contract_has_one_immutable_source (__main__.Matrix.test_default_planner_contract_has_one_immutable_source) ... ok
+test_invalid_device_resource_order_and_duplicates_fail_before_launch (__main__.Matrix.test_invalid_device_resource_order_and_duplicates_fail_before_launch) ... ok
+test_six_cases_unique_ports_identities_and_exact_order (__main__.Matrix.test_six_cases_unique_ports_identities_and_exact_order) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+OK

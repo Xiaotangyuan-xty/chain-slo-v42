@@ -1,0 +1,173 @@
+{
+  "gate": "PASS",
+  "GPU_used": false,
+  "model_execution": false,
+  "CUDA_VISIBLE_DEVICES": "",
+  "CPU_affinity": [
+    28,
+    30,
+    84,
+    86
+  ],
+  "utc": "2026-11-07T17:55:22.238108+00:00",
+  "source_files": {
+    "V47_ORIGIN.json": "8ee15717c33f8a06435ea9bc4fe9899d7da9c6557119843448b540317d673572",
+    "V49_ORIGIN.json": "113b2bb93f59904f961767f93ba34f4fbff1ab99789217cf5d1f77891ed55196",
+    "V49PRO_ORIGIN.json": "e95561892749089e04c495af0bde38b03d99e0f52461143449f9e2a00fc7aa4a",
+    "V48_ORIGIN.json": "04ce85111f8ea9df1379eb9ec4a7b20bf7c920e77550826e5456727a56f48989",
+    "harness/start.py": "7c677b54ebcd231ca4a95cb723200b06d00283c6eabbdad2555f6263d41d351f",
+    "harness/study_contract.py": "bf2dff4d5d67e23b2215b3b0e155ad7d155b118123a5f36821ccc8c879722983",
+    "harness/metric_events.py": "bd903ac0bcc11640156a2e3bc02a185b0f08db2d1f893f97ddf8f3d528dac70e",
+    "harness/jitserve_mixed_goodput.py": "541b659d894827179c9f663983edd804119eed73875a820ace78cee1f1993776",
+    "harness/controller.py": "b7d7f41c51b36eafcd7426b5773c58299e9584e78d63074be4c1a8fe9e57c4b0",
+    "harness/a_server.py": "302ab90ac0cfa2926b6fbfa0163d220923ee989903fce1c7884d7f6fc9e0aa68",
+    "harness/offline_compare.py": "5d67a41e7713d9275dcdf0b07687b584d36bda96cd7e2f1dcf393b812ea089d6",
+    "harness/c_server.py": "0678942b1fef4716051ad7a426b748d63c28adf3c98ddaa1982125a20d934ce4",
+    "harness/alignment_metrics.py": "f3a5e714fac8e81620aa3171f949dd01323f4196ab9aa30f7f057784f3351323",
+    "harness/prepare.py": "2e2c07e04377d31870dd39eb7611c815412b61dd373fd33390724603603f357e",
+    "harness/native_graph_observation.py": "2afec6b79ff9e6f3bb9b69b0bedbe6a81f5e5e0a008822f5c551759197641e54",
+    "harness/runner.py": "20dfc059ba3358e2d8d06d89875a3c0e4fa0b3244f4ff4c933c78f31645b8139",
+    "harness/client.py": "04810d8a558a89e5a893a885efd9ec9b2dc55f0243af4ba3fca653321a7d7b12",
+    "harness/predictor_server.py": "6e65655d6bf1996b2c36d1c38cbb79cd76e3e0d67980db634fdd8ce80f28cf4a",
+    "harness/stage_replay.py": "c72b38613c2f06ec0f3e3e3786b932d62ef1286dc1f4c654313f8cdcf101dfaa",
+    "assets/TRACE_PUBLIC_SNAPSHOTS.json": "144e698ed033e47df5ab98292aa7ba577beeb1f52cc2b6d05493b4e9ddd56627",
+    "assets/TOT_CALIBRATION.json": "fe07bdafb05fdf7323eaf8e539c1329849cf951b2803823913e93aaff526ce46",
+    "assets/CHAIN_MODEL.json": "7d1d668028a01a9da525845e2d3e4320563b615ebac72125c9d3448cd6f761f7",
+    "programs/test_v47_runtime.py": "5ad776428fc6ce11cc4f8f5b17cfde11bd2e1e7ad9b3fdc26c74e4da3429a354",
+    "programs/test_v50_shared_native.py": "a5094e148e2689234fbd10775b8f1167d8857ddb5e5aeace937000ae8d4d219a",
+    "programs/test_v50_execution.py": "56b8b0f8a12ce665d4274127cbf5ae7cde8c4d39b54bfdb64f62dc8a0bc8265f",
+    "programs/window_control.py": "e9bcd49f4f39bd09235f12833708b423e1d40d65870cd730b9df117c50af86ec",
+    "programs/native_tot_adapter.py": "062b50d57a41f452e6a719986522e5d64420af425daddc3324b46b2d411d7805",
+    "programs/test_v50_control.py": "dc0c963f1cef1acdcb355b618f8150efe9270fc038003cb28287af62f7015443",
+    "programs/test_v50_harness.py": "a04d87b678d5a0ced074ffbe584b30abf07a079fec6ce8a5e62a4aa8a958ae58",
+    "programs/test_v49pro_budget.py": "fba5f8c1500b9227649568f2390c6c2aca603310438772f0a71e3ffe4417ac5a",
+    "programs/install_v50.py": "47984d13eb197447136ea456c3778c81abcbae53d5db8a5c310c9f5d45d8d6bb",
+    "programs/controlled_native.py": "774cec5f8d08b9f77f6c5967e7522a61158343c227f314b39fec5345192596d3",
+    "programs/chain_admission.py": "d61f32065e9bf0c5bb69b37d4158c5181de2d342c794bae8db0c5e63eeb1e3b4",
+    "programs/test_v50_install.py": "d54fbe13ac2d868fdacb04d9c2bfdfdacf7d5aac6d6150f6bed336e137f83c4d",
+    "programs/mixed_control.py": "e15c2d2856541ad2a2617b83b98a3ef1088ddd0f1f83419bf289ab144e556b72",
+    "programs/test_v50_transport.py": "ab5579c666d5c969a2f9ea09ad067cc8088a78d43cda5b7692135617c45283c8",
+    "programs/step_cost.py": "56f5cce15d28161698400c57f820a9cbcba943b947f2b60a2e478381dfa8ad59",
+    "programs/stage_scenarios.py": "16210795e079d47dfe9bae8ee66f9463d69469a69fdea7f2965c558a739356ae",
+    "programs/token_reward.py": "721ab407bd4cfaf42a18fb0a493a3bd8d8050a609f698b8842d4e42271dbf995",
+    "programs/mixed_joint.py": "52ceb7ce6baa7d3636c6859639df74acf9f55ff5f1f76ba3afca10318c364be4",
+    "programs/paired_rollout.py": "76c1997e5c79df5e4aa0729461a2f76977451c9feea78156e8fb84c57607640f",
+    "programs/install_comparison_runtime.py": "7102ef5cf8a641d8a5519db74668360ffff9b4e36b140834188a492d419b280a",
+    "programs/test_v49pro_control.py": "e2e5c2d0fd92075c0ba1322ebfa6130e69bbd9cb28b19ad7e3ad31456e8da9cf",
+    "programs/mixed_forecast.py": "70df0d7af1b97bbbecaa49ff673aaca3badec12530c420e27150b1ea45dd1b06",
+    "programs/chain_forecast.py": "6f5b11c4adc8aa58a9f1d0a46a889edfb7da14af0adb92c7b5e5a3b74f6f898b",
+    "programs/framed_predictor.py": "f6b1cb36d725fac6592db7cec20843bb98b06d736931950ac4a3490b635ebff8",
+    "programs/test_v50_matrix.py": "3118a58a47c940bb98d29ad8e6fef5d60f1edac90aefb60943e1333084e65562",
+    "programs/validate_tot_calibration.py": "bf7bbbf8053e4d6d1f766b54399f75d425a795d38f56b0c6a9b9671e408cc69b",
+    "programs/joint_admission.py": "20801938d14c66dc905687a8b7755c49d2468c3ae29c83ee21c8d90cfcc2a833",
+    "programs/test_v50_comparison_install.py": "f190aec9770ed817cbc249459593a3912b14294febb6382c57aef8d6e04efc2e",
+    "programs/window_projection.py": "2477a26bbfeaaf481f7b4acaf63179f322f7d9d43e11786b7216cb4705161191",
+    "programs/shared_prediction.py": "6f6294c75fe74cab68e51b1fe225ce9eb1caa72e879a526c28f1b545b215c43e",
+    "programs/native_chain.py": "5958c3e16ab19c3310244dba88892e9bbfe8882ad2a8439efea63b1369f3bf38",
+    "programs/build_tot_calibration.py": "753aee64176d19bde18c740933b18a5bc9ae9e46bde6b5dd9c25a7010f21bcff",
+    "programs/test_boundaries.py": "e9d4da804bfcdc46a783970c0418327b42e3281eaeabd515c6b9b73efaf74a48",
+    "programs/test_v50_trace_replay.py": "e1921fbd8b1e528ae6640ce2c41119ca4ebac5d1c895419c4037d24affd4df3e",
+    "programs/test_v50_runtime.py": "25a54d2bc8299bd81b495f6cf672c1c4ebf007e1bf32f341d583830c224473a7",
+    "programs/baseline_budget.py": "e3a0c9c307ee3d42985f4c41dc6e544797d6dbb29aeb39fc4f74ad0b3c30fbe2",
+    "programs/prediction_transport.py": "48f34e9721fa38131294ce8e47921c4323bf4a99ca57bd4233b471cf805b0d04",
+    "programs/execution_observation.py": "85a99cf861aa1f49cd5cd8c7d7442c2f6a0d83ff9498baedac7b206121099666",
+    "programs/protocol_paths.py": "97dd40457864779447689ab76f3dc0179f9a538e12ce3c73ce425103344c0f62",
+    "programs/candidate_budget.py": "8b4a4fbbcc18f64d995c32bedc92d5a119f5aa58921a80d355110e7a707a3e78",
+    "programs/planner_config.py": "df8babca3cb73466a2fb533f327aa4588dbc45ef2b44e73fd4ce5cab0c0ac772",
+    "programs/test_v47_forecast.py": "45577320ca954e3e519a27a28b2d3699fe8f0b8ac426d45f04697aa7d456a63b"
+  },
+  "tests": {
+    "test_boundaries": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 16,
+      "log_sha256": "c5ce648d68574db09b23033fc224feaab259d0c6c78a77fb8f7fe2137cd4fb1c"
+    },
+    "test_v47_forecast": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 9,
+      "log_sha256": "28c39ea48c4ce7a7ce5e54d7e22024f3c30a43b834fc73cb069de3fc9a2430a7"
+    },
+    "controlled_native": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 10,
+      "log_sha256": "380cb2a805dabfe10f399d7c149851cdb0fc13fd39697378e23a4311b9262947"
+    },
+    "test_v47_runtime": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 7,
+      "log_sha256": "c920efd8692d9457dfa84ac76b2f344f8d66a19c058a29d627eed2a1362fc43a"
+    },
+    "test_v49pro_control": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 26,
+      "log_sha256": "70aff2b963bcdedd3479c3c2729577bf24e984fc1624c24e82ca5ce89d101279"
+    },
+    "test_v50_control": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 15,
+      "log_sha256": "b0ad21c6f6d892cadffa2ab6324c4a087431529ba7f88779f4fc50e6337c1b7d"
+    },
+    "test_v50_transport": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 4,
+      "log_sha256": "88063286dd79047e94b27310fb541cc721c6d9b370064ad5db3b763ed636f156"
+    },
+    "test_v50_runtime": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 12,
+      "log_sha256": "4ffdedc56b2b66f379def63d8c8ac5ef4fe4223ff3b05bf64e6f16751b86753b"
+    },
+    "test_v50_shared_native": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 1,
+      "log_sha256": "6a1a3c8b7b9421936b3701b06e21758b7ca64f3853e9b54a90ae3421b035d7d5"
+    },
+    "test_v50_comparison_install": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 3,
+      "log_sha256": "5751364f4a99f156b938f2c2608e5abada40e830e9b99cb6ac2f1fcc1034e392"
+    },
+    "test_v50_execution": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 5,
+      "log_sha256": "7b3e82c44aefe0e5da22d6fb3095043366e04cfd5ef636a5c497893f4ebea889"
+    },
+    "test_v50_install": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 2,
+      "log_sha256": "98a527ef845adf58c78724c9e744d2caa717fa3100c082c4c36668cb24a28332"
+    },
+    "test_v50_harness": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 5,
+      "log_sha256": "2dde41eaa5ad09c063615e66ffa28bb8f3ca847d5e31542d6ffd02daa5ff1bdd"
+    },
+    "test_v50_matrix": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 5,
+      "log_sha256": "cfb9646c1fa8a2aea51eefa666db7def2ab8075005dc9948f306ba25625e1959"
+    },
+    "test_v50_trace_replay": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 1,
+      "log_sha256": "138c1f60239b7623cd5bf5fef3986960f9f4354495b4deb4a6335d91357593f0"
+    }
+  },
+  "python": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/slo_declaration_robustness/gpu_closed_loop_20261013T122407Z_v1/env/bin/python",
+  "stage": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v50_window_projection_20261108/attempt05/stage43_v50_window_projection_20261108_v1"
+}
