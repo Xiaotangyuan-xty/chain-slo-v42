@@ -1,24 +1,30 @@
 {
   "CPU_only": true,
   "not_GPU_performance": true,
+  "scope": "Local CPU synthetic states, not measured batch latency or formal workload outcomes",
+  "source_sha256": {
+    "mixed_control.py": "4f0ff5a74c8161f3617c5a8d7c6426bf68b9cc669dab70b9d8ced3ec12ed5bc4",
+    "step_cost.py": "24de697c48c640ae2d9d124b7e18593022c788516c1ec3ca08e396e30cfe1e5a",
+    "credit_curve.py": "f7c0f5778ae54bf85ba07ccc1e18d5f34c234e9f8422edaa06ec5abbfa36d004"
+  },
   "measurements": [
     {
       "candidates": 16,
       "selected": 8,
-      "median_seconds": 0.000792291946709156,
-      "max_seconds": 0.0008609583601355553
+      "median_seconds": 0.0008150837384164333,
+      "max_seconds": 0.0008793328888714314
     },
     {
       "candidates": 64,
       "selected": 8,
-      "median_seconds": 0.005685416981577873,
-      "max_seconds": 0.005771541967988014
+      "median_seconds": 0.005498999729752541,
+      "max_seconds": 0.005646415986120701
     },
     {
       "candidates": 256,
       "selected": 8,
-      "median_seconds": 0.020338709000498056,
-      "max_seconds": 0.021428166888654232
+      "median_seconds": 0.0198874999769032,
+      "max_seconds": 0.020615792367607355
     }
   ]
 }

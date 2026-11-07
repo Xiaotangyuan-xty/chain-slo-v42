@@ -1,6 +1,6 @@
 # v49 CPU qualification and trace provenance
 
-Final native CPU qualification: **74 tests PASS**, active attempt07. All commands
+Final native CPU qualification: **75 tests PASS**, active attempt08. All commands
 used CUDA_VISIBLE_DEVICES empty and CPU28/30/84/86; each test process checked
 that no CUDA context was initialized. No LLM engine, GPU generation, GPU profiling
 or performance replay was started. External frozen JITServe/vLLM dependencies and
@@ -27,7 +27,8 @@ Preserved development attempts:
 - attempt04: 73 tests PASS, with early invalid-protocol/output validation.
 - attempt05: 73 tests PASS, including corrected module description.
 - attempt06: 74 tests PASS, adding exit-buffer persistence of all5000 streamed plan events.
-- attempt07: 74 tests PASS on the exact final source after trailing-blank-line cleanup.
+- attempt07: 74 tests PASS after trailing-blank-line cleanup.
+- attempt08: 75 tests PASS on final source; preserve the observed fixed-cost component when extrapolating batch cost and verify learning can pass the largest seen batch.
 
 Every attempt keeps its source archive, logs and source hashes; failed CPU
 attempts are not hidden or treated as GPU trials. CPU tests are mechanism and

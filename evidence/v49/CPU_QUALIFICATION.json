@@ -9,7 +9,7 @@
     84,
     86
   ],
-  "utc": "2026-11-07T12:47:43.061289+00:00",
+  "utc": "2026-11-07T12:55:50.845228+00:00",
   "source_files": {
     "V47_ORIGIN.json": "8ee15717c33f8a06435ea9bc4fe9899d7da9c6557119843448b540317d673572",
     "V48_ORIGIN.json": "04ce85111f8ea9df1379eb9ec4a7b20bf7c920e77550826e5456727a56f48989",
@@ -21,10 +21,10 @@
     "programs/controlled_native.py": "774cec5f8d08b9f77f6c5967e7522a61158343c227f314b39fec5345192596d3",
     "programs/credit_curve.py": "f7c0f5778ae54bf85ba07ccc1e18d5f34c234e9f8422edaa06ec5abbfa36d004",
     "programs/chain_admission.py": "d61f32065e9bf0c5bb69b37d4158c5181de2d342c794bae8db0c5e63eeb1e3b4",
-    "programs/test_v49_control.py": "251e227e7647c210ebb88122475ac4d74a828bee86eaec7778252a02bc2347f9",
+    "programs/test_v49_control.py": "3ec4a0fdc4d01f1f3961881854a977795d11af89edb9046aa3cf1945234ec671",
     "programs/mixed_control.py": "4f0ff5a74c8161f3617c5a8d7c6426bf68b9cc669dab70b9d8ced3ec12ed5bc4",
     "programs/test_v49_comparison_install.py": "1f1354638a6f1d3cb2c334849881cae7c32688f129a994c2d7cccb903538c622",
-    "programs/step_cost.py": "4ca2eaf363d2e8e2d5d1c5836a04260f9a3dfe6356f920e97473f7da27a3a018",
+    "programs/step_cost.py": "24de697c48c640ae2d9d124b7e18593022c788516c1ec3ca08e396e30cfe1e5a",
     "programs/token_reward.py": "721ab407bd4cfaf42a18fb0a493a3bd8d8050a609f698b8842d4e42271dbf995",
     "programs/mixed_joint.py": "aecdc7b168a8017aac171fdd93c860e9e866ac62612e712ed852c7408bbd150f",
     "programs/install_comparison_runtime.py": "eaa5e1dcdcbfb862d75521b2b7f26b5feeecc00eb65bf629596cb3cfcb1b6d92",
@@ -46,7 +46,7 @@
     "programs/test_v47_forecast.py": "45577320ca954e3e519a27a28b2d3699fe8f0b8ac426d45f04697aa7d456a63b"
   },
   "python": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/slo_declaration_robustness/gpu_closed_loop_20261013T122407Z_v1/env/bin/python",
-  "stage": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt07/stage39_v49_compute_budget_20261107_v1",
+  "stage": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt08/stage39_v49_compute_budget_20261107_v1",
   "tests": {
     "test_boundaries": {
       "pass": true,
@@ -58,37 +58,37 @@
       "pass": true,
       "returncode": 0,
       "tests": 9,
-      "log_sha256": "77796048bedde1ff9a7c19f59edbd2fdf07e6a678009efde473af38dbca412ae"
+      "log_sha256": "28c39ea48c4ce7a7ce5e54d7e22024f3c30a43b834fc73cb069de3fc9a2430a7"
     },
     "controlled_native": {
       "pass": true,
       "returncode": 0,
       "tests": 10,
-      "log_sha256": "43fce6dc6e0312d9081c20eaf80504123d91b3ae79d66eda07a57583005e5ac7"
+      "log_sha256": "68f9fb28d771b8a30d9a1f9d8a55caf6316da6eef6cf454f217e5d53a5e22202"
     },
     "test_v47_runtime": {
       "pass": true,
       "returncode": 0,
       "tests": 7,
-      "log_sha256": "fdf35415a6d59bbb5843cf9ee1478ce4b68495641fb20c25d6a69d296d32ed7c"
+      "log_sha256": "aa5750630e2286e9d02c55691387a71fe9b092d93d70a0dc30fca3d086b7ed6c"
     },
     "test_v49_control": {
       "pass": true,
       "returncode": 0,
-      "tests": 12,
-      "log_sha256": "bc5af6f4f84efd312f439ae1b220865c4980fc79dae30e205320b3b438486e28"
+      "tests": 13,
+      "log_sha256": "5d86c2b4d16da9386f8291a76a1bb33be9926874d8dd685ba75e553fcd7cf091"
     },
     "test_v49_transport": {
       "pass": true,
       "returncode": 0,
       "tests": 4,
-      "log_sha256": "88063286dd79047e94b27310fb541cc721c6d9b370064ad5db3b763ed636f156"
+      "log_sha256": "47de80cef077df7b9e415b9653d254c80637b3a0034cd28b790613e234c7c7a8"
     },
     "test_v49_runtime": {
       "pass": true,
       "returncode": 0,
       "tests": 10,
-      "log_sha256": "42b1547b57aae7883843b30c5b3eca9078f2000db7c74bde0c18bd64bf0ea213"
+      "log_sha256": "fa57ff2fa6d92fd858cc35554b899a0b559b6778cdc85d006ec01f99e1403e8e"
     },
     "test_v49_shared_native": {
       "pass": true,
@@ -100,13 +100,13 @@
       "pass": true,
       "returncode": 0,
       "tests": 3,
-      "log_sha256": "3c81eec50abb45eb1cff57c24b6dbc6aadb889b04ebb11d97996a5b5ec6f418e"
+      "log_sha256": "48ec01c243574246e2a5626b63b6508e558f88000494999b7a21891212c63588"
     },
     "test_v49_install": {
       "pass": true,
       "returncode": 0,
       "tests": 2,
-      "log_sha256": "745524bd8dac6ab96cab7a63fe500b1eefed4f77a3e10a31ba79f99d37724d48"
+      "log_sha256": "3df4d6837ee16a5f43b48265f182cfe47a725e0bb8953db2cdac6e9828940361"
     }
   }
 }

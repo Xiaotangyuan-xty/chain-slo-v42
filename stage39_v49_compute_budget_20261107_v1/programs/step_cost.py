@@ -55,6 +55,15 @@ class CostSnapshot:
             return self.points[0][1]
         if i == len(counts):
             n, seconds = self.points[-1]
+            if len(self.points) >= 2:
+                previous_n, previous_seconds = self.points[-2]
+                slope = (seconds - previous_seconds) / (n - previous_n)
+                intercept = seconds - slope * n
+                if slope > 0 and intercept >= 0:
+                    # Preserve an observed fixed-cost component. Assuming full
+                    # proportional cost can trap selection at the largest
+                    # previously observed batch instead of learning beyond it.
+                    return intercept + slope * members
             return seconds * members / n
         lo, left = self.points[i - 1]; hi, right = self.points[i]
         return left + (right - left) * (members - lo) / (hi - lo)

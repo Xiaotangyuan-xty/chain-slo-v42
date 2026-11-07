@@ -97,6 +97,13 @@ class ComputeControl(unittest.TestCase):
         self.assertLessEqual(p.seconds(2),p.seconds(4))
         self.assertGreater(p.seconds(8),p.seconds(4))
 
+    def test_observed_fixed_cost_allows_learning_beyond_seen_batch_width(self):
+        cs=costs([(1,.02),(2,.025)])
+        self.assertAlmostEqual(cs.seconds(4),.035)
+        actions=[action(str(i),slack=10)for i in range(4)]
+        selected,_=plan(actions,[member(str(i))for i in range(4)],set(),10000,32,.02,costs=cs)
+        self.assertEqual(selected,{'0','1','2','3'})
+
     def test_curve_matches_original_forecaster_without_any_test_targets(self):
         model={'neighbors':2,'prefill_tokens_per_decode_unit':256,'interstage_gap_decode_units':32,
                'forecast_guard_decode_units':50,'service_safety_factor':1.15,

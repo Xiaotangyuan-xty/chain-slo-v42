@@ -34,7 +34,11 @@ member count, up to128 counts. Samples outside1ms-1s are excluded, as are schedu
 outputs involving prefill, copy, swap or a planning step. The next scheduler call
 supplies the elapsed interval, which includes ordinary execution/loop overhead;
 this is a bounded online proxy, not a GPU latency oracle. Bucket medians are made
-monotone, interpolated between observed counts and conservatively extrapolated.
+monotone and interpolated between observed counts. Above the observed range, a
+positive slope with a nonnegative fixed-cost component from the last two points
+is retained; otherwise a conservative proportional extrapolation is used. This
+avoids locking selection at the largest previously seen width when batching
+benefits have already been observed.
 No speed-up below a cold reference batch is invented. Attention/context effects
 are not independently identified, and low-data/extrapolation behavior must be
 validated on new hardware. These limits are recorded in every plan.
