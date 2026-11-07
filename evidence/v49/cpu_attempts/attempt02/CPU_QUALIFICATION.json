@@ -1,0 +1,112 @@
+{
+  "gate": "PASS",
+  "GPU_used": false,
+  "model_execution": false,
+  "CUDA_VISIBLE_DEVICES": "",
+  "CPU_affinity": [
+    28,
+    30,
+    84,
+    86
+  ],
+  "utc": "2026-11-07T12:28:42.716519+00:00",
+  "source_files": {
+    "V47_ORIGIN.json": "8ee15717c33f8a06435ea9bc4fe9899d7da9c6557119843448b540317d673572",
+    "V48_ORIGIN.json": "04ce85111f8ea9df1379eb9ec4a7b20bf7c920e77550826e5456727a56f48989",
+    "assets/TOT_CALIBRATION.json": "fe07bdafb05fdf7323eaf8e539c1329849cf951b2803823913e93aaff526ce46",
+    "assets/CHAIN_MODEL.json": "7d1d668028a01a9da525845e2d3e4320563b615ebac72125c9d3448cd6f761f7",
+    "programs/test_v47_runtime.py": "5ad776428fc6ce11cc4f8f5b17cfde11bd2e1e7ad9b3fdc26c74e4da3429a354",
+    "programs/native_tot_adapter.py": "062b50d57a41f452e6a719986522e5d64420af425daddc3324b46b2d411d7805",
+    "programs/test_v49_runtime.py": "c6e9864f986e80368b61c1d5c5e9ce21a4f7c9c899e79b5cc8905d93f9dd3e92",
+    "programs/controlled_native.py": "774cec5f8d08b9f77f6c5967e7522a61158343c227f314b39fec5345192596d3",
+    "programs/credit_curve.py": "f7c0f5778ae54bf85ba07ccc1e18d5f34c234e9f8422edaa06ec5abbfa36d004",
+    "programs/chain_admission.py": "d61f32065e9bf0c5bb69b37d4158c5181de2d342c794bae8db0c5e63eeb1e3b4",
+    "programs/test_v49_control.py": "251e227e7647c210ebb88122475ac4d74a828bee86eaec7778252a02bc2347f9",
+    "programs/mixed_control.py": "25d86174299ee431c5c8bb5677a21591eb5ad108a13a07c868fa224d9723be0d",
+    "programs/test_v49_comparison_install.py": "c70432979c7709817995765e7ed4f5099719d684a8ee145e12f96e8f40871c95",
+    "programs/step_cost.py": "4ca2eaf363d2e8e2d5d1c5836a04260f9a3dfe6356f920e97473f7da27a3a018",
+    "programs/token_reward.py": "721ab407bd4cfaf42a18fb0a493a3bd8d8050a609f698b8842d4e42271dbf995",
+    "programs/mixed_joint.py": "e5fc27c91a2ad16f186dd94bdfd5a3a3f8225fd845f7f65b9a9dcf1afc68c451",
+    "programs/install_comparison_runtime.py": "cd3db5102f1ddb38469d49ce8f8b8090614d8f14569819319185c641fa796455",
+    "programs/mixed_forecast.py": "70df0d7af1b97bbbecaa49ff673aaca3badec12530c420e27150b1ea45dd1b06",
+    "programs/chain_forecast.py": "6f5b11c4adc8aa58a9f1d0a46a889edfb7da14af0adb92c7b5e5a3b74f6f898b",
+    "programs/test_v49_transport.py": "bd25218dab229c912d8b0764300f8a225ac9c688ed28bf33646d031dbeee599c",
+    "programs/framed_predictor.py": "f6b1cb36d725fac6592db7cec20843bb98b06d736931950ac4a3490b635ebff8",
+    "programs/validate_tot_calibration.py": "bf7bbbf8053e4d6d1f766b54399f75d425a795d38f56b0c6a9b9671e408cc69b",
+    "programs/joint_admission.py": "20801938d14c66dc905687a8b7755c49d2468c3ae29c83ee21c8d90cfcc2a833",
+    "programs/shared_prediction.py": "a773c3dd4384437f1082c0976d9cdcdbe10a587ceea307b1774ff63f710362ad",
+    "programs/test_v49_install.py": "61995235dd3c225130af40b8ae429dcbacfc46ecebee42757af097cab77914ed",
+    "programs/native_chain.py": "5958c3e16ab19c3310244dba88892e9bbfe8882ad2a8439efea63b1369f3bf38",
+    "programs/build_tot_calibration.py": "753aee64176d19bde18c740933b18a5bc9ae9e46bde6b5dd9c25a7010f21bcff",
+    "programs/test_boundaries.py": "e9d4da804bfcdc46a783970c0418327b42e3281eaeabd515c6b9b73efaf74a48",
+    "programs/install_v49.py": "40afba4d0e60c5fd7e489592ba364309f0406f58478ae34adb2224895998a484",
+    "programs/baseline_budget.py": "e3a0c9c307ee3d42985f4c41dc6e544797d6dbb29aeb39fc4f74ad0b3c30fbe2",
+    "programs/test_v49_shared_native.py": "173f155c6282c301cbe02d8b2fd2267198682a6e9d4a2e1aca1655ac63e674b6",
+    "programs/prediction_transport.py": "48f34e9721fa38131294ce8e47921c4323bf4a99ca57bd4233b471cf805b0d04",
+    "programs/test_v47_forecast.py": "45577320ca954e3e519a27a28b2d3699fe8f0b8ac426d45f04697aa7d456a63b"
+  },
+  "python": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/slo_declaration_robustness/gpu_closed_loop_20261013T122407Z_v1/env/bin/python",
+  "stage": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt02/stage39_v49_compute_budget_20261107_v1",
+  "tests": {
+    "test_boundaries": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 16,
+      "log_sha256": "c5ce648d68574db09b23033fc224feaab259d0c6c78a77fb8f7fe2137cd4fb1c"
+    },
+    "test_v47_forecast": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 9,
+      "log_sha256": "28c39ea48c4ce7a7ce5e54d7e22024f3c30a43b834fc73cb069de3fc9a2430a7"
+    },
+    "controlled_native": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 10,
+      "log_sha256": "09dce321f3f6747d62648c05a9dec40f7ba61f8dca8922ba78b9e5c99ced1d23"
+    },
+    "test_v47_runtime": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 7,
+      "log_sha256": "ad60d33f1b7a458d39d0d6254959ff4d6067c88a157d26515b198bca12187891"
+    },
+    "test_v49_control": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 12,
+      "log_sha256": "bc5af6f4f84efd312f439ae1b220865c4980fc79dae30e205320b3b438486e28"
+    },
+    "test_v49_transport": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 4,
+      "log_sha256": "47de80cef077df7b9e415b9653d254c80637b3a0034cd28b790613e234c7c7a8"
+    },
+    "test_v49_runtime": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 8,
+      "log_sha256": "95ac2f9458f24b94e7cf81257051413da7d6908531cb7b06be7bc62d99fb5c22"
+    },
+    "test_v49_shared_native": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 1,
+      "log_sha256": "6a1a3c8b7b9421936b3701b06e21758b7ca64f3853e9b54a90ae3421b035d7d5"
+    },
+    "test_v49_comparison_install": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 2,
+      "log_sha256": "ca8b1e71b2f7825f1ee2b70833665c0b1a731068f653f36de61ad9849b39023e"
+    },
+    "test_v49_install": {
+      "pass": true,
+      "returncode": 0,
+      "tests": 1,
+      "log_sha256": "db58fe2866040f22affdcc7beca6e69e5d7f3e062fc8a5f5857661d9e88e427f"
+    }
+  }
+}

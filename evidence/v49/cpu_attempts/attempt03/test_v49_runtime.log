@@ -1,0 +1,34 @@
+INFO 11-07 12:31:56 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-07 12:31:56 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.RECOMPUTE mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-07 12:31:56 scheduler.py:1573] Collection ID: 1, Request ID: 1: (1, -0.0, 100.0) is preempted by PreemptionMode.RECOMPUTE mode.
+INFO 11-07 12:31:56 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-07 12:31:56 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-07 12:31:56 scheduler.py:1573] Collection ID: 1, Request ID: 1: (1, -0.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-07 12:31:56 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 12:31:56 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 12:31:56 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 12:31:56 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 12:31:56 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 12:31:56 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 12:31:56 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 12:31:56 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 12:31:56 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+{"CUDA_context_initialized": false, "engine_started": false, "exit_code": 0}
+/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+test_compute_interference_can_recompute_when_CPU_swap_full (__main__.Runtime.test_compute_interference_can_recompute_when_CPU_swap_full) ... ok
+test_compute_interference_can_swap_with_free_KV_and_resume (__main__.Runtime.test_compute_interference_can_swap_with_free_KV_and_resume) ... ok
+test_free_KV_does_not_force_expired_work_into_decode_batch (__main__.Runtime.test_free_KV_does_not_force_expired_work_into_decode_batch) ... ok
+test_mixed_to_pure_replans_and_foreground_only_delegates (__main__.Runtime.test_mixed_to_pure_replans_and_foreground_only_delegates) ... ok
+test_new_request_and_revision_replan_before_periodic_frame (__main__.Runtime.test_new_request_and_revision_replan_before_periodic_frame) ... ok
+test_next_stage_event_keeps_native_barrier_metadata (__main__.Runtime.test_next_stage_event_keeps_native_barrier_metadata) ... ok
+test_pure_DR_decisions_still_match_original_v47 (__main__.Runtime.test_pure_DR_decisions_still_match_original_v47) ... ok
+test_real_deadline_crossing_replans_without_waiting_50_ticks (__main__.Runtime.test_real_deadline_crossing_replans_without_waiting_50_ticks) ... ok
+test_required_mixed_work_finishes_without_drops_or_lost_prefix (__main__.Runtime.test_required_mixed_work_finishes_without_drops_or_lost_prefix) ... ok
+test_selected_members_only_and_no_work_disappears (__main__.Runtime.test_selected_members_only_and_no_work_disappears) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.105s
+
+OK

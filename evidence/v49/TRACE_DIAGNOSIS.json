@@ -1,0 +1,170 @@
+{
+  "source": "Completed Stage37 GPU1 Llama8B native-ToT mixed, shared repaired prediction, one run per method",
+  "independent_raw_audit": "PASS",
+  "metrics": {
+    "v48": {
+      "main_duration": 3737.9900313206017,
+      "main_root_jobs": 1800,
+      "main_requests": 2527,
+      "main_output_tokens": 646171,
+      "output_tokens_per_second": 172.86589706920995,
+      "max_arrival_error": 0.00504761267984577,
+      "compound_attained": 72,
+      "compound_total": 120,
+      "jitserve_token_goodput": 759.8130555555556,
+      "fixed_hour_token_goodput": 759.8130555555556,
+      "fixed_hour_credited_weighted_tokens": 2735327,
+      "complete_replay_token_goodput": 736.4150190169152,
+      "jitserve_credited_weighted_tokens": 2752712,
+      "raw_last_completion_seconds": 3737.9900313206017,
+      "drain_seconds": 137.9900313206017,
+      "DR_attained": 12,
+      "ToT_attained": 60,
+      "mean_JCT": 24.259427665326122,
+      "p95_JCT": 78.49138528667389,
+      "request_failures": 0
+    },
+    "A": {
+      "main_duration": 3720.963262984529,
+      "main_root_jobs": 1800,
+      "main_requests": 2527,
+      "main_output_tokens": 646171,
+      "output_tokens_per_second": 173.65691471022905,
+      "max_arrival_error": 0.004822990713364561,
+      "compound_attained": 75,
+      "compound_total": 120,
+      "jitserve_token_goodput": 769.6877777777778,
+      "fixed_hour_token_goodput": 769.6877777777778,
+      "fixed_hour_credited_weighted_tokens": 2770876,
+      "complete_replay_token_goodput": 749.2202429765271,
+      "jitserve_credited_weighted_tokens": 2787821,
+      "raw_last_completion_seconds": 3720.963262984529,
+      "drain_seconds": 120.96326298452914,
+      "DR_attained": 15,
+      "ToT_attained": 60,
+      "mean_JCT": 23.54757274648692,
+      "p95_JCT": 73.19576185410841,
+      "request_failures": 0
+    },
+    "Astar": {
+      "main_duration": 3679.299602318555,
+      "main_root_jobs": 1800,
+      "main_requests": 2527,
+      "main_output_tokens": 646171,
+      "output_tokens_per_second": 175.62337125055203,
+      "max_arrival_error": 0.004900826928860624,
+      "compound_attained": 96,
+      "compound_total": 120,
+      "jitserve_token_goodput": 1010.9230555555556,
+      "fixed_hour_token_goodput": 1010.9230555555556,
+      "fixed_hour_credited_weighted_tokens": 3639323,
+      "complete_replay_token_goodput": 1012.3907815641641,
+      "jitserve_credited_weighted_tokens": 3724889,
+      "raw_last_completion_seconds": 3679.299602318555,
+      "drain_seconds": 79.29960231855512,
+      "DR_attained": 36,
+      "ToT_attained": 60,
+      "mean_JCT": 15.700338580075444,
+      "p95_JCT": 47.912167238071554,
+      "request_failures": 0
+    }
+  },
+  "exclusive_attainments": {
+    "deadline": {
+      "Astar_timely_v48_missed": 95,
+      "v48_timely_Astar_missed": 0
+    },
+    "dr": {
+      "Astar_timely_v48_missed": 24,
+      "v48_timely_Astar_missed": 0
+    },
+    "tot_style": {
+      "Astar_timely_v48_missed": 0,
+      "v48_timely_Astar_missed": 0
+    }
+  },
+  "v48_retained_plan_audit": {
+    "retained": 4096,
+    "total_plans": 4874,
+    "dropped": 778,
+    "coverage_seconds": [
+      422.6265733614564,
+      3650.9036164898425
+    ],
+    "counters": {
+      "all_live_selected": 4096,
+      "all_residents_retained": 4096,
+      "zero_credit_members_selected": 19397,
+      "plans_with_zero_credit_selected": 4020,
+      "expired_compound_members_selected": 3766,
+      "plans_with_expired_compound_selected": 2325,
+      "plans_expired_chain_selected_and_positive_foreground": 2325,
+      "plans_expired_chain_selected_and_positive_DR": 1316,
+      "plans_with_victims": 0,
+      "decision_rows": 0,
+      "backfill_admissions": 130,
+      "plans_below_slots_and_KV": 4096,
+      "plans_missing_any_positive_member": 0
+    },
+    "trigger_counts": {
+      "new_request_or_stage": 1688,
+      "prediction_revision": 4022,
+      "completion_or_abort": 1727,
+      "periodic": 90,
+      "mixed_entry": 51
+    },
+    "selected_members": {
+      "count": 4096,
+      "mean": 14.165283203125,
+      "p50": 14.0,
+      "p95": 22.0,
+      "max": 29
+    },
+    "resident_members": {
+      "count": 4096,
+      "mean": 13.685302734375,
+      "p50": 14.0,
+      "p95": 21.0,
+      "max": 29
+    },
+    "KV_charge_fraction": {
+      "count": 4096,
+      "mean": 0.07115088981079405,
+      "p50": 0.06759305210918114,
+      "p95": 0.1283622828784119,
+      "max": 0.18431761786600495
+    },
+    "plan_seconds": {
+      "count": 4096,
+      "mean": 0.0024956502988970897,
+      "p50": 0.0022356072440743446,
+      "p95": 0.004981005564332008,
+      "max": 0.01591610349714756
+    },
+    "retained_planning_seconds_sum": 10.22218362428248,
+    "plans_by300s": {
+      "1": 310,
+      "2": 210,
+      "3": 489,
+      "4": 438,
+      "5": 388,
+      "6": 465,
+      "7": 442,
+      "8": 352,
+      "9": 423,
+      "10": 169,
+      "11": 377,
+      "12": 33
+    }
+  },
+  "mean_running_5s_samples": {
+    "v48": 12.244264507422402,
+    "A": 11.89445196211096,
+    "Astar": 8.058823529411764
+  },
+  "raw_trace_summary_sha256": "c1eae6313bd6273255113ae31b1a3ef9db70cf384c885538761e693df7b3c175",
+  "accepted_results_sha256": "ea0760cae76d37443ea61a76b2051b17837400b620ed4793edfc9e7b47de507f",
+  "historical_predictor_weights_retrained": false,
+  "counterfactual_GPU_gain_claimed": false,
+  "trace_IDs_used_by_algorithm": false
+}

@@ -1,0 +1,8 @@
+{"CUDA_context_initialized": false, "engine_started": false, "exit_code": 0}
+test_Astar_shared_protocol_keeps_declared_repairs_and_implicit_ToT (__main__.Comparison.test_Astar_shared_protocol_keeps_declared_repairs_and_implicit_ToT) ... ok
+test_native_A_shared_protocol_keeps_original_budget_and_implicit_ToT (__main__.Comparison.test_native_A_shared_protocol_keeps_original_budget_and_implicit_ToT) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 9.952s
+
+OK

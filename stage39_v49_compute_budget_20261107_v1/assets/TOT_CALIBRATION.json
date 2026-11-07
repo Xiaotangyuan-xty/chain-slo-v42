@@ -1,0 +1,1412 @@
+{
+  "schema": "reserved_tot_replay_length_donors/v1",
+  "source": "Stage34 prefrozen pool, public Game24 log prompts/recorded/reconstructed response lengths",
+  "CPU_only": true,
+  "GPU_labels_used": false,
+  "models": {
+    "llama8": {
+      "model": {
+        "schema": "fit-only-chain-work-model/v1",
+        "fit_graph_count": 14,
+        "cal_graph_count": 0,
+        "neighbors": 32,
+        "service_safety_factor": 1.15,
+        "prefill_tokens_per_decode_unit": 256,
+        "interstage_gap_decode_units": 32,
+        "forecast_guard_decode_units": 50,
+        "kv_horizon_tokens": 50,
+        "residence_tokens": 50,
+        "incumbent_density_factor": 1.2,
+        "scope": "Reserved public ToT-style fixed replay length profiles only; no evaluation run labels or natural-generation quality claim.",
+        "records": [
+          {
+            "id": "08d20cd9ca0963de191fd1c9fa7ace1af84399a674f9aa19f13bd6bbe7793100",
+            "stages": [
+              {
+                "inputs": [
+                  458,
+                  458,
+                  458
+                ],
+                "outputs": [
+                  17,
+                  17,
+                  17
+                ]
+              },
+              {
+                "inputs": [
+                  178
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  63,
+                  63,
+                  63
+                ],
+                "outputs": [
+                  32,
+                  36,
+                  32
+                ]
+              },
+              {
+                "inputs": [
+                  227
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2496fd5ceb92fd04dd112284558d7ad6ef7959f842b22502fe688eb5511e9dd7",
+            "stages": [
+              {
+                "inputs": [
+                  458,
+                  458,
+                  458
+                ],
+                "outputs": [
+                  17,
+                  17,
+                  21
+                ]
+              },
+              {
+                "inputs": [
+                  182
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  67,
+                  67,
+                  67
+                ],
+                "outputs": [
+                  42,
+                  42,
+                  38
+                ]
+              },
+              {
+                "inputs": [
+                  249
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3a83d37bb8d2ca4e7172d3813099d0db02b26cad9d883f4739d738e3d2c52ef7",
+            "stages": [
+              {
+                "inputs": [
+                  458,
+                  458,
+                  458
+                ],
+                "outputs": [
+                  17,
+                  17,
+                  17
+                ]
+              },
+              {
+                "inputs": [
+                  178
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  63,
+                  63,
+                  63
+                ],
+                "outputs": [
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "inputs": [
+                  223
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3e244deedfd9b0dbdb8eecdf6627858b359403c6c55d82885acba338afa9b6ac",
+            "stages": [
+              {
+                "inputs": [
+                  458,
+                  458,
+                  458
+                ],
+                "outputs": [
+                  17,
+                  17,
+                  17
+                ]
+              },
+              {
+                "inputs": [
+                  178
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  63,
+                  63,
+                  63
+                ],
+                "outputs": [
+                  32,
+                  32,
+                  35
+                ]
+              },
+              {
+                "inputs": [
+                  226
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "64201bd26f7b36d4472dac6d7bc84c23b6098b75077aad6c4e1e9edb5146bbd3",
+            "stages": [
+              {
+                "inputs": [
+                  458,
+                  458,
+                  458
+                ],
+                "outputs": [
+                  17,
+                  17,
+                  17
+                ]
+              },
+              {
+                "inputs": [
+                  178
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  63,
+                  63,
+                  63
+                ],
+                "outputs": [
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "inputs": [
+                  223
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "6acec9274178c4bbb28ae5684023682718556a092d8a8930cd790b21b5358ca3",
+            "stages": [
+              {
+                "inputs": [
+                  458,
+                  458,
+                  458
+                ],
+                "outputs": [
+                  17,
+                  17,
+                  17
+                ]
+              },
+              {
+                "inputs": [
+                  178
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  63,
+                  63,
+                  63
+                ],
+                "outputs": [
+                  32,
+                  32,
+                  36
+                ]
+              },
+              {
+                "inputs": [
+                  227
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "9b39d4666dead4178dabe3955b76d74bba6c57bcbf4e27b5a2c3206eb0eb2cc3",
+            "stages": [
+              {
+                "inputs": [
+                  458,
+                  458,
+                  458
+                ],
+                "outputs": [
+                  17,
+                  17,
+                  17
+                ]
+              },
+              {
+                "inputs": [
+                  178
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  63,
+                  63,
+                  63
+                ],
+                "outputs": [
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "inputs": [
+                  223
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "9fdeb2a14fcb1d1d130765c29eb73e866be4c9ead2ea0d2253ce0cb31547d34c",
+            "stages": [
+              {
+                "inputs": [
+                  458,
+                  458,
+                  458
+                ],
+                "outputs": [
+                  17,
+                  17,
+                  17
+                ]
+              },
+              {
+                "inputs": [
+                  178
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  63,
+                  63,
+                  63
+                ],
+                "outputs": [
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "inputs": [
+                  223
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "a7a3b676dfd9d9138af4d8329f6bbe83201c23ef0c93fb62e239f04bcdff2898",
+            "stages": [
+              {
+                "inputs": [
+                  458,
+                  458,
+                  458
+                ],
+                "outputs": [
+                  17,
+                  17,
+                  17
+                ]
+              },
+              {
+                "inputs": [
+                  178
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  63,
+                  63,
+                  63
+                ],
+                "outputs": [
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "inputs": [
+                  223
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "b724a996677c590a69fe8232d22bebd75b42b3a7dc81534f54a739b6268abf2d",
+            "stages": [
+              {
+                "inputs": [
+                  458,
+                  458,
+                  458
+                ],
+                "outputs": [
+                  17,
+                  17,
+                  17
+                ]
+              },
+              {
+                "inputs": [
+                  178
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  63,
+                  63,
+                  63
+                ],
+                "outputs": [
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "inputs": [
+                  223
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "bc1ed24fba8306cb20e7b8f9e38ca2b73608fd1283759fe32705c9156392a154",
+            "stages": [
+              {
+                "inputs": [
+                  458,
+                  458,
+                  458
+                ],
+                "outputs": [
+                  17,
+                  17,
+                  17
+                ]
+              },
+              {
+                "inputs": [
+                  178
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  63,
+                  63,
+                  63
+                ],
+                "outputs": [
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "inputs": [
+                  223
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c6d8f158d13be905b5ab6f821d30e114c5f9455dfd49a862e3e6706a2a3d9929",
+            "stages": [
+              {
+                "inputs": [
+                  458,
+                  458,
+                  458
+                ],
+                "outputs": [
+                  17,
+                  17,
+                  17
+                ]
+              },
+              {
+                "inputs": [
+                  178
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  63,
+                  63,
+                  63
+                ],
+                "outputs": [
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "inputs": [
+                  223
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "cb9e749f7f57cd3cfa7e38f3f14655aaa57cf99538bd3e908ec37292519d352b",
+            "stages": [
+              {
+                "inputs": [
+                  458,
+                  458,
+                  458
+                ],
+                "outputs": [
+                  17,
+                  17,
+                  17
+                ]
+              },
+              {
+                "inputs": [
+                  178
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  63,
+                  63,
+                  63
+                ],
+                "outputs": [
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "inputs": [
+                  223
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f30e47fca1b5484b6004ed6f8e1cee0cce033c1214ef8d52554988810e0e6364",
+            "stages": [
+              {
+                "inputs": [
+                  458,
+                  458,
+                  458
+                ],
+                "outputs": [
+                  17,
+                  17,
+                  17
+                ]
+              },
+              {
+                "inputs": [
+                  178
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  63,
+                  63,
+                  63
+                ],
+                "outputs": [
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "inputs": [
+                  223
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          }
+        ],
+        "fit_ids": [
+          "08d20cd9ca0963de191fd1c9fa7ace1af84399a674f9aa19f13bd6bbe7793100",
+          "2496fd5ceb92fd04dd112284558d7ad6ef7959f842b22502fe688eb5511e9dd7",
+          "3a83d37bb8d2ca4e7172d3813099d0db02b26cad9d883f4739d738e3d2c52ef7",
+          "3e244deedfd9b0dbdb8eecdf6627858b359403c6c55d82885acba338afa9b6ac",
+          "64201bd26f7b36d4472dac6d7bc84c23b6098b75077aad6c4e1e9edb5146bbd3",
+          "6acec9274178c4bbb28ae5684023682718556a092d8a8930cd790b21b5358ca3",
+          "9b39d4666dead4178dabe3955b76d74bba6c57bcbf4e27b5a2c3206eb0eb2cc3",
+          "9fdeb2a14fcb1d1d130765c29eb73e866be4c9ead2ea0d2253ce0cb31547d34c",
+          "a7a3b676dfd9d9138af4d8329f6bbe83201c23ef0c93fb62e239f04bcdff2898",
+          "b724a996677c590a69fe8232d22bebd75b42b3a7dc81534f54a739b6268abf2d",
+          "bc1ed24fba8306cb20e7b8f9e38ca2b73608fd1283759fe32705c9156392a154",
+          "c6d8f158d13be905b5ab6f821d30e114c5f9455dfd49a862e3e6706a2a3d9929",
+          "cb9e749f7f57cd3cfa7e38f3f14655aaa57cf99538bd3e908ec37292519d352b",
+          "f30e47fca1b5484b6004ed6f8e1cee0cce033c1214ef8d52554988810e0e6364"
+        ],
+        "cal_ids": [],
+        "training_trace_sha256": "3f5fc052f240051c6a80a3be7c57af5eae6289f93d9a559c1a7b0d7ee9e7eac9"
+      },
+      "source_pool_sha256": "b5e2ba5176f6e47cdd0e23ce413ab27c38824874dd11ee9a593488c753631c38",
+      "selected_template_ids": [
+        "tot_game24_public_902",
+        "tot_game24_public_905",
+        "tot_game24_public_919",
+        "tot_game24_public_923",
+        "tot_game24_public_924",
+        "tot_game24_public_928",
+        "tot_game24_public_931",
+        "tot_game24_public_932",
+        "tot_game24_public_935",
+        "tot_game24_public_955",
+        "tot_game24_public_960",
+        "tot_game24_public_964",
+        "tot_game24_public_977",
+        "tot_game24_public_990"
+      ],
+      "calibration_graph_fingerprints": [
+        "08d20cd9ca0963de191fd1c9fa7ace1af84399a674f9aa19f13bd6bbe7793100",
+        "2496fd5ceb92fd04dd112284558d7ad6ef7959f842b22502fe688eb5511e9dd7",
+        "3a83d37bb8d2ca4e7172d3813099d0db02b26cad9d883f4739d738e3d2c52ef7",
+        "3e244deedfd9b0dbdb8eecdf6627858b359403c6c55d82885acba338afa9b6ac",
+        "64201bd26f7b36d4472dac6d7bc84c23b6098b75077aad6c4e1e9edb5146bbd3",
+        "6acec9274178c4bbb28ae5684023682718556a092d8a8930cd790b21b5358ca3",
+        "9b39d4666dead4178dabe3955b76d74bba6c57bcbf4e27b5a2c3206eb0eb2cc3",
+        "9fdeb2a14fcb1d1d130765c29eb73e866be4c9ead2ea0d2253ce0cb31547d34c",
+        "a7a3b676dfd9d9138af4d8329f6bbe83201c23ef0c93fb62e239f04bcdff2898",
+        "b724a996677c590a69fe8232d22bebd75b42b3a7dc81534f54a739b6268abf2d",
+        "bc1ed24fba8306cb20e7b8f9e38ca2b73608fd1283759fe32705c9156392a154",
+        "c6d8f158d13be905b5ab6f821d30e114c5f9455dfd49a862e3e6706a2a3d9929",
+        "cb9e749f7f57cd3cfa7e38f3f14655aaa57cf99538bd3e908ec37292519d352b",
+        "f30e47fca1b5484b6004ed6f8e1cee0cce033c1214ef8d52554988810e0e6364"
+      ],
+      "evaluation_graphs_disjoint": true,
+      "public_sampling_cap": 256,
+      "performance_or_coverage_validated": false
+    },
+    "qwen14": {
+      "model": {
+        "schema": "fit-only-chain-work-model/v1",
+        "fit_graph_count": 14,
+        "cal_graph_count": 0,
+        "neighbors": 32,
+        "service_safety_factor": 1.15,
+        "prefill_tokens_per_decode_unit": 256,
+        "interstage_gap_decode_units": 32,
+        "forecast_guard_decode_units": 50,
+        "kv_horizon_tokens": 50,
+        "residence_tokens": 50,
+        "incumbent_density_factor": 1.2,
+        "scope": "Reserved public ToT-style fixed replay length profiles only; no evaluation run labels or natural-generation quality claim.",
+        "records": [
+          {
+            "id": "08d20cd9ca0963de191fd1c9fa7ace1af84399a674f9aa19f13bd6bbe7793100",
+            "stages": [
+              {
+                "inputs": [
+                  511,
+                  511,
+                  511
+                ],
+                "outputs": [
+                  19,
+                  19,
+                  19
+                ]
+              },
+              {
+                "inputs": [
+                  194
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  76,
+                  76,
+                  76
+                ],
+                "outputs": [
+                  38,
+                  43,
+                  36
+                ]
+              },
+              {
+                "inputs": [
+                  254
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2496fd5ceb92fd04dd112284558d7ad6ef7959f842b22502fe688eb5511e9dd7",
+            "stages": [
+              {
+                "inputs": [
+                  510,
+                  510,
+                  510
+                ],
+                "outputs": [
+                  18,
+                  18,
+                  24
+                ]
+              },
+              {
+                "inputs": [
+                  197
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  80,
+                  80,
+                  80
+                ],
+                "outputs": [
+                  49,
+                  49,
+                  43
+                ]
+              },
+              {
+                "inputs": [
+                  278
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3a83d37bb8d2ca4e7172d3813099d0db02b26cad9d883f4739d738e3d2c52ef7",
+            "stages": [
+              {
+                "inputs": [
+                  510,
+                  510,
+                  510
+                ],
+                "outputs": [
+                  18,
+                  18,
+                  20
+                ]
+              },
+              {
+                "inputs": [
+                  193
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  76,
+                  76,
+                  76
+                ],
+                "outputs": [
+                  39,
+                  39,
+                  37
+                ]
+              },
+              {
+                "inputs": [
+                  252
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3e244deedfd9b0dbdb8eecdf6627858b359403c6c55d82885acba338afa9b6ac",
+            "stages": [
+              {
+                "inputs": [
+                  509,
+                  509,
+                  509
+                ],
+                "outputs": [
+                  17,
+                  17,
+                  17
+                ]
+              },
+              {
+                "inputs": [
+                  188
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  72,
+                  72,
+                  72
+                ],
+                "outputs": [
+                  32,
+                  32,
+                  35
+                ]
+              },
+              {
+                "inputs": [
+                  236
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "64201bd26f7b36d4472dac6d7bc84c23b6098b75077aad6c4e1e9edb5146bbd3",
+            "stages": [
+              {
+                "inputs": [
+                  510,
+                  510,
+                  510
+                ],
+                "outputs": [
+                  18,
+                  20,
+                  20
+                ]
+              },
+              {
+                "inputs": [
+                  195
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  74,
+                  74,
+                  74
+                ],
+                "outputs": [
+                  35,
+                  33,
+                  33
+                ]
+              },
+              {
+                "inputs": [
+                  238
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "6acec9274178c4bbb28ae5684023682718556a092d8a8930cd790b21b5358ca3",
+            "stages": [
+              {
+                "inputs": [
+                  510,
+                  510,
+                  510
+                ],
+                "outputs": [
+                  20,
+                  18,
+                  20
+                ]
+              },
+              {
+                "inputs": [
+                  195
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  76,
+                  76,
+                  76
+                ],
+                "outputs": [
+                  39,
+                  37,
+                  41
+                ]
+              },
+              {
+                "inputs": [
+                  254
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "9b39d4666dead4178dabe3955b76d74bba6c57bcbf4e27b5a2c3206eb0eb2cc3",
+            "stages": [
+              {
+                "inputs": [
+                  511,
+                  511,
+                  511
+                ],
+                "outputs": [
+                  19,
+                  19,
+                  19
+                ]
+              },
+              {
+                "inputs": [
+                  194
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  76,
+                  76,
+                  76
+                ],
+                "outputs": [
+                  38,
+                  36,
+                  36
+                ]
+              },
+              {
+                "inputs": [
+                  247
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "9fdeb2a14fcb1d1d130765c29eb73e866be4c9ead2ea0d2253ce0cb31547d34c",
+            "stages": [
+              {
+                "inputs": [
+                  510,
+                  510,
+                  510
+                ],
+                "outputs": [
+                  18,
+                  18,
+                  18
+                ]
+              },
+              {
+                "inputs": [
+                  191
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  74,
+                  74,
+                  74
+                ],
+                "outputs": [
+                  33,
+                  33,
+                  33
+                ]
+              },
+              {
+                "inputs": [
+                  236
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "a7a3b676dfd9d9138af4d8329f6bbe83201c23ef0c93fb62e239f04bcdff2898",
+            "stages": [
+              {
+                "inputs": [
+                  510,
+                  510,
+                  510
+                ],
+                "outputs": [
+                  18,
+                  18,
+                  20
+                ]
+              },
+              {
+                "inputs": [
+                  193
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  76,
+                  76,
+                  76
+                ],
+                "outputs": [
+                  38,
+                  36,
+                  36
+                ]
+              },
+              {
+                "inputs": [
+                  247
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "b724a996677c590a69fe8232d22bebd75b42b3a7dc81534f54a739b6268abf2d",
+            "stages": [
+              {
+                "inputs": [
+                  510,
+                  510,
+                  510
+                ],
+                "outputs": [
+                  20,
+                  18,
+                  18
+                ]
+              },
+              {
+                "inputs": [
+                  193
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  74,
+                  74,
+                  74
+                ],
+                "outputs": [
+                  34,
+                  34,
+                  36
+                ]
+              },
+              {
+                "inputs": [
+                  241
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "bc1ed24fba8306cb20e7b8f9e38ca2b73608fd1283759fe32705c9156392a154",
+            "stages": [
+              {
+                "inputs": [
+                  510,
+                  510,
+                  510
+                ],
+                "outputs": [
+                  18,
+                  18,
+                  18
+                ]
+              },
+              {
+                "inputs": [
+                  191
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  74,
+                  74,
+                  74
+                ],
+                "outputs": [
+                  36,
+                  36,
+                  34
+                ]
+              },
+              {
+                "inputs": [
+                  243
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "c6d8f158d13be905b5ab6f821d30e114c5f9455dfd49a862e3e6706a2a3d9929",
+            "stages": [
+              {
+                "inputs": [
+                  510,
+                  510,
+                  510
+                ],
+                "outputs": [
+                  18,
+                  18,
+                  18
+                ]
+              },
+              {
+                "inputs": [
+                  191
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  74,
+                  74,
+                  74
+                ],
+                "outputs": [
+                  36,
+                  34,
+                  34
+                ]
+              },
+              {
+                "inputs": [
+                  241
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "cb9e749f7f57cd3cfa7e38f3f14655aaa57cf99538bd3e908ec37292519d352b",
+            "stages": [
+              {
+                "inputs": [
+                  510,
+                  510,
+                  510
+                ],
+                "outputs": [
+                  20,
+                  18,
+                  18
+                ]
+              },
+              {
+                "inputs": [
+                  193
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  76,
+                  76,
+                  76
+                ],
+                "outputs": [
+                  39,
+                  37,
+                  37
+                ]
+              },
+              {
+                "inputs": [
+                  250
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          },
+          {
+            "id": "f30e47fca1b5484b6004ed6f8e1cee0cce033c1214ef8d52554988810e0e6364",
+            "stages": [
+              {
+                "inputs": [
+                  512,
+                  512,
+                  512
+                ],
+                "outputs": [
+                  22,
+                  20,
+                  22
+                ]
+              },
+              {
+                "inputs": [
+                  201
+                ],
+                "outputs": [
+                  11
+                ]
+              },
+              {
+                "inputs": [
+                  78,
+                  78,
+                  78
+                ],
+                "outputs": [
+                  36,
+                  36,
+                  38
+                ]
+              },
+              {
+                "inputs": [
+                  247
+                ],
+                "outputs": [
+                  11
+                ]
+              }
+            ]
+          }
+        ],
+        "fit_ids": [
+          "08d20cd9ca0963de191fd1c9fa7ace1af84399a674f9aa19f13bd6bbe7793100",
+          "2496fd5ceb92fd04dd112284558d7ad6ef7959f842b22502fe688eb5511e9dd7",
+          "3a83d37bb8d2ca4e7172d3813099d0db02b26cad9d883f4739d738e3d2c52ef7",
+          "3e244deedfd9b0dbdb8eecdf6627858b359403c6c55d82885acba338afa9b6ac",
+          "64201bd26f7b36d4472dac6d7bc84c23b6098b75077aad6c4e1e9edb5146bbd3",
+          "6acec9274178c4bbb28ae5684023682718556a092d8a8930cd790b21b5358ca3",
+          "9b39d4666dead4178dabe3955b76d74bba6c57bcbf4e27b5a2c3206eb0eb2cc3",
+          "9fdeb2a14fcb1d1d130765c29eb73e866be4c9ead2ea0d2253ce0cb31547d34c",
+          "a7a3b676dfd9d9138af4d8329f6bbe83201c23ef0c93fb62e239f04bcdff2898",
+          "b724a996677c590a69fe8232d22bebd75b42b3a7dc81534f54a739b6268abf2d",
+          "bc1ed24fba8306cb20e7b8f9e38ca2b73608fd1283759fe32705c9156392a154",
+          "c6d8f158d13be905b5ab6f821d30e114c5f9455dfd49a862e3e6706a2a3d9929",
+          "cb9e749f7f57cd3cfa7e38f3f14655aaa57cf99538bd3e908ec37292519d352b",
+          "f30e47fca1b5484b6004ed6f8e1cee0cce033c1214ef8d52554988810e0e6364"
+        ],
+        "cal_ids": [],
+        "training_trace_sha256": "9c53f8cc161cbb46763fdc14a4d9580ab0fb009072a28493462d0eb0757e257d"
+      },
+      "source_pool_sha256": "6f2faf3a89602c58e42e3b5811c8f82b18559aa65212c9df259e5437e65853c9",
+      "selected_template_ids": [
+        "tot_game24_public_902",
+        "tot_game24_public_905",
+        "tot_game24_public_919",
+        "tot_game24_public_923",
+        "tot_game24_public_924",
+        "tot_game24_public_928",
+        "tot_game24_public_931",
+        "tot_game24_public_932",
+        "tot_game24_public_935",
+        "tot_game24_public_955",
+        "tot_game24_public_960",
+        "tot_game24_public_964",
+        "tot_game24_public_977",
+        "tot_game24_public_990"
+      ],
+      "calibration_graph_fingerprints": [
+        "08d20cd9ca0963de191fd1c9fa7ace1af84399a674f9aa19f13bd6bbe7793100",
+        "2496fd5ceb92fd04dd112284558d7ad6ef7959f842b22502fe688eb5511e9dd7",
+        "3a83d37bb8d2ca4e7172d3813099d0db02b26cad9d883f4739d738e3d2c52ef7",
+        "3e244deedfd9b0dbdb8eecdf6627858b359403c6c55d82885acba338afa9b6ac",
+        "64201bd26f7b36d4472dac6d7bc84c23b6098b75077aad6c4e1e9edb5146bbd3",
+        "6acec9274178c4bbb28ae5684023682718556a092d8a8930cd790b21b5358ca3",
+        "9b39d4666dead4178dabe3955b76d74bba6c57bcbf4e27b5a2c3206eb0eb2cc3",
+        "9fdeb2a14fcb1d1d130765c29eb73e866be4c9ead2ea0d2253ce0cb31547d34c",
+        "a7a3b676dfd9d9138af4d8329f6bbe83201c23ef0c93fb62e239f04bcdff2898",
+        "b724a996677c590a69fe8232d22bebd75b42b3a7dc81534f54a739b6268abf2d",
+        "bc1ed24fba8306cb20e7b8f9e38ca2b73608fd1283759fe32705c9156392a154",
+        "c6d8f158d13be905b5ab6f821d30e114c5f9455dfd49a862e3e6706a2a3d9929",
+        "cb9e749f7f57cd3cfa7e38f3f14655aaa57cf99538bd3e908ec37292519d352b",
+        "f30e47fca1b5484b6004ed6f8e1cee0cce033c1214ef8d52554988810e0e6364"
+      ],
+      "evaluation_graphs_disjoint": true,
+      "public_sampling_cap": 256,
+      "performance_or_coverage_validated": false
+    }
+  }
+}

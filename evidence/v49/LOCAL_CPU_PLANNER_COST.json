@@ -1,0 +1,24 @@
+{
+  "CPU_only": true,
+  "not_GPU_performance": true,
+  "measurements": [
+    {
+      "candidates": 16,
+      "selected": 8,
+      "median_seconds": 0.000792291946709156,
+      "max_seconds": 0.0008609583601355553
+    },
+    {
+      "candidates": 64,
+      "selected": 8,
+      "median_seconds": 0.005685416981577873,
+      "max_seconds": 0.005771541967988014
+    },
+    {
+      "candidates": 256,
+      "selected": 8,
+      "median_seconds": 0.020338709000498056,
+      "max_seconds": 0.021428166888654232
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+INFO 11-07 12:24:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-07 12:24:42 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.RECOMPUTE mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-07 12:24:42 scheduler.py:1573] Collection ID: 1, Request ID: 1: (1, -0.0, 100.0) is preempted by PreemptionMode.RECOMPUTE mode.
+INFO 11-07 12:24:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-07 12:24:42 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-07 12:24:42 scheduler.py:1573] Collection ID: 1, Request ID: 1: (1, -0.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-07 12:24:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 12:24:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 12:24:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 12:24:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 12:24:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 12:24:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 12:24:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+{"CUDA_context_initialized": false, "engine_started": false, "exit_code": 1}
+/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+test_compute_interference_can_recompute_when_CPU_swap_full (__main__.Runtime.test_compute_interference_can_recompute_when_CPU_swap_full) ... ERROR
+test_compute_interference_can_swap_with_free_KV_and_resume (__main__.Runtime.test_compute_interference_can_swap_with_free_KV_and_resume) ... ERROR
+test_free_KV_does_not_force_expired_work_into_decode_batch (__main__.Runtime.test_free_KV_does_not_force_expired_work_into_decode_batch) ... ok
+test_mixed_to_pure_replans_and_foreground_only_delegates (__main__.Runtime.test_mixed_to_pure_replans_and_foreground_only_delegates) ... ERROR
+test_new_request_and_revision_replan_before_periodic_frame (__main__.Runtime.test_new_request_and_revision_replan_before_periodic_frame) ... ok
+test_next_stage_event_keeps_native_barrier_metadata (__main__.Runtime.test_next_stage_event_keeps_native_barrier_metadata) ... ok
+test_pure_DR_decisions_still_match_original_v47 (__main__.Runtime.test_pure_DR_decisions_still_match_original_v47) ... ok
+test_selected_members_only_and_no_work_disappears (__main__.Runtime.test_selected_members_only_and_no_work_disappears) ... ok
+
+======================================================================
+ERROR: test_compute_interference_can_recompute_when_CPU_swap_full (__main__.Runtime.test_compute_interference_can_recompute_when_CPU_swap_full)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/test_v49_runtime.py", line 87, in test_compute_interference_can_recompute_when_CPU_swap_full
+    def test_compute_interference_can_recompute_when_CPU_swap_full(self):self.exercise_compute_swap(1)
+                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/test_v49_runtime.py", line 80, in exercise_compute_swap
+    self.fixture.step(s)
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/controlled_native.py", line 76, in step
+    _,out,_=scheduler.schedule()
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 1295, in schedule
+    scheduler_outputs: SchedulerOutputs = self._schedule()
+                                          ^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/mixed_joint.py", line 128, in _schedule
+    output = self._dispatch()
+             ^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/mixed_joint.py", line 152, in _dispatch
+    return NativeChainScheduler._schedule(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/native_chain.py", line 158, in _schedule
+    goals=self.policy.goals(groups,now) if groups else []
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/mixed_joint.py", line 63, in goals
+    use_domain = any(self.chains[g.collection_id].get('mixed_application') == 'tot_native' for g in groups)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/mixed_joint.py", line 63, in <genexpr>
+    use_domain = any(self.chains[g.collection_id].get('mixed_application') == 'tot_native' for g in groups)
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 2
+
+======================================================================
+ERROR: test_compute_interference_can_swap_with_free_KV_and_resume (__main__.Runtime.test_compute_interference_can_swap_with_free_KV_and_resume)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/test_v49_runtime.py", line 86, in test_compute_interference_can_swap_with_free_KV_and_resume
+    def test_compute_interference_can_swap_with_free_KV_and_resume(self):self.exercise_compute_swap(32)
+                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/test_v49_runtime.py", line 80, in exercise_compute_swap
+    self.fixture.step(s)
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/controlled_native.py", line 76, in step
+    _,out,_=scheduler.schedule()
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 1295, in schedule
+    scheduler_outputs: SchedulerOutputs = self._schedule()
+                                          ^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/mixed_joint.py", line 128, in _schedule
+    output = self._dispatch()
+             ^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/mixed_joint.py", line 152, in _dispatch
+    return NativeChainScheduler._schedule(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/native_chain.py", line 158, in _schedule
+    goals=self.policy.goals(groups,now) if groups else []
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/mixed_joint.py", line 63, in goals
+    use_domain = any(self.chains[g.collection_id].get('mixed_application') == 'tot_native' for g in groups)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/mixed_joint.py", line 63, in <genexpr>
+    use_domain = any(self.chains[g.collection_id].get('mixed_application') == 'tot_native' for g in groups)
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 2
+
+======================================================================
+ERROR: test_mixed_to_pure_replans_and_foreground_only_delegates (__main__.Runtime.test_mixed_to_pure_replans_and_foreground_only_delegates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/test_v49_runtime.py", line 135, in test_mixed_to_pure_replans_and_foreground_only_delegates
+    self.finish(fg);s.free_finished_seq_groups();self.fixture.step(s)
+                                                 ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/controlled_native.py", line 76, in step
+    _,out,_=scheduler.schedule()
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 1295, in schedule
+    scheduler_outputs: SchedulerOutputs = self._schedule()
+                                          ^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/mixed_joint.py", line 128, in _schedule
+    output = self._dispatch()
+             ^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/mixed_joint.py", line 152, in _dispatch
+    return NativeChainScheduler._schedule(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/native_chain.py", line 158, in _schedule
+    goals=self.policy.goals(groups,now) if groups else []
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/mixed_joint.py", line 63, in goals
+    use_domain = any(self.chains[g.collection_id].get('mixed_application') == 'tot_native' for g in groups)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v49_compute_budget_20261107/attempt01/stage39_v49_compute_budget_20261107_v1/programs/mixed_joint.py", line 63, in <genexpr>
+    use_domain = any(self.chains[g.collection_id].get('mixed_application') == 'tot_native' for g in groups)
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 1
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.089s
+
+FAILED (errors=3)

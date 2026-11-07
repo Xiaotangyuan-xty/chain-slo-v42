@@ -1,0 +1,9 @@
+{"CUDA_context_initialized": false, "engine_started": false, "exit_code": 0}
+test_Astar_shared_protocol_keeps_declared_repairs_and_implicit_ToT (__main__.Comparison.test_Astar_shared_protocol_keeps_declared_repairs_and_implicit_ToT) ... ok
+test_native_A_shared_protocol_keeps_original_budget_and_implicit_ToT (__main__.Comparison.test_native_A_shared_protocol_keeps_original_budget_and_implicit_ToT) ... ok
+test_v49_shared_entry_registers_native_ToT_with_real_keyword_API (__main__.Comparison.test_v49_shared_entry_registers_native_ToT_with_real_keyword_API) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 14.670s
+
+OK
