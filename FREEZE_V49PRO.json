@@ -75,7 +75,7 @@
     "evidence/v49pro/cpu_attempts/attempt08/test_v49pro_runtime.log": "fb75ab455106399083ba887a0d9ee376a21022abd73b37ed5012a0f534474824",
     "evidence/v49pro/cpu_attempts/attempt08/test_v49pro_execution.log": "4d4d701719c0a6485115e7620da16485a65a041ba7c7fd16565a1ede980ca4e0",
     "evidence/v49pro/cpu_attempts/attempt08/test_v49pro_control.log": "70aff2b963bcdedd3479c3c2729577bf24e984fc1624c24e82ca5ce89d101279",
-    "V49PRO.md": "260955779643be7f50753cecb05185fa2556380d79e4613d14b2a75379271bf1",
+    "V49PRO.md": "7c0872d6811e9ea2e98439fcd8cbef13dcd692b5cb319e27d6ef8a3300bb44b5",
     "verify_v49pro_freeze.py": "f852deccd39939f1d9130f47fa2cfc31296263d091a05cf1becbbb14cd901467"
   }
 }

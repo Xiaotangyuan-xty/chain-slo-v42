@@ -1,6 +1,6 @@
 # v49pro: stage-aware paired terminal-credit control
 
-The completed v49 mixed replay exposed a scheduling regression: fixed-hour native weighted-token goodput was **630.6125/s**, DR attainment was **4/60**, and drain took **1336.625 s**. Its 6336 joint plans consumed **499.953 s** in the recorded planning region (78.907 ms mean, 132.782 ms P95). These CPU times exclude subsequent JSON serialization. The decision log was 863 MB. In 389 plans at least eight requests were live while only one or two were selected. This is evidence of expensive control and restrictive selection; it does not quantify the isolated causal effect of each component.
+The completed v49 mixed replay exposed a scheduling regression: fixed-hour native weighted-token goodput was **630.6125/s**, DR attainment was **4/60**, and drain took **1336.625 s**. Its 6336 joint plans consumed **499.953 s** in the recorded planning region (78.907 ms mean, 132.782 ms P95). These planning-region wall-clock durations exclude subsequent JSON serialization; they are not process CPU accounting or GPU execution time. The decision log was 863 MB. In 389 plans at least eight requests were live while only one or two were selected. This is evidence of expensive control and restrictive selection; it does not quantify the isolated causal effect of each component.
 
 GPU1 was stopped at the user's request. v49 had completed with a PASS gate; Astar was interrupted, A did not run. That queue is **not** a completed three-method comparison. The original v49 code, its results and earlier versions remain intact.
 
