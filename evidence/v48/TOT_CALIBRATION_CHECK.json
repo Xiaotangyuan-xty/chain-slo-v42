@@ -1,0 +1,191 @@
+{
+  "CPU_only": true,
+  "GPU_used": false,
+  "gate": "PASS",
+  "scope": "Leave-one-graph-out within14 reserved calibration input graphs per model. Fixed replay-length work proxy, not formal evaluation, not natural response prediction coverage or GPU performance. No parameter selection from these scores.",
+  "asset_sha256": "fe07bdafb05fdf7323eaf8e539c1329849cf951b2803823913e93aaff526ce46",
+  "results": {
+    "llama8": {
+      "graphs": 14,
+      "median_ToT_work_ratio": 1.0179415746542306,
+      "median_DR_transfer_work_ratio": 4.419402342943899,
+      "rows": [
+        {
+          "held_out_graph": "08d20cd9ca0963de191fd1c9fa7ace1af84399a674f9aa19f13bd6bbe7793100",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 0.993609145092196,
+          "DR_transfer_work_ratio": 4.321184909345094
+        },
+        {
+          "held_out_graph": "2496fd5ceb92fd04dd112284558d7ad6ef7959f842b22502fe688eb5511e9dd7",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 0.8582712282995569,
+          "DR_transfer_work_ratio": 3.7748957349700976
+        },
+        {
+          "held_out_graph": "3a83d37bb8d2ca4e7172d3813099d0db02b26cad9d883f4739d738e3d2c52ef7",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.0179415746542306,
+          "DR_transfer_work_ratio": 4.419402342943899
+        },
+        {
+          "held_out_graph": "3e244deedfd9b0dbdb8eecdf6627858b359403c6c55d82885acba338afa9b6ac",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 0.9995902920966508,
+          "DR_transfer_work_ratio": 4.345327706399415
+        },
+        {
+          "held_out_graph": "64201bd26f7b36d4472dac6d7bc84c23b6098b75077aad6c4e1e9edb5146bbd3",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.0179415746542306,
+          "DR_transfer_work_ratio": 4.419402342943899
+        },
+        {
+          "held_out_graph": "6acec9274178c4bbb28ae5684023682718556a092d8a8930cd790b21b5358ca3",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 0.993609145092196,
+          "DR_transfer_work_ratio": 4.321184909345094
+        },
+        {
+          "held_out_graph": "9b39d4666dead4178dabe3955b76d74bba6c57bcbf4e27b5a2c3206eb0eb2cc3",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.0179415746542306,
+          "DR_transfer_work_ratio": 4.419402342943899
+        },
+        {
+          "held_out_graph": "9fdeb2a14fcb1d1d130765c29eb73e866be4c9ead2ea0d2253ce0cb31547d34c",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.0179415746542306,
+          "DR_transfer_work_ratio": 4.419402342943899
+        },
+        {
+          "held_out_graph": "a7a3b676dfd9d9138af4d8329f6bbe83201c23ef0c93fb62e239f04bcdff2898",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.0179415746542306,
+          "DR_transfer_work_ratio": 4.419402342943899
+        },
+        {
+          "held_out_graph": "b724a996677c590a69fe8232d22bebd75b42b3a7dc81534f54a739b6268abf2d",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.0179415746542306,
+          "DR_transfer_work_ratio": 4.419402342943899
+        },
+        {
+          "held_out_graph": "bc1ed24fba8306cb20e7b8f9e38ca2b73608fd1283759fe32705c9156392a154",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.0179415746542306,
+          "DR_transfer_work_ratio": 4.419402342943899
+        },
+        {
+          "held_out_graph": "c6d8f158d13be905b5ab6f821d30e114c5f9455dfd49a862e3e6706a2a3d9929",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.0179415746542306,
+          "DR_transfer_work_ratio": 4.419402342943899
+        },
+        {
+          "held_out_graph": "cb9e749f7f57cd3cfa7e38f3f14655aaa57cf99538bd3e908ec37292519d352b",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.0179415746542306,
+          "DR_transfer_work_ratio": 4.419402342943899
+        },
+        {
+          "held_out_graph": "f30e47fca1b5484b6004ed6f8e1cee0cce033c1214ef8d52554988810e0e6364",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.0179415746542306,
+          "DR_transfer_work_ratio": 4.419402342943899
+        }
+      ]
+    },
+    "qwen14": {
+      "graphs": 14,
+      "median_ToT_work_ratio": 1.0023213603253855,
+      "median_DR_transfer_work_ratio": 4.005058947946321,
+      "rows": [
+        {
+          "held_out_graph": "08d20cd9ca0963de191fd1c9fa7ace1af84399a674f9aa19f13bd6bbe7793100",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 0.9626037987973657,
+          "DR_transfer_work_ratio": 3.8575816868696506
+        },
+        {
+          "held_out_graph": "2496fd5ceb92fd04dd112284558d7ad6ef7959f842b22502fe688eb5511e9dd7",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 0.8408188982911313,
+          "DR_transfer_work_ratio": 3.405801437086725
+        },
+        {
+          "held_out_graph": "3a83d37bb8d2ca4e7172d3813099d0db02b26cad9d883f4739d738e3d2c52ef7",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 0.9781307801109782,
+          "DR_transfer_work_ratio": 3.915374952368035
+        },
+        {
+          "held_out_graph": "3e244deedfd9b0dbdb8eecdf6627858b359403c6c55d82885acba338afa9b6ac",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.1016555469898617,
+          "DR_transfer_work_ratio": 4.373978152485263
+        },
+        {
+          "held_out_graph": "64201bd26f7b36d4472dac6d7bc84c23b6098b75077aad6c4e1e9edb5146bbd3",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.0453205828404195,
+          "DR_transfer_work_ratio": 4.164720773823018
+        },
+        {
+          "held_out_graph": "6acec9274178c4bbb28ae5684023682718556a092d8a8930cd790b21b5358ca3",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 0.9575263733967356,
+          "DR_transfer_work_ratio": 3.8389106302677987
+        },
+        {
+          "held_out_graph": "9b39d4666dead4178dabe3955b76d74bba6c57bcbf4e27b5a2c3206eb0eb2cc3",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 0.9995727002606377,
+          "DR_transfer_work_ratio": 3.9947696332318556
+        },
+        {
+          "held_out_graph": "9fdeb2a14fcb1d1d130765c29eb73e866be4c9ead2ea0d2253ce0cb31547d34c",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.0821561843507819,
+          "DR_transfer_work_ratio": 4.301420138075878
+        },
+        {
+          "held_out_graph": "a7a3b676dfd9d9138af4d8329f6bbe83201c23ef0c93fb62e239f04bcdff2898",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.0050700203901333,
+          "DR_transfer_work_ratio": 4.015348262660785
+        },
+        {
+          "held_out_graph": "b724a996677c590a69fe8232d22bebd75b42b3a7dc81534f54a739b6268abf2d",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.0394077405639994,
+          "DR_transfer_work_ratio": 4.142777823335656
+        },
+        {
+          "held_out_graph": "bc1ed24fba8306cb20e7b8f9e38ca2b73608fd1283759fe32705c9156392a154",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.0394077405639994,
+          "DR_transfer_work_ratio": 4.142777823335656
+        },
+        {
+          "held_out_graph": "c6d8f158d13be905b5ab6f821d30e114c5f9455dfd49a862e3e6706a2a3d9929",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 1.0512963954659629,
+          "DR_transfer_work_ratio": 4.186897411459197
+        },
+        {
+          "held_out_graph": "cb9e749f7f57cd3cfa7e38f3f14655aaa57cf99538bd3e908ec37292519d352b",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 0.988743882299277,
+          "DR_transfer_work_ratio": 3.9547608796341596
+        },
+        {
+          "held_out_graph": "f30e47fca1b5484b6004ed6f8e1cee0cce033c1214ef8d52554988810e0e6364",
+          "donors": 13,
+          "reserved_ToT_work_ratio": 0.9624868966205761,
+          "DR_transfer_work_ratio": 3.8569763077197132
+        }
+      ]
+    }
+  }
+}

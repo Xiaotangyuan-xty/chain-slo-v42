@@ -1,0 +1,30 @@
+INFO 11-07 08:11:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:11:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-07 08:11:42 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.RECOMPUTE mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-07 08:11:42 scheduler.py:1573] Collection ID: 1, Request ID: 1: (1, -0.0, 100.0) is preempted by PreemptionMode.RECOMPUTE mode.
+INFO 11-07 08:11:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-07 08:11:42 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-07 08:11:42 scheduler.py:1573] Collection ID: 1, Request ID: 1: (1, -0.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-07 08:11:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:11:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:11:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:11:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:11:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:11:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+{"CUDA_context_initialized": false, "engine_started": false, "exit_code": 0}
+/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+test_foreground_only_stays_native_and_all_abort_frees_registries (__main__.MixedRuntime.test_foreground_only_stays_native_and_all_abort_frees_registries) ... ok
+test_mixed_pressure_native_recompute_resumes_prefix (__main__.MixedRuntime.test_mixed_pressure_native_recompute_resumes_prefix) ... ok
+test_mixed_pressure_native_swap_resumes_prefix (__main__.MixedRuntime.test_mixed_pressure_native_swap_resumes_prefix) ... ok
+test_new_foreground_is_eligible_before_50ticks (__main__.MixedRuntime.test_new_foreground_is_eligible_before_50ticks) ... ok
+test_next_stage_arrives_while_other_selected_work_is_live (__main__.MixedRuntime.test_next_stage_arrives_while_other_selected_work_is_live) ... ok
+test_prediction_revision_triggers_plan_without_membership_change (__main__.MixedRuntime.test_prediction_revision_triggers_plan_without_membership_change) ... ok
+test_pure_chain_trace_matches_unchanged_v47_loop (__main__.MixedRuntime.test_pure_chain_trace_matches_unchanged_v47_loop) ... ok
+test_zero_probability_chain_backfills_with_positive_chain_and_foreground (__main__.MixedRuntime.test_zero_probability_chain_backfills_with_positive_chain_and_foreground) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.087s
+
+OK

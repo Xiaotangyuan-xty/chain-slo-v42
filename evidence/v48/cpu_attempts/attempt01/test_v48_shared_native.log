@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+  File "<frozen runpy>", line 286, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v48_shared_native.py", line 4, in <module>
+    from jitserve.scheduler.policy import SLOPolicy
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/jitserve/scheduler/policy.py", line 6, in <module>
+    from vllm.sequence import SequenceGroup
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/__init__.py", line 4, in <module>
+    from vllm.engine.async_llm_engine import AsyncLLMEngine
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/engine/async_llm_engine.py", line 12, in <module>
+    from vllm.core.scheduler import SchedulerOutputs
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 21, in <module>
+    from jitserve.scheduler.policy import BasePolicy
+ImportError: cannot import name 'BasePolicy' from partially initialized module 'jitserve.scheduler.policy' (most likely due to a circular import) (/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/jitserve/scheduler/policy.py)

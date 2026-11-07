@@ -1,0 +1,14 @@
+{"CUDA_context_initialized": false, "engine_started": false, "exit_code": 0}
+test_cumulative_token_deadlines_and_late_TTFT_recovery (__main__.Control.test_cumulative_token_deadlines_and_late_TTFT_recovery) ... ok
+test_declared_budget_is_not_exceeded_and_oversized_delegates (__main__.Control.test_declared_budget_is_not_exceeded_and_oversized_delegates) ... ok
+test_latency_never_reearns_settled_prefix_and_deadline_is_conditional (__main__.Control.test_latency_never_reearns_settled_prefix_and_deadline_is_conditional) ... ok
+test_new_positive_request_does_not_evict_resident_with_spare_capacity (__main__.Control.test_new_positive_request_does_not_evict_resident_with_spare_capacity) ... ok
+test_switch_cost_and_conditional_prefix_can_prevent_bad_eviction (__main__.Control.test_switch_cost_and_conditional_prefix_can_prevent_bad_eviction) ... ok
+test_tot_donors_are_calibration_only_and_width_cap_qualified (__main__.Control.test_tot_donors_are_calibration_only_and_width_cap_qualified) ... ok
+test_zero_forecast_work_gets_spare_capacity (__main__.Control.test_zero_forecast_work_gets_spare_capacity) ... ok
+test_zero_prediction_is_not_completion_and_cap_bounds_survival (__main__.Control.test_zero_prediction_is_not_completion_and_cap_bounds_survival) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.004s
+
+OK

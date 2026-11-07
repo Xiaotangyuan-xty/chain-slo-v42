@@ -1,0 +1,100 @@
+INFO 11-07 08:04:33 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:04:33 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:04:33 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:04:33 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:04:33 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:04:33 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:04:33 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+{"CUDA_context_initialized": false, "engine_started": false, "exit_code": 1}
+/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+test_all_expired_calls_finish_without_losing_emitted_prefix_or_kv (__main__.ExpiredDrain.test_all_expired_calls_finish_without_losing_emitted_prefix_or_kv) ... ERROR
+test_expired_backlog_bypasses_forecast_and_expands_only_within_pool (__main__.ExpiredDrain.test_expired_backlog_bypasses_forecast_and_expands_only_within_pool) ... ERROR
+test_new_foreground_restores_limits_and_remains_executable (__main__.ExpiredDrain.test_new_foreground_restores_limits_and_remains_executable) ... ERROR
+test_new_live_root_exits_fast_drain_and_restores_prior_limit (__main__.ExpiredDrain.test_new_live_root_exits_fast_drain_and_restores_prior_limit) ... ERROR
+test_reused_root_id_cannot_reactivate_stale_deadline_heap_entry (__main__.ExpiredDrain.test_reused_root_id_cannot_reactivate_stale_deadline_heap_entry) ... ERROR
+test_unsubmitted_next_stage_keeps_root_credit_live (__main__.ExpiredDrain.test_unsubmitted_next_stage_keeps_root_credit_live) ... ERROR
+test_zero_model_probability_is_not_proof_of_expiry (__main__.ExpiredDrain.test_zero_model_probability_is_not_proof_of_expiry) ... ERROR
+
+======================================================================
+ERROR: test_all_expired_calls_finish_without_losing_emitted_prefix_or_kv (__main__.ExpiredDrain.test_all_expired_calls_finish_without_losing_emitted_prefix_or_kv)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v47_runtime.py", line 95, in test_all_expired_calls_finish_without_losing_emitted_prefix_or_kv
+    for g in groups:s.add_seq_group(g)
+                    ^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_expired_backlog_bypasses_forecast_and_expands_only_within_pool (__main__.ExpiredDrain.test_expired_backlog_bypasses_forecast_and_expands_only_within_pool)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v47_runtime.py", line 30, in test_expired_backlog_bypasses_forecast_and_expands_only_within_pool
+    for rid in range(1,13):s.add_seq_group(self.group(rid))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_new_foreground_restores_limits_and_remains_executable (__main__.ExpiredDrain.test_new_foreground_restores_limits_and_remains_executable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v47_runtime.py", line 80, in test_new_foreground_restores_limits_and_remains_executable
+    for rid in range(1,5):s.add_seq_group(self.group(rid))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_new_live_root_exits_fast_drain_and_restores_prior_limit (__main__.ExpiredDrain.test_new_live_root_exits_fast_drain_and_restores_prior_limit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v47_runtime.py", line 45, in test_new_live_root_exits_fast_drain_and_restores_prior_limit
+    for rid in range(1,5):s.add_seq_group(self.group(rid))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_reused_root_id_cannot_reactivate_stale_deadline_heap_entry (__main__.ExpiredDrain.test_reused_root_id_cannot_reactivate_stale_deadline_heap_entry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v47_runtime.py", line 111, in test_reused_root_id_cannot_reactivate_stale_deadline_heap_entry
+    s=self.scheduler();g=self.group(1,2000.);s.add_seq_group(g);self.fixture.step(s)
+                                             ^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_unsubmitted_next_stage_keeps_root_credit_live (__main__.ExpiredDrain.test_unsubmitted_next_stage_keeps_root_credit_live)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v47_runtime.py", line 58, in test_unsubmitted_next_stage_keeps_root_credit_live
+    s.add_seq_group(g);self.fixture.step(s)
+    ^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_zero_model_probability_is_not_proof_of_expiry (__main__.ExpiredDrain.test_zero_model_probability_is_not_proof_of_expiry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v47_runtime.py", line 71, in test_zero_model_probability_is_not_proof_of_expiry
+    s=self.scheduler();s.add_seq_group(self.group(1,2000.))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.021s
+
+FAILED (errors=7)

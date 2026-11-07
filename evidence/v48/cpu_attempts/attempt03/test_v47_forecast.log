@@ -1,0 +1,15 @@
+{"CUDA_context_initialized": false, "engine_started": false, "exit_code": 0}
+test_model_tokenization_without_special_tokens_and_bounded_cache (__main__.TextCredit.test_model_tokenization_without_special_tokens_and_bounded_cache) ... ok
+test_bounded_cache_matches_disabled_cache_across_progress_and_prefix (__main__.TokenForecast.test_bounded_cache_matches_disabled_cache_across_progress_and_prefix) ... ok
+test_completed_current_sibling_reward_is_counted_once (__main__.TokenForecast.test_completed_current_sibling_reward_is_counted_once) ... ok
+test_completed_prefix_is_reward_not_remaining_work (__main__.TokenForecast.test_completed_prefix_is_reward_not_remaining_work) ... ok
+test_condition_reward_on_the_same_timely_donor (__main__.TokenForecast.test_condition_reward_on_the_same_timely_donor) ... ok
+test_expiry_skips_neighbor_search_and_never_reuses_probability (__main__.TokenForecast.test_expiry_skips_neighbor_search_and_never_reuses_probability) ... ok
+test_future_cache_invalidates_width_and_public_cap (__main__.TokenForecast.test_future_cache_invalidates_width_and_public_cap) ... ok
+test_new_current_sibling_invalidates_neighbor_signature (__main__.TokenForecast.test_new_current_sibling_invalidates_neighbor_signature) ... ok
+test_unknown_support_is_not_expiry (__main__.TokenForecast.test_unknown_support_is_not_expiry) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.005s
+
+OK

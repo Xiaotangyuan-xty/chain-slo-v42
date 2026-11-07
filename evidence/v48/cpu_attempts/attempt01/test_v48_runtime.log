@@ -1,0 +1,123 @@
+INFO 11-07 08:04:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:04:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:04:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:04:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:04:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:04:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:04:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:04:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-07 08:04:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+{"CUDA_context_initialized": false, "engine_started": false, "exit_code": 1}
+/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+test_foreground_only_stays_native_and_all_abort_frees_registries (__main__.MixedRuntime.test_foreground_only_stays_native_and_all_abort_frees_registries) ... ERROR
+test_mixed_pressure_native_recompute_resumes_prefix (__main__.MixedRuntime.test_mixed_pressure_native_recompute_resumes_prefix) ... ERROR
+test_mixed_pressure_native_swap_resumes_prefix (__main__.MixedRuntime.test_mixed_pressure_native_swap_resumes_prefix) ... ERROR
+test_new_foreground_is_eligible_before_50ticks (__main__.MixedRuntime.test_new_foreground_is_eligible_before_50ticks) ... ERROR
+test_next_stage_arrives_while_other_selected_work_is_live (__main__.MixedRuntime.test_next_stage_arrives_while_other_selected_work_is_live) ... ERROR
+test_prediction_revision_triggers_plan_without_membership_change (__main__.MixedRuntime.test_prediction_revision_triggers_plan_without_membership_change) ... ERROR
+test_pure_chain_trace_matches_unchanged_v47_loop (__main__.MixedRuntime.test_pure_chain_trace_matches_unchanged_v47_loop) ... ERROR
+test_zero_probability_chain_backfills_with_positive_chain_and_foreground (__main__.MixedRuntime.test_zero_probability_chain_backfills_with_positive_chain_and_foreground) ... ERROR
+
+======================================================================
+ERROR: test_foreground_only_stays_native_and_all_abort_frees_registries (__main__.MixedRuntime.test_foreground_only_stays_native_and_all_abort_frees_registries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v48_runtime.py", line 115, in test_foreground_only_stays_native_and_all_abort_frees_registries
+    s=self.scheduler();s.add_seq_group(self.group(1,0))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_mixed_pressure_native_recompute_resumes_prefix (__main__.MixedRuntime.test_mixed_pressure_native_recompute_resumes_prefix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v48_runtime.py", line 98, in test_mixed_pressure_native_recompute_resumes_prefix
+    def test_mixed_pressure_native_recompute_resumes_prefix(self):self.exercise_pressure(1)
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v48_runtime.py", line 75, in exercise_pressure
+    s=self.scheduler(cpu=cpu,gpu=20);fg=self.group(1,1,prompt=160);s.add_seq_group(fg)
+                                                                   ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_mixed_pressure_native_swap_resumes_prefix (__main__.MixedRuntime.test_mixed_pressure_native_swap_resumes_prefix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v48_runtime.py", line 97, in test_mixed_pressure_native_swap_resumes_prefix
+    def test_mixed_pressure_native_swap_resumes_prefix(self):self.exercise_pressure(32)
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v48_runtime.py", line 75, in exercise_pressure
+    s=self.scheduler(cpu=cpu,gpu=20);fg=self.group(1,1,prompt=160);s.add_seq_group(fg)
+                                                                   ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_new_foreground_is_eligible_before_50ticks (__main__.MixedRuntime.test_new_foreground_is_eligible_before_50ticks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v48_runtime.py", line 32, in test_new_foreground_is_eligible_before_50ticks
+    s=self.scheduler();s.add_seq_group(self.group(1,0));s.add_seq_group(self.group(2))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_next_stage_arrives_while_other_selected_work_is_live (__main__.MixedRuntime.test_next_stage_arrives_while_other_selected_work_is_live)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v48_runtime.py", line 44, in test_next_stage_arrives_while_other_selected_work_is_live
+    s.add_seq_group(fg);s.add_seq_group(first)
+    ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_prediction_revision_triggers_plan_without_membership_change (__main__.MixedRuntime.test_prediction_revision_triggers_plan_without_membership_change)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v48_runtime.py", line 55, in test_prediction_revision_triggers_plan_without_membership_change
+    s=self.scheduler();fg=self.group(1,0);s.add_seq_group(fg);s.add_seq_group(self.group(2))
+                                          ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_pure_chain_trace_matches_unchanged_v47_loop (__main__.MixedRuntime.test_pure_chain_trace_matches_unchanged_v47_loop)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v48_runtime.py", line 111, in test_pure_chain_trace_matches_unchanged_v47_loop
+    self.assertEqual(trace(native_chain.NativeChainScheduler),trace(MixedScheduler))
+                                                              ^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v48_runtime.py", line 104, in trace
+    for rid in [1,2,3]:s.add_seq_group(self.group(rid))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_zero_probability_chain_backfills_with_positive_chain_and_foreground (__main__.MixedRuntime.test_zero_probability_chain_backfills_with_positive_chain_and_foreground)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v48_mixed_continuity_20261107/attempt01/stage36_v48_mixed_continuity_20261107_v1/programs/test_v48_runtime.py", line 67, in test_zero_probability_chain_backfills_with_positive_chain_and_foreground
+    for g in groups:s.add_seq_group(g)
+                    ^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.049s
+
+FAILED (errors=8)
