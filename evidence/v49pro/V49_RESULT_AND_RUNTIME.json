@@ -1,0 +1,858 @@
+{
+  "gate": "PASS",
+  "checks_failed": [],
+  "metrics": {
+    "main_duration": 4936.624668003991,
+    "main_root_jobs": 1800,
+    "main_requests": 2527,
+    "main_output_tokens": 646171,
+    "output_tokens_per_second": 130.89328102824234,
+    "max_arrival_error": 0.004085154128915747,
+    "compound_attained": 64,
+    "compound_total": 120,
+    "jitserve_token_goodput": 630.6125,
+    "fixed_hour_token_goodput": 630.6125,
+    "fixed_hour_credited_weighted_tokens": 2270205,
+    "complete_replay_token_goodput": 463.56471352424677,
+    "jitserve_credited_weighted_tokens": 2288445,
+    "raw_last_completion_seconds": 4936.624668003991,
+    "drain_seconds": 1336.6246680039912,
+    "DR_attained": 4,
+    "ToT_attained": 60,
+    "mean_JCT": 979.2100651180941,
+    "p95_JCT": 3336.7912056375294,
+    "request_failures": 0
+  },
+  "applications": {
+    "latency": {
+      "roots": 840,
+      "attained_roots": 50,
+      "full_credit": 1994335,
+      "hour_credit": 1976095,
+      "post_window_credit": 18240,
+      "mean_JCT": 31.394955978274258,
+      "p95_JCT": 77.5178658395074,
+      "hour_goodput": 548.9152777777778,
+      "full_goodput": 403.98756926488454
+    },
+    "deadline": {
+      "roots": 840,
+      "attained_roots": 154,
+      "full_credit": 60950,
+      "hour_credit": 60950,
+      "post_window_credit": 0,
+      "mean_JCT": 1863.2008730394189,
+      "p95_JCT": 3457.011568332277,
+      "hour_goodput": 16.930555555555557,
+      "full_goodput": 12.346492613675592
+    },
+    "dr": {
+      "roots": 60,
+      "attained_roots": 4,
+      "full_credit": 35381,
+      "hour_credit": 35381,
+      "post_window_credit": 0,
+      "mean_JCT": 2844.9912419752527,
+      "p95_JCT": 4770.940705099422,
+      "hour_goodput": 9.828055555555556,
+      "full_goodput": 7.167042742648993
+    },
+    "tot_style": {
+      "roots": 60,
+      "attained_roots": 60,
+      "full_credit": 197779,
+      "hour_credit": 197779,
+      "post_window_credit": 0,
+      "mean_JCT": 6.969105319865048,
+      "p95_JCT": 9.255497699975965,
+      "hour_goodput": 54.93861111111111,
+      "full_goodput": 40.063608903037654
+    }
+  },
+  "runtime": {
+    "version": "v49_mixed_terminal_credit_compute_budget",
+    "variant": "v49_observed_compute_terminal_credit_v1",
+    "parent_commit": "a4aa15e7bc1efb51b390c0fc445596f3547c8161",
+    "installer_runs_model": false,
+    "installer_allocates_GPU": false,
+    "stage_budget_adapter": false,
+    "model_key": "llama8",
+    "ToT_path": "native implicit [3,1,3,1], cap256",
+    "shared_prediction": {
+      "version": "shared_framed_dynamic_prediction_v1",
+      "method": "v49",
+      "protocol": "length_framed_pickle_v1",
+      "port": 64711,
+      "timeout_seconds": 10.0,
+      "fallback": 1024,
+      "QRF_weights_changed": false,
+      "native_reward_formula_changed": false,
+      "asynchronous": true,
+      "comparison_requirement": "same module, protocol, weights and configuration for A/Astar/v48; method label alone may differ"
+    },
+    "prediction_comparison_ready": true,
+    "prediction_comparison_requirement": "Identical shared protocol/weights/snapshot semantics for A/Astar/v49; do not reuse unrepaired baselines.",
+    "request_drops": false,
+    "future_truth_access": false,
+    "benchmark_end_time_used": false,
+    "step_cost_model": "bounded online decode-only scheduler intervals by batch member count; not a GPU latency oracle",
+    "decision_logging": "all plans streamed with bounded buffer; no per-token decision serialization; crash may lose unflushed buffer",
+    "pure_files": {
+      "programs/native_chain.py": "5958c3e16ab19c3310244dba88892e9bbfe8882ad2a8439efea63b1369f3bf38",
+      "programs/chain_forecast.py": "6f5b11c4adc8aa58a9f1d0a46a889edfb7da14af0adb92c7b5e5a3b74f6f898b",
+      "programs/chain_admission.py": "d61f32065e9bf0c5bb69b37d4158c5181de2d342c794bae8db0c5e63eeb1e3b4",
+      "programs/token_reward.py": "721ab407bd4cfaf42a18fb0a493a3bd8d8050a609f698b8842d4e42271dbf995",
+      "assets/CHAIN_MODEL.json": "7d1d668028a01a9da525845e2d3e4320563b615ebac72125c9d3448cd6f761f7"
+    },
+    "logged_plan_events": 6336,
+    "schedulers": [
+      {
+        "mixed_counts": {
+          "warmup_foreground_only_native_calls": 688,
+          "warmup_pure_chain_calls": 1730,
+          "main_foreground_only_native_calls": 258,
+          "main_joint_calls": 54658,
+          "joint_plans": 6336,
+          "event_plans": 2069,
+          "backfill_members": 44,
+          "planned_evictions": 1000,
+          "compute_filtered_plans": 5442,
+          "main_pure_chain_calls": 2965
+        },
+        "v47_pure_drain_counts": {
+          "expired_drain_entries": 1,
+          "drain_capacity_refreshes": 340,
+          "max_drain_seq_limit": 69,
+          "expired_drain_ticks": 2965,
+          "expired_drain_exits": 1
+        },
+        "unstreamed_plan_events_lost": 0,
+        "step_cost_stats": {
+          "accepted_samples": 53408
+        },
+        "step_cost_bins": {
+          "version": "observed_monotone_decode_step_v1",
+          "batch_seconds": [
+            [
+              1,
+              0.05402677413076162
+            ],
+            [
+              2,
+              0.05853612720966339
+            ],
+            [
+              3,
+              0.0693911612033844
+            ],
+            [
+              4,
+              0.0693911612033844
+            ],
+            [
+              5,
+              0.07370158191770315
+            ],
+            [
+              6,
+              0.07374308072030544
+            ],
+            [
+              7,
+              0.07684329152107239
+            ],
+            [
+              8,
+              0.0798588264733553
+            ],
+            [
+              9,
+              0.0798588264733553
+            ],
+            [
+              10,
+              0.08118801191449165
+            ],
+            [
+              11,
+              0.08248934522271156
+            ],
+            [
+              12,
+              0.08248934522271156
+            ],
+            [
+              13,
+              0.08472670335322618
+            ],
+            [
+              14,
+              0.09397838823497295
+            ],
+            [
+              15,
+              0.09397838823497295
+            ],
+            [
+              16,
+              0.09397838823497295
+            ],
+            [
+              17,
+              0.10112613812088966
+            ],
+            [
+              18,
+              0.10112613812088966
+            ],
+            [
+              19,
+              0.10129213146865368
+            ],
+            [
+              20,
+              0.10129213146865368
+            ],
+            [
+              21,
+              0.10129213146865368
+            ],
+            [
+              22,
+              0.11038052570074797
+            ],
+            [
+              23,
+              0.11038052570074797
+            ],
+            [
+              24,
+              0.11038052570074797
+            ],
+            [
+              25,
+              0.11038052570074797
+            ],
+            [
+              26,
+              0.11038052570074797
+            ],
+            [
+              27,
+              0.11038052570074797
+            ],
+            [
+              28,
+              0.11038052570074797
+            ],
+            [
+              29,
+              0.11038052570074797
+            ],
+            [
+              30,
+              0.11038052570074797
+            ],
+            [
+              31,
+              0.11038052570074797
+            ],
+            [
+              32,
+              0.11038052570074797
+            ],
+            [
+              33,
+              0.11038052570074797
+            ],
+            [
+              34,
+              0.11038052570074797
+            ],
+            [
+              35,
+              0.11038052570074797
+            ],
+            [
+              36,
+              0.11361264809966087
+            ],
+            [
+              37,
+              0.11361264809966087
+            ],
+            [
+              38,
+              0.11361264809966087
+            ],
+            [
+              39,
+              0.12063609343022108
+            ],
+            [
+              40,
+              0.12063609343022108
+            ],
+            [
+              41,
+              0.12063609343022108
+            ],
+            [
+              42,
+              0.12063609343022108
+            ],
+            [
+              43,
+              0.12063609343022108
+            ],
+            [
+              44,
+              0.16823915392160416
+            ],
+            [
+              45,
+              0.16823915392160416
+            ],
+            [
+              46,
+              0.16823915392160416
+            ],
+            [
+              47,
+              0.16823915392160416
+            ],
+            [
+              48,
+              0.16823915392160416
+            ],
+            [
+              49,
+              0.16823915392160416
+            ],
+            [
+              50,
+              0.16823915392160416
+            ],
+            [
+              51,
+              0.16823915392160416
+            ],
+            [
+              52,
+              0.16823915392160416
+            ],
+            [
+              53,
+              0.16823915392160416
+            ],
+            [
+              54,
+              0.16823915392160416
+            ],
+            [
+              55,
+              0.16823915392160416
+            ],
+            [
+              56,
+              0.16823915392160416
+            ],
+            [
+              57,
+              0.16823915392160416
+            ],
+            [
+              58,
+              0.16823915392160416
+            ],
+            [
+              59,
+              0.16823915392160416
+            ],
+            [
+              60,
+              0.16823915392160416
+            ],
+            [
+              61,
+              0.16823915392160416
+            ],
+            [
+              62,
+              0.16823915392160416
+            ],
+            [
+              63,
+              0.16823915392160416
+            ],
+            [
+              64,
+              0.16823915392160416
+            ],
+            [
+              65,
+              0.16823915392160416
+            ],
+            [
+              66,
+              0.16823915392160416
+            ],
+            [
+              67,
+              0.16823915392160416
+            ],
+            [
+              68,
+              0.16823915392160416
+            ],
+            [
+              69,
+              0.16823915392160416
+            ]
+          ],
+          "sample_counts": {
+            "1": 64,
+            "3": 64,
+            "2": 64,
+            "4": 64,
+            "7": 64,
+            "6": 64,
+            "5": 64,
+            "8": 64,
+            "9": 64,
+            "10": 64,
+            "32": 64,
+            "12": 64,
+            "11": 64,
+            "17": 64,
+            "18": 35,
+            "19": 38,
+            "16": 14,
+            "15": 64,
+            "13": 64,
+            "14": 21,
+            "69": 27,
+            "68": 64,
+            "67": 52,
+            "66": 64,
+            "65": 64,
+            "64": 44,
+            "63": 37,
+            "62": 11,
+            "61": 25,
+            "60": 26,
+            "59": 46,
+            "58": 30,
+            "57": 6,
+            "56": 22,
+            "55": 12,
+            "54": 41,
+            "53": 7,
+            "52": 1,
+            "51": 8,
+            "50": 64,
+            "49": 58,
+            "48": 64,
+            "47": 10,
+            "46": 1,
+            "44": 1,
+            "45": 1,
+            "43": 12,
+            "42": 64,
+            "41": 19,
+            "40": 64,
+            "38": 41,
+            "39": 6,
+            "37": 64,
+            "36": 1,
+            "35": 45,
+            "34": 11,
+            "33": 46,
+            "31": 14,
+            "30": 34,
+            "29": 25,
+            "28": 34,
+            "27": 19,
+            "26": 17,
+            "25": 17,
+            "24": 11,
+            "23": 47,
+            "22": 6,
+            "21": 20,
+            "20": 23
+          },
+          "fallback_unit": 0.02,
+          "reference_members": 1,
+          "limitation": "Online member-count proxy; not hardware profiling or a context-length latency oracle."
+        },
+        "last_joint_summary": {
+          "tick": 57329,
+          "monotonic": 14776185.190530036,
+          "reasons": [
+            "completion_or_abort",
+            "prediction_revision",
+            "deadline_or_membership_change"
+          ],
+          "selected": null,
+          "running_before": [
+            "112102261865431891dc2aa53226916e",
+            "13718b3a684d4a78a083a04bf34e4b4c",
+            "279da2dc0d9e4aa99ef2a8bc32046207",
+            "2a5d46336c674f288056d2918d59484e",
+            "4569aee5e856466098e9b257e26c495f",
+            "47f67a25f78245f388e944b5864c6eac",
+            "4f8b14842098455f927cc93f9d065acd",
+            "501a3980b2cd4d31999c76376e72bbd5",
+            "519be9297d15418b9dab0e54f7a7d61f",
+            "5912df0c04ef44d9aeacfb9902d5f0a7",
+            "5ee5f78cb5504ed4979a49b3f85027a0",
+            "63eec83f6b5540158a56cee7a757ef5a",
+            "66906dffbb924d479ec90afa35f4a973",
+            "6899c95e1a624b4f82b25a6fbe066962",
+            "79421934872b4e6fbf658360d7edabbf",
+            "84b24400a7894c059c9cc1d42a123b36",
+            "87d3cedf7b8144f2bde2e001c22f9f3d",
+            "922155a8733f440f8bf2936d30f5b5e4",
+            "93cca0f348c94cabae1dd3d0baa77078",
+            "97b1c54d0a4a4716bcd0405ebc154c6e",
+            "9868a389197d40b281043191c4dbbfc5",
+            "9a4ff57b8b9040acbfe00eb4b657426a",
+            "9ad0e2dcd93a460280ef0ef1a10f866c",
+            "9ad2a3553e094b69a60b607f71c180f0",
+            "9e8197cf8a6b4bbb9d8e8e6d7be77e47",
+            "a1e2297996af489db591df9dfd63a8a3",
+            "bcfa2a110b3a4d5daaa5023a69cdbcc4",
+            "c7060151403b4e50b7920f4e679b961d",
+            "cb641278d7284b60a6b383fc7799e24f",
+            "e81aaec27364438aa9c24da18008ce59",
+            "edbde76103084406bd0e53fe532eb3f2"
+          ],
+          "physical_candidates": 70,
+          "capacity": 10075,
+          "slots": 32,
+          "detail": {
+            "reason": "native_required_work_fallback",
+            "decisions": [],
+            "selected_charge": 0,
+            "backfill": [],
+            "evicted": [],
+            "cost_model": {
+              "version": "observed_monotone_decode_step_v1",
+              "batch_seconds": [
+                [
+                  1,
+                  0.0664853760972619
+                ],
+                [
+                  2,
+                  0.07032727357000113
+                ],
+                [
+                  3,
+                  0.07299674302339554
+                ],
+                [
+                  4,
+                  0.07493726350367069
+                ],
+                [
+                  5,
+                  0.07493726350367069
+                ],
+                [
+                  6,
+                  0.07493726350367069
+                ],
+                [
+                  7,
+                  0.07592581957578659
+                ],
+                [
+                  8,
+                  0.07592581957578659
+                ],
+                [
+                  9,
+                  0.07592581957578659
+                ],
+                [
+                  10,
+                  0.07853221334517002
+                ],
+                [
+                  11,
+                  0.07853221334517002
+                ],
+                [
+                  12,
+                  0.07853221334517002
+                ],
+                [
+                  13,
+                  0.07936613820493221
+                ],
+                [
+                  14,
+                  0.11191512271761894
+                ],
+                [
+                  15,
+                  0.11191512271761894
+                ],
+                [
+                  16,
+                  0.11191512271761894
+                ],
+                [
+                  17,
+                  0.11191512271761894
+                ],
+                [
+                  18,
+                  0.11191512271761894
+                ],
+                [
+                  19,
+                  0.11191512271761894
+                ],
+                [
+                  32,
+                  0.11191512271761894
+                ]
+              ],
+              "sample_counts": {
+                "1": 64,
+                "3": 64,
+                "2": 64,
+                "4": 64,
+                "7": 64,
+                "6": 64,
+                "5": 64,
+                "8": 64,
+                "9": 64,
+                "10": 64,
+                "32": 64,
+                "12": 64,
+                "11": 64,
+                "17": 15,
+                "18": 2,
+                "19": 6,
+                "16": 5,
+                "15": 18,
+                "13": 64,
+                "14": 1
+              },
+              "fallback_unit": 0.10607593965530396,
+              "reference_members": 31,
+              "limitation": "Online member-count proxy; not hardware profiling or a context-length latency oracle."
+            },
+            "action_pool": 0,
+            "all_actions": 57
+          },
+          "plan_seconds": 0.010444749146699905
+        }
+      }
+    ],
+    "DR_forecast_stats": {
+      "estimate_calls": 35,
+      "neighbor_cache_misses": 113,
+      "future_cache_misses": 1094,
+      "estimate_seconds": 0.02965858392417431,
+      "neighbor_cache_hits": 9172,
+      "future_cache_hits": 254519,
+      "v49_curve_calls": 9250,
+      "v49_curve_seconds": 4.94770073518157
+    },
+    "ToT_forecast_stats": {
+      "llama8": {
+        "estimate_calls": 6,
+        "neighbor_cache_misses": 246,
+        "future_cache_misses": 56,
+        "estimate_seconds": 0.003772476688027382,
+        "future_cache_hits": 11967,
+        "v49_curve_calls": 866,
+        "v49_curve_seconds": 0.3295722659677267,
+        "neighbor_cache_hits": 626
+      },
+      "qwen14": {}
+    },
+    "reward_count_stats": {
+      "token_cache_misses": 1851,
+      "token_cache_hits": 2109907
+    }
+  },
+  "first_plan": {
+    "scheduler": 0,
+    "tick": 2675,
+    "monotonic": 14771609.314266756,
+    "reasons": [
+      "mixed_entry",
+      "new_request_or_stage",
+      "prediction_revision",
+      "periodic"
+    ],
+    "selected": [
+      "f65d7bdc3f7b43ed94483d5c01fb2e14"
+    ],
+    "running_before": [
+      "1d5264412756451582e17892cec7dc7b",
+      "3e3ae8e1269041d1a0bab23d3e3dc42d",
+      "80eaaa9c11a1408485ad6f732fec6f92",
+      "d7b0ec47f2864161a30c6153ebbe3655"
+    ],
+    "physical_candidates": 5,
+    "capacity": 10075,
+    "slots": 32,
+    "detail": {
+      "reason": "terminal_credit_compute_budget",
+      "decisions": [
+        {
+          "reason": "positive_net_compute_credit",
+          "action": "chain:11070100004",
+          "rate_before": 0.0,
+          "rate_after": 68.34930664773582
+        }
+      ],
+      "objective_rate_proxy": 68.34930664773582,
+      "selected_step_seconds": 0.043257009238004684,
+      "selected_charge": 29,
+      "backfill": [],
+      "evicted": [
+        "1d5264412756451582e17892cec7dc7b",
+        "3e3ae8e1269041d1a0bab23d3e3dc42d",
+        "80eaaa9c11a1408485ad6f732fec6f92",
+        "d7b0ec47f2864161a30c6153ebbe3655"
+      ],
+      "actions": [
+        {
+          "id": "chain:11070100004",
+          "kind": "compound",
+          "members": [
+            "f65d7bdc3f7b43ed94483d5c01fb2e14"
+          ],
+          "slack": 119.98059093765914,
+          "arrival": 1794056904.5721772,
+          "domain": "unchanged_DR_FIT295",
+          "scenario_count": 32,
+          "expected_credit": 6774.21875,
+          "work": 2291.2296142578125,
+          "probability": 0.375,
+          "critical_seconds": 124.10064184058422,
+          "supported": true,
+          "reason": "supported",
+          "selected": true,
+          "density": 2.956586589072323
+        },
+        {
+          "id": "request:80eaaa9c11a1408485ad6f732fec6f92",
+          "kind": "foreground",
+          "members": [
+            "80eaaa9c11a1408485ad6f732fec6f92"
+          ],
+          "penalty": 100,
+          "arrival": 1794056892.0958867,
+          "domain": "marginal_native_deadlines",
+          "expected_credit": 1.1497019706417442e-32,
+          "density": 1.4989595445133563e-35,
+          "work": 767.0,
+          "stage_work": 767.0,
+          "probability": 1.3800287728264844e-36,
+          "critical_seconds": 33.17812608554959,
+          "slack": 7.508115291595459,
+          "prefix_at_risk": 0.0,
+          "selected": false
+        },
+        {
+          "id": "request:3e3ae8e1269041d1a0bab23d3e3dc42d",
+          "kind": "foreground",
+          "members": [
+            "3e3ae8e1269041d1a0bab23d3e3dc42d"
+          ],
+          "penalty": 100,
+          "arrival": 1794056896.9839396,
+          "domain": "marginal_native_deadlines",
+          "expected_credit": 4.804096793461758e-15,
+          "density": 9.150660558974778e-18,
+          "work": 525.0,
+          "stage_work": 525.0,
+          "probability": 8.645126495342375e-19,
+          "critical_seconds": 22.70992984995246,
+          "slack": 12.394601106643677,
+          "prefix_at_risk": 0.0,
+          "selected": false
+        },
+        {
+          "id": "request:d7b0ec47f2864161a30c6153ebbe3655",
+          "kind": "foreground",
+          "members": [
+            "d7b0ec47f2864161a30c6153ebbe3655"
+          ],
+          "penalty": 100,
+          "arrival": 1794056898.6174977,
+          "domain": "marginal_native_deadlines",
+          "expected_credit": 2.9276398232531996e-32,
+          "density": 3.2242729330982374e-35,
+          "work": 908.0,
+          "stage_work": 908.0,
+          "probability": 3.460976265815344e-36,
+          "critical_seconds": 39.27736438810825,
+          "slack": 14.02534031867981,
+          "prefix_at_risk": 0.0,
+          "selected": false
+        },
+        {
+          "id": "request:1d5264412756451582e17892cec7dc7b",
+          "kind": "foreground",
+          "members": [
+            "1d5264412756451582e17892cec7dc7b"
+          ],
+          "penalty": 100,
+          "arrival": 1794056904.176717,
+          "domain": "marginal_native_deadlines",
+          "expected_credit": 7.30264156503404e-08,
+          "density": 1.2504523227798013e-10,
+          "work": 584.0,
+          "stage_work": 584.0,
+          "probability": 1.3765582591958605e-11,
+          "critical_seconds": 25.262093394994736,
+          "slack": 19.579312324523926,
+          "prefix_at_risk": 0.0,
+          "selected": false
+        }
+      ],
+      "cost_model": {
+        "version": "observed_monotone_decode_step_v1",
+        "batch_seconds": [
+          [
+            1,
+            0.043257009238004684
+          ],
+          [
+            2,
+            0.05202663969248533
+          ],
+          [
+            3,
+            0.05240896623581648
+          ],
+          [
+            4,
+            0.05240896623581648
+          ]
+        ],
+        "sample_counts": {
+          "1": 64,
+          "3": 64,
+          "2": 32,
+          "4": 5
+        },
+        "fallback_unit": 0.04303999805450439,
+        "reference_members": 4,
+        "limitation": "Online member-count proxy; not hardware profiling or a context-length latency oracle."
+      },
+      "action_pool": 5,
+      "all_actions": 5
+    },
+    "plan_seconds": 0.017159203067421913
+  }
+}

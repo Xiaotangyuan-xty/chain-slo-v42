@@ -1,0 +1,4350 @@
+{
+  "study": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage40_v49_llama8_nativeToT_mixed_gpu1_20261107_v1",
+  "source_files": {
+    "V49_DECISIONS.jsonl": {
+      "bytes": 863146132,
+      "sha256": "1ec9e6c098f2b8186a20ddfa888c44669338b2da5e2d1c0f5dcfc213745be696"
+    },
+    "client_calls.json": {
+      "bytes": 28815567,
+      "sha256": "be36a8862748ef99385234631b4dfd6d2077ea39b30039658e606044b455d208"
+    },
+    "V49_RUNTIME.json": {
+      "bytes": 14896,
+      "sha256": "1a88998d9558b11f32a67b31466ded4f2b1461a656b4bcd2504e4a34aed13fa5"
+    }
+  },
+  "counts": {
+    "plans": 6336,
+    "controlled": 5442,
+    "evictions": 1000,
+    "backfill": 44,
+    "compound_selected": 2556,
+    "compound_available": 154877,
+    "foreground_selected": 31639,
+    "foreground_available": 1834723,
+    "selected_le2_with_live_ge8": 389
+  },
+  "selected_size_histogram": {
+    "1": 156,
+    "2": 240,
+    "3": 397,
+    "4": 526,
+    "5": 618,
+    "7": 902,
+    "6": 686,
+    "8": 745,
+    "9": 516,
+    "10": 261,
+    "native_fallback": 894,
+    "12": 121,
+    "11": 165,
+    "13": 87,
+    "14": 6,
+    "17": 2,
+    "18": 5,
+    "19": 5,
+    "16": 3,
+    "15": 1
+  },
+  "plan_seconds": {
+    "count": 6336,
+    "mean": 0.0789067423364472,
+    "p95": 0.1327819973230362,
+    "max": 0.5620060060173273
+  },
+  "plan_seconds_total": 499.9531194437295,
+  "selected_cost_seconds": {
+    "count": 5442,
+    "mean": 0.07010946925072943,
+    "p95": 0.07712893094867468,
+    "max": 0.0831360500305891
+  },
+  "triggers": {
+    "mixed_entry": 2,
+    "new_request_or_stage": 2069,
+    "prediction_revision": 5045,
+    "periodic": 83,
+    "deadline_or_membership_change": 4727,
+    "continuity_quantum_expired": 645,
+    "completion_or_abort": 2045
+  },
+  "time_buckets_600s": {
+    "0": {
+      "plans": 930,
+      "selected_sum": 5004,
+      "controlled": 930
+    },
+    "1": {
+      "plans": 1000,
+      "selected_sum": 4939,
+      "controlled": 971
+    },
+    "2": {
+      "plans": 899,
+      "selected_sum": 6354,
+      "controlled": 899
+    },
+    "3": {
+      "plans": 936,
+      "selected_sum": 7657,
+      "controlled": 936
+    },
+    "4": {
+      "plans": 838,
+      "selected_sum": 5894,
+      "controlled": 837
+    },
+    "5": {
+      "plans": 847,
+      "selected_sum": 5502,
+      "controlled": 847
+    },
+    "6": {
+      "plans": 484,
+      "selected_sum": 79,
+      "controlled": 22
+    },
+    "7": {
+      "plans": 402
+    }
+  },
+  "credit_by_kind": {
+    "compound": {
+      "count": 154877,
+      "mean": 47.050798139784455,
+      "p95": 0.0,
+      "max": 7845.15625
+    },
+    "foreground": {
+      "count": 1834723,
+      "mean": 71.32091447731658,
+      "p95": 0.0,
+      "max": 12304
+    }
+  },
+  "request_long_gap_by_application": {
+    "latency": {
+      "count": 840,
+      "mean": 7.145052683042983,
+      "p95": 2.4394594207406044,
+      "max": 1373.0874191783369,
+      "over2s": 66
+    },
+    "deadline": {
+      "count": 840,
+      "mean": 89.20108829448222,
+      "p95": 182.21327760629356,
+      "max": 3153.388356452808,
+      "over2s": 42
+    },
+    "tot_style": {
+      "count": 480,
+      "mean": 0.17297983154033622,
+      "p95": 0.32666693441569805,
+      "max": 0.5187099874019623,
+      "over2s": 0
+    },
+    "dr": {
+      "count": 367,
+      "mean": 244.75353886142415,
+      "p95": 2178.0449075568467,
+      "max": 2952.0127471406013,
+      "over2s": 61
+    }
+  },
+  "ttft_by_application": {
+    "latency": {
+      "count": 840,
+      "mean": 0.25235558067049296,
+      "p95": 0.6527841091156006,
+      "max": 8.95780611038208
+    },
+    "deadline": {
+      "count": 840,
+      "mean": 1703.7373047658375,
+      "p95": 3291.29944729805,
+      "max": 3519.113690853119
+    },
+    "tot_style": {
+      "count": 480,
+      "mean": 0.24236364364624025,
+      "p95": 0.39971446990966797,
+      "max": 2.4711239337921143
+    },
+    "dr": {
+      "count": 367,
+      "mean": 260.49304794095843,
+      "p95": 2155.8791315555573,
+      "max": 3163.2372086048126
+    }
+  },
+  "worst_roots": [
+    {
+      "collection_id": 11070100004,
+      "app": "dr",
+      "jct": 4833.268810888752,
+      "largest_gap": 2940.5062902849168
+    },
+    {
+      "collection_id": 11070100031,
+      "app": "dr",
+      "jct": 4804.720349069685,
+      "largest_gap": 1860.8889554999769
+    },
+    {
+      "collection_id": 11070100052,
+      "app": "dr",
+      "jct": 4773.912201795727,
+      "largest_gap": 91.83527501299977
+    },
+    {
+      "collection_id": 11070100033,
+      "app": "dr",
+      "jct": 4770.784310536459,
+      "largest_gap": 1860.8890494648367
+    },
+    {
+      "collection_id": 11070100113,
+      "app": "dr",
+      "jct": 4654.700484767556,
+      "largest_gap": 385.3028898201883
+    },
+    {
+      "collection_id": 11070100152,
+      "app": "dr",
+      "jct": 4537.500672375783,
+      "largest_gap": 307.3247423544526
+    },
+    {
+      "collection_id": 11070100165,
+      "app": "dr",
+      "jct": 4502.629427032545,
+      "largest_gap": 1860.8898800257593
+    },
+    {
+      "collection_id": 11070100233,
+      "app": "dr",
+      "jct": 4394.918499547988,
+      "largest_gap": 1860.889953168109
+    },
+    {
+      "collection_id": 11070100190,
+      "app": "dr",
+      "jct": 4285.45661652647,
+      "largest_gap": 215.90157261304557
+    },
+    {
+      "collection_id": 11070100259,
+      "app": "dr",
+      "jct": 4196.634624322876,
+      "largest_gap": 1860.8900581877679
+    },
+    {
+      "collection_id": 11070100254,
+      "app": "dr",
+      "jct": 4087.263222740963,
+      "largest_gap": 72.65496785566211
+    },
+    {
+      "collection_id": 11070100392,
+      "app": "dr",
+      "jct": 4051.421780243516,
+      "largest_gap": 0.5785914361476898
+    }
+  ],
+  "representative_underfill_plans": [
+    {
+      "scheduler": 0,
+      "tick": 2951,
+      "monotonic": 14771622.778835546,
+      "reasons": [
+        "new_request_or_stage",
+        "prediction_revision",
+        "deadline_or_membership_change"
+      ],
+      "selected": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "running_before": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "physical_candidates": 12,
+      "capacity": 10075,
+      "slots": 32,
+      "detail": {
+        "reason": "terminal_credit_compute_budget",
+        "decisions": [
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "rate_before": 0.0,
+            "rate_after": 161.28272889901712
+          },
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "chain:11070100004",
+            "rate_before": 161.28272889901712,
+            "rate_after": 191.47916548188823
+          },
+          {
+            "reason": "bounded_live_continuity",
+            "proposed_rate": 191.47916548188823,
+            "incumbent_rate": 191.47916548188823,
+            "switch_loss_rate_proxy": 0.0
+          }
+        ],
+        "objective_rate_proxy": 191.47916548188823,
+        "selected_step_seconds": 0.049602335318922997,
+        "selected_charge": 39,
+        "backfill": [],
+        "evicted": [],
+        "actions": [
+          {
+            "id": "chain:11070100004",
+            "kind": "compound",
+            "members": [
+              "a23c60cfc57f40b8818345fd75ae75e3"
+            ],
+            "slack": 106.51463120616972,
+            "arrival": 1794056907.6795452,
+            "domain": "unchanged_DR_FIT295",
+            "scenario_count": 32,
+            "expected_credit": 3380.40625,
+            "work": 2256.8935546875,
+            "probability": 0.1875,
+            "critical_seconds": 138.52085003542587,
+            "supported": true,
+            "reason": "supported",
+            "selected": true,
+            "density": 1.497813772820166
+          },
+          {
+            "id": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "kind": "foreground",
+            "members": [
+              "1527a9acc8274b0a875ea6e0470977c8"
+            ],
+            "penalty": 100,
+            "arrival": 1794056914.4746158,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 7600,
+            "density": 8.0,
+            "work": 950.0,
+            "stage_work": 950.0,
+            "probability": 1.0,
+            "critical_seconds": 47.12221855297685,
+            "slack": 100.72794203758241,
+            "prefix_at_risk": 0.0,
+            "selected": true
+          },
+          {
+            "id": "request:8f70401075bb4878b562845ac815197a",
+            "kind": "foreground",
+            "members": [
+              "8f70401075bb4878b562845ac815197a"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.4109256,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.4682697331654687e-32,
+            "density": 1.980364019822552e-35,
+            "work": 741.4140625,
+            "stage_work": 741.4140625,
+            "probability": 2.4337307030755322e-36,
+            "critical_seconds": 36.77586893828993,
+            "slack": 11.364220142364502,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7f9a0cedc27243ceb7fb1694e05b0586",
+            "kind": "foreground",
+            "members": [
+              "7f9a0cedc27243ceb7fb1694e05b0586"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.5279562,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.38973998477212e-29,
+            "density": 2.036377267923591e-32,
+            "work": 682.45703125,
+            "stage_work": 682.45703125,
+            "probability": 2.4941492906893752e-33,
+            "critical_seconds": 33.85146250481921,
+            "slack": 11.481237411499023,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7a0b75929aac45d8aa9137e0e0fa1006",
+            "kind": "foreground",
+            "members": [
+              "7a0b75929aac45d8aa9137e0e0fa1006"
+            ],
+            "penalty": 100,
+            "arrival": 1794056911.6564732,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 4.040198134368312e-28,
+            "density": 5.795644527615644e-31,
+            "work": 697.109375,
+            "stage_work": 697.109375,
+            "probability": 7.210776609616834e-32,
+            "critical_seconds": 34.578252972714836,
+            "slack": 13.609742403030396,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:0b96c86554194f6a80cc8230fcdac012",
+            "kind": "foreground",
+            "members": [
+              "0b96c86554194f6a80cc8230fcdac012"
+            ],
+            "penalty": 100,
+            "arrival": 1794056916.9062994,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.1908912594134155e-20,
+            "density": 1.771572630498372e-23,
+            "work": 672.22265625,
+            "stage_work": 672.22265625,
+            "probability": 2.1923624068730034e-24,
+            "critical_seconds": 33.34381360428961,
+            "slack": 18.859556674957275,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:6f58132502c646dc9d3934832d693e4d",
+            "kind": "foreground",
+            "members": [
+              "6f58132502c646dc9d3934832d693e4d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.0357053,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 2.6220287753813913e-37,
+            "density": 2.559901173845828e-40,
+            "work": 1024.26953125,
+            "stage_work": 1024.26953125,
+            "probability": 3.1743689774593116e-41,
+            "critical_seconds": 50.80616074601858,
+            "slack": 19.988646030426025,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:80eaaa9c11a1408485ad6f732fec6f92",
+            "kind": "foreground",
+            "members": [
+              "80eaaa9c11a1408485ad6f732fec6f92"
+            ],
+            "penalty": 100,
+            "arrival": 1794056892.0958867,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 766.0,
+            "stage_work": 766.0,
+            "probability": 0.0,
+            "critical_seconds": 37.995388854295015,
+            "slack": -5.951193332672119,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:d7b0ec47f2864161a30c6153ebbe3655",
+            "kind": "foreground",
+            "members": [
+              "d7b0ec47f2864161a30c6153ebbe3655"
+            ],
+            "penalty": 100,
+            "arrival": 1794056898.6174977,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.3457762091883224e-47,
+            "density": 1.4837664930411494e-50,
+            "work": 907.0,
+            "stage_work": 907.0,
+            "probability": 1.590940074699518e-51,
+            "critical_seconds": 44.98931813426316,
+            "slack": 0.5703954696655273,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:5f191bf1b8f744408f310d51946601ad",
+            "kind": "foreground",
+            "members": [
+              "5f191bf1b8f744408f310d51946601ad"
+            ],
+            "penalty": 100,
+            "arrival": 1794056906.6187143,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 4.599633273536459e-46,
+            "density": 4.496220208735542e-49,
+            "work": 1023.0,
+            "stage_work": 1023.0,
+            "probability": 5.543730593631986e-50,
+            "critical_seconds": 50.743189031258225,
+            "slack": 8.571599006652832,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:3e3ae8e1269041d1a0bab23d3e3dc42d",
+            "kind": "foreground",
+            "members": [
+              "3e3ae8e1269041d1a0bab23d3e3dc42d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056896.9839396,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 524.0,
+            "stage_work": 524.0,
+            "probability": 0.0,
+            "critical_seconds": 25.99162370711565,
+            "slack": -1.063187837600708,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1d5264412756451582e17892cec7dc7b",
+            "kind": "foreground",
+            "members": [
+              "1d5264412756451582e17892cec7dc7b"
+            ],
+            "penalty": 100,
+            "arrival": 1794056904.176717,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 4.9532527879057584e-30,
+            "density": 8.496145433800615e-33,
+            "work": 583.0,
+            "stage_work": 583.0,
+            "probability": 9.336951532338847e-34,
+            "critical_seconds": 28.918161490932107,
+            "slack": 6.129574537277222,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          }
+        ],
+        "cost_model": {
+          "version": "observed_monotone_decode_step_v1",
+          "batch_seconds": [
+            [
+              1,
+              0.049602335318922997
+            ],
+            [
+              2,
+              0.049602335318922997
+            ],
+            [
+              3,
+              0.05240896623581648
+            ],
+            [
+              4,
+              0.05240896623581648
+            ]
+          ],
+          "sample_counts": {
+            "1": 64,
+            "3": 64,
+            "2": 64,
+            "4": 5
+          },
+          "fallback_unit": 0.0486557936668396,
+          "reference_members": 2,
+          "limitation": "Online member-count proxy; not hardware profiling or a context-length latency oracle."
+        },
+        "action_pool": 10,
+        "all_actions": 12
+      },
+      "plan_seconds": 0.0021001454442739487
+    },
+    {
+      "scheduler": 0,
+      "tick": 2953,
+      "monotonic": 14771622.851778183,
+      "reasons": [
+        "prediction_revision"
+      ],
+      "selected": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "running_before": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "physical_candidates": 12,
+      "capacity": 10075,
+      "slots": 32,
+      "detail": {
+        "reason": "terminal_credit_compute_budget",
+        "decisions": [
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "rate_before": 0.0,
+            "rate_after": 161.28272889901712
+          },
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "chain:11070100004",
+            "rate_before": 161.28272889901712,
+            "rate_after": 191.5059485080937
+          },
+          {
+            "reason": "bounded_live_continuity",
+            "proposed_rate": 191.5059485080937,
+            "incumbent_rate": 191.5059485080937,
+            "switch_loss_rate_proxy": 0.0
+          }
+        ],
+        "objective_rate_proxy": 191.5059485080937,
+        "selected_step_seconds": 0.049602335318922997,
+        "selected_charge": 39,
+        "backfill": [],
+        "evicted": [],
+        "actions": [
+          {
+            "id": "chain:11070100004",
+            "kind": "compound",
+            "members": [
+              "a23c60cfc57f40b8818345fd75ae75e3"
+            ],
+            "slack": 106.44168856926262,
+            "arrival": 1794056907.6795452,
+            "domain": "unchanged_DR_FIT295",
+            "scenario_count": 32,
+            "expected_credit": 3380.40625,
+            "work": 2254.8935546875,
+            "probability": 0.1875,
+            "critical_seconds": 138.40676466419234,
+            "supported": true,
+            "reason": "supported",
+            "selected": true,
+            "density": 1.4991422734668653
+          },
+          {
+            "id": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "kind": "foreground",
+            "members": [
+              "1527a9acc8274b0a875ea6e0470977c8"
+            ],
+            "penalty": 100,
+            "arrival": 1794056914.4746158,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 7584,
+            "density": 8.0,
+            "work": 948.0,
+            "stage_work": 948.0,
+            "probability": 1.0,
+            "critical_seconds": 47.023013882339,
+            "slack": 100.65455083847047,
+            "prefix_at_risk": 0.0,
+            "selected": true
+          },
+          {
+            "id": "request:8f70401075bb4878b562845ac815197a",
+            "kind": "foreground",
+            "members": [
+              "8f70401075bb4878b562845ac815197a"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.4109256,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.249285858028749e-32,
+            "density": 1.6850042657894e-35,
+            "work": 741.4140625,
+            "stage_work": 741.4140625,
+            "probability": 2.0707539499896386e-36,
+            "critical_seconds": 36.77586893828993,
+            "slack": 11.290815353393555,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7f9a0cedc27243ceb7fb1694e05b0586",
+            "kind": "foreground",
+            "members": [
+              "7f9a0cedc27243ceb7fb1694e05b0586"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.5279562,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.168815253945926e-29,
+            "density": 1.712657647918293e-32,
+            "work": 682.45703125,
+            "stage_work": 682.45703125,
+            "probability": 2.0976583882733774e-33,
+            "critical_seconds": 33.85146250481921,
+            "slack": 11.407819986343384,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7a0b75929aac45d8aa9137e0e0fa1006",
+            "kind": "foreground",
+            "members": [
+              "7a0b75929aac45d8aa9137e0e0fa1006"
+            ],
+            "penalty": 100,
+            "arrival": 1794056911.6564732,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 3.3778019567573143e-28,
+            "density": 4.845440440041872e-31,
+            "work": 697.109375,
+            "stage_work": 697.109375,
+            "probability": 6.028559622982892e-32,
+            "critical_seconds": 34.578252972714836,
+            "slack": 13.536314964294434,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:0b96c86554194f6a80cc8230fcdac012",
+            "kind": "foreground",
+            "members": [
+              "0b96c86554194f6a80cc8230fcdac012"
+            ],
+            "penalty": 100,
+            "arrival": 1794056916.9062994,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 9.6267983694015e-21,
+            "density": 1.432084783203333e-23,
+            "work": 672.22265625,
+            "stage_work": 672.22265625,
+            "probability": 1.7722382859722937e-24,
+            "critical_seconds": 33.34381360428961,
+            "slack": 18.786118030548096,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:6f58132502c646dc9d3934832d693e4d",
+            "kind": "foreground",
+            "members": [
+              "6f58132502c646dc9d3934832d693e4d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.0357053,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.3376652407973486e-21,
+            "density": 1.8859758975405002e-24,
+            "work": 709.26953125,
+            "stage_work": 709.26953125,
+            "probability": 2.3304272487758687e-25,
+            "critical_seconds": 35.18142512055783,
+            "slack": 19.915470838546753,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:80eaaa9c11a1408485ad6f732fec6f92",
+            "kind": "foreground",
+            "members": [
+              "80eaaa9c11a1408485ad6f732fec6f92"
+            ],
+            "penalty": 100,
+            "arrival": 1794056892.0958867,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 766.0,
+            "stage_work": 766.0,
+            "probability": 0.0,
+            "critical_seconds": 37.995388854295015,
+            "slack": -6.0243730545043945,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:d7b0ec47f2864161a30c6153ebbe3655",
+            "kind": "foreground",
+            "members": [
+              "d7b0ec47f2864161a30c6153ebbe3655"
+            ],
+            "penalty": 100,
+            "arrival": 1794056898.6174977,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.201327058191078e-47,
+            "density": 1.324506128104827e-50,
+            "work": 907.0,
+            "stage_work": 907.0,
+            "probability": 1.420176212544128e-51,
+            "critical_seconds": 44.98931813426316,
+            "slack": 0.4972100257873535,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:5f191bf1b8f744408f310d51946601ad",
+            "kind": "foreground",
+            "members": [
+              "5f191bf1b8f744408f310d51946601ad"
+            ],
+            "penalty": 100,
+            "arrival": 1794056906.6187143,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 4.089055788242762e-46,
+            "density": 3.997121982641996e-49,
+            "work": 1023.0,
+            "stage_work": 1023.0,
+            "probability": 4.928354571824469e-50,
+            "critical_seconds": 50.743189031258225,
+            "slack": 8.498403310775757,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:3e3ae8e1269041d1a0bab23d3e3dc42d",
+            "kind": "foreground",
+            "members": [
+              "3e3ae8e1269041d1a0bab23d3e3dc42d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056896.9839396,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 524.0,
+            "stage_work": 524.0,
+            "probability": 0.0,
+            "critical_seconds": 25.99162370711565,
+            "slack": -1.1363933086395264,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1d5264412756451582e17892cec7dc7b",
+            "kind": "foreground",
+            "members": [
+              "1d5264412756451582e17892cec7dc7b"
+            ],
+            "penalty": 100,
+            "arrival": 1794056904.176717,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 4.174799815282115e-30,
+            "density": 7.160891621410146e-33,
+            "work": 583.0,
+            "stage_work": 583.0,
+            "probability": 7.869556673481838e-34,
+            "critical_seconds": 28.918161490932107,
+            "slack": 6.056352853775024,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          }
+        ],
+        "cost_model": {
+          "version": "observed_monotone_decode_step_v1",
+          "batch_seconds": [
+            [
+              1,
+              0.049602335318922997
+            ],
+            [
+              2,
+              0.049602335318922997
+            ],
+            [
+              3,
+              0.05240896623581648
+            ],
+            [
+              4,
+              0.05240896623581648
+            ]
+          ],
+          "sample_counts": {
+            "1": 64,
+            "3": 64,
+            "2": 64,
+            "4": 5
+          },
+          "fallback_unit": 0.0486557936668396,
+          "reference_members": 2,
+          "limitation": "Online member-count proxy; not hardware profiling or a context-length latency oracle."
+        },
+        "action_pool": 10,
+        "all_actions": 12
+      },
+      "plan_seconds": 0.004141077399253845
+    },
+    {
+      "scheduler": 0,
+      "tick": 2958,
+      "monotonic": 14771623.096440988,
+      "reasons": [
+        "new_request_or_stage",
+        "prediction_revision",
+        "deadline_or_membership_change"
+      ],
+      "selected": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "running_before": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "physical_candidates": 13,
+      "capacity": 10075,
+      "slots": 32,
+      "detail": {
+        "reason": "terminal_credit_compute_budget",
+        "decisions": [
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "rate_before": 0.0,
+            "rate_after": 161.28272889901712
+          },
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "chain:11070100004",
+            "rate_before": 161.28272889901712,
+            "rate_after": 189.99721784640514
+          },
+          {
+            "reason": "bounded_live_continuity",
+            "proposed_rate": 189.99721784640514,
+            "incumbent_rate": 189.99721784640514,
+            "switch_loss_rate_proxy": 0.0
+          }
+        ],
+        "objective_rate_proxy": 189.99721784640514,
+        "selected_step_seconds": 0.05001375265419483,
+        "selected_charge": 39,
+        "backfill": [],
+        "evicted": [],
+        "actions": [
+          {
+            "id": "chain:11070100004",
+            "kind": "compound",
+            "members": [
+              "a23c60cfc57f40b8818345fd75ae75e3"
+            ],
+            "slack": 106.19702576473355,
+            "arrival": 1794056907.6795452,
+            "domain": "unchanged_DR_FIT295",
+            "scenario_count": 32,
+            "expected_credit": 3380.40625,
+            "work": 2249.8935546875,
+            "probability": 0.1875,
+            "critical_seconds": 139.26717472717618,
+            "supported": true,
+            "reason": "supported",
+            "selected": true,
+            "density": 1.5024738583552781
+          },
+          {
+            "id": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "kind": "foreground",
+            "members": [
+              "1527a9acc8274b0a875ea6e0470977c8"
+            ],
+            "penalty": 100,
+            "arrival": 1794056914.4746158,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 7544,
+            "density": 8.0,
+            "work": 943.0,
+            "stage_work": 943.0,
+            "probability": 1.0,
+            "critical_seconds": 47.162968752905726,
+            "slack": 100.41036825180055,
+            "prefix_at_risk": 0.0,
+            "selected": true
+          },
+          {
+            "id": "request:8f70401075bb4878b562845ac815197a",
+            "kind": "foreground",
+            "members": [
+              "8f70401075bb4878b562845ac815197a"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.4109256,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 3.7621234830862405e-33,
+            "density": 5.0742542843072124e-36,
+            "work": 741.4140625,
+            "stage_work": 741.4140625,
+            "probability": 6.2359083094418045e-37,
+            "critical_seconds": 37.08089953621675,
+            "slack": 11.04665732383728,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7f9a0cedc27243ceb7fb1694e05b0586",
+            "kind": "foreground",
+            "members": [
+              "7f9a0cedc27243ceb7fb1694e05b0586"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.5279562,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 3.419241856871597e-30,
+            "density": 5.010193609711743e-33,
+            "work": 682.45703125,
+            "stage_work": 682.45703125,
+            "probability": 6.1364713870631675e-34,
+            "critical_seconds": 34.13223715805361,
+            "slack": 11.163676261901855,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7a0b75929aac45d8aa9137e0e0fa1006",
+            "kind": "foreground",
+            "members": [
+              "7a0b75929aac45d8aa9137e0e0fa1006"
+            ],
+            "penalty": 100,
+            "arrival": 1794056911.6564732,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 9.341484644569545e-29,
+            "density": 1.3400314182504783e-31,
+            "work": 697.109375,
+            "stage_work": 697.109375,
+            "probability": 1.6672290995126798e-32,
+            "critical_seconds": 34.86505585417035,
+            "slack": 13.292182445526123,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:0b96c86554194f6a80cc8230fcdac012",
+            "kind": "foreground",
+            "members": [
+              "0b96c86554194f6a80cc8230fcdac012"
+            ],
+            "penalty": 100,
+            "arrival": 1794056916.9062994,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 2.157781100679981e-21,
+            "density": 3.209920226011396e-24,
+            "work": 672.22265625,
+            "stage_work": 672.22265625,
+            "probability": 3.9723510689984926e-25,
+            "critical_seconds": 33.62037765823334,
+            "slack": 18.541998386383057,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:6f58132502c646dc9d3934832d693e4d",
+            "kind": "foreground",
+            "members": [
+              "6f58132502c646dc9d3934832d693e4d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.0357053,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 2.9606060067350247e-22,
+            "density": 4.174162115095121e-25,
+            "work": 709.26953125,
+            "stage_work": 709.26953125,
+            "probability": 5.15785018594952e-26,
+            "critical_seconds": 35.47323090109421,
+            "slack": 19.671394109725952,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1a78f2bfb7af421eb17175e4c9f70e0c",
+            "kind": "foreground",
+            "members": [
+              "1a78f2bfb7af421eb17175e4c9f70e0c"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.3107748,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 5.78832023730624e-25,
+            "density": 7.6021443707695335e-28,
+            "work": 761.40625,
+            "stage_work": 761.40625,
+            "probability": 9.349572342604168e-29,
+            "critical_seconds": 38.080783856858034,
+            "slack": 19.94593071937561,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:80eaaa9c11a1408485ad6f732fec6f92",
+            "kind": "foreground",
+            "members": [
+              "80eaaa9c11a1408485ad6f732fec6f92"
+            ],
+            "penalty": 100,
+            "arrival": 1794056892.0958867,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 766.0,
+            "stage_work": 766.0,
+            "probability": 0.0,
+            "critical_seconds": 38.31053453311324,
+            "slack": -6.268977642059326,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:d7b0ec47f2864161a30c6153ebbe3655",
+            "kind": "foreground",
+            "members": [
+              "d7b0ec47f2864161a30c6153ebbe3655"
+            ],
+            "penalty": 100,
+            "arrival": 1794056898.6174977,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 4.6306712959290774e-48,
+            "density": 5.105481031895344e-51,
+            "work": 907.0,
+            "stage_work": 907.0,
+            "probability": 5.474253807694855e-52,
+            "critical_seconds": 45.36247365735471,
+            "slack": 0.25261592864990234,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:5f191bf1b8f744408f310d51946601ad",
+            "kind": "foreground",
+            "members": [
+              "5f191bf1b8f744408f310d51946601ad"
+            ],
+            "penalty": 100,
+            "arrival": 1794056906.6187143,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.411825592766063e-46,
+            "density": 1.3800836683930234e-49,
+            "work": 1023.0,
+            "stage_work": 1023.0,
+            "probability": 1.701609729740946e-50,
+            "critical_seconds": 51.16406896524131,
+            "slack": 8.25382113456726,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:3e3ae8e1269041d1a0bab23d3e3dc42d",
+            "kind": "foreground",
+            "members": [
+              "3e3ae8e1269041d1a0bab23d3e3dc42d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056896.9839396,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 524.0,
+            "stage_work": 524.0,
+            "probability": 0.0,
+            "critical_seconds": 26.207206390798092,
+            "slack": -1.3809638023376465,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1d5264412756451582e17892cec7dc7b",
+            "kind": "foreground",
+            "members": [
+              "1d5264412756451582e17892cec7dc7b"
+            ],
+            "penalty": 100,
+            "arrival": 1794056904.176717,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.3569477354242587e-30,
+            "density": 2.327526132803188e-33,
+            "work": 583.0,
+            "stage_work": 583.0,
+            "probability": 2.557865665267217e-34,
+            "critical_seconds": 29.158017797395587,
+            "slack": 5.811799049377441,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          }
+        ],
+        "cost_model": {
+          "version": "observed_monotone_decode_step_v1",
+          "batch_seconds": [
+            [
+              1,
+              0.049602335318922997
+            ],
+            [
+              2,
+              0.05001375265419483
+            ],
+            [
+              3,
+              0.05240896623581648
+            ],
+            [
+              4,
+              0.05240896623581648
+            ]
+          ],
+          "sample_counts": {
+            "1": 64,
+            "3": 64,
+            "2": 64,
+            "4": 5
+          },
+          "fallback_unit": 0.0486557936668396,
+          "reference_members": 2,
+          "limitation": "Online member-count proxy; not hardware profiling or a context-length latency oracle."
+        },
+        "action_pool": 11,
+        "all_actions": 13
+      },
+      "plan_seconds": 0.0024528689682483673
+    },
+    {
+      "scheduler": 0,
+      "tick": 2963,
+      "monotonic": 14771623.356588468,
+      "reasons": [
+        "deadline_or_membership_change"
+      ],
+      "selected": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "running_before": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "physical_candidates": 13,
+      "capacity": 10075,
+      "slots": 32,
+      "detail": {
+        "reason": "terminal_credit_compute_budget",
+        "decisions": [
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "rate_before": 0.0,
+            "rate_after": 161.28272889901712
+          },
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "chain:11070100004",
+            "rate_before": 161.28272889901712,
+            "rate_after": 189.52739928369235
+          },
+          {
+            "reason": "bounded_live_continuity",
+            "proposed_rate": 189.52739928369235,
+            "incumbent_rate": 189.52739928369235,
+            "switch_loss_rate_proxy": 0.0
+          }
+        ],
+        "objective_rate_proxy": 189.52739928369235,
+        "selected_step_seconds": 0.050155388191342354,
+        "selected_charge": 41,
+        "backfill": [],
+        "evicted": [],
+        "actions": [
+          {
+            "id": "chain:11070100004",
+            "kind": "compound",
+            "members": [
+              "a23c60cfc57f40b8818345fd75ae75e3"
+            ],
+            "slack": 105.93687828443944,
+            "arrival": 1794056907.6795452,
+            "domain": "unchanged_DR_FIT295",
+            "scenario_count": 32,
+            "expected_credit": 3380.40625,
+            "work": 2244.8935546875,
+            "probability": 0.1875,
+            "critical_seconds": 139.3731763874658,
+            "supported": true,
+            "reason": "supported",
+            "selected": true,
+            "density": 1.5058202839691295
+          },
+          {
+            "id": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "kind": "foreground",
+            "members": [
+              "1527a9acc8274b0a875ea6e0470977c8"
+            ],
+            "penalty": 100,
+            "arrival": 1794056914.4746158,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 7504,
+            "density": 8.0,
+            "work": 938.0,
+            "stage_work": 938.0,
+            "probability": 1.0,
+            "critical_seconds": 47.04575412347913,
+            "slack": 100.14968495368959,
+            "prefix_at_risk": 0.0,
+            "selected": true
+          },
+          {
+            "id": "request:8f70401075bb4878b562845ac815197a",
+            "kind": "foreground",
+            "members": [
+              "8f70401075bb4878b562845ac815197a"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.4109256,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.7051602450036407e-33,
+            "density": 2.2998757796068116e-36,
+            "work": 741.4140625,
+            "stage_work": 741.4140625,
+            "probability": 2.826388604348816e-37,
+            "critical_seconds": 37.18591011520766,
+            "slack": 10.785942554473877,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7f9a0cedc27243ceb7fb1694e05b0586",
+            "kind": "foreground",
+            "members": [
+              "7f9a0cedc27243ceb7fb1694e05b0586"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.5279562,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.4934792900632734e-30,
+            "density": 2.1883858201706723e-33,
+            "work": 682.45703125,
+            "stage_work": 682.45703125,
+            "probability": 2.6803289484265495e-34,
+            "critical_seconds": 34.22889732625481,
+            "slack": 10.902945280075073,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7a0b75929aac45d8aa9137e0e0fa1006",
+            "kind": "foreground",
+            "members": [
+              "7a0b75929aac45d8aa9137e0e0fa1006"
+            ],
+            "penalty": 100,
+            "arrival": 1794056911.6564732,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 3.9491023574684516e-29,
+            "density": 5.664968079748535e-32,
+            "work": 697.109375,
+            "stage_work": 697.109375,
+            "probability": 7.048192677973321e-33,
+            "critical_seconds": 34.96379131494905,
+            "slack": 13.031439781188965,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:0b96c86554194f6a80cc8230fcdac012",
+            "kind": "foreground",
+            "members": [
+              "0b96c86554194f6a80cc8230fcdac012"
+            ],
+            "penalty": 100,
+            "arrival": 1794056916.9062994,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 7.861730769269179e-22,
+            "density": 1.169512913046685e-24,
+            "work": 672.22265625,
+            "stage_work": 672.22265625,
+            "probability": 1.447299478878715e-25,
+            "critical_seconds": 33.71558827523404,
+            "slack": 18.281243085861206,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:6f58132502c646dc9d3934832d693e4d",
+            "kind": "foreground",
+            "members": [
+              "6f58132502c646dc9d3934832d693e4d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.0357053,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.0849060289944374e-22,
+            "density": 1.5296103684059632e-25,
+            "work": 709.26953125,
+            "stage_work": 709.26953125,
+            "probability": 1.8900801898857792e-26,
+            "critical_seconds": 35.57368867213518,
+            "slack": 19.410626888275146,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1a78f2bfb7af421eb17175e4c9f70e0c",
+            "kind": "foreground",
+            "members": [
+              "1a78f2bfb7af421eb17175e4c9f70e0c"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.3107748,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 2.214911638835848e-25,
+            "density": 2.9089748591318343e-28,
+            "work": 761.40625,
+            "stage_work": 761.40625,
+            "probability": 3.577631463149488e-29,
+            "critical_seconds": 38.188626040064264,
+            "slack": 19.685672998428345,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:80eaaa9c11a1408485ad6f732fec6f92",
+            "kind": "foreground",
+            "members": [
+              "80eaaa9c11a1408485ad6f732fec6f92"
+            ],
+            "penalty": 100,
+            "arrival": 1794056892.0958867,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 766.0,
+            "stage_work": 766.0,
+            "probability": 0.0,
+            "critical_seconds": 38.41902735456824,
+            "slack": -6.529236555099487,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:d7b0ec47f2864161a30c6153ebbe3655",
+            "kind": "foreground",
+            "members": [
+              "d7b0ec47f2864161a30c6153ebbe3655"
+            ],
+            "penalty": 100,
+            "arrival": 1794056898.6174977,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 907.0,
+            "stage_work": 907.0,
+            "probability": 0.0,
+            "critical_seconds": 45.490937089547515,
+            "slack": -0.007665872573852539,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:5f191bf1b8f744408f310d51946601ad",
+            "kind": "foreground",
+            "members": [
+              "5f191bf1b8f744408f310d51946601ad"
+            ],
+            "penalty": 100,
+            "arrival": 1794056906.6187143,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 7.429541506185206e-47,
+            "density": 7.262503916114571e-50,
+            "work": 1023.0,
+            "stage_work": 1023.0,
+            "probability": 8.954491389882133e-51,
+            "critical_seconds": 51.30896211974323,
+            "slack": 7.993528366088867,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:3e3ae8e1269041d1a0bab23d3e3dc42d",
+            "kind": "foreground",
+            "members": [
+              "3e3ae8e1269041d1a0bab23d3e3dc42d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056896.9839396,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 524.0,
+            "stage_work": 524.0,
+            "probability": 0.0,
+            "critical_seconds": 26.281423412263393,
+            "slack": -1.641268253326416,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1d5264412756451582e17892cec7dc7b",
+            "kind": "foreground",
+            "members": [
+              "1d5264412756451582e17892cec7dc7b"
+            ],
+            "penalty": 100,
+            "arrival": 1794056904.176717,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 6.1710821073849465e-31,
+            "density": 1.0585046496372121e-33,
+            "work": 583.0,
+            "stage_work": 583.0,
+            "probability": 1.163257701674825e-34,
+            "critical_seconds": 29.240591315552592,
+            "slack": 5.551477432250977,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          }
+        ],
+        "cost_model": {
+          "version": "observed_monotone_decode_step_v1",
+          "batch_seconds": [
+            [
+              1,
+              0.049602335318922997
+            ],
+            [
+              2,
+              0.050155388191342354
+            ],
+            [
+              3,
+              0.05240896623581648
+            ],
+            [
+              4,
+              0.05240896623581648
+            ]
+          ],
+          "sample_counts": {
+            "1": 64,
+            "3": 64,
+            "2": 64,
+            "4": 5
+          },
+          "fallback_unit": 0.0486557936668396,
+          "reference_members": 2,
+          "limitation": "Online member-count proxy; not hardware profiling or a context-length latency oracle."
+        },
+        "action_pool": 10,
+        "all_actions": 13
+      },
+      "plan_seconds": 0.0053858887404203415
+    },
+    {
+      "scheduler": 0,
+      "tick": 2982,
+      "monotonic": 14771624.373220123,
+      "reasons": [
+        "new_request_or_stage",
+        "prediction_revision",
+        "deadline_or_membership_change"
+      ],
+      "selected": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "running_before": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "physical_candidates": 14,
+      "capacity": 10075,
+      "slots": 32,
+      "detail": {
+        "reason": "terminal_credit_compute_budget",
+        "decisions": [
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "rate_before": 0.0,
+            "rate_after": 161.28272889901712
+          },
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "chain:11070100004",
+            "rate_before": 161.28272889901712,
+            "rate_after": 184.03294255540126
+          },
+          {
+            "reason": "bounded_live_continuity",
+            "proposed_rate": 184.03294255540126,
+            "incumbent_rate": 184.03294255540126,
+            "switch_loss_rate_proxy": 0.0
+          }
+        ],
+        "objective_rate_proxy": 184.03294255540126,
+        "selected_step_seconds": 0.05047421995550394,
+        "selected_charge": 43,
+        "backfill": [],
+        "evicted": [],
+        "actions": [
+          {
+            "id": "chain:11070100004",
+            "kind": "compound",
+            "members": [
+              "a23c60cfc57f40b8818345fd75ae75e3"
+            ],
+            "slack": 104.92024662904441,
+            "arrival": 1794056907.6795452,
+            "domain": "unchanged_DR_FIT295",
+            "scenario_count": 31,
+            "expected_credit": 2910.9032258064517,
+            "work": 2258.40625,
+            "probability": 0.16129032258064516,
+            "critical_seconds": 141.04350405831792,
+            "supported": true,
+            "reason": "supported",
+            "selected": true,
+            "density": 1.2889192215999454
+          },
+          {
+            "id": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "kind": "foreground",
+            "members": [
+              "1527a9acc8274b0a875ea6e0470977c8"
+            ],
+            "penalty": 100,
+            "arrival": 1794056914.4746158,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 7352,
+            "density": 8.0,
+            "work": 919.0,
+            "stage_work": 919.0,
+            "probability": 1.0,
+            "critical_seconds": 46.38580813910812,
+            "slack": 99.1335590362549,
+            "prefix_at_risk": 0.0,
+            "selected": true
+          },
+          {
+            "id": "request:8f70401075bb4878b562845ac815197a",
+            "kind": "foreground",
+            "members": [
+              "8f70401075bb4878b562845ac815197a"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.4109256,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.18852863220693e-34,
+            "density": 1.60305650016846e-37,
+            "work": 741.4140625,
+            "stage_work": 741.4140625,
+            "probability": 1.9700458017684896e-38,
+            "critical_seconds": 37.422296468728746,
+            "slack": 9.769846677780151,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7f9a0cedc27243ceb7fb1694e05b0586",
+            "kind": "foreground",
+            "members": [
+              "7f9a0cedc27243ceb7fb1694e05b0586"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.5279562,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 9.012830765515915e-32,
+            "density": 1.3206444292921798e-34,
+            "work": 682.45703125,
+            "stage_work": 682.45703125,
+            "probability": 1.6175216736388935e-35,
+            "critical_seconds": 34.446486305492726,
+            "slack": 9.88686466217041,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7a0b75929aac45d8aa9137e0e0fa1006",
+            "kind": "foreground",
+            "members": [
+              "7a0b75929aac45d8aa9137e0e0fa1006"
+            ],
+            "penalty": 100,
+            "arrival": 1794056911.6564732,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 2.1504539867986238e-30,
+            "density": 3.084815760509065e-33,
+            "work": 697.109375,
+            "stage_work": 697.109375,
+            "probability": 3.838040311973271e-34,
+            "critical_seconds": 35.18605192679388,
+            "slack": 12.015370845794678,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:0b96c86554194f6a80cc8230fcdac012",
+            "kind": "foreground",
+            "members": [
+              "0b96c86554194f6a80cc8230fcdac012"
+            ],
+            "penalty": 100,
+            "arrival": 1794056916.9062994,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 2.5888829359482493e-23,
+            "density": 3.851228327218775e-26,
+            "work": 672.22265625,
+            "stage_work": 672.22265625,
+            "probability": 4.765984786355393e-27,
+            "critical_seconds": 33.929914210635616,
+            "slack": 17.265186071395874,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:6f58132502c646dc9d3934832d693e4d",
+            "kind": "foreground",
+            "members": [
+              "6f58132502c646dc9d3934832d693e4d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.0357053,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 3.703908503202351e-24,
+            "density": 5.222145235358792e-27,
+            "work": 709.26953125,
+            "stage_work": 709.26953125,
+            "probability": 6.452802270387372e-28,
+            "critical_seconds": 35.799826328049676,
+            "slack": 18.394580602645874,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1a78f2bfb7af421eb17175e4c9f70e0c",
+            "kind": "foreground",
+            "members": [
+              "1a78f2bfb7af421eb17175e4c9f70e0c"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.3107748,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 8.875930275758425e-27,
+            "density": 1.1657285812611106e-29,
+            "work": 761.40625,
+            "stage_work": 761.40625,
+            "probability": 1.4336828098462971e-30,
+            "critical_seconds": 38.43138653799542,
+            "slack": 18.669638872146606,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:b379ba1787bb4b19a953cda67114e31b",
+            "kind": "foreground",
+            "members": [
+              "b379ba1787bb4b19a953cda67114e31b"
+            ],
+            "penalty": 100,
+            "arrival": 1794056919.5829077,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 4.1581228456903467e-38,
+            "density": 4.059133889166646e-41,
+            "work": 1024.38671875,
+            "stage_work": 1024.38671875,
+            "probability": 5.015829729421407e-42,
+            "critical_seconds": 51.70512056168445,
+            "slack": 19.94127082824707,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:80eaaa9c11a1408485ad6f732fec6f92",
+            "kind": "foreground",
+            "members": [
+              "80eaaa9c11a1408485ad6f732fec6f92"
+            ],
+            "penalty": 100,
+            "arrival": 1794056892.0958867,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 766.0,
+            "stage_work": 766.0,
+            "probability": 0.0,
+            "critical_seconds": 38.66325248591602,
+            "slack": -7.545774936676025,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:d7b0ec47f2864161a30c6153ebbe3655",
+            "kind": "foreground",
+            "members": [
+              "d7b0ec47f2864161a30c6153ebbe3655"
+            ],
+            "penalty": 100,
+            "arrival": 1794056898.6174977,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 907.0,
+            "stage_work": 907.0,
+            "probability": 0.0,
+            "critical_seconds": 45.780117499642074,
+            "slack": -1.0241830348968506,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:5f191bf1b8f744408f310d51946601ad",
+            "kind": "foreground",
+            "members": [
+              "5f191bf1b8f744408f310d51946601ad"
+            ],
+            "penalty": 100,
+            "arrival": 1794056906.6187143,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 9.112196267751251e-48,
+            "density": 8.907327729962122e-51,
+            "work": 1023.0,
+            "stage_work": 1023.0,
+            "probability": 1.0982519305473365e-51,
+            "critical_seconds": 51.63512701448053,
+            "slack": 6.9770214557647705,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:3e3ae8e1269041d1a0bab23d3e3dc42d",
+            "kind": "foreground",
+            "members": [
+              "3e3ae8e1269041d1a0bab23d3e3dc42d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056896.9839396,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 524.0,
+            "stage_work": 524.0,
+            "probability": 0.0,
+            "critical_seconds": 26.448491256684065,
+            "slack": -2.6577653884887695,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1d5264412756451582e17892cec7dc7b",
+            "kind": "foreground",
+            "members": [
+              "1d5264412756451582e17892cec7dc7b"
+            ],
+            "penalty": 100,
+            "arrival": 1794056904.176717,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 4.0859984872947866e-32,
+            "density": 7.008573734639429e-35,
+            "work": 583.0,
+            "stage_work": 583.0,
+            "probability": 7.702164914787534e-36,
+            "critical_seconds": 29.426470234058797,
+            "slack": 4.534996032714844,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          }
+        ],
+        "cost_model": {
+          "version": "observed_monotone_decode_step_v1",
+          "batch_seconds": [
+            [
+              1,
+              0.049602335318922997
+            ],
+            [
+              2,
+              0.05047421995550394
+            ],
+            [
+              3,
+              0.05240896623581648
+            ],
+            [
+              4,
+              0.05240896623581648
+            ]
+          ],
+          "sample_counts": {
+            "1": 64,
+            "3": 64,
+            "2": 64,
+            "4": 5
+          },
+          "fallback_unit": 0.0486557936668396,
+          "reference_members": 2,
+          "limitation": "Online member-count proxy; not hardware profiling or a context-length latency oracle."
+        },
+        "action_pool": 11,
+        "all_actions": 14
+      },
+      "plan_seconds": 0.002768760547041893
+    },
+    {
+      "scheduler": 0,
+      "tick": 2983,
+      "monotonic": 14771624.422036216,
+      "reasons": [
+        "prediction_revision"
+      ],
+      "selected": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "running_before": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "physical_candidates": 14,
+      "capacity": 10075,
+      "slots": 32,
+      "detail": {
+        "reason": "terminal_credit_compute_budget",
+        "decisions": [
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "rate_before": 0.0,
+            "rate_after": 161.28272889901712
+          },
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "chain:11070100004",
+            "rate_before": 161.28272889901712,
+            "rate_after": 184.04425473681457
+          },
+          {
+            "reason": "bounded_live_continuity",
+            "proposed_rate": 184.04425473681457,
+            "incumbent_rate": 184.04425473681457,
+            "switch_loss_rate_proxy": 0.0
+          }
+        ],
+        "objective_rate_proxy": 184.04425473681457,
+        "selected_step_seconds": 0.05047421995550394,
+        "selected_charge": 43,
+        "backfill": [],
+        "evicted": [],
+        "actions": [
+          {
+            "id": "chain:11070100004",
+            "kind": "compound",
+            "members": [
+              "a23c60cfc57f40b8818345fd75ae75e3"
+            ],
+            "slack": 104.87143053673208,
+            "arrival": 1794056907.6795452,
+            "domain": "unchanged_DR_FIT295",
+            "scenario_count": 31,
+            "expected_credit": 2910.9032258064517,
+            "work": 2257.40625,
+            "probability": 0.16129032258064516,
+            "critical_seconds": 140.9854587053691,
+            "supported": true,
+            "reason": "supported",
+            "selected": true,
+            "density": 1.2894901951327775
+          },
+          {
+            "id": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "kind": "foreground",
+            "members": [
+              "1527a9acc8274b0a875ea6e0470977c8"
+            ],
+            "penalty": 100,
+            "arrival": 1794056914.4746158,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 7344,
+            "density": 8.0,
+            "work": 918.0,
+            "stage_work": 918.0,
+            "probability": 1.0,
+            "critical_seconds": 46.33533391915262,
+            "slack": 99.08477835655214,
+            "prefix_at_risk": 0.0,
+            "selected": true
+          },
+          {
+            "id": "request:8f70401075bb4878b562845ac815197a",
+            "kind": "foreground",
+            "members": [
+              "8f70401075bb4878b562845ac815197a"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.4109256,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.072940312873544e-34,
+            "density": 1.447153982021408e-37,
+            "work": 741.4140625,
+            "stage_work": 741.4140625,
+            "probability": 1.7784523667719943e-38,
+            "critical_seconds": 37.422296468728746,
+            "slack": 9.721066951751709,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7f9a0cedc27243ceb7fb1694e05b0586",
+            "kind": "foreground",
+            "members": [
+              "7f9a0cedc27243ceb7fb1694e05b0586"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.5279562,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 8.078781517042323e-32,
+            "density": 1.1837787797782797e-34,
+            "work": 682.45703125,
+            "stage_work": 682.45703125,
+            "probability": 1.4498890016228146e-35,
+            "critical_seconds": 34.446486305492726,
+            "slack": 9.838086128234863,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7a0b75929aac45d8aa9137e0e0fa1006",
+            "kind": "foreground",
+            "members": [
+              "7a0b75929aac45d8aa9137e0e0fa1006"
+            ],
+            "penalty": 100,
+            "arrival": 1794056911.6564732,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.920824383267889e-30,
+            "density": 2.7554132136981932e-33,
+            "work": 697.109375,
+            "stage_work": 697.109375,
+            "probability": 3.4282070020843997e-34,
+            "critical_seconds": 35.18605192679388,
+            "slack": 11.966593027114868,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:0b96c86554194f6a80cc8230fcdac012",
+            "kind": "foreground",
+            "members": [
+              "0b96c86554194f6a80cc8230fcdac012"
+            ],
+            "penalty": 100,
+            "arrival": 1794056916.9062994,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 2.2665965751262075e-23,
+            "density": 3.371794381002325e-26,
+            "work": 672.22265625,
+            "stage_work": 672.22265625,
+            "probability": 4.172674107375198e-27,
+            "critical_seconds": 33.929914210635616,
+            "slack": 17.2164089679718,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:6f58132502c646dc9d3934832d693e4d",
+            "kind": "foreground",
+            "members": [
+              "6f58132502c646dc9d3934832d693e4d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.0357053,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 3.2513652138275e-24,
+            "density": 4.5841038851582556e-27,
+            "work": 709.26953125,
+            "stage_work": 709.26953125,
+            "probability": 5.664399327225609e-28,
+            "critical_seconds": 35.799826328049676,
+            "slack": 18.345804691314697,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1a78f2bfb7af421eb17175e4c9f70e0c",
+            "kind": "foreground",
+            "members": [
+              "1a78f2bfb7af421eb17175e4c9f70e0c"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.3107748,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 7.851868118650486e-27,
+            "density": 1.0312324227244635e-29,
+            "work": 761.40625,
+            "stage_work": 761.40625,
+            "probability": 1.2682713808190093e-30,
+            "critical_seconds": 38.43138653799542,
+            "slack": 18.620864391326904,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:b379ba1787bb4b19a953cda67114e31b",
+            "kind": "foreground",
+            "members": [
+              "b379ba1787bb4b19a953cda67114e31b"
+            ],
+            "penalty": 100,
+            "arrival": 1794056919.5829077,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 3.787868368161444e-38,
+            "density": 3.697693750640931e-41,
+            "work": 1024.38671875,
+            "stage_work": 1024.38671875,
+            "probability": 4.56920189163021e-42,
+            "critical_seconds": 51.70512056168445,
+            "slack": 19.89297318458557,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:80eaaa9c11a1408485ad6f732fec6f92",
+            "kind": "foreground",
+            "members": [
+              "80eaaa9c11a1408485ad6f732fec6f92"
+            ],
+            "penalty": 100,
+            "arrival": 1794056892.0958867,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 766.0,
+            "stage_work": 766.0,
+            "probability": 0.0,
+            "critical_seconds": 38.66325248591602,
+            "slack": -7.594059228897095,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:d7b0ec47f2864161a30c6153ebbe3655",
+            "kind": "foreground",
+            "members": [
+              "d7b0ec47f2864161a30c6153ebbe3655"
+            ],
+            "penalty": 100,
+            "arrival": 1794056898.6174977,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 907.0,
+            "stage_work": 907.0,
+            "probability": 0.0,
+            "critical_seconds": 45.780117499642074,
+            "slack": -1.0724608898162842,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:5f191bf1b8f744408f310d51946601ad",
+            "kind": "foreground",
+            "members": [
+              "5f191bf1b8f744408f310d51946601ad"
+            ],
+            "penalty": 100,
+            "arrival": 1794056906.6187143,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 8.456856022469591e-48,
+            "density": 8.266721429589043e-51,
+            "work": 1023.0,
+            "stage_work": 1023.0,
+            "probability": 1.0192667256200544e-51,
+            "critical_seconds": 51.63512701448053,
+            "slack": 6.9287450313568115,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:3e3ae8e1269041d1a0bab23d3e3dc42d",
+            "kind": "foreground",
+            "members": [
+              "3e3ae8e1269041d1a0bab23d3e3dc42d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056896.9839396,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 524.0,
+            "stage_work": 524.0,
+            "probability": 0.0,
+            "critical_seconds": 26.448491256684065,
+            "slack": -2.7060396671295166,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1d5264412756451582e17892cec7dc7b",
+            "kind": "foreground",
+            "members": [
+              "1d5264412756451582e17892cec7dc7b"
+            ],
+            "penalty": 100,
+            "arrival": 1794056904.176717,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 3.6696307369096267e-32,
+            "density": 6.294392344613425e-35,
+            "work": 583.0,
+            "stage_work": 583.0,
+            "probability": 6.917305818868287e-36,
+            "critical_seconds": 29.426470234058797,
+            "slack": 4.486722946166992,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          }
+        ],
+        "cost_model": {
+          "version": "observed_monotone_decode_step_v1",
+          "batch_seconds": [
+            [
+              1,
+              0.049602335318922997
+            ],
+            [
+              2,
+              0.05047421995550394
+            ],
+            [
+              3,
+              0.05240896623581648
+            ],
+            [
+              4,
+              0.05240896623581648
+            ]
+          ],
+          "sample_counts": {
+            "1": 64,
+            "3": 64,
+            "2": 64,
+            "4": 5
+          },
+          "fallback_unit": 0.0486557936668396,
+          "reference_members": 2,
+          "limitation": "Online member-count proxy; not hardware profiling or a context-length latency oracle."
+        },
+        "action_pool": 11,
+        "all_actions": 14
+      },
+      "plan_seconds": 0.0021774638444185257
+    },
+    {
+      "scheduler": 0,
+      "tick": 3016,
+      "monotonic": 14771626.196062466,
+      "reasons": [
+        "new_request_or_stage",
+        "prediction_revision",
+        "deadline_or_membership_change"
+      ],
+      "selected": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "running_before": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "physical_candidates": 15,
+      "capacity": 10075,
+      "slots": 32,
+      "detail": {
+        "reason": "terminal_credit_compute_budget",
+        "decisions": [
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "rate_before": 0.0,
+            "rate_after": 161.28272889901712
+          },
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "chain:11070100004",
+            "rate_before": 161.28272889901712,
+            "rate_after": 177.95654776803485
+          },
+          {
+            "reason": "bounded_live_continuity",
+            "proposed_rate": 177.95654776803485,
+            "incumbent_rate": 177.95654776803485,
+            "switch_loss_rate_proxy": 0.0
+          }
+        ],
+        "objective_rate_proxy": 177.95654776803485,
+        "selected_step_seconds": 0.052308388985693455,
+        "selected_charge": 47,
+        "backfill": [],
+        "evicted": [],
+        "actions": [
+          {
+            "id": "chain:11070100004",
+            "kind": "compound",
+            "members": [
+              "a23c60cfc57f40b8818345fd75ae75e3"
+            ],
+            "slack": 103.09740428626537,
+            "arrival": 1794056907.6795452,
+            "domain": "unchanged_DR_FIT295",
+            "scenario_count": 31,
+            "expected_credit": 2910.9032258064517,
+            "work": 2224.40625,
+            "probability": 0.16129032258064516,
+            "critical_seconds": 144.12358780326755,
+            "supported": true,
+            "reason": "supported",
+            "selected": true,
+            "density": 1.3086203232015068
+          },
+          {
+            "id": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "kind": "foreground",
+            "members": [
+              "1527a9acc8274b0a875ea6e0470977c8"
+            ],
+            "penalty": 100,
+            "arrival": 1794056914.4746158,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 7080,
+            "density": 8.0,
+            "work": 885.0,
+            "stage_work": 885.0,
+            "probability": 1.0,
+            "critical_seconds": 46.29292425233871,
+            "slack": 97.310724067688,
+            "prefix_at_risk": 0.0,
+            "selected": true
+          },
+          {
+            "id": "request:8f70401075bb4878b562845ac815197a",
+            "kind": "foreground",
+            "members": [
+              "8f70401075bb4878b562845ac815197a"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.4109256,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.8496678296494994e-37,
+            "density": 2.4947838504877285e-40,
+            "work": 741.4140625,
+            "stage_work": 741.4140625,
+            "probability": 3.0659171716384873e-41,
+            "critical_seconds": 38.78217518071324,
+            "slack": 7.9469921588897705,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7f9a0cedc27243ceb7fb1694e05b0586",
+            "kind": "foreground",
+            "members": [
+              "7f9a0cedc27243ceb7fb1694e05b0586"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.5279562,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.140521476305474e-34,
+            "density": 1.6711989533120865e-37,
+            "work": 682.45703125,
+            "stage_work": 682.45703125,
+            "probability": 2.0468798928669667e-38,
+            "critical_seconds": 35.698227856646554,
+            "slack": 8.064006328582764,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7a0b75929aac45d8aa9137e0e0fa1006",
+            "kind": "foreground",
+            "members": [
+              "7a0b75929aac45d8aa9137e0e0fa1006"
+            ],
+            "penalty": 100,
+            "arrival": 1794056911.6564732,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 2.0866171187087612e-33,
+            "density": 2.9932420844415715e-36,
+            "work": 697.109375,
+            "stage_work": 697.109375,
+            "probability": 3.724106940404714e-37,
+            "critical_seconds": 36.46466835307365,
+            "slack": 10.192508220672607,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:0b96c86554194f6a80cc8230fcdac012",
+            "kind": "foreground",
+            "members": [
+              "0b96c86554194f6a80cc8230fcdac012"
+            ],
+            "penalty": 100,
+            "arrival": 1794056916.9062994,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 8.638055375617449e-27,
+            "density": 1.284999143558314e-29,
+            "work": 672.22265625,
+            "stage_work": 672.22265625,
+            "probability": 1.5902163799001194e-30,
+            "critical_seconds": 35.1628841881211,
+            "slack": 15.442317724227905,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:6f58132502c646dc9d3934832d693e4d",
+            "kind": "foreground",
+            "members": [
+              "6f58132502c646dc9d3934832d693e4d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.0357053,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.2169775894002858e-27,
+            "density": 1.7158182267543808e-30,
+            "work": 709.26953125,
+            "stage_work": 709.26953125,
+            "probability": 2.1201700163768044e-31,
+            "critical_seconds": 37.10074653632546,
+            "slack": 16.571709156036377,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1a78f2bfb7af421eb17175e4c9f70e0c",
+            "kind": "foreground",
+            "members": [
+              "1a78f2bfb7af421eb17175e4c9f70e0c"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.3107748,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 3.689235156606695e-30,
+            "density": 4.8452914020691254e-33,
+            "work": 761.40625,
+            "stage_work": 761.40625,
+            "probability": 5.959029488946366e-34,
+            "critical_seconds": 39.82793430113816,
+            "slack": 16.846763610839844,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:b379ba1787bb4b19a953cda67114e31b",
+            "kind": "foreground",
+            "members": [
+              "b379ba1787bb4b19a953cda67114e31b"
+            ],
+            "penalty": 100,
+            "arrival": 1794056919.5829077,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 4.16433482451789e-41,
+            "density": 4.0651979846042784e-44,
+            "work": 1024.38671875,
+            "stage_work": 1024.38671875,
+            "probability": 5.0233230693822556e-45,
+            "critical_seconds": 53.58401895615316,
+            "slack": 18.118882656097412,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:b7a6fc856474499496ac10067bb1e0f0",
+            "kind": "foreground",
+            "members": [
+              "b7a6fc856474499496ac10067bb1e0f0"
+            ],
+            "penalty": 100,
+            "arrival": 1794056921.4393623,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.2654678962405584e-39,
+            "density": 1.2355304151271455e-42,
+            "work": 1024.23046875,
+            "stage_work": 1024.23046875,
+            "probability": 1.533900480291586e-43,
+            "critical_seconds": 53.575845770374144,
+            "slack": 19.974952936172485,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:80eaaa9c11a1408485ad6f732fec6f92",
+            "kind": "foreground",
+            "members": [
+              "80eaaa9c11a1408485ad6f732fec6f92"
+            ],
+            "penalty": 100,
+            "arrival": 1794056892.0958867,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 766.0,
+            "stage_work": 766.0,
+            "probability": 0.0,
+            "critical_seconds": 40.068225963041186,
+            "slack": -9.368564128875732,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:d7b0ec47f2864161a30c6153ebbe3655",
+            "kind": "foreground",
+            "members": [
+              "d7b0ec47f2864161a30c6153ebbe3655"
+            ],
+            "penalty": 100,
+            "arrival": 1794056898.6174977,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 907.0,
+            "stage_work": 907.0,
+            "probability": 0.0,
+            "critical_seconds": 47.44370881002396,
+            "slack": -2.8469769954681396,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:5f191bf1b8f744408f310d51946601ad",
+            "kind": "foreground",
+            "members": [
+              "5f191bf1b8f744408f310d51946601ad"
+            ],
+            "penalty": 100,
+            "arrival": 1794056906.6187143,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 3.4950727814895644e-50,
+            "density": 3.416493432541119e-53,
+            "work": 1023.0,
+            "stage_work": 1023.0,
+            "probability": 4.2124536356388625e-54,
+            "critical_seconds": 53.511481932364404,
+            "slack": 5.154222249984741,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:3e3ae8e1269041d1a0bab23d3e3dc42d",
+            "kind": "foreground",
+            "members": [
+              "3e3ae8e1269041d1a0bab23d3e3dc42d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056896.9839396,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 524.0,
+            "stage_work": 524.0,
+            "probability": 0.0,
+            "critical_seconds": 27.40959582850337,
+            "slack": -4.480567932128906,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1d5264412756451582e17892cec7dc7b",
+            "kind": "foreground",
+            "members": [
+              "1d5264412756451582e17892cec7dc7b"
+            ],
+            "penalty": 100,
+            "arrival": 1794056904.176717,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 7.939572337763917e-35,
+            "density": 1.3618477423265723e-37,
+            "work": 583.0,
+            "stage_work": 583.0,
+            "probability": 1.4966206103230758e-38,
+            "critical_seconds": 30.495790778659284,
+            "slack": 2.7121894359588623,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          }
+        ],
+        "cost_model": {
+          "version": "observed_monotone_decode_step_v1",
+          "batch_seconds": [
+            [
+              1,
+              0.049602335318922997
+            ],
+            [
+              2,
+              0.052308388985693455
+            ],
+            [
+              3,
+              0.05240896623581648
+            ],
+            [
+              4,
+              0.05240896623581648
+            ]
+          ],
+          "sample_counts": {
+            "1": 64,
+            "3": 64,
+            "2": 64,
+            "4": 5
+          },
+          "fallback_unit": 0.04937868499755859,
+          "reference_members": 2,
+          "limitation": "Online member-count proxy; not hardware profiling or a context-length latency oracle."
+        },
+        "action_pool": 12,
+        "all_actions": 15
+      },
+      "plan_seconds": 0.003110673278570175
+    },
+    {
+      "scheduler": 0,
+      "tick": 3017,
+      "monotonic": 14771626.237607587,
+      "reasons": [
+        "prediction_revision"
+      ],
+      "selected": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "running_before": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "physical_candidates": 15,
+      "capacity": 10075,
+      "slots": 32,
+      "detail": {
+        "reason": "terminal_credit_compute_budget",
+        "decisions": [
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "rate_before": 0.0,
+            "rate_after": 161.28272889901712
+          },
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "chain:11070100004",
+            "rate_before": 161.28272889901712,
+            "rate_after": 177.9677996066361
+          },
+          {
+            "reason": "bounded_live_continuity",
+            "proposed_rate": 177.9677996066361,
+            "incumbent_rate": 177.9677996066361,
+            "switch_loss_rate_proxy": 0.0
+          }
+        ],
+        "objective_rate_proxy": 177.9677996066361,
+        "selected_step_seconds": 0.052308388985693455,
+        "selected_charge": 47,
+        "backfill": [],
+        "evicted": [],
+        "actions": [
+          {
+            "id": "chain:11070100004",
+            "kind": "compound",
+            "members": [
+              "a23c60cfc57f40b8818345fd75ae75e3"
+            ],
+            "slack": 103.05585916526616,
+            "arrival": 1794056907.6795452,
+            "domain": "unchanged_DR_FIT295",
+            "scenario_count": 31,
+            "expected_credit": 2910.9032258064517,
+            "work": 2223.40625,
+            "probability": 0.16129032258064516,
+            "critical_seconds": 144.06343315593404,
+            "supported": true,
+            "reason": "supported",
+            "selected": true,
+            "density": 1.3092088887518651
+          },
+          {
+            "id": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "kind": "foreground",
+            "members": [
+              "1527a9acc8274b0a875ea6e0470977c8"
+            ],
+            "penalty": 100,
+            "arrival": 1794056914.4746158,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 7072,
+            "density": 8.0,
+            "work": 884.0,
+            "stage_work": 884.0,
+            "probability": 1.0,
+            "critical_seconds": 46.240615863353014,
+            "slack": 97.26926403045655,
+            "prefix_at_risk": 0.0,
+            "selected": true
+          },
+          {
+            "id": "request:8f70401075bb4878b562845ac815197a",
+            "kind": "foreground",
+            "members": [
+              "8f70401075bb4878b562845ac815197a"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.4109256,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.7049366316640322e-37,
+            "density": 2.299574175751532e-40,
+            "work": 741.4140625,
+            "stage_work": 741.4140625,
+            "probability": 2.8260179540262427e-41,
+            "critical_seconds": 38.78217518071324,
+            "slack": 7.905555725097656,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7f9a0cedc27243ceb7fb1694e05b0586",
+            "kind": "foreground",
+            "members": [
+              "7f9a0cedc27243ceb7fb1694e05b0586"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.5279562,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.0455547615885567e-34,
+            "density": 1.532044822915079e-37,
+            "work": 682.45703125,
+            "stage_work": 682.45703125,
+            "probability": 1.876444295744e-38,
+            "critical_seconds": 35.698227856646554,
+            "slack": 8.022576093673706,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7a0b75929aac45d8aa9137e0e0fa1006",
+            "kind": "foreground",
+            "members": [
+              "7a0b75929aac45d8aa9137e0e0fa1006"
+            ],
+            "penalty": 100,
+            "arrival": 1794056911.6564732,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.90801151682579e-33,
+            "density": 2.7370332192502647e-36,
+            "work": 697.109375,
+            "stage_work": 697.109375,
+            "probability": 3.4053391340813666e-37,
+            "critical_seconds": 36.46466835307365,
+            "slack": 10.151084184646606,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:0b96c86554194f6a80cc8230fcdac012",
+            "kind": "foreground",
+            "members": [
+              "0b96c86554194f6a80cc8230fcdac012"
+            ],
+            "penalty": 100,
+            "arrival": 1794056916.9062994,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 7.78315499605344e-27,
+            "density": 1.1578239625947506e-29,
+            "work": 672.22265625,
+            "stage_work": 672.22265625,
+            "probability": 1.4328341303485713e-30,
+            "critical_seconds": 35.1628841881211,
+            "slack": 15.400901079177856,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:6f58132502c646dc9d3934832d693e4d",
+            "kind": "foreground",
+            "members": [
+              "6f58132502c646dc9d3934832d693e4d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.0357053,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.0988320064214555e-27,
+            "density": 1.5492446214133853e-30,
+            "work": 709.26953125,
+            "stage_work": 709.26953125,
+            "probability": 1.9143414746018388e-31,
+            "critical_seconds": 37.10074653632546,
+            "slack": 16.530298709869385,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1a78f2bfb7af421eb17175e4c9f70e0c",
+            "kind": "foreground",
+            "members": [
+              "1a78f2bfb7af421eb17175e4c9f70e0c"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.3107748,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 3.350579421596999e-30,
+            "density": 4.400514733884833e-33,
+            "work": 761.40625,
+            "stage_work": 761.40625,
+            "probability": 5.412016510413502e-34,
+            "critical_seconds": 39.82793430113816,
+            "slack": 16.80535888671875,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:b379ba1787bb4b19a953cda67114e31b",
+            "kind": "foreground",
+            "members": [
+              "b379ba1787bb4b19a953cda67114e31b"
+            ],
+            "penalty": 100,
+            "arrival": 1794056919.5829077,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 3.8649294430984827e-41,
+            "density": 3.7729202969505823e-44,
+            "work": 1024.38671875,
+            "stage_work": 1024.38671875,
+            "probability": 4.6621585562104735e-45,
+            "critical_seconds": 53.58401895615316,
+            "slack": 18.07748293876648,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:b7a6fc856474499496ac10067bb1e0f0",
+            "kind": "foreground",
+            "members": [
+              "b7a6fc856474499496ac10067bb1e0f0"
+            ],
+            "penalty": 100,
+            "arrival": 1794056921.4393623,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 8.531832381330776e-31,
+            "density": 1.0239462791285231e-33,
+            "work": 833.23046875,
+            "stage_work": 833.23046875,
+            "probability": 1.2692401638397464e-34,
+            "critical_seconds": 43.584943474106694,
+            "slack": 19.93390727043152,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:80eaaa9c11a1408485ad6f732fec6f92",
+            "kind": "foreground",
+            "members": [
+              "80eaaa9c11a1408485ad6f732fec6f92"
+            ],
+            "penalty": 100,
+            "arrival": 1794056892.0958867,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 766.0,
+            "stage_work": 766.0,
+            "probability": 0.0,
+            "critical_seconds": 40.068225963041186,
+            "slack": -9.409577369689941,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:d7b0ec47f2864161a30c6153ebbe3655",
+            "kind": "foreground",
+            "members": [
+              "d7b0ec47f2864161a30c6153ebbe3655"
+            ],
+            "penalty": 100,
+            "arrival": 1794056898.6174977,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 907.0,
+            "stage_work": 907.0,
+            "probability": 0.0,
+            "critical_seconds": 47.44370881002396,
+            "slack": -2.88797664642334,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:5f191bf1b8f744408f310d51946601ad",
+            "kind": "foreground",
+            "members": [
+              "5f191bf1b8f744408f310d51946601ad"
+            ],
+            "penalty": 100,
+            "arrival": 1794056906.6187143,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 3.2917045901818805e-50,
+            "density": 3.217697546609854e-53,
+            "work": 1023.0,
+            "stage_work": 1023.0,
+            "probability": 3.967343124239943e-54,
+            "critical_seconds": 53.511481932364404,
+            "slack": 5.1132307052612305,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:3e3ae8e1269041d1a0bab23d3e3dc42d",
+            "kind": "foreground",
+            "members": [
+              "3e3ae8e1269041d1a0bab23d3e3dc42d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056896.9839396,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 524.0,
+            "stage_work": 524.0,
+            "probability": 0.0,
+            "critical_seconds": 27.40959582850337,
+            "slack": -4.521552801132202,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1d5264412756451582e17892cec7dc7b",
+            "kind": "foreground",
+            "members": [
+              "1d5264412756451582e17892cec7dc7b"
+            ],
+            "penalty": 100,
+            "arrival": 1794056904.176717,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 7.287356040119849e-35,
+            "density": 1.2499753070531474e-37,
+            "work": 583.0,
+            "stage_work": 583.0,
+            "probability": 1.3736769161394626e-38,
+            "critical_seconds": 30.495790778659284,
+            "slack": 2.6712124347686768,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          }
+        ],
+        "cost_model": {
+          "version": "observed_monotone_decode_step_v1",
+          "batch_seconds": [
+            [
+              1,
+              0.049602335318922997
+            ],
+            [
+              2,
+              0.052308388985693455
+            ],
+            [
+              3,
+              0.05240896623581648
+            ],
+            [
+              4,
+              0.05240896623581648
+            ]
+          ],
+          "sample_counts": {
+            "1": 64,
+            "3": 64,
+            "2": 64,
+            "4": 5
+          },
+          "fallback_unit": 0.04937868499755859,
+          "reference_members": 2,
+          "limitation": "Online member-count proxy; not hardware profiling or a context-length latency oracle."
+        },
+        "action_pool": 12,
+        "all_actions": 15
+      },
+      "plan_seconds": 0.001968657597899437
+    },
+    {
+      "scheduler": 0,
+      "tick": 3064,
+      "monotonic": 14771628.607413417,
+      "reasons": [
+        "completion_or_abort",
+        "prediction_revision",
+        "deadline_or_membership_change"
+      ],
+      "selected": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "running_before": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "physical_candidates": 16,
+      "capacity": 10075,
+      "slots": 32,
+      "detail": {
+        "reason": "terminal_credit_compute_budget",
+        "decisions": [
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "rate_before": 0.0,
+            "rate_after": 161.28272889901712
+          },
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "chain:11070100004",
+            "rate_before": 161.28272889901712,
+            "rate_after": 181.02873819883558
+          },
+          {
+            "reason": "bounded_live_continuity",
+            "proposed_rate": 181.02873819883558,
+            "incumbent_rate": 181.02873819883558,
+            "switch_loss_rate_proxy": 0.0
+          }
+        ],
+        "objective_rate_proxy": 181.02873819883558,
+        "selected_step_seconds": 0.05180754233151674,
+        "selected_charge": 53,
+        "backfill": [],
+        "evicted": [],
+        "actions": [
+          {
+            "id": "chain:11070100004",
+            "kind": "compound",
+            "members": [
+              "a23c60cfc57f40b8818345fd75ae75e3"
+            ],
+            "slack": 100.68605333566666,
+            "arrival": 1794056907.6795452,
+            "domain": "unchanged_DR_FIT295",
+            "scenario_count": 30,
+            "expected_credit": 3007.9333333333334,
+            "work": 2181.78984375,
+            "probability": 0.16666666666666666,
+            "critical_seconds": 140.20459248960924,
+            "supported": true,
+            "reason": "supported",
+            "selected": true,
+            "density": 1.3786540174572364
+          },
+          {
+            "id": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "kind": "foreground",
+            "members": [
+              "1527a9acc8274b0a875ea6e0470977c8"
+            ],
+            "penalty": 100,
+            "arrival": 1794056914.4746158,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 6696,
+            "density": 8.0,
+            "work": 837.0,
+            "stage_work": 837.0,
+            "probability": 1.0,
+            "critical_seconds": 43.362912931479514,
+            "slack": 94.8993196964264,
+            "prefix_at_risk": 0.0,
+            "selected": true
+          },
+          {
+            "id": "request:8f70401075bb4878b562845ac815197a",
+            "kind": "foreground",
+            "members": [
+              "8f70401075bb4878b562845ac815197a"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.4109256,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 3.616583586977656e-39,
+            "density": 4.8779538585804146e-42,
+            "work": 741.4140625,
+            "stage_work": 741.4140625,
+            "probability": 5.994668634141647e-43,
+            "critical_seconds": 38.41084042815055,
+            "slack": 5.535601377487183,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7f9a0cedc27243ceb7fb1694e05b0586",
+            "kind": "foreground",
+            "members": [
+              "7f9a0cedc27243ceb7fb1694e05b0586"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.5279562,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.62198783187782e-36,
+            "density": 2.376688579069893e-39,
+            "work": 682.45703125,
+            "stage_work": 682.45703125,
+            "probability": 2.9109616508934315e-40,
+            "critical_seconds": 35.35642153592562,
+            "slack": 5.6526172161102295,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7a0b75929aac45d8aa9137e0e0fa1006",
+            "kind": "foreground",
+            "members": [
+              "7a0b75929aac45d8aa9137e0e0fa1006"
+            ],
+            "penalty": 100,
+            "arrival": 1794056911.6564732,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 2.6655375997537703e-35,
+            "density": 3.8237006922389625e-38,
+            "work": 697.109375,
+            "stage_work": 697.109375,
+            "probability": 4.7573399959910234e-39,
+            "critical_seconds": 36.11552345500968,
+            "slack": 7.781121015548706,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:0b96c86554194f6a80cc8230fcdac012",
+            "kind": "foreground",
+            "members": [
+              "0b96c86554194f6a80cc8230fcdac012"
+            ],
+            "penalty": 100,
+            "arrival": 1794056916.9062994,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 5.311857931731887e-29,
+            "density": 7.901932317134523e-32,
+            "work": 672.22265625,
+            "stage_work": 672.22265625,
+            "probability": 9.77882535296739e-33,
+            "critical_seconds": 34.8262037198765,
+            "slack": 13.03093433380127,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:6f58132502c646dc9d3934832d693e4d",
+            "kind": "foreground",
+            "members": [
+              "6f58132502c646dc9d3934832d693e4d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.0357053,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 8.630959301603257e-30,
+            "density": 1.2168800323894158e-32,
+            "work": 709.26953125,
+            "stage_work": 709.26953125,
+            "probability": 1.5036514462723444e-33,
+            "critical_seconds": 36.74551126468941,
+            "slack": 14.160327672958374,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1a78f2bfb7af421eb17175e4c9f70e0c",
+            "kind": "foreground",
+            "members": [
+              "1a78f2bfb7af421eb17175e4c9f70e0c"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.3107748,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 3.653415399975877e-32,
+            "density": 4.7982471906106326e-35,
+            "work": 761.40625,
+            "stage_work": 761.40625,
+            "probability": 5.901171700817117e-36,
+            "critical_seconds": 39.44658652835642,
+            "slack": 14.435384273529053,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:b379ba1787bb4b19a953cda67114e31b",
+            "kind": "foreground",
+            "members": [
+              "b379ba1787bb4b19a953cda67114e31b"
+            ],
+            "penalty": 100,
+            "arrival": 1794056919.5829077,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.438881728841363e-42,
+            "density": 1.4046274736919155e-45,
+            "work": 1024.38671875,
+            "stage_work": 1024.38671875,
+            "probability": 1.7356836294829472e-46,
+            "critical_seconds": 53.07095829548416,
+            "slack": 15.707504749298096,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:b7a6fc856474499496ac10067bb1e0f0",
+            "kind": "foreground",
+            "members": [
+              "b7a6fc856474499496ac10067bb1e0f0"
+            ],
+            "penalty": 100,
+            "arrival": 1794056921.4393623,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.0727848805644679e-32,
+            "density": 1.287500782555208e-35,
+            "work": 833.23046875,
+            "stage_work": 833.23046875,
+            "probability": 1.5959310927766557e-36,
+            "critical_seconds": 43.16762278167516,
+            "slack": 17.56394648551941,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:5a66a54bacfc433e96248719293d2004",
+            "kind": "foreground",
+            "members": [
+              "5a66a54bacfc433e96248719293d2004"
+            ],
+            "penalty": 100,
+            "arrival": 1794056923.6472015,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 9.552486315555984e-23,
+            "density": 1.3756336892929728e-25,
+            "work": 694.40625,
+            "stage_work": 694.40625,
+            "probability": 1.6892106658808106e-26,
+            "critical_seconds": 35.9754811921448,
+            "slack": 19.771764516830444,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:80eaaa9c11a1408485ad6f732fec6f92",
+            "kind": "foreground",
+            "members": [
+              "80eaaa9c11a1408485ad6f732fec6f92"
+            ],
+            "penalty": 100,
+            "arrival": 1794056892.0958867,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 766.0,
+            "stage_work": 766.0,
+            "probability": 0.0,
+            "critical_seconds": 39.684577425941825,
+            "slack": -11.779563188552856,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:d7b0ec47f2864161a30c6153ebbe3655",
+            "kind": "foreground",
+            "members": [
+              "d7b0ec47f2864161a30c6153ebbe3655"
+            ],
+            "penalty": 100,
+            "arrival": 1794056898.6174977,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 907.0,
+            "stage_work": 907.0,
+            "probability": 0.0,
+            "critical_seconds": 46.989440894685686,
+            "slack": -5.257967472076416,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:5f191bf1b8f744408f310d51946601ad",
+            "kind": "foreground",
+            "members": [
+              "5f191bf1b8f744408f310d51946601ad"
+            ],
+            "penalty": 100,
+            "arrival": 1794056906.6187143,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 2.2576313142974e-51,
+            "density": 2.2068732300072336e-54,
+            "work": 1023.0,
+            "stage_work": 1023.0,
+            "probability": 2.7210212297184522e-55,
+            "critical_seconds": 52.99911580514163,
+            "slack": 2.7432360649108887,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:3e3ae8e1269041d1a0bab23d3e3dc42d",
+            "kind": "foreground",
+            "members": [
+              "3e3ae8e1269041d1a0bab23d3e3dc42d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056896.9839396,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 524.0,
+            "stage_work": 524.0,
+            "probability": 0.0,
+            "critical_seconds": 27.147152181714773,
+            "slack": -6.891550540924072,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1d5264412756451582e17892cec7dc7b",
+            "kind": "foreground",
+            "members": [
+              "1d5264412756451582e17892cec7dc7b"
+            ],
+            "penalty": 100,
+            "arrival": 1794056904.176717,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.0360446693482726e-36,
+            "density": 1.7770920572011536e-39,
+            "work": 583.0,
+            "stage_work": 583.0,
+            "probability": 1.9529588489128607e-40,
+            "critical_seconds": 30.20379717927426,
+            "slack": 0.3012096881866455,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          }
+        ],
+        "cost_model": {
+          "version": "observed_monotone_decode_step_v1",
+          "batch_seconds": [
+            [
+              1,
+              0.049602335318922997
+            ],
+            [
+              2,
+              0.05180754233151674
+            ],
+            [
+              3,
+              0.05352907441556454
+            ],
+            [
+              4,
+              0.05352907441556454
+            ]
+          ],
+          "sample_counts": {
+            "1": 64,
+            "3": 64,
+            "2": 64,
+            "4": 5
+          },
+          "fallback_unit": 0.04986611413955688,
+          "reference_members": 2,
+          "limitation": "Online member-count proxy; not hardware profiling or a context-length latency oracle."
+        },
+        "action_pool": 13,
+        "all_actions": 16
+      },
+      "plan_seconds": 0.003096655011177063
+    },
+    {
+      "scheduler": 0,
+      "tick": 3069,
+      "monotonic": 14771628.915374884,
+      "reasons": [
+        "deadline_or_membership_change"
+      ],
+      "selected": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "running_before": [
+        "1527a9acc8274b0a875ea6e0470977c8",
+        "a23c60cfc57f40b8818345fd75ae75e3"
+      ],
+      "physical_candidates": 16,
+      "capacity": 10075,
+      "slots": 32,
+      "detail": {
+        "reason": "terminal_credit_compute_budget",
+        "decisions": [
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "rate_before": 0.0,
+            "rate_after": 161.28272889901712
+          },
+          {
+            "reason": "positive_net_compute_credit",
+            "action": "chain:11070100004",
+            "rate_before": 161.28272889901712,
+            "rate_after": 180.3560395194954
+          },
+          {
+            "reason": "bounded_live_continuity",
+            "proposed_rate": 180.3560395194954,
+            "incumbent_rate": 180.3560395194954,
+            "switch_loss_rate_proxy": 0.0
+          }
+        ],
+        "objective_rate_proxy": 180.3560395194954,
+        "selected_step_seconds": 0.05201833415776491,
+        "selected_charge": 53,
+        "backfill": [],
+        "evicted": [],
+        "actions": [
+          {
+            "id": "chain:11070100004",
+            "kind": "compound",
+            "members": [
+              "a23c60cfc57f40b8818345fd75ae75e3"
+            ],
+            "slack": 100.37809186801314,
+            "arrival": 1794056907.6795452,
+            "domain": "unchanged_DR_FIT295",
+            "scenario_count": 30,
+            "expected_credit": 3007.9333333333334,
+            "work": 2176.78984375,
+            "probability": 0.16666666666666666,
+            "critical_seconds": 140.47594420184006,
+            "supported": true,
+            "reason": "supported",
+            "selected": true,
+            "density": 1.3818207310961659
+          },
+          {
+            "id": "request:1527a9acc8274b0a875ea6e0470977c8",
+            "kind": "foreground",
+            "members": [
+              "1527a9acc8274b0a875ea6e0470977c8"
+            ],
+            "penalty": 100,
+            "arrival": 1794056914.4746158,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 6656,
+            "density": 8.0,
+            "work": 832.0,
+            "stage_work": 832.0,
+            "probability": 1.0,
+            "critical_seconds": 43.27925401926041,
+            "slack": 94.59131913185121,
+            "prefix_at_risk": 0.0,
+            "selected": true
+          },
+          {
+            "id": "request:8f70401075bb4878b562845ac815197a",
+            "kind": "foreground",
+            "members": [
+              "8f70401075bb4878b562845ac815197a"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.4109256,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.508756063940976e-39,
+            "density": 2.0349709295417848e-42,
+            "work": 741.4140625,
+            "stage_work": 741.4140625,
+            "probability": 2.5008388263566647e-43,
+            "critical_seconds": 38.567124452391,
+            "slack": 5.22760009765625,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7f9a0cedc27243ceb7fb1694e05b0586",
+            "kind": "foreground",
+            "members": [
+              "7f9a0cedc27243ceb7fb1694e05b0586"
+            ],
+            "penalty": 100,
+            "arrival": 1794056909.5279562,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 6.561654912999285e-37,
+            "density": 9.614751717014104e-40,
+            "work": 682.45703125,
+            "stage_work": 682.45703125,
+            "probability": 1.1776121523688594e-40,
+            "critical_seconds": 35.50027789987871,
+            "slack": 5.34461522102356,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:7a0b75929aac45d8aa9137e0e0fa1006",
+            "kind": "foreground",
+            "members": [
+              "7a0b75929aac45d8aa9137e0e0fa1006"
+            ],
+            "penalty": 100,
+            "arrival": 1794056911.6564732,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.0445207745309297e-35,
+            "density": 1.4983599589819455e-38,
+            "work": 697.109375,
+            "stage_work": 697.109375,
+            "probability": 1.8642169811367655e-39,
+            "critical_seconds": 36.26246841326065,
+            "slack": 7.473118543624878,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:0b96c86554194f6a80cc8230fcdac012",
+            "kind": "foreground",
+            "members": [
+              "0b96c86554194f6a80cc8230fcdac012"
+            ],
+            "penalty": 100,
+            "arrival": 1794056916.9062994,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.8216149167799596e-29,
+            "density": 2.709838622431821e-32,
+            "work": 672.22265625,
+            "stage_work": 672.22265625,
+            "probability": 3.353488432952797e-33,
+            "critical_seconds": 34.967902761232835,
+            "slack": 12.722930669784546,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:6f58132502c646dc9d3934832d693e4d",
+            "kind": "foreground",
+            "members": [
+              "6f58132502c646dc9d3934832d693e4d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.0357053,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 2.9645887094966683e-30,
+            "density": 4.179777332704461e-33,
+            "work": 709.26953125,
+            "stage_work": 709.26953125,
+            "probability": 5.164788692502907e-34,
+            "critical_seconds": 36.89501948448378,
+            "slack": 13.852323055267334,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1a78f2bfb7af421eb17175e4c9f70e0c",
+            "kind": "foreground",
+            "members": [
+              "1a78f2bfb7af421eb17175e4c9f70e0c"
+            ],
+            "penalty": 100,
+            "arrival": 1794056918.3107748,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.297165758072678e-32,
+            "density": 1.7036447469043997e-35,
+            "work": 761.40625,
+            "stage_work": 761.40625,
+            "probability": 2.095244319290386e-36,
+            "critical_seconds": 39.60708474231069,
+            "slack": 14.127378702163696,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:b379ba1787bb4b19a953cda67114e31b",
+            "kind": "foreground",
+            "members": [
+              "b379ba1787bb4b19a953cda67114e31b"
+            ],
+            "penalty": 100,
+            "arrival": 1794056919.5829077,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 5.7963607728048945e-43,
+            "density": 5.658371654679259e-46,
+            "work": 1024.38671875,
+            "stage_work": 1024.38671875,
+            "probability": 6.991991282032442e-47,
+            "critical_seconds": 53.28689064271384,
+            "slack": 15.399498224258423,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:b7a6fc856474499496ac10067bb1e0f0",
+            "kind": "foreground",
+            "members": [
+              "b7a6fc856474499496ac10067bb1e0f0"
+            ],
+            "penalty": 100,
+            "arrival": 1794056921.4393623,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 3.735519621943171e-33,
+            "density": 4.4831769384851494e-36,
+            "work": 833.23046875,
+            "stage_work": 833.23046875,
+            "probability": 5.557155046032686e-37,
+            "critical_seconds": 43.343260953868594,
+            "slack": 17.255939245224,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:5a66a54bacfc433e96248719293d2004",
+            "kind": "foreground",
+            "members": [
+              "5a66a54bacfc433e96248719293d2004"
+            ],
+            "penalty": 100,
+            "arrival": 1794056923.6472015,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 2.744328726780127e-23,
+            "density": 3.952050729353497e-26,
+            "work": 694.40625,
+            "stage_work": 694.40625,
+            "probability": 4.8529243621222404e-27,
+            "critical_seconds": 36.12185635374044,
+            "slack": 19.46375560760498,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:80eaaa9c11a1408485ad6f732fec6f92",
+            "kind": "foreground",
+            "members": [
+              "80eaaa9c11a1408485ad6f732fec6f92"
+            ],
+            "penalty": 100,
+            "arrival": 1794056892.0958867,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 766.0,
+            "stage_work": 766.0,
+            "probability": 0.0,
+            "critical_seconds": 39.84604396484792,
+            "slack": -12.087572574615479,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:d7b0ec47f2864161a30c6153ebbe3655",
+            "kind": "foreground",
+            "members": [
+              "d7b0ec47f2864161a30c6153ebbe3655"
+            ],
+            "penalty": 100,
+            "arrival": 1794056898.6174977,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 907.0,
+            "stage_work": 907.0,
+            "probability": 0.0,
+            "critical_seconds": 47.180629081092775,
+            "slack": -5.565978050231934,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:5f191bf1b8f744408f310d51946601ad",
+            "kind": "foreground",
+            "members": [
+              "5f191bf1b8f744408f310d51946601ad"
+            ],
+            "penalty": 100,
+            "arrival": 1794056906.6187143,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 1.0743667370698287e-51,
+            "density": 1.050211864193381e-54,
+            "work": 1023.0,
+            "stage_work": 1023.0,
+            "probability": 1.2948857865129911e-55,
+            "critical_seconds": 53.214755843393505,
+            "slack": 2.435224771499634,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:3e3ae8e1269041d1a0bab23d3e3dc42d",
+            "kind": "foreground",
+            "members": [
+              "3e3ae8e1269041d1a0bab23d3e3dc42d"
+            ],
+            "penalty": 100,
+            "arrival": 1794056896.9839396,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 524.0,
+            "stage_work": 524.0,
+            "probability": 0.0,
+            "critical_seconds": 27.257607098668814,
+            "slack": -7.199563503265381,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          },
+          {
+            "id": "request:1d5264412756451582e17892cec7dc7b",
+            "kind": "foreground",
+            "members": [
+              "1d5264412756451582e17892cec7dc7b"
+            ],
+            "penalty": 100,
+            "arrival": 1794056904.176717,
+            "domain": "marginal_native_deadlines",
+            "expected_credit": 0.0,
+            "density": 0.0,
+            "work": 583.0,
+            "stage_work": 583.0,
+            "probability": 0.0,
+            "critical_seconds": 30.326688813976943,
+            "slack": -0.006804943084716797,
+            "prefix_at_risk": 0.0,
+            "selected": false
+          }
+        ],
+        "cost_model": {
+          "version": "observed_monotone_decode_step_v1",
+          "batch_seconds": [
+            [
+              1,
+              0.049602335318922997
+            ],
+            [
+              2,
+              0.05201833415776491
+            ],
+            [
+              3,
+              0.05352907441556454
+            ],
+            [
+              4,
+              0.05352907441556454
+            ]
+          ],
+          "sample_counts": {
+            "1": 64,
+            "3": 64,
+            "2": 64,
+            "4": 5
+          },
+          "fallback_unit": 0.04986611413955688,
+          "reference_members": 2,
+          "limitation": "Online member-count proxy; not hardware profiling or a context-length latency oracle."
+        },
+        "action_pool": 12,
+        "all_actions": 16
+      },
+      "plan_seconds": 0.0038027483969926834
+    }
+  ],
+  "conditional_chain_predictions": [
+    {
+      "chain": "11070100004",
+      "probability": 0.375,
+      "t": 13.281183520331979,
+      "credit": 6774.21875
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.375,
+      "t": 13.372448971495032,
+      "credit": 6774.21875
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.2916666666666667,
+      "t": 15.359147816896439,
+      "credit": 5314.0
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.2916666666666667,
+      "t": 15.3975177872926,
+      "credit": 5314.0
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.18181818181818182,
+      "t": 15.792119624093175,
+      "credit": 3545.818181818182
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.25,
+      "t": 16.473593963310122,
+      "credit": 4794.375
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.25,
+      "t": 18.162707397714257,
+      "credit": 4794.375
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.25,
+      "t": 18.290133694186807,
+      "credit": 4794.375
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.21875,
+      "t": 19.1152021009475,
+      "credit": 4059.4375
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.21875,
+      "t": 20.39687116071582,
+      "credit": 4059.4375
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.21875,
+      "t": 20.438536217436194,
+      "credit": 4059.4375
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.1875,
+      "t": 20.840525371953845,
+      "credit": 3380.40625
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.15625,
+      "t": 23.177220260724425,
+      "credit": 2685.96875
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.15625,
+      "t": 23.261221995577216,
+      "credit": 2685.96875
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.1875,
+      "t": 25.494578970596194,
+      "credit": 3380.40625
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.1875,
+      "t": 25.66510752774775,
+      "credit": 3380.40625
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.1875,
+      "t": 25.7199032548815,
+      "credit": 3380.40625
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.1875,
+      "t": 26.74575231038034,
+      "credit": 3380.40625
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.1875,
+      "t": 26.81869494728744,
+      "credit": 3380.40625
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.1875,
+      "t": 27.06335775181651,
+      "credit": 3380.40625
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.1875,
+      "t": 27.32350523211062,
+      "credit": 3380.40625
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.16129032258064516,
+      "t": 28.34013688750565,
+      "credit": 2910.9032258064517
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.16129032258064516,
+      "t": 28.388952979817986,
+      "credit": 2910.9032258064517
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.16129032258064516,
+      "t": 30.16297923028469,
+      "credit": 2910.9032258064517
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.16129032258064516,
+      "t": 30.204524351283908,
+      "credit": 2910.9032258064517
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.16129032258064516,
+      "t": 30.749193608760834,
+      "credit": 2910.9032258064517
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.13333333333333333,
+      "t": 32.3507134038955,
+      "credit": 2267.2
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.13333333333333333,
+      "t": 32.41315281577408,
+      "credit": 2267.2
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.16666666666666666,
+      "t": 32.57433018088341,
+      "credit": 3007.9333333333334
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.16666666666666666,
+      "t": 32.88229164853692,
+      "credit": 3007.9333333333334
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.13333333333333333,
+      "t": 33.53147342801094,
+      "credit": 2267.2
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.13333333333333333,
+      "t": 33.58578310161829,
+      "credit": 2267.2
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.13333333333333333,
+      "t": 35.32214427925646,
+      "credit": 2267.2
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.13333333333333333,
+      "t": 35.61657798849046,
+      "credit": 2267.2
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.13333333333333333,
+      "t": 35.690255995839834,
+      "credit": 2267.2
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.06896551724137931,
+      "t": 38.744378846138716,
+      "credit": 1096.896551724138
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.06896551724137931,
+      "t": 40.5062802284956,
+      "credit": 1096.896551724138
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.06896551724137931,
+      "t": 45.497896978631616,
+      "credit": 1096.896551724138
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.06896551724137931,
+      "t": 45.63614816404879,
+      "credit": 1096.896551724138
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.06896551724137931,
+      "t": 46.02762267924845,
+      "credit": 1096.896551724138
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.034482758620689655,
+      "t": 51.45281207934022,
+      "credit": 456.2758620689655
+    },
+    {
+      "chain": "11070100033",
+      "probability": 0.1875,
+      "t": 54.03721871599555,
+      "credit": 2343.0
+    },
+    {
+      "chain": "11070100033",
+      "probability": 0.1875,
+      "t": 54.12663011625409,
+      "credit": 2343.0
+    },
+    {
+      "chain": "11070100033",
+      "probability": 0.1875,
+      "t": 55.09050297178328,
+      "credit": 2343.0
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.034482758620689655,
+      "t": 56.6522124838084,
+      "credit": 456.2758620689655
+    },
+    {
+      "chain": "11070100033",
+      "probability": 0.09375,
+      "t": 56.78616967983544,
+      "credit": 1272.03125
+    },
+    {
+      "chain": "11070100033",
+      "probability": 0.09375,
+      "t": 57.00252584181726,
+      "credit": 1272.03125
+    },
+    {
+      "chain": "11070100033",
+      "probability": 0.09375,
+      "t": 58.099286610260606,
+      "credit": 1272.03125
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.034482758620689655,
+      "t": 64.19442673586309,
+      "credit": 456.2758620689655
+    },
+    {
+      "chain": "11070100033",
+      "probability": 0.09375,
+      "t": 64.19442673586309,
+      "credit": 1272.03125
+    },
+    {
+      "chain": "11070100033",
+      "probability": 0.09375,
+      "t": 64.66223968751729,
+      "credit": 1272.03125
+    },
+    {
+      "chain": "11070100033",
+      "probability": 0.09375,
+      "t": 65.21944099664688,
+      "credit": 1272.03125
+    },
+    {
+      "chain": "11070100033",
+      "probability": 0.09375,
+      "t": 65.82680024765432,
+      "credit": 1272.03125
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.034482758620689655,
+      "t": 65.82680024765432,
+      "credit": 456.2758620689655
+    },
+    {
+      "chain": "11070100033",
+      "probability": 0.09375,
+      "t": 66.01589264161885,
+      "credit": 1272.03125
+    },
+    {
+      "chain": "11070100004",
+      "probability": 0.034482758620689655,
+      "t": 66.01589264161885,
+      "credit": 456.2758620689655
+    },
+    {
+      "chain": "11070100033",
+      "probability": 0.0625,
+      "t": 76.11373406462371,
+      "credit": 808.5625
+    },
+    {
+      "chain": "11070100033",
+      "probability": 0.0625,
+      "t": 76.84293203614652,
+      "credit": 808.5625
+    },
+    {
+      "chain": "11070100033",
+      "probability": 0.0625,
+      "t": 76.91312418878078,
+      "credit": 808.5625
+    },
+    {
+      "chain": "11070100064",
+      "probability": 1.0,
+      "t": 132.4775385595858,
+      "credit": 3340.214285714286
+    },
+    {
+      "chain": "11070100064",
+      "probability": 1.0,
+      "t": 132.78637759946287,
+      "credit": 3340.214285714286
+    },
+    {
+      "chain": "11070100064",
+      "probability": 1.0,
+      "t": 133.30720970407128,
+      "credit": 3340.214285714286
+    },
+    {
+      "chain": "11070100064",
+      "probability": 1.0,
+      "t": 133.39393682777882,
+      "credit": 3340.214285714286
+    },
+    {
+      "chain": "11070100064",
+      "probability": 1.0,
+      "t": 133.45286745391786,
+      "credit": 3340.214285714286
+    },
+    {
+      "chain": "11070100064",
+      "probability": 1.0,
+      "t": 134.03297995217144,
+      "credit": 3336.6428571428573
+    },
+    {
+      "chain": "11070100064",
+      "probability": 1.0,
+      "t": 134.1098057795316,
+      "credit": 3336.6428571428573
+    },
+    {
+      "chain": "11070100064",
+      "probability": 1.0,
+      "t": 134.84636340849102,
+      "credit": 3332.785714285714
+    },
+    {
+      "chain": "11070100064",
+      "probability": 1.0,
+      "t": 134.8745920136571,
+      "credit": 3332.785714285714
+    },
+    {
+      "chain": "11070100064",
+      "probability": 1.0,
+      "t": 134.94949392974377,
+      "credit": 3332.785714285714
+    },
+    {
+      "chain": "11070100064",
+      "probability": 1.0,
+      "t": 136.2332981918007,
+      "credit": 3332.785714285714
+    },
+    {
+      "chain": "11070100064",
+      "probability": 1.0,
+      "t": 136.6153237633407,
+      "credit": 3332.785714285714
+    },
+    {
+      "chain": "11070100064",
+      "probability": 1.0,
+      "t": 136.9531148802489,
+      "credit": 3284.0
+    },
+    {
+      "chain": "11070100064",
+      "probability": 1.0,
+      "t": 137.5049047358334,
+      "credit": 3284.0
+    },
+    {
+      "chain": "11070100064",
+      "probability": 1.0,
+      "t": 137.55808299779892,
+      "credit": 3284.0
+    },
+    {
+      "chain": "11070100085",
+      "probability": 1.0,
+      "t": 176.73528411611915,
+      "credit": 3340.214285714286
+    },
+    {
+      "chain": "11070100085",
+      "probability": 1.0,
+      "t": 176.78282296471298,
+      "credit": 3340.214285714286
+    },
+    {
+      "chain": "11070100085",
+      "probability": 1.0,
+      "t": 177.0139876715839,
+      "credit": 3340.214285714286
+    },
+    {
+      "chain": "11070100085",
+      "probability": 1.0,
+      "t": 177.75495332106948,
+      "credit": 3340.214285714286
+    },
+    {
+      "chain": "11070100085",
+      "probability": 1.0,
+      "t": 177.82890698499978,
+      "credit": 3340.214285714286
+    },
+    {
+      "chain": "11070100085",
+      "probability": 1.0,
+      "t": 178.04363580979407,
+      "credit": 3336.6428571428573
+    },
+    {
+      "chain": "11070100085",
+      "probability": 1.0,
+      "t": 178.77011841535568,
+      "credit": 3332.785714285714
+    },
+    {
+      "chain": "11070100085",
+      "probability": 1.0,
+      "t": 178.8180372454226,
+      "credit": 3332.785714285714
+    },
+    {
+      "chain": "11070100085",
+      "probability": 1.0,
+      "t": 178.88638649135828,
+      "credit": 3332.785714285714
+    },
+    {
+      "chain": "11070100085",
+      "probability": 1.0,
+      "t": 179.09515641257167,
+      "credit": 3332.785714285714
+    },
+    {
+      "chain": "11070100085",
+      "probability": 1.0,
+      "t": 180.08465583249927,
+      "credit": 3332.785714285714
+    },
+    {
+      "chain": "11070100085",
+      "probability": 1.0,
+      "t": 180.91553252004087,
+      "credit": 3455.0
+    },
+    {
+      "chain": "11070100085",
+      "probability": 1.0,
+      "t": 181.20527187548578,
+      "credit": 3320.0
+    },
+    {
+      "chain": "11070100110",
+      "probability": 1.0,
+      "t": 210.98115345090628,
+      "credit": 3340.214285714286
+    },
+    {
+      "chain": "11070100110",
+      "probability": 1.0,
+      "t": 211.23553421534598,
+      "credit": 3340.214285714286
+    },
+    {
+      "chain": "11070100110",
+      "probability": 1.0,
+      "t": 211.76648595556617,
+      "credit": 3340.214285714286
+    },
+    {
+      "chain": "11070100110",
+      "probability": 1.0,
+      "t": 212.4378995448351,
+      "credit": 3336.6428571428573
+    },
+    {
+      "chain": "11070100110",
+      "probability": 1.0,
+      "t": 213.01384731382132,
+      "credit": 3336.6428571428573
+    },
+    {
+      "chain": "11070100110",
+      "probability": 1.0,
+      "t": 213.26127544417977,
+      "credit": 3332.785714285714
+    },
+    {
+      "chain": "11070100110",
+      "probability": 1.0,
+      "t": 213.3577218297869,
+      "credit": 3332.785714285714
+    },
+    {
+      "chain": "11070100110",
+      "probability": 1.0,
+      "t": 213.41461983695626,
+      "credit": 3332.785714285714
+    },
+    {
+      "chain": "11070100110",
+      "probability": 1.0,
+      "t": 214.54995306767523,
+      "credit": 3332.785714285714
+    },
+    {
+      "chain": "11070100110",
+      "probability": 1.0,
+      "t": 215.67939372733235,
+      "credit": 3284.0
+    },
+    {
+      "chain": "11070100113",
+      "probability": 0.0625,
+      "t": 223.0885360725224,
+      "credit": 1085.09375
+    },
+    {
+      "chain": "11070100113",
+      "probability": 0.0625,
+      "t": 223.2017528899014,
+      "credit": 1085.09375
+    },
+    {
+      "chain": "11070100113",
+      "probability": 0.0625,
+      "t": 224.72981649264693,
+      "credit": 1085.09375
+    }
+  ]
+}

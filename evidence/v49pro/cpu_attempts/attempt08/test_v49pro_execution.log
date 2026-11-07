@@ -1,0 +1,14 @@
+{"CUDA_context_initialized": false, "engine_started": false, "exit_code": 0}
+test_async_boundary_excludes_scheduler_time_and_keeps_all_flags (__main__.Execution.test_async_boundary_excludes_scheduler_time_and_keeps_all_flags) ... ok
+test_engine_installer_hooks_native_constructor_without_starting_model (__main__.Execution.test_engine_installer_hooks_native_constructor_without_starting_model) ... ok
+test_executor_failure_is_preserved_logged_and_not_fit_as_latency (__main__.Execution.test_executor_failure_is_preserved_logged_and_not_fit_as_latency) ... ok
+test_native_SequenceGroupMetadata_and_ExecuteModelRequest_ABI (__main__.Execution.test_native_SequenceGroupMetadata_and_ExecuteModelRequest_ABI) ... /mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+ok
+test_sync_long_call_and_foreground_pure_paths_have_same_coverage (__main__.Execution.test_sync_long_call_and_foreground_pure_paths_have_same_coverage) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 9.131s
+
+OK

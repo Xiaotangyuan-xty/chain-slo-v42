@@ -1,0 +1,27 @@
+{
+  "CPU_SYNTHETIC_PLANNER_BUDGET": [
+    {
+      "candidates": 64,
+      "runs": 15,
+      "mean_ms": 6.172093003988266,
+      "p95_ms": 6.194142624735832,
+      "max_ms": 6.201025098562241,
+      "max_materialized_actions": 12,
+      "reasons": {
+        "rollout_wall_budget_exhausted": 15
+      }
+    },
+    {
+      "candidates": 256,
+      "runs": 15,
+      "mean_ms": 6.164115418990453,
+      "p95_ms": 6.186498329043388,
+      "max_ms": 6.1885155737400055,
+      "max_materialized_actions": 12,
+      "reasons": {
+        "rollout_wall_budget_exhausted": 15
+      }
+    }
+  ],
+  "GPU_performance_claim": false
+}
