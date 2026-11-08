@@ -47,6 +47,8 @@ def reprice(goals,selected,protected,forecaster,block_size=16,residents=(),backg
         selected-=remove
     rows=[row(values[g['chain']],{m['request'] for m in g['members']}&selected,
               sum(blocks(m,block_size) for m in g['members'])) for g in goals]
+    if not any(v['probability']>0 and v['expected_credited_tokens']>0 for v in values.values()):
+        return None,rows
     return (selected or None),rows
 
 

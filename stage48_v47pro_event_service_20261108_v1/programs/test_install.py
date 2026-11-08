@@ -50,6 +50,7 @@ class MixedScheduler:
         self.mode='pure';self.mode_epoch=0;self.v47_counts=Counter();self.mixed_counts=Counter()
         self.events=S(counts=Counter());self.cost_model=S(describe=lambda:{});self.last_joint_summary=None
 mixed.MixedScheduler=MixedScheduler
+pure_core=module('pure_core_v47');pure_core.MODEL=S(stats={})
 annotations=module('native_tot_adapter');annotations.install_server_annotations=lambda server:{}
 token_reward=module('token_reward');token_reward.REWARD=S(stats={})
 vllm=module('vllm');vllm.__path__=[];engine_package=module('vllm.engine');engine_package.__path__=[]

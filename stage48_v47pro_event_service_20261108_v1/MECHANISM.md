@@ -16,16 +16,21 @@ The historical Stage30 directory and all later release freezes remain unchanged.
    preemption, configuration and capacity release remain urgent. TTFT, next cumulative token
    deadline and root deadline include a lead based on observed busy-round time.
    Ordinary decode KV growth and queue reordering do not cause a replan.
-   Generated-token milestones repeat every50 tokens. Fifty ticks is only a fallback. These are internal controls, not new gates or
+   A 50-token milestone triggers a full plan only when the protected set actually
+   changes; an unchanged quantum is only cheap bookkeeping. Fifty ticks is only a fallback. These are internal controls, not new gates or
    hard real-time guarantees. No future arrival or true future output length is
    used to construct these triggers. Decision JSON serialization and file writes
    use a bounded background queue; drops and writer errors are explicitly counted.
+   Every submitted plan retains its full rows and decision ID for audit.
 2. Each donor scenario includes all unfinished members, unsubmitted siblings and
-   all future public stages. Capacity/slot-limited fixed waves and integer
-   prefill chunks replace the all-members-parallel shortcut. The physical first
-   selected wave is revalued, followed by the remaining waves. Fixed background
-   reservations account for other admitted roots and foreground. The selector
-   cannot retain a full parallel root credit after reducing its first wave.
+   all future public stages through cached current/future critical, work and
+   terminal-credit components; the hot path does not materialize every future
+   stage as fixed waves. The physical first selected batch and serial residual
+   members use their actual current service costs, including integer prefill
+   chunks. Current resident/foreground backgrounds remain charged throughout the
+   current stage's residual work, while future stages use their own isolated
+   cached units and allow those residents to release. The selector cannot retain
+   full parallel root credit after reducing its first wave.
    Final pure and joint selections are revalued against the complete chosen set
    and every retained running resident; non-protected roots whose credit becomes
    zero are removed from desired selection, with bounded rechecking of the set.
@@ -106,3 +111,34 @@ drain are separate; JCT adds no validity constraint; arrival error<=0.5s remains
 The legacy `future_components` helper remains for traceability, but v47pro's
 `estimate`/`revalue` paths do not call it. Their prefill/recompute estimates use
 configured integer token-budget chunks and the online service model.
+
+## Stage61 diagnostic override
+
+The current diagnostic workspace intentionally passes `forecaster=None` to the
+pure and joint selectors. Initial forecasts remain enabled, but selected-wave,
+resident-background and final revaluation are skipped. This is a measurement
+arm for separating planning cost from selection semantics, not a final policy.
+The bounded deselected-resident turnover remains active: selected requests and
+those in the current `last_protected` lease cannot be evicted, while other
+deselected residents use the existing bounded native preemption path.
+
+## Stage62 pure-core restoration control
+
+The current workspace routes chain-only operation through the isolated frozen
+v47 implementation from commit 082e98c7. Its original forecast, selector,
+leases, 50-tick cadence, preemption and reversible expired drain are used
+instead of pro event replanning, ServiceModel estimates, selected/final revalue
+and the Stage60 turnover logic. Shared prediction, native correctness fixes and
+executor observation remain common. The mixed/foreground path retains the
+current diagnostic implementation. Entering or leaving pure mode rebuilds the
+corresponding policy from live native queues and clears selected, lease and
+drain state so no previous-mode selection can contaminate pure execution.
+
+## Stage64 arrival-triggered frozen replanning
+
+The frozen pure scheduler retains its original forecast/select/lease/preemption
+and drain behavior, but its original replan condition also triggers when a
+previously unseen request ID appears. This covers new independent roots and new
+stage/sibling arrivals before the 50-tick fallback. No pro prediction, physical,
+deadline or service-quantum event is added; ServiceModel and revalue remain
+unused. With no new arrival, the trace remains equivalent to frozen v47.

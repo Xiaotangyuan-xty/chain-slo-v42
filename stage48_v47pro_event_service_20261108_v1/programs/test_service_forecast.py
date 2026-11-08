@@ -88,6 +88,23 @@ class ForecastTests(unittest.TestCase):
         g.update(chain=rid,stage=0,deadline=slack,arrival=0.,members=views)
         return g
 
+    def test_initial_estimate_matches_v47_isolated_formula(self):
+        data={'neighbors':1,'prefill_tokens_per_decode_unit':4,'interstage_gap_decode_units':2,
+              'forecast_guard_decode_units':3,'service_safety_factor':1.25,
+              'records':[{'id':1,'stages':[{'inputs':[8],'outputs':[12]},
+                                            {'inputs':[6,4],'outputs':[4,8]}]}]}
+        f=StageForecaster(data);m=ServiceModel();m.observe_round(.5)
+        meta={'stages':2,'widths':[1,2],'observed':{},'neighbor_cache':{}}
+        views=[{'request':'r','member':0,'declared_input':8,'prompt':8,'generated':2,
+                'max_tokens':12,'prefill_tokens':8,'arrival':0}]
+        g=f.estimate(meta,0,views,100.,service=m)
+        self.assertEqual(g['probability'],1.)
+        self.assertAlmostEqual(g['critical_mean_seconds'],16.1875)
+        self.assertAlmostEqual(g['remaining_work'],13.25)
+        self.assertEqual(g['current_remaining_tokens'],10.)
+        self.assertEqual(g['expected_credited_tokens'],210.)
+        self.assertAlmostEqual(g['score'],210./13.25)
+
     def test_retained_resident_is_charged_in_pure_and_joint(self):
         f,m=self.interference();g=self.interference_goal(f,m,'new',100.)
         resident={'request':'old','prompt':1,'generated':0,'max_tokens':100,
@@ -96,6 +113,42 @@ class ForecastTests(unittest.TestCase):
         self.assertIsNone(selected);self.assertEqual(rows[0]['probability'],0.)
         selected,rows,fg=select_joint([g],[],100,2,forecaster=f,residents=[resident])
         self.assertIsNone(selected);self.assertEqual(rows[0]['probability'],0.)
+
+    def test_resident_affects_current_stage_but_is_released_from_future(self):
+        data={'neighbors':1,'prefill_tokens_per_decode_unit':256,'interstage_gap_decode_units':0,
+              'forecast_guard_decode_units':0,'service_safety_factor':1.,
+              'records':[{'id':1,'stages':[{'inputs':[1],'outputs':[100]},
+                                            {'inputs':[0],'outputs':[100]}]}]}
+        f=StageForecaster(data);m=ServiceModel()
+        m.observe_execution({'members':1,'context_tokens':101},1.)
+        m.observe_execution({'members':2,'context_tokens':202},2.)
+        meta={'stages':2,'widths':[1,1],'observed':{},'neighbor_cache':{}}
+        views=[{'request':'new','member':0,'declared_input':1,'prompt':1,'generated':0,
+                'max_tokens':100,'prefill_tokens':0,'arrival':0}]
+        g=f.estimate(meta,0,views,1000.,service=m,capacity=100,slots=2)
+        resident={'request':'old','prompt':1,'generated':0,'max_tokens':100,
+                  'prefill_tokens':0,'arrival':0,'resident':True,'swapped':False}
+        result=f.revalue(g,{'new'},[resident,dict(resident)])
+        self.assertEqual(g['critical_mean_seconds'],200.)
+        self.assertEqual(result['critical_mean_seconds'],300.)
+        self.assertEqual(result['probability'],1.)
+
+    def test_partial_residual_keeps_current_resident_background(self):
+        data={'neighbors':1,'prefill_tokens_per_decode_unit':256,'interstage_gap_decode_units':0,
+              'forecast_guard_decode_units':0,'service_safety_factor':1.,
+              'records':[{'id':1,'stages':[{'inputs':[1,1],'outputs':[100,100]}]}]}
+        f=StageForecaster(data);m=ServiceModel()
+        m.observe_execution({'members':1,'context_tokens':101},1.)
+        m.observe_execution({'members':2,'context_tokens':202},2.)
+        meta={'stages':1,'widths':[2],'observed':{},'neighbor_cache':{}}
+        views=[{'request':str(i),'member':i,'declared_input':1,'prompt':1,'generated':0,
+                'max_tokens':100,'prefill_tokens':0,'arrival':0} for i in range(2)]
+        g=f.estimate(meta,0,views,350.,service=m,capacity=100,slots=2)
+        resident={'request':'old','prompt':1,'generated':0,'max_tokens':100,
+                  'prefill_tokens':0,'arrival':0,'resident':True,'swapped':False}
+        result=f.revalue(g,{'0'},[resident])
+        self.assertEqual(result['critical_mean_seconds'],400.)
+        self.assertEqual(result['probability'],0.)
 
     def test_pure_final_set_removes_stale_positive_credit(self):
         f,m=self.interference();a=self.interference_goal(f,m,'a',100.);b=self.interference_goal(f,m,'b',200.)
@@ -127,31 +180,47 @@ class ForecastTests(unittest.TestCase):
         g=f.estimate(meta,0,views,150.,service=m,capacity=100,slots=2)
         g.update(chain=1,stage=0,deadline=150.,arrival=0.,members=views)
         return f,g
+
     def test_partial_selection_recomputes_probability_and_credit(self):
         f,g=self.fixture();self.assertEqual(g['probability'],1.)
         partial=f.revalue(g,{'0'})
         self.assertEqual(partial['critical_mean_seconds'],200.)
         self.assertEqual(partial['probability'],0.);self.assertEqual(partial['expected_credited_tokens'],0.)
+
+    def test_empty_first_wave_has_no_terminal_credit(self):
+        f,g=self.fixture();empty=f.revalue(g,set())
+        self.assertEqual(empty['probability'],0.)
+        self.assertEqual(empty['expected_credited_tokens'],0.)
+        self.assertEqual(empty['score'],0.)
+
     def test_two_members_selected_retains_parallel_probability(self):
         f,g=self.fixture();full=f.revalue(g,{'0','1'})
         self.assertEqual(full['critical_mean_seconds'],100.);self.assertEqual(full['probability'],1.)
+
     def test_capacity_selector_cannot_reuse_full_parallel_credit(self):
         f,g=self.fixture();selected,rows=select([g],100,1,forecaster=f)
         self.assertIsNone(selected);self.assertEqual(rows[0]['probability'],0.)
         self.assertEqual(rows[0]['expected_credited_tokens'],0.)
-    def test_foreground_reservation_changes_chain_waves(self):
-        f,g=self.fixture();bg=[{'prompt':1,'generated':0,'max_tokens':100,'remaining':100}]
+
+    def test_foreground_reservation_changes_chain_service(self):
+        f,g=self.fixture();bg=[{'request':'fg','prompt':1,'generated':0,'max_tokens':100,'remaining':100}]
         partial=f.revalue(g,{'0'},bg)
         self.assertEqual(partial['probability'],0.)
-    def test_future_stages_are_also_wave_limited(self):
-        f,g=self.fixture();state=g['_forecast'];scenario=state['scenarios'][0]
-        scenario['stages'].append([dict(t) for t in scenario['stages'][0]])
-        state['slack']=350;state['slots']=1
-        result=f._value(state)
-        self.assertEqual(result['critical_mean_seconds'],400.)
-        self.assertEqual(result['probability'],0.)
+
+    def test_final_revalue_remains_repeatable_and_timed(self):
+        f,g=self.fixture();full=f.revalue(g,{'0','1'});again=f.revalue(full,{'0','1'})
+        self.assertEqual(again['critical_mean_seconds'],100.)
+        self.assertEqual(again['probability'],1.)
+        self.assertGreater(again['expected_credited_tokens'],0.)
+        self.assertGreaterEqual(f.stats['revalue_seconds'],0.)
+
+    def test_external_incumbent_factor_survives_revalue(self):
+        f,g=self.fixture();g['score']*=1.2
+        empty=f.revalue(g,set());full=f.revalue(empty,{'0','1'})
+        self.assertAlmostEqual(full['score'],1.2*full['expected_credited_tokens']/full['remaining_work'])
+
     def test_unsubmitted_siblings_are_costed_but_never_physically_selected(self):
-        f,g=self.fixture();task=g['_forecast']['scenarios'][0]['stages'][0][1];task['request']=None
+        f,g=self.fixture();task=g['_forecast']['scenarios'][0]['current'][1];task['request']=None
         result=f.revalue(g,{'0'})
         self.assertEqual(result['critical_mean_seconds'],200.)
 

@@ -5,6 +5,7 @@ from jitserve.request_info import RequestType
 from vllm.sequence import SequenceStatus
 from jitserve.scheduler.policy import SLOPolicy
 from native_chain import ChainCompletionPolicy,NativeChainScheduler
+from pure_core_v47 import leave_pure,schedule_pure
 
 VERSION='v47pro_event_wave_service_v1'
 VARIANT='v47pro_v47_reward_event_wave_v1'
@@ -46,7 +47,19 @@ class MixedScheduler(NativeChainScheduler):
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs);self.policy=MixedPolicy();self.policy.service_model=self.cost_model
         self.mixed_counts=Counter()
+    def add_seq_group(self,seq_group):
+        if not is_chain(seq_group) and getattr(self,'_pure_core_active',False):leave_pure(self)
+        return super().add_seq_group(seq_group)
+    def _restore_drain_limits(self):
+        from frozen_v47.native_chain import NativeChainScheduler as frozen
+        return frozen._restore_drain_limits(self)
+    def _expired_drain(self,groups,live,tick):
+        from frozen_v47.native_chain import NativeChainScheduler as frozen
+        return frozen._expired_drain(self,groups,live,tick)
     def _schedule(self):
+        queued=list(self.running)+list(self.waiting)+list(self.swapped)
+        if all(is_chain(g) for g in queued):return schedule_pure(self)
+        leave_pure(self)
         groups,now=self._begin();chains=[g for g in groups if is_chain(g)];foreground=[g for g in groups if not is_chain(g)]
         if foreground:mode='joint' if chains else 'foreground'
         else:mode='expired_drain' if groups and not self.policy.has_live_credit(now) else 'pure'

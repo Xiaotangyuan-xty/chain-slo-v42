@@ -74,6 +74,7 @@ def install(server,output,*,model_key='llama8',shared_prediction_config=None):
     if shared_prediction_config is not None and shared_prediction_config.get('predictor_protocol')!=PROTOCOL:raise ValueError('Matching framed prediction required')
     import native_chain
     from mixed_joint import MixedScheduler,VERSION,VARIANT
+    import pure_core_v47
     from native_tot_adapter import install_server_annotations
     from token_reward import REWARD
     import vllm.engine.llm_engine as engine
@@ -111,8 +112,11 @@ def install(server,output,*,model_key='llama8',shared_prediction_config=None):
         data={**receipt,'decision_log':decisions.snapshot(),
                'schedulers':[{'mode':s.mode,'mode_epoch':s.mode_epoch,'v47_counts':dict(s.v47_counts),
                'mixed_counts':dict(s.mixed_counts),'replan_reasons':dict(s.events.counts),'service_model':s.cost_model.describe(),
+               'pure_core_transitions':getattr(s,'pure_core_transitions',0),
                'last_joint_summary':s.last_joint_summary} for s in schedulers],
-               'forecast_stats':dict(native_chain.MODEL.stats),'reward_count_stats':dict(REWARD.stats)}
+               'forecast_stats':dict(native_chain.MODEL.stats),'reward_count_stats':dict(REWARD.stats),
+               'pure_core_control':'frozen_v47_commit_082e98c7_pure_only',
+               'pure_core_forecast_stats':dict(pure_core_v47.MODEL.stats)}
         for name in ['V47PRO_RUNTIME.json','MIXED_RUNTIME.json']:
             if output.is_dir():(output/name).write_text(json.dumps(data,indent=2,allow_nan=False)+'\n')
     write();atexit.register(write,True)

@@ -110,6 +110,7 @@ class NativeChainScheduler(SLOScheduler):
         self.events=ReplanEvents();self.mode=None;self.mode_epoch=0;self.last_joint_summary=None
         self.last_start=None;self.last_cycle_ids=set();self.last_nonempty=False;self.decision_sink=None;self.decision_id=0
         self._planned_this_step=False;self._lease_progress={};self.mask_id=0;self._logged_execution_mask=None
+        self.last_protected=set()
 
     def _clear_plan(self):
         self.selected=set();self.desired_selected=set();self.rows=[];self.leases.clear();self._lease_progress.clear()
@@ -120,6 +121,7 @@ class NativeChainScheduler(SLOScheduler):
         self._current_bounds=(0,0);self._current_is_last=False;self._cur_rank=0
         self.prev_no_swap_space=False;self.dull_iteration=0
         self.fast_expired_drain=False;self.drain_key=None;self.last_joint_summary=None;self._logged_execution_mask=None
+        self.last_protected=set()
 
     def _enter_mode(self,mode):
         if self.mode!=mode:
@@ -257,18 +259,15 @@ class NativeChainScheduler(SLOScheduler):
 
     def _execute_selected(self,selected):
         swaps=[];preemptions=0
-        # Resident requests remain useful unless an actual selected admission
-        # is blocked on KV/slots. A changed plan alone never evicts them.
-        targets=[g for g in list(self.swapped)+list(self.waiting) if g.request_id in selected]
-        for target in sorted(targets,key=self.policy.get_priority):
-            if not self._blocked(target):continue
-            for victim in sorted(list(self.running),key=self.policy.get_priority,reverse=True):
-                if not self._blocked(target) or preemptions>=self.max_swaps_per_iter:break
-                if victim.request_id in selected:continue
-                mode=self._preempt(victim,swaps,self._choose_preemption(victim))
-                self.running.remove(victim)
-                (self.swapped if mode==PreemptionMode.SWAP else self.waiting).append(victim)
-                preemptions+=1
+        # Selected work and the current lease are protected; other residents
+        # provide bounded turnover without requiring a blocked admission target.
+        victims=[g for g in self.running if g.request_id not in selected and g.request_id not in self.last_protected]
+        for victim in sorted(victims,key=self.policy.get_priority,reverse=True):
+            if preemptions>=self.max_swaps_per_iter:break
+            mode=self._preempt(victim,swaps,self._choose_preemption(victim))
+            self.running.remove(victim)
+            (self.swapped if mode==PreemptionMode.SWAP else self.waiting).append(victim)
+            preemptions+=1
         effective=set(selected)|{g.request_id for g in self.running}
         self.selected=effective
         self.last_recorded_selected=frozenset(effective)
@@ -301,20 +300,25 @@ class NativeChainScheduler(SLOScheduler):
         signature,deadlines=self._event_state(groups,now)
         coalesce=max(.01,min(.05,self.cost_model.last_round))
         reasons=self.events.reasons(signature,tick,now,coalesce)
+        protected=self._protected(now) if reasons else set()
+        if reasons==['service_quantum'] and protected==self.last_protected:
+            reasons=[];self.events.counts['quantum_without_protection_change']+=1
         if reasons:
-            protected=self._protected(now)
             residents=[self._view(g) for g in self.running]
             capacity=self.block_manager.num_total_gpu_blocks-self.block_manager.watermark_blocks
             goals=self.policy.goals(chains,now,capacity,self.base_max_num_seqs,self.cache_config.block_size,self.scheduler_config.max_num_batched_tokens) if chains else []
+            # Diagnostic only: preserve initial forecasts but skip selected and
+            # final resident/service revaluation in both pure and joint modes.
             if joint:
                 from joint_admission import select_joint
                 fg_sorted=sorted(foreground,key=self.policy.get_priority)
-                self.selected,self.rows,fg=select_joint(goals,[self._view(g) for g in fg_sorted],capacity,self.base_max_num_seqs,self.cache_config.block_size,protected,forecaster=MODEL,residents=residents)
+                self.selected,self.rows,fg=select_joint(goals,[self._view(g) for g in fg_sorted],capacity,self.base_max_num_seqs,self.cache_config.block_size,protected,forecaster=None,residents=residents)
                 self.last_joint_summary={'tick':tick,'chain_goals':len(goals),'foreground_selected':len(fg),'reasons':reasons}
             else:
-                self.selected,self.rows=select(goals,capacity,self.base_max_num_seqs,self.cache_config.block_size,protected,forecaster=MODEL,residents=residents)
+                self.selected,self.rows=select(goals,capacity,self.base_max_num_seqs,self.cache_config.block_size,protected,forecaster=None,residents=residents)
             self.desired_selected=None if self.selected is None else set(self.selected)
             self.policy.draining=self.selected is None;self.last_plan=tick;self._planned_this_step=True;self.decision_id+=1
+            self.last_protected=protected
             committed=time.perf_counter()
             self.events.commit(signature,tick,committed,deadlines,reasons,waiting=any(g not in self.running for g in groups),started=now)
             self.v47_counts['plans']+=1
@@ -345,6 +349,8 @@ def install(server):
         info.chain_deadline=time.perf_counter()+info.slo_constraint[2]*stages-request_dict.get('served_time',0.)
         info.chain_stage_count=stages;info.chain_stage_widths=list(request_dict.get('requests_per_stage') or [1]*stages)
         tokenizer=getattr(getattr(server,'graph_ctx',None),'generation_tokenizer',None);REWARD.bind(tokenizer)
+        from frozen_v47.token_reward import REWARD as FROZEN_REWARD
+        FROZEN_REWARD.bind(tokenizer)
         if tokenizer is not None:info.chain_reward_input_tokens=REWARD.count(prompt,getattr(info,'input_len',0))
         return original(info,request_dict,prompt)
     server._handle_collective_request=collective

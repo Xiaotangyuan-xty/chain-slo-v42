@@ -1,4 +1,4 @@
-"""v47 empirical root reward, repriced for selected capacity/prefill waves."""
+"""v47 empirical root reward with lightweight current-batch repricing."""
 from collections import Counter, OrderedDict
 import json
 import math
@@ -97,80 +97,164 @@ class StageForecaster:
     def estimate(self, meta, stage, views, slack, token_seconds=None, *, service=None,
                  capacity=1000000, slots=32, block_size=16, token_budget=2048):
         from service_model import ServiceModel
-        start=time.perf_counter();self.stats['estimate_calls']+=1
+        start = time.perf_counter()
+        self.stats['estimate_calls'] += 1
         if service is None:
-            service=ServiceModel()
-            if token_seconds is not None:service.observe_round(token_seconds)
+            service = ServiceModel()
+            if token_seconds is not None:
+                service.observe_round(token_seconds)
         try:
-            if slack<=0:return self.zero('whole_chain_deadline_expired',supported=True)
-            width=meta['widths'][stage];done=meta['observed'].get(stage,{})
-            live={v['member'] for v in views}
-            missing=[i for i in range(width) if i not in live and i not in done]
-            donors=self.neighbors(meta,stage,views)
-            if not donors:return self.zero('no_full_depth_training_support',len(missing))
-            cap=meta.get('future_max_tokens',1024)
-            survivors=[r for r in donors if all(self.member_target(r,stage,v['member'],width,v['max_tokens'])>v['generated'] for v in views)]
-            selected=survivors or donors
-            prefix=sum(z.get('reward_input',z['declared_input'])+8*z.get('reward_output',z['output'])
-                       for members in meta['observed'].values() for z in members.values())
-            scenarios=[]
+            if slack <= 0:
+                return self.zero('whole_chain_deadline_expired', supported=True)
+            width = meta['widths'][stage]
+            done = meta['observed'].get(stage, {})
+            live = {v['member'] for v in views}
+            missing = [i for i in range(width) if i not in live and i not in done]
+            donors = self.neighbors(meta, stage, views)
+            if not donors:
+                return self.zero('no_full_depth_training_support', len(missing))
+            cap = meta.get('future_max_tokens', 1024)
+            survivors = [r for r in donors if all(
+                self.member_target(r, stage, v['member'], width, v['max_tokens']) > v['generated']
+                for v in views)]
+            selected = survivors or donors
+            prefix = sum(z.get('reward_input', z['declared_input']) + 8 * z.get('reward_output', z['output'])
+                         for members in meta['observed'].values() for z in members.values())
+            scenarios = []
             for row in selected:
-                current=[];reward=prefix
+                current = []
+                remaining = []
+                prefill = []
+                reward = prefix
                 for v in views:
-                    n=max(0,self.member_target(row,stage,v['member'],width,v['max_tokens'])-v['generated'])
-                    if not survivors:n=min(max(0,v['max_tokens']-v['generated']),max(50,n))
-                    current.append({**v,'remaining':n})
-                    reward+=v.get('reward_input',v['prompt'])+8*(v['generated']+n)
+                    n = max(0., self.member_target(row, stage, v['member'], width, v['max_tokens']) - v['generated'])
+                    if not survivors:
+                        n = min(max(0, v['max_tokens'] - v['generated']), max(50., n))
+                    current.append({**v, 'remaining': n})
+                    remaining.append(n)
+                    prefill.append(v['prefill_tokens'])
+                    reward += v.get('reward_input', v['prompt']) + 8 * (v['generated'] + n)
                 for member in missing:
-                    z=row['stages'][stage];idx=min(len(z['outputs'])-1,member*len(z['outputs'])//max(1,width))
-                    n=min(cap,z['outputs'][idx]);inp=z['inputs'][min(idx,len(z['inputs'])-1)]
-                    current.append({'request':None,'prompt':inp,'generated':0,'prefill_tokens':inp,'remaining':n,'max_tokens':cap})
-                    reward+=inp+8*n
-                stages=[current]
-                for sid in range(stage+1,meta['stages']):
-                    z=row['stages'][sid];future=[]
-                    for member in range(meta['widths'][sid]):
-                        idx=min(len(z['outputs'])-1,member*len(z['outputs'])//max(1,meta['widths'][sid]))
-                        n=min(cap,z['outputs'][idx]);inp=z['inputs'][min(idx,len(z['inputs'])-1)]
-                        future.append({'request':None,'prompt':inp,'generated':0,'prefill_tokens':inp,'remaining':n,'max_tokens':cap})
-                        reward+=inp+8*n
-                    stages.append(future)
-                scenarios.append({'stages':stages,'reward':reward})
-            state={'scenarios':scenarios,'slack':slack,'service':service,'capacity':capacity,
-                   'slots':slots,'block_size':block_size,'token_budget':token_budget,
-                   'supported':True,'survival_backoff':not bool(survivors),'estimated_unsubmitted_members':len(missing)}
-            return {**self._value(state), '_forecast':state}
-        finally:self.stats['estimate_seconds']+=time.perf_counter()-start
+                    z = row['stages'][stage]
+                    index = min(len(z['outputs']) - 1, member * len(z['outputs']) // max(1, width))
+                    n = min(cap, z['outputs'][index])
+                    inp = z['inputs'][min(index, len(z['inputs']) - 1)]
+                    current.append({'request': None, 'prompt': inp, 'generated': 0,
+                                    'prefill_tokens': inp, 'remaining': n, 'max_tokens': cap})
+                    remaining.append(n)
+                    prefill.append(inp)
+                    reward += inp + 8 * n
+                fw, fc, fr = self.future_components(row, stage, meta['widths'], cap)
+                work = sum(remaining) + sum(prefill) / self.prefill_unit + fw
+                critical = max(remaining, default=0.) + max(prefill, default=0.) / self.prefill_unit
+                scenarios.append({'current': current, 'current_critical_units': critical,
+                                  'future_critical_units': fc, 'remaining_work_units': work,
+                                  'terminal_credit': reward + fr,
+                                  'current_remaining': max(remaining, default=0.)})
+            state = {'scenarios': scenarios, 'physical': {v['request']: v for v in views},
+                     'slack': slack, 'service': service, 'capacity': capacity, 'slots': slots,
+                     'block_size': block_size, 'token_budget': token_budget,
+                     'supported': True, 'survival_backoff': not bool(survivors),
+                     'estimated_unsubmitted_members': len(missing)}
+            value = self._value(state)
+            state['initial_score'] = value['score']
+            return {**value, '_forecast': state}
+        finally:
+            self.stats['estimate_seconds'] += time.perf_counter() - start
 
-    def _value(self,state,first=None,background=()):
-        from service_model import stage_seconds
-        service=state['service'];critical=[];works=[];rewards=[];wave_counts=[]
+    @staticmethod
+    def _context(task):
+        remaining = task.get('remaining', max(0, task.get('max_tokens', 0) - task.get('generated', 0)))
+        return task['prompt'] + task.get('generated', 0) + remaining
+
+    def _current_seconds(self, state, scenario, first, background):
+        service = state['service']
+        selected = [t for t in scenario['current'] if t.get('request') in first]
+        if not selected:
+            return math.inf
+        batch = selected + background
+        members = len(batch)
+        context = sum(self._context(t) for t in batch)
+        seconds = max(t['remaining'] for t in selected) * service.unit(members, context)
+        prefill = sum(t.get('prefill_tokens', 0) for t in selected)
+        seconds += math.ceil(prefill / state['token_budget']) * service.unit(
+            members, context, min(prefill, state['token_budget']))
+        if any(t.get('swapped') for t in selected):
+            seconds += service.unit(members, context, 0, True)
+        background_context = sum(self._context(t) for t in background)
+        for task in scenario['current']:
+            if task.get('request') in first:
+                continue
+            context = self._context(task) + background_context
+            members = 1 + len(background)
+            seconds += task['remaining'] * service.unit(members, context)
+            prefill = task.get('prefill_tokens', 0)
+            seconds += math.ceil(prefill / state['token_budget']) * service.unit(
+                members, context, min(prefill, state['token_budget']))
+            if task.get('swapped'):
+                seconds += service.unit(members, context, 0, True)
+        return seconds
+
+    def _value(self, state, first=None, background=()):
+        service = state['service']
+        unit = service.unit(1)
+        feasible = True
+        if first is not None:
+            from service_model import member_blocks
+            first = set(first)
+            selected = [state['physical'][r] for r in first if r in state['physical']]
+            unique = {}
+            for task in background:
+                rid = task.get('request')
+                if rid not in first:
+                    unique[rid] = task
+            background = list(unique.values())
+            physical = selected + background
+            feasible = bool(first) and len(selected) == len(first)
+            feasible = feasible and len(physical) <= state['slots']
+            feasible = feasible and sum(member_blocks(t, state['block_size']) for t in physical) <= state['capacity']
+        critical = []
+        works = []
+        rewards = []
+        current_remaining = []
         for scenario in state['scenarios']:
-            elapsed=0.;work=0.;count=0
-            for sid,tasks in enumerate(scenario['stages']):
-                seconds,nwaves=stage_seconds(tasks,service,state['capacity'],state['slots'],state['block_size'],state['token_budget'],first if sid==0 else None,background)
-                elapsed+=seconds;count+=nwaves
-                if sid:elapsed+=self.gap_units*service.unit(1)
-                for task in tasks:
-                    context=task['prompt']+task['generated']+task['remaining']
-                    work+=task['remaining']*service.unit(1,context)
-                    prefill=task.get('prefill_tokens',0)
-                    work+=math.ceil(prefill/state['token_budget'])*service.unit(1,context,min(prefill,state['token_budget']))
-                    if task.get('swapped'):work+=service.unit(1,context,0,True)
-            critical.append(self.factor*elapsed+self.guard_units*service.unit(1))
-            works.append(work);rewards.append(scenario['reward']);wave_counts.append(count)
-        timely=[c<=state['slack'] for c in critical]
-        expected=statistics.fmean(r if ok else 0. for r,ok in zip(rewards,timely))
-        work=max(.001,statistics.fmean(works))
-        finite=all(math.isfinite(c) for c in critical)
-        return {'supported':True,'probability':sum(timely)/len(timely),'remaining_work':work,
-                'critical_mean_seconds':statistics.fmean(critical) if finite else None,
-                'score':expected/work,'expected_credited_tokens':expected,'mean_chain_tokens':statistics.fmean(rewards),
-                'donors':len(critical),'survival_backoff':state['survival_backoff'],
-                'estimated_unsubmitted_members':state['estimated_unsubmitted_members'],
-                'stage_waves_mean':statistics.fmean(wave_counts),'wave_model':'selected first, then fixed capacity/token-budget waves'}
+            if first is None:
+                current = scenario['current_critical_units'] * unit
+            elif feasible:
+                current = self._current_seconds(state, scenario, first, background)
+            else:
+                current = math.inf
+            future = scenario['future_critical_units'] * unit
+            critical.append(self.factor * (current + future) + self.guard_units * unit)
+            works.append(scenario['remaining_work_units'] * unit)
+            rewards.append(scenario['terminal_credit'])
+            current_remaining.append(scenario['current_remaining'])
+        timely = [c <= state['slack'] for c in critical]
+        expected = statistics.fmean(r if ok else 0. for r, ok in zip(rewards, timely))
+        work = max(.001, statistics.fmean(works))
+        finite = all(math.isfinite(c) for c in critical)
+        return {'supported': True, 'probability': sum(timely) / len(timely),
+                'remaining_work': work, 'critical_mean_seconds': statistics.fmean(critical) if finite else None,
+                'current_remaining_tokens': statistics.fmean(current_remaining),
+                'score': expected / work, 'expected_credited_tokens': expected,
+                'mean_chain_tokens': statistics.fmean(rewards), 'donors': len(critical),
+                'survival_backoff': state['survival_backoff'],
+                'estimated_unsubmitted_members': state['estimated_unsubmitted_members'],
+                'stage_waves_mean': None,
+                'wave_model': 'current selected batch, serial residual, isolated future units'}
 
-    def revalue(self,goal,first,background=()):
-        if '_forecast' not in goal:return goal
-        self.stats['selected_wave_revalues']+=1
-        return {**goal,**self._value(goal['_forecast'],first,background)}
+    def revalue(self, goal, first, background=()):
+        start = time.perf_counter()
+        try:
+            if '_forecast' not in goal:
+                return goal
+            self.stats['selected_wave_revalues'] += 1
+            state = goal['_forecast']
+            value = self._value(state, first, background)
+            if 'score_factor' not in state:
+                initial = state['initial_score']
+                state['score_factor'] = goal.get('score', initial) / initial if initial > 0 else 1.
+            value['score'] *= state['score_factor']
+            return {**goal, **value}
+        finally:
+            self.stats['revalue_seconds'] += time.perf_counter() - start
