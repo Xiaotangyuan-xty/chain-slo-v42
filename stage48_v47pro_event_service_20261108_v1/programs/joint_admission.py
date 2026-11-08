@@ -1,8 +1,8 @@
 """v47 coexistence target, with exact selected-wave root repricing."""
-from chain_admission import select,blocks
+from chain_admission import select,blocks,reprice
 
 
-def select_joint(goals,foreground,capacity,max_seqs,block_size=16,protected=(),*,forecaster=None):
+def select_joint(goals,foreground,capacity,max_seqs,block_size=16,protected=(),*,forecaster=None,residents=()):
     all_members={m['request']:m for g in goals for m in g['members']}
     all_members.update({m['request']:m for m in foreground})
     protected=set(protected)&all_members.keys()
@@ -22,25 +22,11 @@ def select_joint(goals,foreground,capacity,max_seqs,block_size=16,protected=(),*
     fg=[all_members[r] for r in fg_selected]
     fg_cost=sum(blocks(m,block_size) for m in fg)
     chains,rows=select(goals,capacity-fg_cost,max_seqs-len(fg),block_size,chain_protected,
-                       forecaster=forecaster,background=())
-    # Reprice against the whole resource pool including fixed foreground.
-    # select() uses the reduced pool, so its waves already reserve those slots
-    # and KV. Service estimates additionally include foreground batch/context.
+                       forecaster=forecaster,residents=residents)
+    # The final value uses the complete physical pool, fixed foreground and every
+    # resident that execution will retain, with each physical member counted once.
     if forecaster:
-        final=[]
-        chosen=set(chains or ())
-        for g in goals:
-            own={m['request'] for m in g['members']};first=own&chosen
-            if not first:continue
-            # The resource pool is restored for this call because background is
-            # now explicit. No resource is subtracted twice.
-            valued=forecaster.revalue(g,first,[all_members[r] for r in chosen-own]+fg)
-            if valued['probability']<=0 and not(first&chain_protected):chosen-=own
-            final.append(valued)
-        chains=chosen
-        from chain_admission import row
-        by={g['chain']:g for g in final}
-        rows=[row(by.get(g['chain'],g) if set(chains)&{m['request'] for m in g['members']} else {**g,'probability':0.,'expected_credited_tokens':0.,'score':0.},set(chains)&{m['request'] for m in g['members']},sum(blocks(m,block_size) for m in g['members'])) for g in goals]
+        chains,rows=reprice(goals,chains,chain_protected,forecaster,block_size,residents,fg)
     if not chains:
         # As in v47, zero predicted opportunity is not expiry: preserve full
         # required execution and let native allocation make forward progress.

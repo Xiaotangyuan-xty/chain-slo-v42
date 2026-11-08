@@ -14,8 +14,44 @@ def row(goal, chosen, charge):
             'probability_recomputed_for_selected_wave':True}
 
 
-def select(goals,capacity,max_seqs,block_size=16,protected=(),*,forecaster=None,background=()):
+def _members(goals,residents,background):
     members={m['request']:m for g in goals for m in g['members']}
+    for m in list(residents)+list(background):members[m['request']]=m
+    return members
+
+
+def _revalue(forecaster,goal,chosen,selected,members,residents,background):
+    own={m['request'] for m in goal['members']}
+    actual=set(selected)|set(chosen)
+    actual.update(m['request'] for m in list(residents)+list(background))
+    first=own&actual
+    other=[members[r] for r in sorted(actual-own)]
+    return forecaster.revalue(goal,first,other)
+
+
+def reprice(goals,selected,protected,forecaster,block_size=16,residents=(),background=()):
+    if forecaster is None:return selected,None
+    selected=set(selected or());protected=set(protected)
+    members=_members(goals,residents,background)
+    while True:
+        values={};remove=set()
+        for goal in goals:
+            own={m['request'] for m in goal['members']};chosen=own&selected
+            if chosen:
+                valued=_revalue(forecaster,goal,chosen,selected,members,residents,background)
+                if valued['probability']<=0 and not chosen&protected:remove.update(chosen)
+            else:
+                valued={**goal,'probability':0.,'score':0.,'expected_credited_tokens':0.}
+            values[goal['chain']]=valued
+        if not remove:break
+        selected-=remove
+    rows=[row(values[g['chain']],{m['request'] for m in g['members']}&selected,
+              sum(blocks(m,block_size) for m in g['members'])) for g in goals]
+    return (selected or None),rows
+
+
+def select(goals,capacity,max_seqs,block_size=16,protected=(),*,forecaster=None,background=(),residents=()):
+    members=_members(goals,residents,background)
     selected=set(protected)&members.keys()
     used=sum(blocks(members[r],block_size) for r in selected)
     rows=[]
@@ -27,8 +63,9 @@ def select(goals,capacity,max_seqs,block_size=16,protected=(),*,forecaster=None,
             rid=member['request'];b=blocks(member,block_size)
             if rid not in selected and used+charge+b<=capacity and len(selected)+len(chosen-selected)<max_seqs:
                 chosen.add(rid);charge+=b
-        other=[members[r] for r in selected-own]+list(background)
-        valued=forecaster.revalue(goal,chosen,other) if forecaster else goal
+        if forecaster and chosen:
+            valued=_revalue(forecaster,goal,chosen,selected,members,residents,background)
+        else:valued=goal
         # Empty first wave cannot earn whole-root credit. Required work is
         # executed through the explicit native drain fallback, without that claim.
         if chosen and valued['probability']>0:
@@ -37,5 +74,7 @@ def select(goals,capacity,max_seqs,block_size=16,protected=(),*,forecaster=None,
             chosen=own&selected
             if not chosen:valued={**valued,'probability':0.,'score':0.,'expected_credited_tokens':0.}
         rows.append(row(valued,chosen,sum(blocks(m,block_size) for m in goal['members'])))
+    if forecaster:
+        return reprice(goals,selected,protected,forecaster,block_size,residents,background)
     if not selected:return None,rows
     return selected,rows

@@ -302,15 +302,16 @@ class NativeChainScheduler(SLOScheduler):
         signature,deadlines=self._event_state(groups,now);reasons=self.events.reasons(signature,tick,now)
         if reasons:
             protected=self._protected(now)
+            residents=[self._view(g) for g in self.running]
             capacity=self.block_manager.num_total_gpu_blocks-self.block_manager.watermark_blocks
             goals=self.policy.goals(chains,now,capacity,self.base_max_num_seqs,self.cache_config.block_size,self.scheduler_config.max_num_batched_tokens) if chains else []
             if joint:
                 from joint_admission import select_joint
                 fg_sorted=sorted(foreground,key=self.policy.get_priority)
-                self.selected,self.rows,fg=select_joint(goals,[self._view(g) for g in fg_sorted],capacity,self.base_max_num_seqs,self.cache_config.block_size,protected,forecaster=MODEL)
+                self.selected,self.rows,fg=select_joint(goals,[self._view(g) for g in fg_sorted],capacity,self.base_max_num_seqs,self.cache_config.block_size,protected,forecaster=MODEL,residents=residents)
                 self.last_joint_summary={'tick':tick,'chain_goals':len(goals),'foreground_selected':len(fg),'reasons':reasons}
             else:
-                self.selected,self.rows=select(goals,capacity,self.base_max_num_seqs,self.cache_config.block_size,protected,forecaster=MODEL)
+                self.selected,self.rows=select(goals,capacity,self.base_max_num_seqs,self.cache_config.block_size,protected,forecaster=MODEL,residents=residents)
             self.desired_selected=None if self.selected is None else set(self.selected)
             self.policy.draining=self.selected is None;self.last_plan=tick;self._planned_this_step=True;self.decision_id+=1
             self.events.commit(signature,tick,now,deadlines,reasons)

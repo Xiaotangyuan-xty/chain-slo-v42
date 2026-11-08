@@ -3,6 +3,7 @@ from chain_forecast import StageForecaster
 from service_model import ServiceModel,stage_seconds,waves
 from replan_events import ReplanEvents
 from chain_admission import select
+from joint_admission import select_joint
 
 
 class ServiceTests(unittest.TestCase):
@@ -67,6 +68,45 @@ class ServiceTests(unittest.TestCase):
 
 
 class ForecastTests(unittest.TestCase):
+    def interference(self):
+        data={'neighbors':1,'prefill_tokens_per_decode_unit':256,'interstage_gap_decode_units':0,
+              'forecast_guard_decode_units':0,'service_safety_factor':1.,
+              'records':[{'id':1,'stages':[{'inputs':[1],'outputs':[100]}]}]}
+        f=StageForecaster(data);m=ServiceModel()
+        m.observe_execution({'members':1,'context_tokens':101},1.)
+        m.observe_execution({'members':2,'context_tokens':202},2.)
+        return f,m
+
+    def interference_goal(self,f,m,rid,slack):
+        meta={'stages':1,'widths':[1],'observed':{},'neighbor_cache':{}}
+        views=[{'request':rid,'member':0,'declared_input':1,'prompt':1,'generated':0,
+                'max_tokens':100,'prefill_tokens':0,'arrival':0}]
+        g=f.estimate(meta,0,views,slack,service=m,capacity=100,slots=2)
+        g.update(chain=rid,stage=0,deadline=slack,arrival=0.,members=views)
+        return g
+
+    def test_retained_resident_is_charged_in_pure_and_joint(self):
+        f,m=self.interference();g=self.interference_goal(f,m,'new',100.)
+        resident={'request':'old','prompt':1,'generated':0,'max_tokens':100,
+                  'prefill_tokens':0,'arrival':0,'resident':True,'swapped':False}
+        selected,rows=select([g],100,2,forecaster=f,residents=[resident])
+        self.assertIsNone(selected);self.assertEqual(rows[0]['probability'],0.)
+        selected,rows,fg=select_joint([g],[],100,2,forecaster=f,residents=[resident])
+        self.assertIsNone(selected);self.assertEqual(rows[0]['probability'],0.)
+
+    def test_pure_final_set_removes_stale_positive_credit(self):
+        f,m=self.interference();a=self.interference_goal(f,m,'a',100.);b=self.interference_goal(f,m,'b',200.)
+        selected,rows=select([a,b],100,2,forecaster=f)
+        by={r['chain']:r for r in rows}
+        self.assertEqual(selected,{'b'});self.assertEqual(by['a']['probability'],0.)
+        self.assertEqual(by['a']['expected_credited_tokens'],0.);self.assertEqual(by['b']['probability'],1.)
+
+    def test_final_repricing_does_not_remove_protected_root(self):
+        f,m=self.interference();a=self.interference_goal(f,m,'a',100.);b=self.interference_goal(f,m,'b',200.)
+        selected,rows=select([a,b],100,2,protected={'a'},forecaster=f)
+        by={r['chain']:r for r in rows}
+        self.assertEqual(selected,{'a','b'});self.assertEqual(by['a']['probability'],0.)
+
     def fixture(self):
         data={'neighbors':1,'prefill_tokens_per_decode_unit':256,'interstage_gap_decode_units':0,
               'forecast_guard_decode_units':0,'service_safety_factor':1.,

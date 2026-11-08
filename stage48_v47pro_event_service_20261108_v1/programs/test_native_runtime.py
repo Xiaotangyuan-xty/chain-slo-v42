@@ -29,6 +29,11 @@ class NativeTests(unittest.TestCase):
             g=item.seq_group;g.update_num_computed_tokens(item.token_chunk_size)
             if not g.is_prefill():g.first_seq.append_token_id(1,{1:Logprob(0.)})
         return out
+    def process(self,s,groups,token_budget=64):
+        from vllm.core.scheduler import SchedulingBudget,SchedulerPrefillOutputs,SchedulerSwappedInOutputs
+        prefills,swapped,running=s._init_preemption_outputs(True,SchedulerPrefillOutputs,SchedulerSwappedInOutputs)
+        s._schedule_process_list(groups,running,prefills,swapped,SchedulingBudget(token_budget,4),True)
+        return prefills,swapped,running
     def cleanup(self,s):
         s.abort_seq_group([g.request_id for g in list(s.running)+list(s.waiting)+list(s.swapped)])
         self.assertEqual(s.block_manager.get_num_free_gpu_blocks(),s.block_manager.num_total_gpu_blocks)
@@ -188,6 +193,72 @@ class NativeTests(unittest.TestCase):
             if not(s.running or s.waiting or s.swapped):break
         self.assertLess(tick,1999);self.assertTrue(all(v>=20 for v in previous.values()))
         self.cleanup(s);self.assertEqual(s.block_manager.get_num_free_cpu_blocks(),64)
+
+    def test_native_arguments_and_swap_recovery(self):
+        s=self.scheduler();g=self.group(1,0);s.add_seq_group(g)
+        lookahead=s._get_num_lookahead_slots(True,True)
+        with patch.object(s,'_schedule_slo_prefills',wraps=s._schedule_slo_prefills) as prefill:
+            prefills,_,_=self.process(s,[g])
+        prefill.assert_called_once();args=prefill.call_args.args
+        self.assertEqual(args[0],g);self.assertEqual(args[1],64)
+        self.assertEqual(args[2],lookahead);self.assertTrue(args[3])
+        s.running.extend(x.seq_group for x in prefills.seq_groups)
+        g.update_num_computed_tokens(prefills.seq_groups[0].token_chunk_size)
+        g.first_seq.append_token_id(1,{1:Logprob(0.)});prefix=g.first_seq.get_output_len()
+        swaps=[]
+        self.assertEqual(s._preempt(g,swaps,PreemptionMode.SWAP),PreemptionMode.SWAP)
+        s.running.remove(g);s.swapped.append(g)
+        lookahead=s._get_num_lookahead_slots(False,True)
+        with patch.object(s,'_schedule_slo_swapped',wraps=s._schedule_slo_swapped) as recovery:
+            _,swapped,_=self.process(s,[g])
+        recovery.assert_called_once_with(g,1,lookahead,True)
+        self.assertTrue(swapped.blocks_to_swap_in)
+        self.assertEqual([x.seq_group for x in swapped.decode_seq_groups],[g])
+        self.assertNotIn(g,s.swapped);self.assertEqual(g.first_seq.get_output_len(),prefix)
+        s.running.extend(x.seq_group for x in swapped.decode_seq_groups);self.cleanup(s)
+
+    def test_native_never_is_dequeued_and_finally_drained(self):
+        from vllm.core.interfaces import AllocStatus
+        s=self.scheduler();g=self.group(1,0);s.add_seq_group(g)
+        with patch.object(s.block_manager,'can_allocate',return_value=AllocStatus.NEVER):
+            prefills,_,_=self.process(s,[g])
+        self.assertEqual(prefills.ignored_seq_groups,[g]);self.assertNotIn(g,s.waiting)
+        self.assertFalse(s.running or s.waiting or s.swapped)
+        out=s._schedule_slo();self.assertFalse(out.ignored_seq_groups)
+        self.assertFalse(s.running or s.waiting or s.swapped);self.cleanup(s)
+
+    def test_low_budget_running_is_conserved_and_recovers_monotonically(self):
+        s=self.scheduler();groups=[self.group(i,0,prompt=2) for i in range(1,3)]
+        for g in groups:s.add_seq_group(g)
+        prefills,_,_=self.process(s,groups)
+        s.running.extend(x.seq_group for x in prefills.seq_groups)
+        for item in prefills.seq_groups:
+            g=item.seq_group;g.update_num_computed_tokens(item.token_chunk_size)
+            g.first_seq.append_token_id(1,{1:Logprob(0.)})
+        previous={g.request_id:g.first_seq.get_output_len() for g in groups}
+        s.scheduler_config.max_num_batched_tokens=1;out=s._schedule_slo()
+        for item in out.scheduled_seq_groups:
+            g=item.seq_group;g.update_num_computed_tokens(item.token_chunk_size)
+            if not g.is_prefill():g.first_seq.append_token_id(1,{1:Logprob(0.)})
+        ids=[g.request_id for queue in (s.running,s.waiting,s.swapped) for g in queue]
+        self.assertCountEqual(ids,['1','2']);self.assertEqual(len(ids),len(set(ids)))
+        self.assertEqual(len(s.running),2);self.assertEqual(out.num_batched_tokens,1)
+        self.assertEqual(len(out.scheduled_seq_groups),1)
+        for g in groups:
+            n=g.first_seq.get_output_len();self.assertGreaterEqual(n,previous[g.request_id]);previous[g.request_id]=n
+        s.scheduler_config.max_num_batched_tokens=64
+        for tick in range(10):
+            out=s._schedule_slo()
+            for item in out.scheduled_seq_groups:
+                g=item.seq_group;g.update_num_computed_tokens(item.token_chunk_size)
+                if not g.is_prefill():g.first_seq.append_token_id(1,{1:Logprob(0.)})
+            for g in groups:
+                n=g.first_seq.get_output_len();self.assertGreaterEqual(n,previous[g.request_id]);previous[g.request_id]=n
+                if n>=4:g.first_seq.status=SequenceStatus.FINISHED_LENGTH_CAPPED
+            ids=[g.request_id for queue in (s.running,s.waiting,s.swapped) for g in queue]
+            self.assertEqual(len(ids),len(set(ids)));s.free_finished_seq_groups()
+            if not(s.running or s.waiting or s.swapped):break
+        self.assertLess(tick,9);self.assertTrue(all(v>=4 for v in previous.values()));self.cleanup(s)
 
 
 if __name__=='__main__':unittest.main(verbosity=2)

@@ -22,11 +22,16 @@ The historical Stage30 directory and all later release freezes remain unchanged.
    selected wave is revalued, followed by the remaining waves. Fixed background
    reservations account for other admitted roots and foreground. The selector
    cannot retain a full parallel root credit after reducing its first wave.
+   Final pure and joint selections are revalued against the complete chosen set
+   and every retained running resident; non-protected roots whose credit becomes
+   zero are removed from desired selection, with bounded rechecking of the set.
    Infeasible/zero-prediction work goes through full native required execution;
    predicted zero is not proof of deadline expiry. The donor timely fraction is
    an empirical scenario frequency, not a calibrated probability.
 3. A deselected resident is retained unless an actual selected waiting/swapped
-   admission is blocked on KV or sequence slots. Eviction chooses a coarse
+   admission is blocked on KV or sequence slots. Retained residents are included
+   in the service and physical-resource background before execution, rather than
+   being omitted from the value estimate. Eviction chooses a coarse
    swap-versus-recompute cost and respects the physical allocator. All native
    and proactive preemptions share one lease/plan invalidation boundary.
    Synchronous recompute may continue scheduling in the same round; actual

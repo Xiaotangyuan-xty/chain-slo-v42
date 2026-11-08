@@ -634,6 +634,11 @@ class SLOScheduler(Scheduler):
                 else:
                     stop_allocate = True
 
+            if (seq_group_status == SequenceStatus.RUNNING
+                    and num_new_tokens == 0 and not seq_group.is_finished()):
+                running_result.leftover_running.append(seq_group)
+                continue
+
             if seq_group_status == SequenceStatus.WAITING:
                 prompt_limit = self._get_prompt_limit(seq_group)
                 if num_new_tokens > prompt_limit:
@@ -700,7 +705,8 @@ class SLOScheduler(Scheduler):
                 continue
             self.swapped.remove(swapped_seq)
             swapped_scheduled_result = self._schedule_slo_swapped(
-                swapped_seq, num_lookahead_slots, enable_chunking)
+                swapped_seq, num_new_tokens, num_lookahead_slots,
+                enable_chunking)
             if swapped_scheduled_result.is_prefill:
                 swapped_in_result.prefill_seq_groups.append(
                     swapped_scheduled_result.seq_group)
@@ -747,6 +753,7 @@ class SLOScheduler(Scheduler):
             if can_allocate == AllocStatus.NEVER:
                 for seq in waiting_seq.get_seqs(status=SequenceStatus.WAITING):
                     seq.status = SequenceStatus.FINISHED_IGNORED
+                self.waiting.remove(waiting_seq)
                 prefill_result.ignored_seq_groups.append(waiting_seq)
                 continue
             elif can_allocate == AllocStatus.LATER:
@@ -754,7 +761,8 @@ class SLOScheduler(Scheduler):
 
             self.waiting.remove(waiting_seq)
             waiting_scheduled_result = self._schedule_slo_prefills(
-                waiting_seq, num_new_tokens, num_new_seqs, enable_chunking)
+                waiting_seq, num_new_tokens, num_lookahead_slots,
+                enable_chunking)
             prefill_result.seq_groups.append(waiting_scheduled_result.seq_group)
 
         return force_preemption_count
