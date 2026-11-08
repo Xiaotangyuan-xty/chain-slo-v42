@@ -1,0 +1,151 @@
+{
+  "UTC": "2026-11-08T06:41:23.978001+00:00",
+  "read_only": true,
+  "Stage47_state": "STOPPED_BY_USER",
+  "Stage47_completed_preserved": [
+    "01_llama8_mixed_v50pro_gpu0"
+  ],
+  "Stage47_interrupted": "02_llama8_mixed_A_gpu0",
+  "Stage47_not_run": [
+    "03_llama8_mixed_Astar_gpu0"
+  ],
+  "old_Stage47_runner": {
+    "pid": 340862,
+    "registered_ticks": 1482477864,
+    "same_live_identity": false
+  },
+  "GPU0_compute_empty": true,
+  "GPU0_compute": "",
+  "GPU01_telemetry": "0, GPU-ff8c7d5c-f75c-26e1-43de-b40ca283f938, 4 MiB, 0 %\n1, GPU-f5874940-7f3b-ad3e-b810-bc7dda423d1a, 18205 MiB, 49 %",
+  "development": [
+    {
+      "root": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage48_v47pro_GPU0_integration_normalKV_final01_20261108_v1/gpu0",
+      "state": "FAILED_PRESERVED",
+      "runner": {
+        "pid": 1078602,
+        "registered_ticks": 1483108865,
+        "same_live_identity": false
+      },
+      "registered": [
+        {
+          "pid": 1079096,
+          "registered_ticks": 1483108987,
+          "same_live_identity": false
+        },
+        {
+          "pid": 1079283,
+          "registered_ticks": 1483109373,
+          "same_live_identity": false
+        },
+        {
+          "pid": 1081789,
+          "registered_ticks": 1483111446,
+          "same_live_identity": false
+        }
+      ]
+    },
+    {
+      "root": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage48_v47pro_GPU0_rc_normalKV03_20261108_v1/gpu0",
+      "state": "COMPLETED",
+      "runner": {
+        "pid": 1212908,
+        "registered_ticks": 1483214996,
+        "same_live_identity": false
+      },
+      "registered": [
+        {
+          "pid": 1212948,
+          "registered_ticks": 1483215117,
+          "same_live_identity": false
+        },
+        {
+          "pid": 1213959,
+          "registered_ticks": 1483216203,
+          "same_live_identity": false
+        },
+        {
+          "pid": 1216869,
+          "registered_ticks": 1483218276,
+          "same_live_identity": false
+        }
+      ]
+    },
+    {
+      "root": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage48_v47pro_GPU0_event_normalKV04_20261108_v1/gpu0",
+      "state": "COMPLETED",
+      "runner": {
+        "pid": 1337027,
+        "registered_ticks": 1483318361,
+        "same_live_identity": false
+      },
+      "registered": [
+        {
+          "pid": 1337406,
+          "registered_ticks": 1483318487,
+          "same_live_identity": false
+        },
+        {
+          "pid": 1338012,
+          "registered_ticks": 1483319223,
+          "same_live_identity": false
+        },
+        {
+          "pid": 1341274,
+          "registered_ticks": 1483322148,
+          "same_live_identity": false
+        }
+      ]
+    },
+    {
+      "root": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage48_v47pro_GPU0_event_KV1GiB03_20261108_v1/gpu0",
+      "state": "COMPLETED",
+      "runner": {
+        "pid": 1411686,
+        "registered_ticks": 1483385333,
+        "same_live_identity": false
+      },
+      "registered": [
+        {
+          "pid": 1411768,
+          "registered_ticks": 1483385501,
+          "same_live_identity": false
+        },
+        {
+          "pid": 1412281,
+          "registered_ticks": 1483385962,
+          "same_live_identity": false
+        },
+        {
+          "pid": 1424685,
+          "registered_ticks": 1483399599,
+          "same_live_identity": false
+        }
+      ]
+    }
+  ],
+  "all_development_runners_exited": true,
+  "all_registered_development_processes_exited": true,
+  "GPU1_state": {
+    "state": "RUNNING",
+    "active_case": "05_llama8_KV02GiB_mixed_A",
+    "completed": [
+      "01_llama8_KV01GiB_mixed_v47",
+      "02_llama8_KV01GiB_mixed_A",
+      "03_llama8_KV01GiB_mixed_Astar",
+      "04_llama8_KV02GiB_mixed_v47"
+    ],
+    "failed_case": null
+  },
+  "GPU1_runner": {
+    "pid": 3431277,
+    "registered_ticks": 1481486816,
+    "same_live_identity": true
+  },
+  "GPU1_matrix_sha256": "a5e416b727c3518cf8763f21bccdb29421036051be9085816ece588c8ed66092",
+  "GPU1_original_matrix_unchanged": true,
+  "GPU1_original_runner_registration_unchanged": true,
+  "GPU1_untouched": true,
+  "GPU2_untouched": true,
+  "no_GPU2_queries_or_actions": true,
+  "no_post_publication_GPU_start_planned": true
+}

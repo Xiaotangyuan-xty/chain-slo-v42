@@ -1,0 +1,41 @@
+"""v47 reward density with explicit first-wave repricing and no oversized claims."""
+from service_model import member_blocks
+
+
+def blocks(member, block_size=16, horizon=50):
+    return member_blocks(member,block_size,horizon)
+
+
+def row(goal, chosen, charge):
+    names=['chain','stage','deadline','probability','remaining_work','critical_mean_seconds','score',
+           'expected_credited_tokens','stage_waves_mean']
+    return {**{k:goal.get(k) for k in names},'reservation_blocks':charge,
+            'members':[m['request'] for m in goal['members']], 'selected':sorted(chosen),
+            'probability_recomputed_for_selected_wave':True}
+
+
+def select(goals,capacity,max_seqs,block_size=16,protected=(),*,forecaster=None,background=()):
+    members={m['request']:m for g in goals for m in g['members']}
+    selected=set(protected)&members.keys()
+    used=sum(blocks(members[r],block_size) for r in selected)
+    rows=[]
+    for goal in sorted(goals,key=lambda g:(-g['score'],g['deadline'],g['arrival'])):
+        own={m['request'] for m in goal['members']}
+        chosen=own&selected
+        charge=0
+        for member in sorted(goal['members'],key=lambda m:m['arrival']):
+            rid=member['request'];b=blocks(member,block_size)
+            if rid not in selected and used+charge+b<=capacity and len(selected)+len(chosen-selected)<max_seqs:
+                chosen.add(rid);charge+=b
+        other=[members[r] for r in selected-own]+list(background)
+        valued=forecaster.revalue(goal,chosen,other) if forecaster else goal
+        # Empty first wave cannot earn whole-root credit. Required work is
+        # executed through the explicit native drain fallback, without that claim.
+        if chosen and valued['probability']>0:
+            selected.update(chosen);used+=charge
+        else:
+            chosen=own&selected
+            if not chosen:valued={**valued,'probability':0.,'score':0.,'expected_credited_tokens':0.}
+        rows.append(row(valued,chosen,sum(blocks(m,block_size) for m in goal['members'])))
+    if not selected:return None,rows
+    return selected,rows

@@ -1,0 +1,46 @@
+INFO 11-08 05:32:51 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:32:51 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:32:51 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:32:51 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:32:51 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:32:51 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:32:51 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:32:51 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:32:51 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-08 05:32:51 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.RECOMPUTE mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-08 05:32:51 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -245.28707718993925, 2000.0, 100.0) is preempted by PreemptionMode.RECOMPUTE mode.
+INFO 11-08 05:32:51 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:32:51 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:32:51 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:32:51 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:32:51 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-08 05:32:51 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.RECOMPUTE mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-08 05:32:51 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -278.33255269320836, 2000.0, 100.0) is preempted by PreemptionMode.RECOMPUTE mode.
+INFO 11-08 05:32:51 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-08 05:32:51 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-08 05:32:51 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -278.33255269320836, 2000.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-08 05:32:51 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+test_configuration_invalidates_but_preserves_initial_cap (__main__.NativeTests.test_configuration_invalidates_but_preserves_initial_cap) ... ok
+test_expired_drain_limit_is_local_and_reversible (__main__.NativeTests.test_expired_drain_limit_is_local_and_reversible) ... ok
+test_foreground_ttft_deadline_is_event (__main__.NativeTests.test_foreground_ttft_deadline_is_event) ... ok
+test_hidden_deadline_expiry_replans_without_membership_change (__main__.NativeTests.test_hidden_deadline_expiry_replans_without_membership_change) ... ok
+test_idle_gap_is_not_observed_as_gpu_service_time (__main__.NativeTests.test_idle_gap_is_not_observed_as_gpu_service_time) ... ok
+test_low_kv_finite_mixed_replay_drains_all_requests_without_prefix_loss (__main__.NativeTests.test_low_kv_finite_mixed_replay_drains_all_requests_without_prefix_loss) ... ok
+test_mixed_foreground_pure_mode_epoch_clears_native_bins_and_old_leases (__main__.NativeTests.test_mixed_foreground_pure_mode_epoch_clears_native_bins_and_old_leases) ... ok
+test_native_adjustment_changes_only_budget (__main__.NativeTests.test_native_adjustment_changes_only_budget) ... ok
+test_native_physical_preemption_invalidates_lease_and_plan (__main__.NativeTests.test_native_physical_preemption_invalidates_lease_and_plan) ... ok
+test_new_independent_chain_and_foreground_replan_before_fifty_ticks (__main__.NativeTests.test_new_independent_chain_and_foreground_replan_before_fifty_ticks) ... ok
+test_partial_completion_with_surviving_selected_invalidates (__main__.NativeTests.test_partial_completion_with_surviving_selected_invalidates) ... ok
+test_plan_change_without_admission_demand_does_not_evict_resident (__main__.NativeTests.test_plan_change_without_admission_demand_does_not_evict_resident) ... ok
+test_prediction_revision_invalidates (__main__.NativeTests.test_prediction_revision_invalidates) ... ok
+test_recompute_frees_kv_and_schedules_same_round (__main__.NativeTests.test_recompute_frees_kv_and_schedules_same_round) ... ok
+test_swap_dependency_uses_empty_round_and_preserves_output (__main__.NativeTests.test_swap_dependency_uses_empty_round_and_preserves_output) ... ok
+test_wall_quantum_expires_and_foreground_has_same_lease (__main__.NativeTests.test_wall_quantum_expires_and_foreground_has_same_lease) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.159s
+
+OK

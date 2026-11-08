@@ -1,0 +1,205 @@
+INFO 11-08 05:30:43 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:30:43 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:30:43 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:30:43 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:30:43 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:30:43 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:30:43 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:30:43 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:30:43 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:30:43 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:30:43 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:30:43 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:30:43 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:30:43 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:30:43 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 05:30:43 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+test_configuration_invalidates_but_preserves_initial_cap (__main__.NativeTests.test_configuration_invalidates_but_preserves_initial_cap) ... ERROR
+test_expired_drain_limit_is_local_and_reversible (__main__.NativeTests.test_expired_drain_limit_is_local_and_reversible) ... ERROR
+test_foreground_ttft_deadline_is_event (__main__.NativeTests.test_foreground_ttft_deadline_is_event) ... ERROR
+test_hidden_deadline_expiry_replans_without_membership_change (__main__.NativeTests.test_hidden_deadline_expiry_replans_without_membership_change) ... ERROR
+test_idle_gap_is_not_observed_as_gpu_service_time (__main__.NativeTests.test_idle_gap_is_not_observed_as_gpu_service_time) ... ERROR
+test_low_kv_finite_mixed_replay_drains_all_requests_without_prefix_loss (__main__.NativeTests.test_low_kv_finite_mixed_replay_drains_all_requests_without_prefix_loss) ... ERROR
+test_mixed_foreground_pure_mode_epoch_clears_native_bins_and_old_leases (__main__.NativeTests.test_mixed_foreground_pure_mode_epoch_clears_native_bins_and_old_leases) ... ERROR
+test_native_adjustment_changes_only_budget (__main__.NativeTests.test_native_adjustment_changes_only_budget) ... ok
+test_native_physical_preemption_invalidates_lease_and_plan (__main__.NativeTests.test_native_physical_preemption_invalidates_lease_and_plan) ... ERROR
+test_new_independent_chain_and_foreground_replan_before_fifty_ticks (__main__.NativeTests.test_new_independent_chain_and_foreground_replan_before_fifty_ticks) ... ERROR
+test_partial_completion_with_surviving_selected_invalidates (__main__.NativeTests.test_partial_completion_with_surviving_selected_invalidates) ... ERROR
+test_plan_change_without_admission_demand_does_not_evict_resident (__main__.NativeTests.test_plan_change_without_admission_demand_does_not_evict_resident) ... ERROR
+test_prediction_revision_invalidates (__main__.NativeTests.test_prediction_revision_invalidates) ... ERROR
+test_recompute_frees_kv_and_schedules_same_round (__main__.NativeTests.test_recompute_frees_kv_and_schedules_same_round) ... ERROR
+test_swap_dependency_uses_empty_round_and_preserves_output (__main__.NativeTests.test_swap_dependency_uses_empty_round_and_preserves_output) ... ERROR
+test_wall_quantum_expires_and_foreground_has_same_lease (__main__.NativeTests.test_wall_quantum_expires_and_foreground_has_same_lease) ... ERROR
+
+======================================================================
+ERROR: test_configuration_invalidates_but_preserves_initial_cap (__main__.NativeTests.test_configuration_invalidates_but_preserves_initial_cap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47pro_event_service_20261108/cpu_attempt01/stage48_v47pro_event_service_20261108_v1/programs/test_native_runtime.py", line 51, in test_configuration_invalidates_but_preserves_initial_cap
+    s=self.scheduler(slots=2);s.add_seq_group(self.group(1));self.step(s)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_expired_drain_limit_is_local_and_reversible (__main__.NativeTests.test_expired_drain_limit_is_local_and_reversible)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47pro_event_service_20261108/cpu_attempt01/stage48_v47pro_event_service_20261108_v1/programs/test_native_runtime.py", line 115, in test_expired_drain_limit_is_local_and_reversible
+    s=self.scheduler(slots=2);s.add_seq_group(self.group(1,deadline=900.));self.step(s)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_foreground_ttft_deadline_is_event (__main__.NativeTests.test_foreground_ttft_deadline_is_event)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47pro_event_service_20261108/cpu_attempt01/stage48_v47pro_event_service_20261108_v1/programs/test_native_runtime.py", line 60, in test_foreground_ttft_deadline_is_event
+    s=self.scheduler();s.add_seq_group(self.group(1,0,prompt=256));self.step(s)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_hidden_deadline_expiry_replans_without_membership_change (__main__.NativeTests.test_hidden_deadline_expiry_replans_without_membership_change)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47pro_event_service_20261108/cpu_attempt01/stage48_v47pro_event_service_20261108_v1/programs/test_native_runtime.py", line 55, in test_hidden_deadline_expiry_replans_without_membership_change
+    s=self.scheduler();s.add_seq_group(self.group(1,deadline=1000.4));s.add_seq_group(self.group(2))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_idle_gap_is_not_observed_as_gpu_service_time (__main__.NativeTests.test_idle_gap_is_not_observed_as_gpu_service_time)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47pro_event_service_20261108/cpu_attempt01/stage48_v47pro_event_service_20261108_v1/programs/test_native_runtime.py", line 120, in test_idle_gap_is_not_observed_as_gpu_service_time
+    s=self.scheduler();g=self.group(1);s.add_seq_group(g);self.step(s)
+                                       ^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_low_kv_finite_mixed_replay_drains_all_requests_without_prefix_loss (__main__.NativeTests.test_low_kv_finite_mixed_replay_drains_all_requests_without_prefix_loss)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47pro_event_service_20261108/cpu_attempt01/stage48_v47pro_event_service_20261108_v1/programs/test_native_runtime.py", line 127, in test_low_kv_finite_mixed_replay_drains_all_requests_without_prefix_loss
+    for g in groups:s.add_seq_group(g)
+                    ^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_mixed_foreground_pure_mode_epoch_clears_native_bins_and_old_leases (__main__.NativeTests.test_mixed_foreground_pure_mode_epoch_clears_native_bins_and_old_leases)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47pro_event_service_20261108/cpu_attempt01/stage48_v47pro_event_service_20261108_v1/programs/test_native_runtime.py", line 101, in test_mixed_foreground_pure_mode_epoch_clears_native_bins_and_old_leases
+    s.add_seq_group(fg);s.add_seq_group(c);self.step(s);epoch=s.mode_epoch
+    ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_native_physical_preemption_invalidates_lease_and_plan (__main__.NativeTests.test_native_physical_preemption_invalidates_lease_and_plan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47pro_event_service_20261108/cpu_attempt01/stage48_v47pro_event_service_20261108_v1/programs/test_native_runtime.py", line 92, in test_native_physical_preemption_invalidates_lease_and_plan
+    s=self.scheduler();g=self.group(1);s.add_seq_group(g)
+                                       ^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_new_independent_chain_and_foreground_replan_before_fifty_ticks (__main__.NativeTests.test_new_independent_chain_and_foreground_replan_before_fifty_ticks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47pro_event_service_20261108/cpu_attempt01/stage48_v47pro_event_service_20261108_v1/programs/test_native_runtime.py", line 36, in test_new_independent_chain_and_foreground_replan_before_fifty_ticks
+    s=self.scheduler();s.add_seq_group(self.group(1));self.step(s);n=s.v47_counts['plans']
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_partial_completion_with_surviving_selected_invalidates (__main__.NativeTests.test_partial_completion_with_surviving_selected_invalidates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47pro_event_service_20261108/cpu_attempt01/stage48_v47pro_event_service_20261108_v1/programs/test_native_runtime.py", line 42, in test_partial_completion_with_surviving_selected_invalidates
+    s.add_seq_group(a);s.add_seq_group(b);self.step(s);n=s.v47_counts['plans']
+    ^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_plan_change_without_admission_demand_does_not_evict_resident (__main__.NativeTests.test_plan_change_without_admission_demand_does_not_evict_resident)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47pro_event_service_20261108/cpu_attempt01/stage48_v47pro_event_service_20261108_v1/programs/test_native_runtime.py", line 73, in test_plan_change_without_admission_demand_does_not_evict_resident
+    s=self.scheduler();g=self.group(1);s.add_seq_group(g);self.step(s)
+                                       ^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_prediction_revision_invalidates (__main__.NativeTests.test_prediction_revision_invalidates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47pro_event_service_20261108/cpu_attempt01/stage48_v47pro_event_service_20261108_v1/programs/test_native_runtime.py", line 47, in test_prediction_revision_invalidates
+    s=self.scheduler();g=self.group(1);s.add_seq_group(g);self.step(s)
+                                       ^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_recompute_frees_kv_and_schedules_same_round (__main__.NativeTests.test_recompute_frees_kv_and_schedules_same_round)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47pro_event_service_20261108/cpu_attempt01/stage48_v47pro_event_service_20261108_v1/programs/test_native_runtime.py", line 77, in test_recompute_frees_kv_and_schedules_same_round
+    s=self.scheduler(blocks=20,slots=2);a=self.group(1,prompt=160);s.add_seq_group(a)
+                                                                   ^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_swap_dependency_uses_empty_round_and_preserves_output (__main__.NativeTests.test_swap_dependency_uses_empty_round_and_preserves_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47pro_event_service_20261108/cpu_attempt01/stage48_v47pro_event_service_20261108_v1/programs/test_native_runtime.py", line 85, in test_swap_dependency_uses_empty_round_and_preserves_output
+    s=self.scheduler(blocks=20,slots=2);a=self.group(1,prompt=160);s.add_seq_group(a)
+                                                                   ^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+======================================================================
+ERROR: test_wall_quantum_expires_and_foreground_has_same_lease (__main__.NativeTests.test_wall_quantum_expires_and_foreground_has_same_lease)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47pro_event_service_20261108/cpu_attempt01/stage48_v47pro_event_service_20261108_v1/programs/test_native_runtime.py", line 66, in test_wall_quantum_expires_and_foreground_has_same_lease
+    s.add_seq_group(a);s.add_seq_group(b)
+    ^^^^^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/core/scheduler.py", line 444, in add_seq_group
+    self.policy.add_seq_group(seq_group=seq_group)
+TypeError: MixedPolicy.add_seq_group() got an unexpected keyword argument 'seq_group'
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.035s
+
+FAILED (errors=15)

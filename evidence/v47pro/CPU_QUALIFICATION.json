@@ -1,0 +1,75 @@
+{
+  "gate": "PASS",
+  "tests": 48,
+  "GPU_used": false,
+  "model_execution": false,
+  "CUDA_context_initialized": false,
+  "source_files": {
+    "programs/service_model.py": "6f94d3027d26c5bc81b872471b52c6ce3a36a96512f2fcb308b450f2a0b23763",
+    "programs/baseline_budget.py": "e3a0c9c307ee3d42985f4c41dc6e544797d6dbb29aeb39fc4f74ad0b3c30fbe2",
+    "programs/chain_admission.py": "8532d34c14c2a7f9ea855a4e54c23cd24e955fa6f98d48382531632ebf93df07",
+    "programs/joint_admission.py": "4ca851f38c75f404803b87682dcfee27c9c8a0753cab578648e17c3dfb66936d",
+    "programs/native_chain.py": "553117936621c4f9b1215870e96d54aae4b1a06be9feda506c55e43366c2cae5",
+    "programs/install_comparison_runtime.py": "225c59a6073a728bc9fd06d1bd7192b1ac92b279de38dc0d65838701c5b14fa6",
+    "programs/mixed_joint.py": "da8ce9023e4b81a17d44a9d3cece77ca23a3a280153085d879cfe63a5faf2092",
+    "programs/shared_prediction.py": "437a5d9605272e62340eb61fb0448ed3349e0b1970854db40bdebe2c354c6feb",
+    "programs/protocol_paths.py": "97dd40457864779447689ab76f3dc0179f9a538e12ce3c73ce425103344c0f62",
+    "programs/chain_forecast.py": "5697ed1043f7acb12b02e07d7c436d5aee23e943701889e5eddc2eb3445d2ada",
+    "programs/token_reward.py": "721ab407bd4cfaf42a18fb0a493a3bd8d8050a609f698b8842d4e42271dbf995",
+    "programs/test_native_runtime.py": "5277c1628e95641c230cc66da0ce9a026140a9af2b28266ac95c6a9586d86f58",
+    "programs/replan_events.py": "0420440fdd450afb82ca1d2863caf232eac45b72a00c90389727d32e715eb33b",
+    "programs/test_service_forecast.py": "de401f7e3c059848e44a44c5b5f59f2f5fce80fb7f50243ab80d5a2ca8051b14",
+    "programs/install_v47pro.py": "8ee5b158dd223d32e36b4212678e7f9e55d26031bc7182f4e3de66f1faec5f4a",
+    "programs/test_install.py": "8523fe67d31b89dc2266b0bccdc4ce1a872c28790f7d704e71396c4a1fe155cf",
+    "programs/native_tot_adapter.py": "062b50d57a41f452e6a719986522e5d64420af425daddc3324b46b2d411d7805",
+    "programs/prediction_transport.py": "48f34e9721fa38131294ce8e47921c4323bf4a99ca57bd4233b471cf805b0d04",
+    "programs/execution_observation.py": "85a99cf861aa1f49cd5cd8c7d7442c2f6a0d83ff9498baedac7b206121099666",
+    "assets/CHAIN_MODEL.json": "7d1d668028a01a9da525845e2d3e4320563b615ebac72125c9d3448cd6f761f7"
+  },
+  "actual_native_runtime": true,
+  "source_qualification": "gpu/event_normalKV04/terminal_export.json",
+  "additional_contract_checks": [
+    {
+      "name": "TOKENIZER",
+      "gate": "PASS",
+      "request_profiles": 244,
+      "max_prompt_plus_target": 7049,
+      "GPU_used": false
+    },
+    {
+      "name": "NATIVE_STOP",
+      "gate": "PASS",
+      "actual_native_RequestInfo_server_StopChecker": true,
+      "request_profiles": 244,
+      "distinct_target_cap_boundary_pairs": 123,
+      "prediction_cache_reset_preserves_execution_target": true,
+      "CPU_only": true,
+      "CUDA_context_initialized": false
+    },
+    {
+      "name": "NATIVE_ROUTE_v47pro",
+      "gate": "PASS",
+      "method": "v47pro",
+      "new_observer_actual_native_route": {
+        "native_ToT_presence_matches_frozen_warmup": true,
+        "native_graph_route_and_progress_warmup": true
+      },
+      "GPU_execution": false,
+      "engine_started": false,
+      "CUDA_context_initialized": false
+    },
+    {
+      "name": "SHARED_DYNAMIC_CACHE",
+      "gate": "PASS",
+      "native_shared_cache": true,
+      "CPU_only": true
+    },
+    {
+      "name": "CANDIDATE_COMPONENT",
+      "gate": "PASS",
+      "tests": 48,
+      "CPU_only": true,
+      "CUDA_context_initialized": false
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "gate": "PASS",
+  "checks": {
+    "original_gate_and_terminal_queue": true,
+    "controller_cleanup": true,
+    "hash_bound_source_unchanged": true,
+    "all_identities_exact": true,
+    "inputs_SLO_sampling_lengths_complete": true,
+    "raw_token_hashes_coverage": true,
+    "complete_lifetime_TBT": true,
+    "barriers": true,
+    "arrival_error_le_0_5": true,
+    "full_prefix_and_observation": true,
+    "separate_raw_ledger_exact": true,
+    "valid_settlement_times": true,
+    "native_oracle_credit_exact": true,
+    "raw_window_and_full_metrics_exact": true,
+    "executor_mask_decision_integrity": true,
+    "no_outside_allowed_execution": true,
+    "registered_processes_exited": true,
+    "KV_release_and_caps": true,
+    "CPU_only_no_CUDA": true
+  },
+  "failed_checks": [],
+  "study": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage48_v47pro_GPU0_event_normalKV04_20261108_v1/gpu0",
+  "horizon_seconds": 300.0,
+  "KV_GiB": 19.875,
+  "main_roots": 150,
+  "main_calls": 230,
+  "window_credit": 226948,
+  "window_goodput": 756.4933333333333,
+  "credit_by_class": [
+    162144,
+    41762,
+    23042
+  ],
+  "full_credit": 236732,
+  "complete_replay_goodput": 642.2504006131481,
+  "main_duration_seconds": 368.59766809642315,
+  "drain_seconds": 68.59766809642315,
+  "arrival_error_seconds": 0.002286097683565913,
+  "applications": {
+    "deadline": {
+      "window_credit": 41762,
+      "full_credit": 41762,
+      "roots": 66,
+      "attained": 44
+    },
+    "latency": {
+      "window_credit": 162144,
+      "full_credit": 171928,
+      "roots": 72,
+      "attained": 21
+    },
+    "tot_style": {
+      "window_credit": 23042,
+      "full_credit": 23042,
+      "roots": 7,
+      "attained": 7
+    },
+    "dr": {
+      "window_credit": 0,
+      "full_credit": 0,
+      "roots": 5,
+      "attained": 0
+    }
+  },
+  "gate_reported_metrics": {
+    "main_duration": 368.59766809642315,
+    "main_root_jobs": 150,
+    "main_requests": 230,
+    "main_output_tokens": 57960,
+    "output_tokens_per_second": 157.24461931440646,
+    "max_arrival_error": 0.002286097683565913,
+    "compound_attained": 7,
+    "compound_total": 12,
+    "jitserve_token_goodput": 756.4933333333333,
+    "fixed_hour_token_goodput": 756.4933333333333,
+    "fixed_hour_credited_weighted_tokens": 226948,
+    "complete_replay_token_goodput": 642.2504006131481,
+    "jitserve_credited_weighted_tokens": 236732,
+    "raw_last_completion_seconds": 368.59766809642315,
+    "drain_seconds": 68.59766809642315,
+    "DR_attained": 0,
+    "ToT_attained": 7,
+    "mean_JCT": 21.233419236938158,
+    "p95_JCT": 62.74712298428636,
+    "request_failures": 0
+  },
+  "trace": {
+    "plans": 1529,
+    "replan_reasons": {
+      "capacity_release": 201,
+      "membership_stage": 388,
+      "mode_epoch": 4,
+      "physical_state": 570,
+      "prediction_revision": 524,
+      "service_quantum": 1234,
+      "deadline_wait_or_quantum": 185,
+      "50_tick_fallback": 30
+    },
+    "plan_modes": {
+      "pure": 68,
+      "joint": 1461
+    },
+    "preemptions": {},
+    "partial_stage_rows": 0,
+    "partial_stage_examples": [],
+    "scheduler_host_seconds_mean": 0.004921814525724266,
+    "scheduler_host_seconds_p95": 0.032073184847831726,
+    "scheduler_host_seconds_max": 0.33669661171734333,
+    "swap_dependency_empty_rounds": 0,
+    "executor_calls": 9582
+  },
+  "processes": [
+    {
+      "pid": 1337406,
+      "same_live_identity": false
+    },
+    {
+      "pid": 1338012,
+      "same_live_identity": false
+    },
+    {
+      "pid": 1341274,
+      "same_live_identity": false
+    },
+    {
+      "pid": 1337027,
+      "same_live_identity": false
+    }
+  ],
+  "source_publication_hashes": {
+    "programs/service_model.py": "6f94d3027d26c5bc81b872471b52c6ce3a36a96512f2fcb308b450f2a0b23763",
+    "programs/baseline_budget.py": "e3a0c9c307ee3d42985f4c41dc6e544797d6dbb29aeb39fc4f74ad0b3c30fbe2",
+    "programs/chain_admission.py": "8532d34c14c2a7f9ea855a4e54c23cd24e955fa6f98d48382531632ebf93df07",
+    "programs/joint_admission.py": "4ca851f38c75f404803b87682dcfee27c9c8a0753cab578648e17c3dfb66936d",
+    "programs/native_chain.py": "553117936621c4f9b1215870e96d54aae4b1a06be9feda506c55e43366c2cae5",
+    "programs/install_comparison_runtime.py": "225c59a6073a728bc9fd06d1bd7192b1ac92b279de38dc0d65838701c5b14fa6",
+    "programs/mixed_joint.py": "da8ce9023e4b81a17d44a9d3cece77ca23a3a280153085d879cfe63a5faf2092",
+    "programs/shared_prediction.py": "437a5d9605272e62340eb61fb0448ed3349e0b1970854db40bdebe2c354c6feb",
+    "programs/protocol_paths.py": "97dd40457864779447689ab76f3dc0179f9a538e12ce3c73ce425103344c0f62",
+    "programs/chain_forecast.py": "5697ed1043f7acb12b02e07d7c436d5aee23e943701889e5eddc2eb3445d2ada",
+    "programs/token_reward.py": "721ab407bd4cfaf42a18fb0a493a3bd8d8050a609f698b8842d4e42271dbf995",
+    "programs/test_native_runtime.py": "5277c1628e95641c230cc66da0ce9a026140a9af2b28266ac95c6a9586d86f58",
+    "programs/replan_events.py": "0420440fdd450afb82ca1d2863caf232eac45b72a00c90389727d32e715eb33b",
+    "programs/test_service_forecast.py": "de401f7e3c059848e44a44c5b5f59f2f5fce80fb7f50243ab80d5a2ca8051b14",
+    "programs/install_v47pro.py": "8ee5b158dd223d32e36b4212678e7f9e55d26031bc7182f4e3de66f1faec5f4a",
+    "programs/test_install.py": "8523fe67d31b89dc2266b0bccdc4ce1a872c28790f7d704e71396c4a1fe155cf",
+    "programs/native_tot_adapter.py": "062b50d57a41f452e6a719986522e5d64420af425daddc3324b46b2d411d7805",
+    "programs/prediction_transport.py": "48f34e9721fa38131294ce8e47921c4323bf4a99ca57bd4233b471cf805b0d04",
+    "programs/execution_observation.py": "85a99cf861aa1f49cd5cd8c7d7442c2f6a0d83ff9498baedac7b206121099666",
+    "assets/CHAIN_MODEL.json": "7d1d668028a01a9da525845e2d3e4320563b615ebac72125c9d3448cd6f761f7"
+  },
+  "raw_files": {
+    "cases/01_llama8_mixed_v47pro_gpu0/PROTOCOL.json": {
+      "sha256": "439239aaf46dd544f28bcbe878a6e08a798119011aba186e7978f8602a65effc",
+      "bytes": 206392
+    },
+    "cases/01_llama8_mixed_v47pro_gpu0/WORKLOAD.json": {
+      "sha256": "27fe7a6252f4899564dbac342ca68860617221b939f6e2a1c52abfbd842c279d",
+      "bytes": 623799
+    },
+    "cases/01_llama8_mixed_v47pro_gpu0/TRACE_MANIFEST.json": {
+      "sha256": "261b19c745bbcd2e3eef1781e8d5b76842669efc71fadbfea35175d7ba0d2ee8",
+      "bytes": 70972
+    },
+    "cases/01_llama8_mixed_v47pro_gpu0/receipts/RUN_GATE_01_LLAMA8_MIXED_V47PRO_GPU0_01.json": {
+      "sha256": "ee08ff4495fb83dcbd1da0f746afa90370f1522cae4982dbbeddef1e31a0f205",
+      "bytes": 212439
+    },
+    "cases/01_llama8_mixed_v47pro_gpu0/attempts/01_LLAMA8_MIXED_V47PRO_GPU0_01/client_calls.json": {
+      "sha256": "bed2d2bb7e53693beb036caa056c85af6bc85554defb41399198f0f1ab5e5716",
+      "bytes": 2699109
+    },
+    "cases/01_llama8_mixed_v47pro_gpu0/attempts/01_LLAMA8_MIXED_V47PRO_GPU0_01/LIFETIME_TIMINGS.jsonl": {
+      "sha256": "d7a038e8285310ae38b96c20d692aff6a9fba1bb5c83b0644a3790e0ce9a1508",
+      "bytes": 3842752
+    },
+    "cases/01_llama8_mixed_v47pro_gpu0/attempts/01_LLAMA8_MIXED_V47PRO_GPU0_01/engine_token_ids.jsonl": {
+      "sha256": "2aebc157fb8162c2e66c45cd24fbbc057f2323dc4da32a583f89a0518fba3e04",
+      "bytes": 1010256
+    },
+    "cases/01_llama8_mixed_v47pro_gpu0/attempts/01_LLAMA8_MIXED_V47PRO_GPU0_01/V47PRO_DECISIONS.jsonl": {
+      "sha256": "d50d1ba5236e50ad084aeafb194df2314cf8617daa1de5b43d277a02a01c87bf",
+      "bytes": 3100158
+    },
+    "cases/01_llama8_mixed_v47pro_gpu0/attempts/01_LLAMA8_MIXED_V47PRO_GPU0_01/EXECUTOR_EVENTS.jsonl": {
+      "sha256": "9bf74a9951e8509e2627be40ff96b18bec0ce66c4bd9085d6484718dc0dd5b24",
+      "bytes": 4651576
+    },
+    "cases/01_llama8_mixed_v47pro_gpu0/attempts/01_LLAMA8_MIXED_V47PRO_GPU0_01/V47PRO_RUNTIME.json": {
+      "sha256": "074f0ae76ba392636d35510873cf52feb3b1af56c6a259a413a80fbfeb601d93",
+      "bytes": 18343
+    },
+    "cases/01_llama8_mixed_v47pro_gpu0/attempts/01_LLAMA8_MIXED_V47PRO_GPU0_01/CREDIT_LEDGER.jsonl": {
+      "sha256": "d3b9044a6b8d274d115e554eb83d6915420b2f68a7cafb192a58a72337def403",
+      "bytes": 2642858
+    }
+  }
+}

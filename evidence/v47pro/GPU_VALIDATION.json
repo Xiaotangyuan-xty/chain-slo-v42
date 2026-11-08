@@ -1,0 +1,75 @@
+{
+  "superseded_validated_cases": [
+    {
+      "label": "rc_normalKV03",
+      "audit": "gpu/rc_normalKV03/RAW_AUDIT.json",
+      "terminal_export": "gpu/rc_normalKV03/terminal_export.json",
+      "not_release_source": true,
+      "reason": "Trace-driven event-trigger refinement after valid normal-KV probe"
+    }
+  ],
+  "gate": "PASS",
+  "release_source_cases": [
+    {
+      "label": "event_normalKV04",
+      "KV_GiB": 19.875,
+      "horizon_seconds": 300.0,
+      "original_gate": "PASS",
+      "audit": "gpu/event_normalKV04/RAW_AUDIT.json",
+      "terminal_export": "gpu/event_normalKV04/terminal_export.json",
+      "reported_runtime_counts": {
+        "mode_changes": 8,
+        "idle_with_pending": 3,
+        "plans": 1529,
+        "expired_drain_ticks": 877
+      },
+      "metrics": {
+        "window_credit": 226948,
+        "window_goodput": 756.4933333333333,
+        "full_credit": 236732,
+        "complete_replay_goodput": 642.2504006131481,
+        "main_duration_seconds": 368.59766809642315,
+        "drain_seconds": 68.59766809642315,
+        "arrival_error_seconds": 0.002286097683565913
+      }
+    },
+    {
+      "label": "event_KV1GiB03",
+      "KV_GiB": 1.0,
+      "horizon_seconds": 300.0,
+      "original_gate": "PASS",
+      "audit": "gpu/event_KV1GiB03/RAW_AUDIT.json",
+      "terminal_export": "gpu/event_KV1GiB03/terminal_export.json",
+      "reported_runtime_counts": {
+        "mode_changes": 9,
+        "idle_with_pending": 3,
+        "plans": 1609,
+        "all_preemptions": 32,
+        "swap_dependency_rounds": 1,
+        "same_round_after_recompute": 9,
+        "expired_drain_ticks": 3344
+      },
+      "metrics": {
+        "window_credit": 224857,
+        "window_goodput": 749.5233333333333,
+        "full_credit": 238665,
+        "complete_replay_goodput": 453.2693960140589,
+        "main_duration_seconds": 526.5411741863936,
+        "drain_seconds": 226.54117418639362,
+        "arrival_error_seconds": 0.0021066676276007
+      }
+    }
+  ],
+  "preserved_failed_case": {
+    "label": "integration_normalKV_final01",
+    "terminal_export": "gpu/integration_normalKV_final01/terminal_export.json",
+    "original_gate": "FAIL",
+    "failed_checks": [
+      "no_outside_candidate_selection"
+    ],
+    "not_a_valid_performance_result": true
+  },
+  "full_hour_experiment_started": false,
+  "performance_superiority_claimed": false,
+  "seeds_independent": false
+}

@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<string>", line 57, in <module>
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage48_v47pro_GPU0_release_KV1GiB01_20261108_v1/gpu0/cases/01_llama8_mixed_v47pro_gpu0/programs/model_contract.py", line 23, in verify_external
+    m=profile(stage)
+      ^^^^^^^^^^^^^^
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage48_v47pro_GPU0_release_KV1GiB01_20261108_v1/gpu0/cases/01_llama8_mixed_v47pro_gpu0/programs/model_contract.py", line 11, in profile
+    assert p['expected_resource_caps']==m['expected_resource_caps']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

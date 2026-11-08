@@ -1,0 +1,9 @@
+test_actual_native_install_annotations_observer_and_fresh_guard (__main__.InstallTests.test_actual_native_install_annotations_observer_and_fresh_guard) ... /mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 4.140s
+
+OK

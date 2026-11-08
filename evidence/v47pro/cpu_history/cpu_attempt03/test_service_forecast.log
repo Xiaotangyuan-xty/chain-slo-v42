@@ -1,0 +1,24 @@
+test_arrival_completion_revision_configuration_and_state_all_invalidate (__main__.EventTests.test_arrival_completion_revision_configuration_and_state_all_invalidate) ... ok
+test_deadline_before_fifty_ticks (__main__.EventTests.test_deadline_before_fifty_ticks) ... ok
+test_fifty_ticks_is_fallback (__main__.EventTests.test_fifty_ticks_is_fallback) ... ok
+test_past_deadlines_do_not_cause_perpetual_replanning (__main__.EventTests.test_past_deadlines_do_not_cause_perpetual_replanning) ... ok
+test_preemption_and_mode_explicit_invalidations (__main__.EventTests.test_preemption_and_mode_explicit_invalidations) ... ok
+test_capacity_selector_cannot_reuse_full_parallel_credit (__main__.ForecastTests.test_capacity_selector_cannot_reuse_full_parallel_credit) ... ok
+test_foreground_reservation_changes_chain_waves (__main__.ForecastTests.test_foreground_reservation_changes_chain_waves) ... ok
+test_future_stages_are_also_wave_limited (__main__.ForecastTests.test_future_stages_are_also_wave_limited) ... ok
+test_partial_selection_recomputes_probability_and_credit (__main__.ForecastTests.test_partial_selection_recomputes_probability_and_credit) ... ok
+test_two_members_selected_retains_parallel_probability (__main__.ForecastTests.test_two_members_selected_retains_parallel_probability) ... ok
+test_unsubmitted_siblings_are_costed_but_never_physically_selected (__main__.ForecastTests.test_unsubmitted_siblings_are_costed_but_never_physically_selected) ... ok
+test_batch_context_and_prefill_have_separate_evidence (__main__.ServiceTests.test_batch_context_and_prefill_have_separate_evidence) ... ok
+test_foreground_recovery_is_positive_for_waiting_and_swapped (__main__.ServiceTests.test_foreground_recovery_is_positive_for_waiting_and_swapped) ... ok
+test_half_second_is_not_clamped_to_point_two (__main__.ServiceTests.test_half_second_is_not_clamped_to_point_two) ... ok
+test_infeasible_stage_is_not_a_timely_root (__main__.ServiceTests.test_infeasible_stage_is_not_a_timely_root) ... ok
+test_recompute_and_prefill_use_integer_token_budget_waves (__main__.ServiceTests.test_recompute_and_prefill_use_integer_token_budget_waves) ... ok
+test_resource_limited_waves_do_not_hide_remaining_members (__main__.ServiceTests.test_resource_limited_waves_do_not_hide_remaining_members) ... ok
+test_scheduler_time_is_charged (__main__.ServiceTests.test_scheduler_time_is_charged) ... ok
+test_transition_samples_are_retained (__main__.ServiceTests.test_transition_samples_are_retained) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.002s
+
+OK

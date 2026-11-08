@@ -1,0 +1,8 @@
+{
+  "user_instruction": "Rebuild v47 as v47pro; GPU0 may be used during development; after GitHub publication do not start GPU experiments. Preserve GPU1 existing v47 scan. No GPU2.",
+  "source_parent_commit": "082e98c7c05431110bd6cd74234f909487b963ee",
+  "git_parent_commit": "71690b96215d5f1735aeffdd65f4d43aa243c0bf",
+  "no_post_publication_GPU_launch": true,
+  "no_automation_created": true,
+  "new_branch": "v47pro"
+}

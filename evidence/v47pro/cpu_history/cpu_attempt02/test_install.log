@@ -1,0 +1,21 @@
+test_actual_native_install_annotations_observer_and_fresh_guard (__main__.InstallTests.test_actual_native_install_annotations_observer_and_fresh_guard) ... /mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 4.151s
+
+OK
+Exception ignored in atexit callback: <function install.<locals>.write at 0x775cb0772980>
+Traceback (most recent call last):
+  File "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/cpu_candidates/v47pro_event_service_20261108/cpu_attempt02/stage48_v47pro_event_service_20261108_v1/programs/install_v47pro.py", line 54, in write
+    for name in ['V47PRO_RUNTIME.json','MIXED_RUNTIME.json']:(output/name).write_text(json.dumps(data,indent=2,allow_nan=False)+'\n')
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1049, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmpwaes61zj/V47PRO_RUNTIME.json'
