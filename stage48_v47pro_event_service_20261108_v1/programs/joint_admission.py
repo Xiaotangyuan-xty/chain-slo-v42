@@ -22,7 +22,7 @@ def select_joint(goals,foreground,capacity,max_seqs,block_size=16,protected=(),*
     fg=[all_members[r] for r in fg_selected]
     fg_cost=sum(blocks(m,block_size) for m in fg)
     chains,rows=select(goals,capacity-fg_cost,max_seqs-len(fg),block_size,chain_protected,
-                       forecaster=forecaster,residents=residents)
+                       forecaster=forecaster,residents=residents,final_reprice=False)
     # The final value uses the complete physical pool, fixed foreground and every
     # resident that execution will retain, with each physical member counted once.
     if forecaster:

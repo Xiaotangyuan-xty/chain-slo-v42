@@ -12,11 +12,12 @@ class ServiceTests(unittest.TestCase):
         self.assertGreaterEqual(m.unit(1),.5)
         m.observe_execution({'members':1,'context_tokens':512},.5)
         self.assertGreaterEqual(m.unit(1,512),.5)
-    def test_busy_round_extends_matching_executor_stratum(self):
+    def test_busy_round_does_not_extend_executor_stratum(self):
         m=ServiceModel();m.observe_execution({'members':1,'context_tokens':512},.04)
         self.assertAlmostEqual(m.unit(1,512),.04)
         m.observe_round(.5)
-        self.assertGreaterEqual(m.unit(1,512),.5)
+        self.assertAlmostEqual(m.unit(1,512),.04)
+        self.assertEqual(m.last_round,.5);self.assertEqual(m.stats['busy_rounds'],1)
 
     def test_batch_context_and_prefill_have_separate_evidence(self):
         m=ServiceModel()
@@ -31,9 +32,11 @@ class ServiceTests(unittest.TestCase):
         m.observe_execution({'members':1},.5)
         self.assertAlmostEqual(m.unit(1),.5)
 
-    def test_scheduler_time_is_charged(self):
-        m=ServiceModel();m.observe_execution({'members':1,'scheduler_seconds':.3},.2)
-        self.assertAlmostEqual(m.unit(1),.5)
+    def test_scheduler_and_planning_are_not_token_service_time(self):
+        m=ServiceModel();m.observe_execution({'members':1,'scheduler_seconds':.3,'planning_seconds':.25},.2)
+        self.assertAlmostEqual(m.unit(1),.2)
+        self.assertAlmostEqual(m.stats['scheduler_seconds'],.3)
+        self.assertAlmostEqual(m.stats['planning_seconds'],.25)
     def test_foreground_recovery_uses_current_token_budget(self):
         m=ServiceModel();m.observe_round(1.)
         member={'prompt':3000,'generated':0,'prefill_tokens':3000}
@@ -107,6 +110,13 @@ class ForecastTests(unittest.TestCase):
         by={r['chain']:r for r in rows}
         self.assertEqual(selected,{'a','b'});self.assertEqual(by['a']['probability'],0.)
 
+    def test_joint_uses_one_final_reprice(self):
+        f,m=self.interference();g=self.interference_goal(f,m,'new',300.)
+        before=f.stats['selected_wave_revalues']
+        selected,rows,fg=select_joint([g],[],100,2,forecaster=f)
+        self.assertEqual(selected,{'new'})
+        self.assertEqual(f.stats['selected_wave_revalues']-before,2)
+
     def fixture(self):
         data={'neighbors':1,'prefill_tokens_per_decode_unit':256,'interstage_gap_decode_units':0,
               'forecast_guard_decode_units':0,'service_safety_factor':1.,
@@ -172,6 +182,23 @@ class EventTests(unittest.TestCase):
         e=ReplanEvents();e.commit({},1,5,[1,2,6],[])
         self.assertEqual(e.next_due,6)
         self.assertFalse(e.reasons({},2,5.1))
+    def test_waiting_timer_starts_at_plan_commit(self):
+        e=ReplanEvents();e.commit({},1,1000.,[],[],waiting=True)
+        self.assertEqual(e.next_due,1000.5)
+        self.assertFalse(e.reasons({},2,1000.1))
+        self.assertIn('deadline_wait_or_quantum',e.reasons({},3,1000.5))
+    def test_deadline_crossed_during_plan_remains_pending(self):
+        e=ReplanEvents();e.commit({},1,10.,[9.5,11.],[],started=9.)
+        self.assertEqual(e.next_due,10.)
+        self.assertIn('deadline_wait_or_quantum',e.reasons({},2,10.1))
+    def test_nonurgent_events_coalesce_but_are_not_lost(self):
+        e=ReplanEvents();e.commit({'prediction_revision':0},1,0.,[],[])
+        self.assertFalse(e.reasons({'prediction_revision':1},2,.01,coalesce_seconds=.05))
+        self.assertEqual(e.counts['coalesced_replans'],1)
+        self.assertIn('prediction_revision',e.reasons({'prediction_revision':1},3,.06,coalesce_seconds=.05))
+    def test_urgent_membership_bypasses_coalescing(self):
+        e=ReplanEvents();e.commit({'membership_stage':0},1,0.,[],[])
+        self.assertIn('membership_stage',e.reasons({'membership_stage':1},2,.01,coalesce_seconds=.05))
 
 
 if __name__=='__main__':unittest.main(verbosity=2)

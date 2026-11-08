@@ -21,7 +21,6 @@ class ServiceModel:
         self.stats = Counter()
         self.last_round = .05
         self._unit_cache = {}
-        self._last_execution_key = None
 
     def set_token_budget(self, value):
         value=max(1,int(value))
@@ -33,21 +32,21 @@ class ServiceModel:
             self.last_round = seconds
             self._unit_cache.clear()
             self.rounds.append(seconds)
-            previous=self.samples.get(self._last_execution_key)
-            if previous:
-                previous[-1]=max(previous[-1],seconds)
-                self.stats['busy_round_extensions']+=1
+            self.stats['busy_rounds']+=1
 
     def observe_execution(self, values, seconds):
-        duration = seconds + max(0., values.get('scheduler_seconds', 0.))
+        duration = seconds
         if not math.isfinite(duration) or duration <= 0 or values.get('error'):
             return
+        scheduler=max(0.,values.get('scheduler_seconds',0.))
+        planning=max(0.,values.get('planning_seconds',0.))
+        if math.isfinite(scheduler):self.stats['scheduler_seconds']+=scheduler
+        if math.isfinite(planning):self.stats['planning_seconds']+=planning
         n = max(1, values.get('members', 1))
         key = (bucket(n), bucket(values.get('context_tokens', 0)/n/256),
                bucket(values.get('prefill_tokens', 0)/256) if values.get('prefill_tokens', 0) else 0,
                bool(values.get('transition')))
         self.samples.setdefault(key, deque(maxlen=64)).append(duration)
-        self._last_execution_key=key
         self._unit_cache.clear()
         self.stats['samples'] += 1
         self.stats['transition_samples'] += bool(key[3])
@@ -91,7 +90,7 @@ class ServiceModel:
     def describe(self):
         return {'token_budget':self.token_budget,'stats':dict(self.stats), 'last_round_seconds':self.last_round,
                 'bins':[{'key':list(k),'n':len(v),'upper_seconds':upper(v),'last_seconds':v[-1]} for k,v in sorted(self.samples.items())],
-                'timing':'executor host boundary plus scheduler host duration; not GPU kernel time'}
+                'timing':'executor host boundaries only; scheduler/planning and busy rounds are separate diagnostics'}
 
 
 def member_blocks(m, block_size=16, horizon=50):

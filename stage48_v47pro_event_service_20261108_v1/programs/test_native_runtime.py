@@ -72,8 +72,15 @@ class NativeTests(unittest.TestCase):
 
     def test_prediction_revision_invalidates(self):
         s=self.scheduler();g=self.group(1);s.add_seq_group(g);self.step(s)
-        g.request_info.prediction_revision=1;self.step(s)
+        g.request_info.prediction_revision=1
+        with patch('time.perf_counter',return_value=1001.):self.step(s)
         self.assertIn('prediction_revision',s.events.last_reasons);self.cleanup(s)
+    def test_foreground_prediction_revision_coalesces_then_replans(self):
+        s=self.scheduler();g=self.group(1,0);s.add_seq_group(g);self.step(s)
+        g.request_info.prediction_revision=1;self.step(s)
+        self.assertEqual(s.events.counts['prediction_revision'],0)
+        with patch('time.perf_counter',return_value=1001.):self.step(s)
+        self.assertEqual(s.events.counts['prediction_revision'],1);self.cleanup(s)
     def test_configuration_invalidates_but_preserves_initial_cap(self):
         s=self.scheduler(slots=2);s.add_seq_group(self.group(1));self.step(s)
         s.scheduler_config.max_num_batched_tokens=128;self.step(s)

@@ -230,7 +230,6 @@ class NativeChainScheduler(SLOScheduler):
                     token=ttft+n*g.TBT_constraint;deadlines.extend([token-lead,token])
             if g.request_id in self.leases:
                 deadlines.append(self.leases[g.request_id]['started']+1.5)
-        if any(g not in self.running for g in groups):deadlines.append(now+.5)
         signature={
             'membership_stage':tuple(sorted((g.request_id,g.collection_id,g.request_info.stage_id) for g in groups)),
             'prediction_revision':tuple(sorted((g.request_id,getattr(g.request_info,'prediction_revision',0),g.request_info.output_len) for g in groups)),
@@ -299,7 +298,9 @@ class NativeChainScheduler(SLOScheduler):
         live={g.request_id for g in groups};tick=self.policy.num_schedule_count
         chains=[g for g in groups if hasattr(g.request_info,'chain_deadline')]
         foreground=[g for g in groups if not hasattr(g.request_info,'chain_deadline')]
-        signature,deadlines=self._event_state(groups,now);reasons=self.events.reasons(signature,tick,now)
+        signature,deadlines=self._event_state(groups,now)
+        coalesce=max(.01,min(.05,self.cost_model.last_round))
+        reasons=self.events.reasons(signature,tick,now,coalesce)
         if reasons:
             protected=self._protected(now)
             residents=[self._view(g) for g in self.running]
@@ -314,7 +315,8 @@ class NativeChainScheduler(SLOScheduler):
                 self.selected,self.rows=select(goals,capacity,self.base_max_num_seqs,self.cache_config.block_size,protected,forecaster=MODEL,residents=residents)
             self.desired_selected=None if self.selected is None else set(self.selected)
             self.policy.draining=self.selected is None;self.last_plan=tick;self._planned_this_step=True;self.decision_id+=1
-            self.events.commit(signature,tick,now,deadlines,reasons)
+            committed=time.perf_counter()
+            self.events.commit(signature,tick,committed,deadlines,reasons,waiting=any(g not in self.running for g in groups),started=now)
             self.v47_counts['plans']+=1
             self._emit({'kind':'plan','mode':self.mode,'tick':tick,'reasons':reasons,'next_due':self.events.next_due,
                         'selected':sorted(self.selected) if self.selected is not None else None,'protected':sorted(protected),'rows':self.rows,

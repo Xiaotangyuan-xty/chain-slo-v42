@@ -1,5 +1,6 @@
 """v47 chain reward/coexistence with event invalidation and isolated modes."""
 from collections import Counter
+import time
 from jitserve.request_info import RequestType
 from vllm.sequence import SequenceStatus
 from jitserve.scheduler.policy import SLOPolicy
@@ -58,11 +59,15 @@ class MixedScheduler(NativeChainScheduler):
             self.policy.draining=True;self.selected=None;self.desired_selected=None
             self.last_recorded_selected=None
             signature,deadlines=self._event_state(groups,now)
-            reasons=self.events.reasons(signature,self.policy.num_schedule_count,now)
+            coalesce=max(.01,min(.05,self.cost_model.last_round))
+            reasons=self.events.reasons(signature,self.policy.num_schedule_count,now,coalesce)
             if reasons:
                 self.policy.seq_group_slo_dict.clear();self.last_plan=self.policy.num_schedule_count;self._planned_this_step=True
-                self.events.commit(signature,self.last_plan,now,deadlines,reasons)
-                if self._test_enough_swap_space():return self._schedule_slo()
+                if self._test_enough_swap_space():
+                    result=self._schedule_slo()
+                    self.events.commit(signature,self.last_plan,time.perf_counter(),deadlines,reasons,waiting=True,started=now)
+                    return result
+                self.events.commit(signature,self.last_plan,time.perf_counter(),deadlines,reasons,waiting=True,started=now)
             return self._chunked()
         if mode=='expired_drain':
             self.fast_expired_drain=True;self.policy.draining=True;self.selected=None

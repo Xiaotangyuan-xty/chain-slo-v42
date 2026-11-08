@@ -50,7 +50,7 @@ def reprice(goals,selected,protected,forecaster,block_size=16,residents=(),backg
     return (selected or None),rows
 
 
-def select(goals,capacity,max_seqs,block_size=16,protected=(),*,forecaster=None,background=(),residents=()):
+def select(goals,capacity,max_seqs,block_size=16,protected=(),*,forecaster=None,background=(),residents=(),final_reprice=True):
     members=_members(goals,residents,background)
     selected=set(protected)&members.keys()
     used=sum(blocks(members[r],block_size) for r in selected)
@@ -74,7 +74,7 @@ def select(goals,capacity,max_seqs,block_size=16,protected=(),*,forecaster=None,
             chosen=own&selected
             if not chosen:valued={**valued,'probability':0.,'score':0.,'expected_credited_tokens':0.}
         rows.append(row(valued,chosen,sum(blocks(m,block_size) for m in goal['members'])))
-    if forecaster:
+    if forecaster and final_reprice:
         return reprice(goals,selected,protected,forecaster,block_size,residents,background)
     if not selected:return None,rows
     return selected,rows

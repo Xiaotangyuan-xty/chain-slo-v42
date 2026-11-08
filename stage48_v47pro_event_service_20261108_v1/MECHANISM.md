@@ -9,13 +9,17 @@ The historical Stage30 directory and all later release freezes remain unchanged.
    canonical running/waiting/swapped and prefill state, released GPU or CPU
    capacity, resource configuration, mode epoch,
    50-generated-token service quantum, deadline crossings, or waiting/quantum
-   timer expiry. A waiting set has a0.5s maximum re-evaluation interval; the
-   running protection quantum also expires after1.5s. TTFT, next cumulative token
+   timer expiry. A waiting set's0.5s re-evaluation interval starts when planning
+   commits, rather than at its start; a long plan therefore cannot trigger itself.
+   Non-urgent prediction/quantum/physical-state updates use a bounded coalescing
+   interval derived from the observed busy round. Membership, real deadlines,
+   preemption, configuration and capacity release remain urgent. TTFT, next cumulative token
    deadline and root deadline include a lead based on observed busy-round time.
    Ordinary decode KV growth and queue reordering do not cause a replan.
    Generated-token milestones repeat every50 tokens. Fifty ticks is only a fallback. These are internal controls, not new gates or
    hard real-time guarantees. No future arrival or true future output length is
-   used to construct these triggers.
+   used to construct these triggers. Decision JSON serialization and file writes
+   use a bounded background queue; drops and writer errors are explicitly counted.
 2. Each donor scenario includes all unfinished members, unsubmitted siblings and
    all future public stages. Capacity/slot-limited fixed waves and integer
    prefill chunks replace the all-members-parallel shortcut. The physical first
@@ -47,10 +51,11 @@ The historical Stage30 directory and all later release freezes remain unchanged.
    use conservative scaling/backoff and observed busy-round time, without a
    0.2s upper clamp. Unit estimates are cached only until new evidence arrives.
    Idle gaps without any continuously live request are excluded. Prefill and
-   recompute use integer waves of the configured token budget. Measurements
-   combine executor and scheduler host boundaries and are not pure GPU-kernel
-   time. This is a coarse safety model, not a counterfactual search or a claim
-   that batching/interference are perfectly predicted.
+   recompute use integer waves of the configured token budget. Service units use
+   executor host boundaries only. Scheduler and planning host time are separate
+   diagnostics and are not multiplied by future token counts; busy rounds only
+   affect deadline lead and unsupported fallback. This is a coarse safety model,
+   not a counterfactual search or a claim that batching/interference are perfectly predicted.
 5. Each scheduler owns a copied config and a saved initial pure/joint sequence
    cap. Native foreground adjustment changes only its SchedulingBudget. Expired
    drain passes a temporary private cap into chunked scheduling and restores the
