@@ -1,0 +1,12 @@
+{
+  "parent_commit": "a4aa15e7bc1efb51b390c0fc445596f3547c8161",
+  "parent_stage": "stage36_v48_mixed_continuity_20261107_v1",
+  "unchanged_pure_files": {
+    "programs/native_chain.py": "5958c3e16ab19c3310244dba88892e9bbfe8882ad2a8439efea63b1369f3bf38",
+    "programs/chain_forecast.py": "6f5b11c4adc8aa58a9f1d0a46a889edfb7da14af0adb92c7b5e5a3b74f6f898b",
+    "programs/chain_admission.py": "d61f32065e9bf0c5bb69b37d4158c5181de2d342c794bae8db0c5e63eeb1e3b4",
+    "programs/token_reward.py": "721ab407bd4cfaf42a18fb0a493a3bd8d8050a609f698b8842d4e42271dbf995",
+    "assets/CHAIN_MODEL.json": "7d1d668028a01a9da525845e2d3e4320563b615ebac72125c9d3448cd6f761f7"
+  },
+  "frozen_shared_prediction_parent_sha256": "b5ad2b09b97ee06d1264d22ef93d5cf483a5d9df727af5e4559d494fc70c1a14"
+}

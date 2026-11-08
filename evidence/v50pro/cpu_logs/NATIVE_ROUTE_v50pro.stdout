@@ -1,0 +1,2 @@
+WARNING 11-08 03:30:25 similarity.py:755] No event loop running, skipping async clustering update
+{"gate": "PASS", "method": "v50pro", "new_observer_actual_native_route": {"native_ToT_presence_matches_frozen_warmup": true, "native_graph_route_and_progress_warmup": true}, "GPU_execution": false, "engine_started": false, "CUDA_context_initialized": false}

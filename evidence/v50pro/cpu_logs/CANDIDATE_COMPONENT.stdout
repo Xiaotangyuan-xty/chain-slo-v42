@@ -1,0 +1,283 @@
+
+test_actual_arrival_replaces_virtual_work_without_double_count (test_boundaries.ForecastBoundaries.test_actual_arrival_replaces_virtual_work_without_double_count) ... ok
+test_backoff_at_public_cap_has_no_fictitious_output_work (test_boundaries.ForecastBoundaries.test_backoff_at_public_cap_has_no_fictitious_output_work) ... ok
+test_backoff_near_public_cap_only_has_four_tokens_left (test_boundaries.ForecastBoundaries.test_backoff_near_public_cap_only_has_four_tokens_left) ... ok
+test_completed_sibling_is_not_charged_again (test_boundaries.ForecastBoundaries.test_completed_sibling_is_not_charged_again) ... ok
+test_current_members_use_their_own_caps (test_boundaries.ForecastBoundaries.test_current_members_use_their_own_caps) ... ok
+test_future_cap_is_not_the_smallest_current_member_cap (test_boundaries.ForecastBoundaries.test_future_cap_is_not_the_smallest_current_member_cap) ... ok
+test_later_stage_without_support_does_not_raise (test_boundaries.ForecastBoundaries.test_later_stage_without_support_does_not_raise) ... ok
+test_longer_donor_covers_every_declared_stage (test_boundaries.ForecastBoundaries.test_longer_donor_covers_every_declared_stage) ... ok
+test_nonboundary_predictions_keep_v45_work_formula (test_boundaries.ForecastBoundaries.test_nonboundary_predictions_keep_v45_work_formula) ... ok
+test_short_donor_cannot_silently_omit_tail (test_boundaries.ForecastBoundaries.test_short_donor_cannot_silently_omit_tail) ... ok
+test_unsubmitted_siblings_count_as_work (test_boundaries.ForecastBoundaries.test_unsubmitted_siblings_count_as_work) ... ok
+test_foreground_borrows_unused_chain_capacity (test_boundaries.MixedPacking.test_foreground_borrows_unused_chain_capacity) ... ok
+test_foreground_does_not_disable_chain_selection (test_boundaries.MixedPacking.test_foreground_does_not_disable_chain_selection) ... ok
+test_v45_chain_lease_is_not_spent_on_foreground (test_boundaries.MixedPacking.test_v45_chain_lease_is_not_spent_on_foreground) ... ok
+test_virtual_siblings_do_not_consume_physical_slots (test_boundaries.MixedPacking.test_virtual_siblings_do_not_consume_physical_slots) ... ok
+test_zero_probability_keeps_v45_native_drain_signal (test_boundaries.MixedPacking.test_zero_probability_keeps_v45_native_drain_signal) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.030s
+
+OK
+
+INFO 11-08 03:30:36 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-08 03:30:36 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.RECOMPUTE mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-08 03:30:36 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 14824341.618669668, 1794108636.8861458) is preempted by PreemptionMode.RECOMPUTE mode.
+INFO 11-08 03:30:36 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 03:30:36 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 03:30:36 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-08 03:30:36 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-08 03:30:36 scheduler.py:1573] Collection ID: 1, Request ID: 1: (0, -1.2, 14824341.63486081, 1794108636.90232) is preempted by PreemptionMode.SWAP mode.
+
+test_cpu_full_native_recompute_preserves_output_prefix (controlled_native.NativeRuntime.test_cpu_full_native_recompute_preserves_output_prefix) ... /mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+ok
+test_drain_uses_frame_forecast_and_makes_progress (controlled_native.NativeRuntime.test_drain_uses_frame_forecast_and_makes_progress) ... ok
+test_observation_accepts_actual_candidate_engine_contract (controlled_native.NativeRuntime.test_observation_accepts_actual_candidate_engine_contract) ... ok
+test_public_chain_metadata_is_captured_before_stage_budget (controlled_native.NativeRuntime.test_public_chain_metadata_is_captured_before_stage_budget) ... ok
+test_residence_then_native_swap_resume (controlled_native.NativeRuntime.test_residence_then_native_swap_resume) ... ok
+test_completion_density_not_raw_deadline (controlled_native.PlanningTests.test_completion_density_not_raw_deadline) ... ok
+test_fit_only_asset_and_no_runtime_future_target_attributes (controlled_native.PlanningTests.test_fit_only_asset_and_no_runtime_future_target_attributes) ... ok
+test_horizon_replaces_full_length_reservation (controlled_native.PlanningTests.test_horizon_replaces_full_length_reservation) ... ok
+test_no_predicted_opportunity_returns_native_drain (controlled_native.PlanningTests.test_no_predicted_opportunity_returns_native_drain) ... ok
+test_survival_uses_only_observed_generated_prefix (controlled_native.PlanningTests.test_survival_uses_only_observed_generated_prefix) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 4.149s
+
+OK
+
+
+test_model_tokenization_without_special_tokens_and_bounded_cache (test_v47_forecast.TextCredit.test_model_tokenization_without_special_tokens_and_bounded_cache) ... ok
+test_bounded_cache_matches_disabled_cache_across_progress_and_prefix (test_v47_forecast.TokenForecast.test_bounded_cache_matches_disabled_cache_across_progress_and_prefix) ... ok
+test_completed_current_sibling_reward_is_counted_once (test_v47_forecast.TokenForecast.test_completed_current_sibling_reward_is_counted_once) ... ok
+test_completed_prefix_is_reward_not_remaining_work (test_v47_forecast.TokenForecast.test_completed_prefix_is_reward_not_remaining_work) ... ok
+test_condition_reward_on_the_same_timely_donor (test_v47_forecast.TokenForecast.test_condition_reward_on_the_same_timely_donor) ... ok
+test_expiry_skips_neighbor_search_and_never_reuses_probability (test_v47_forecast.TokenForecast.test_expiry_skips_neighbor_search_and_never_reuses_probability) ... ok
+test_future_cache_invalidates_width_and_public_cap (test_v47_forecast.TokenForecast.test_future_cache_invalidates_width_and_public_cap) ... ok
+test_new_current_sibling_invalidates_neighbor_signature (test_v47_forecast.TokenForecast.test_new_current_sibling_invalidates_neighbor_signature) ... ok
+test_unknown_support_is_not_expiry (test_v47_forecast.TokenForecast.test_unknown_support_is_not_expiry) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.004s
+
+OK
+
+INFO 11-08 03:30:41 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 03:30:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 03:30:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+WARNING 11-08 03:30:42 scheduler.py:1564] Sequence group 1 is preempted by PreemptionMode.SWAP mode because there is not enough KV cache space. This can affect the end-to-end performance. Increase gpu_memory_utilization or tensor_parallel_size to provide more KV cache memory. total_num_cumulative_preemption=1
+INFO 11-08 03:30:42 scheduler.py:1573] Collection ID: 1, Request ID: 1: (1, -0.0, 100.0) is preempted by PreemptionMode.SWAP mode.
+INFO 11-08 03:30:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 03:30:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 03:30:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 03:30:42 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+
+/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+test_all_expired_calls_finish_without_losing_emitted_prefix_or_kv (test_v47_runtime.ExpiredDrain.test_all_expired_calls_finish_without_losing_emitted_prefix_or_kv) ... ok
+test_expired_backlog_bypasses_forecast_and_expands_only_within_pool (test_v47_runtime.ExpiredDrain.test_expired_backlog_bypasses_forecast_and_expands_only_within_pool) ... ok
+test_new_foreground_restores_limits_and_remains_executable (test_v47_runtime.ExpiredDrain.test_new_foreground_restores_limits_and_remains_executable) ... ok
+test_new_live_root_exits_fast_drain_and_restores_prior_limit (test_v47_runtime.ExpiredDrain.test_new_live_root_exits_fast_drain_and_restores_prior_limit) ... ok
+test_reused_root_id_cannot_reactivate_stale_deadline_heap_entry (test_v47_runtime.ExpiredDrain.test_reused_root_id_cannot_reactivate_stale_deadline_heap_entry) ... ok
+test_unsubmitted_next_stage_keeps_root_credit_live (test_v47_runtime.ExpiredDrain.test_unsubmitted_next_stage_keeps_root_credit_live) ... ok
+test_zero_model_probability_is_not_proof_of_expiry (test_v47_runtime.ExpiredDrain.test_zero_model_probability_is_not_proof_of_expiry) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.064s
+
+OK
+
+
+test_expired_credit_does_not_retain_a_root_cooldown_protection (test_v50pro_commitments.Contract.test_expired_credit_does_not_retain_a_root_cooldown_protection) ... ok
+test_fallback_cannot_bypass_quantum (test_v50pro_commitments.Contract.test_fallback_cannot_bypass_quantum) ... ok
+test_finished_request_removes_obligation (test_v50pro_commitments.Contract.test_finished_request_removes_obligation) ... ok
+test_infeasible_restoration_is_explicit_failure (test_v50pro_commitments.Contract.test_infeasible_restoration_is_explicit_failure) ... ok
+test_root_cooldown_covers_a_different_sibling (test_v50pro_commitments.Contract.test_root_cooldown_covers_a_different_sibling) ... ok
+test_service_quantum_blocks_new_arrival_eviction (test_v50pro_commitments.Contract.test_service_quantum_blocks_new_arrival_eviction) ... ok
+test_token_quantum_releases_and_restoration_deadline_cannot_be_extended (test_v50pro_commitments.Contract.test_token_quantum_releases_and_restoration_deadline_cannot_be_extended) ... ok
+test_physical_free_space_does_not_override_compute_guard (test_v50pro_commitments.ProtectedAdmission.test_physical_free_space_does_not_override_compute_guard) ... ok
+test_protection_does_not_hide_a_nonpreemptive_feasible_arrival (test_v50pro_commitments.ProtectedAdmission.test_protection_does_not_hide_a_nonpreemptive_feasible_arrival) ... ok
+test_capacity_forced_restore_displacement_has_its_own_obligation (test_v50pro_commitments.RestorationCollateral.test_capacity_forced_restore_displacement_has_its_own_obligation) ... ok
+test_restore_keeps_unrelated_running_members_if_resources_fit (test_v50pro_commitments.RestorationCollateral.test_restore_keeps_unrelated_running_members_if_resources_fit) ... ok
+test_restored_waiter_cannot_be_hidden_before_first_actual_token (test_v50pro_commitments.RestorationService.test_restored_waiter_cannot_be_hidden_before_first_actual_token) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK
+
+
+test_decode_does_not_use_preempted_transition_stratum (test_v50pro_cost.CostContract.test_decode_does_not_use_preempted_transition_stratum) ... ok
+test_future_wide_prefill_has_multiple_waves (test_v50pro_cost.CostContract.test_future_wide_prefill_has_multiple_waves) ... ok
+test_multiple_swap_rounds_charged (test_v50pro_cost.CostContract.test_multiple_swap_rounds_charged) ... ok
+test_preempted_transition_is_usable (test_v50pro_cost.CostContract.test_preempted_transition_is_usable) ... ok
+test_small_recompute_has_at_least_one_executor_iteration (test_v50pro_cost.CostContract.test_small_recompute_has_at_least_one_executor_iteration) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
+
+
+test_budget_does_not_cache_an_incomplete_evaluation (test_v50pro_projection.ProjectionContract.test_budget_does_not_cache_an_incomplete_evaluation) ... ok
+test_empirical_cdf_does_not_move_late_donor_credit_forward (test_v50pro_projection.ProjectionContract.test_empirical_cdf_does_not_move_late_donor_credit_forward) ... ok
+test_integrated_one_for_two_KV_exchange_survives_single_action_losses (test_v50pro_projection.ProjectionContract.test_integrated_one_for_two_KV_exchange_survives_single_action_losses) ... ok
+test_joint_CPU_reservation_uses_runtime_eviction_order (test_v50pro_projection.ProjectionContract.test_joint_CPU_reservation_uses_runtime_eviction_order) ... ok
+test_mean_context_is_not_used_as_start_then_grown_a_second_time (test_v50pro_projection.ProjectionContract.test_mean_context_is_not_used_as_start_then_grown_a_second_time) ... ok
+test_partial_running_root_is_not_expanded_to_waiting_sibling (test_v50pro_projection.ProjectionContract.test_partial_running_root_is_not_expanded_to_waiting_sibling) ... ok
+test_production_controller_can_choose_a_complete_positive_gain (test_v50pro_projection.ProjectionContract.test_production_controller_can_choose_a_complete_positive_gain) ... ok
+test_production_lease_remaining_prevents_eviction (test_v50pro_projection.ProjectionContract.test_production_lease_remaining_prevents_eviction) ... ok
+test_production_plan_reference_is_exact_physical_set (test_v50pro_projection.ProjectionContract.test_production_plan_reference_is_exact_physical_set) ... ok
+test_proposal_changes_background_and_future_tail (test_v50pro_projection.ProjectionContract.test_proposal_changes_background_and_future_tail) ... ok
+test_short_member_completion_reduces_batch_cost (test_v50pro_projection.ProjectionContract.test_short_member_completion_reduces_batch_cost) ... ok
+test_small_prefill_is_at_least_one_call (test_v50pro_projection.ProjectionContract.test_small_prefill_is_at_least_one_call) ... ok
+test_stage_width_uses_future_width_4p6_seconds (test_v50pro_projection.ProjectionContract.test_stage_width_uses_future_width_4p6_seconds) ... ok
+test_unsupported_live_factory_is_not_silently_zero_loss (test_v50pro_projection.ProjectionContract.test_unsupported_live_factory_is_not_silently_zero_loss) ... ok
+test_wide_prefill_is_charged_per_physical_wave (test_v50pro_projection.ProjectionContract.test_wide_prefill_is_charged_per_physical_wave) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.004s
+
+OK
+
+
+test_all_expired_is_complete_required_drain (test_v50pro_admission.Admission.test_all_expired_is_complete_required_drain) ... ok
+test_compute_guard_also_bounds_admission_fallback (test_v50pro_admission.Admission.test_compute_guard_also_bounds_admission_fallback) ... ok
+test_existing_service_is_not_preempted_by_a_compute_observation (test_v50pro_admission.Admission.test_existing_service_is_not_preempted_by_a_compute_observation) ... ok
+test_no_member_disappears_and_physical_capacity_holds (test_v50pro_admission.Admission.test_no_member_disappears_and_physical_capacity_holds) ... ok
+test_required_expired_member_can_make_progress (test_v50pro_admission.Admission.test_required_expired_member_can_make_progress) ... ok
+test_unmeasured_width_gets_bounded_online_probe (test_v50pro_admission.Admission.test_unmeasured_width_gets_bounded_online_probe) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK
+
+
+test_QRF_prediction_capped_by_declared_sampling_limit (test_v50pro_credit_cues.Cues.test_QRF_prediction_capped_by_declared_sampling_limit) ... ok
+test_compute_budget_derives_from_existing_TBT_not_fixed_55ms (test_v50pro_credit_cues.Cues.test_compute_budget_derives_from_existing_TBT_not_fixed_55ms) ... ok
+test_expired_foreground_not_ranked_as_a_full_credit_opportunity (test_v50pro_credit_cues.Cues.test_expired_foreground_not_ranked_as_a_full_credit_opportunity) ... ok
+test_prefix_credit_is_zero_if_terminal_root_not_feasible (test_v50pro_credit_cues.Cues.test_prefix_credit_is_zero_if_terminal_root_not_feasible) ... ok
+test_root_uses_terminal_credit_and_all_future_stage_service (test_v50pro_credit_cues.Cues.test_root_uses_terminal_credit_and_all_future_stage_service) ... ok
+test_valid_60ms_steps_are_not_rejected_under_100ms_TBT (test_v50pro_credit_cues.Cues.test_valid_60ms_steps_are_not_rejected_under_100ms_TBT) ... ok
+test_all_uncertain_but_unexpired_work_keeps_compute_control (test_v50pro_credit_cues.UncertainAdmission.test_all_uncertain_but_unexpired_work_keeps_compute_control) ... ok
+test_latency_prompt_credit_is_not_diluted_over_the_full_stream (test_v50pro_credit_cues.UncertainAdmission.test_latency_prompt_credit_is_not_diluted_over_the_full_stream) ... ok
+test_point_forecast_zero_is_not_a_certificate_for_hiding_live_work (test_v50pro_credit_cues.UncertainAdmission.test_point_forecast_zero_is_not_a_certificate_for_hiding_live_work) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+OK
+
+INFO 11-08 03:30:47 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 03:30:47 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 03:30:47 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 03:30:47 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 03:30:47 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+INFO 11-08 03:30:47 config.py:1065] Chunked prefill is enabled with max_num_batched_tokens=64.
+
+/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+test_event_coalescing_still_admits_new_work (test_v50pro_native.Native.test_event_coalescing_still_admits_new_work) ... ok
+test_expired_mixed_tasks_complete_without_drops_and_release_pools (test_v50pro_native.Native.test_expired_mixed_tasks_complete_without_drops_and_release_pools) ... ok
+test_foreground_and_mixed_paths_do_not_call_baseline_scores_or_planning (test_v50pro_native.Native.test_foreground_and_mixed_paths_do_not_call_baseline_scores_or_planning) ... ok
+test_projection_budget_cannot_leave_all_waiters_hidden_on_idle_gpu (test_v50pro_native.Native.test_projection_budget_cannot_leave_all_waiters_hidden_on_idle_gpu) ... ok
+test_pure_DR_path_matches_original_v47 (test_v50pro_native.Native.test_pure_DR_path_matches_original_v47) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.079s
+
+OK
+
+
+test_incomplete_and_oversized_frames_rejected (test_v50pro_transport.Wire.test_incomplete_and_oversized_frames_rejected) ... ok
+test_large_prompt_and_partial_header_body (test_v50pro_transport.Wire.test_large_prompt_and_partial_header_body) ... ok
+test_native_predict_function_receives_unchanged_large_prompt (test_v50pro_transport.Wire.test_native_predict_function_receives_unchanged_large_prompt) ... ok
+test_shared_client_success_and_failure_status_are_distinct (test_v50pro_transport.Wire.test_shared_client_success_and_failure_status_are_distinct) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.006s
+
+OK
+
+
+test_async_boundary_excludes_scheduler_time_and_keeps_all_flags (test_v50pro_execution.Execution.test_async_boundary_excludes_scheduler_time_and_keeps_all_flags) ... ok
+test_engine_installer_hooks_native_constructor_without_starting_model (test_v50pro_execution.Execution.test_engine_installer_hooks_native_constructor_without_starting_model) ... ok
+test_executor_failure_is_preserved_logged_and_not_fit_as_latency (test_v50pro_execution.Execution.test_executor_failure_is_preserved_logged_and_not_fit_as_latency) ... ok
+test_native_SequenceGroupMetadata_and_ExecuteModelRequest_ABI (test_v50pro_execution.Execution.test_native_SequenceGroupMetadata_and_ExecuteModelRequest_ABI) ... /mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+ok
+test_sync_long_call_and_foreground_pure_paths_have_same_coverage (test_v50pro_execution.Execution.test_sync_long_call_and_foreground_pure_paths_have_same_coverage) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 9.040s
+
+OK
+
+
+test_Astar_shared_protocol_keeps_declared_repairs_and_implicit_ToT (test_v50pro_comparison_install.Comparison.test_Astar_shared_protocol_keeps_declared_repairs_and_implicit_ToT) ... ok
+test_native_A_shared_protocol_keeps_original_budget_and_implicit_ToT (test_v50pro_comparison_install.Comparison.test_native_A_shared_protocol_keeps_original_budget_and_implicit_ToT) ... ok
+test_v49pro_shared_entry_registers_native_ToT_with_real_keyword_API (test_v50pro_comparison_install.Comparison.test_v49pro_shared_entry_registers_native_ToT_with_real_keyword_API) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 14.684s
+
+OK
+
+
+/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+test_actual_collective_allocation_and_cached_priority_follow_new_prediction (test_v50pro_shared_native.SharedNative.test_actual_collective_allocation_and_cached_priority_follow_new_prediction) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK
+
+
+test_actual_server_snapshot_handles_baseline_without_cost_model (test_v50pro_harness.Harness.test_actual_server_snapshot_handles_baseline_without_cost_model) ... ok
+test_all_harness_modules_parse_and_do_not_infer_root_from_parent_depth (test_v50pro_harness.Harness.test_all_harness_modules_parse_and_do_not_infer_root_from_parent_depth) ... ok
+test_explicit_root_is_required_and_protocol_mismatch_fails_early (test_v50pro_harness.Harness.test_explicit_root_is_required_and_protocol_mismatch_fails_early) ... ok
+test_full_native_metric_on_completed_nested_GPU_case_without_writes (test_v50pro_harness.Harness.test_full_native_metric_on_completed_nested_GPU_case_without_writes) ... /mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage46_v50pro_GPU0_component09_context_semantics_20261108_v1/gpu0/cases/01_llama8_mixed_v50pro_gpu0/harness/alignment_metrics.py:24: ResourceWarning: unclosed file <_io.TextIOWrapper name='/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage42_v49pro_llama8_nativeToT_mixed_gpu01_20261107_v1/gpu0/cases/01_llama8_mixed_v49pro_gpu0/attempts/01_LLAMA8_MIXED_V49PRO_GPU0_01/LIFETIME_TIMINGS.jsonl' mode='r' encoding='UTF-8'>
+  for line in (attempt / 'LIFETIME_TIMINGS.jsonl').open():
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_warmup_observer_and_budget_receipt_contract_all_three_methods (test_v50pro_harness.Harness.test_warmup_observer_and_budget_receipt_contract_all_three_methods) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 12.303s
+
+OK
+
+
+test_CPU_preview_cannot_be_launched_by_any_entry (test_v50pro_matrix.Matrix.test_CPU_preview_cannot_be_launched_by_any_entry) ... ok
+test_baselines_keep_native_scheduler_and_final_gate_explicit_root (test_v50pro_matrix.Matrix.test_baselines_keep_native_scheduler_and_final_gate_explicit_root) ... ok
+test_default_planner_contract_has_one_immutable_source (test_v50pro_matrix.Matrix.test_default_planner_contract_has_one_immutable_source) ... ok
+test_invalid_device_resource_order_and_duplicates_fail_before_launch (test_v50pro_matrix.Matrix.test_invalid_device_resource_order_and_duplicates_fail_before_launch) ... ok
+test_six_cases_unique_ports_identities_and_exact_order (test_v50pro_matrix.Matrix.test_six_cases_unique_ports_identities_and_exact_order) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.004s
+
+OK
+
+
+test_actual_installer_metadata_native_ToT_and_domain_registration (test_v50pro_install.Installer.test_actual_installer_metadata_native_ToT_and_domain_registration) ... /mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/repo/third_party/vllm/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+ok
+test_all_plan_events_survive_buffer_flush_at_exit (test_v50pro_install.Installer.test_all_plan_events_survive_buffer_flush_at_exit) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 9.106s
+
+OK
+
+{"gate": "PASS", "tests": 119, "modules": ["test_boundaries", "controlled_native", "test_v47_forecast", "test_v47_runtime", "test_v50pro_commitments", "test_v50pro_cost", "test_v50pro_projection", "test_v50pro_admission", "test_v50pro_credit_cues", "test_v50pro_native", "test_v50pro_transport", "test_v50pro_execution", "test_v50pro_comparison_install", "test_v50pro_shared_native", "test_v50pro_harness", "test_v50pro_matrix", "test_v50pro_install"], "CPU_only": true, "CUDA_context_initialized": false}

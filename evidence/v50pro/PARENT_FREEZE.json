@@ -1,0 +1,1 @@
+{"gate": "PASS", "version": "v50_anytime_stage_window_credit", "CPU_tests": 121, "files_checked": 90, "GPU_used": false, "model_execution": false, "pure_DR_core_preserved": true, "shared_prediction_operational_semantics_preserved": true, "parent_versions_preserved": true, "bad": []}
