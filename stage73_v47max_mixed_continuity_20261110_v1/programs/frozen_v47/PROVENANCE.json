@@ -1,0 +1,12 @@
+{
+  "commit": "082e98c7c05431110bd6cd74234f909487b963ee",
+  "source": "stage30_v47_token_goodput_20261106_v1/programs",
+  "original_sha256": {
+    "native_chain.py": "5958c3e16ab19c3310244dba88892e9bbfe8882ad2a8439efea63b1369f3bf38",
+    "chain_forecast.py": "6f5b11c4adc8aa58a9f1d0a46a889edfb7da14af0adb92c7b5e5a3b74f6f898b",
+    "chain_admission.py": "d61f32065e9bf0c5bb69b37d4158c5181de2d342c794bae8db0c5e63eeb1e3b4",
+    "token_reward.py": "721ab407bd4cfaf42a18fb0a493a3bd8d8050a609f698b8842d4e42271dbf995"
+  },
+  "packaging_changes": "native_chain.py uses package-relative imports and resolves the same CHAIN_MODEL from the candidate root.",
+  "stage64_scheduling_change": "The original replan expression additionally triggers on any newly visible request ID, covering new roots and new stage/sibling arrivals before 50 ticks. Forecast/select/lease/preemption/drain are unchanged."
+}

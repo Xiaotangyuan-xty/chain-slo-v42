@@ -1,3 +1,9 @@
+# v47max
+
+This branch publishes the isolated mixed-only v47max candidate. See [README_V47MAX.md](README_V47MAX.md) for the pure-path freeze, mechanism, CPU evidence and benchmark contract.
+
+---
+
 # chain-slo: v46 rebuilt from v45 with two scoped fixes
 
 Current v46 adds only mixed foreground/chain coexistence and three remaining-work

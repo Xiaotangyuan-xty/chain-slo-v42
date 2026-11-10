@@ -1,0 +1,149 @@
+{
+  "gate": "PASS",
+  "GPU_used": false,
+  "unit": {
+    "gate": "PASS",
+    "GPU_used": false,
+    "tests": [
+      {
+        "test": "test_v47max.py",
+        "returncode": 0,
+        "gate": "PASS",
+        "tests": 25,
+        "stderr_sha256": "a4432ae9c5cf448c155ab769226a0bb1d56fb9e6d7f22ebe0d412af8a926ced3"
+      },
+      {
+        "test": "test_install_v47max.py",
+        "returncode": 0,
+        "gate": "PASS",
+        "tests": 1,
+        "stderr_sha256": "2a3f4fe8ab8f69cb4bb734787671251485245020f1299e7ac2d2e86ddc1899ae"
+      },
+      {
+        "test": "test_service_forecast.py",
+        "returncode": 0,
+        "gate": "PASS",
+        "tests": 36,
+        "stderr_sha256": "d0634a6a06e1589ebf5a362ece2b34b79c878fc3eb83e0d3d48c8709e7c48e7e"
+      },
+      {
+        "test": "test_native_runtime.py",
+        "returncode": 0,
+        "gate": "PASS",
+        "tests": 32,
+        "stderr_sha256": "cb2afa6ce6551b11c49e39d85af1e2b7fd8fde181b04843db95a983c2775e0d8"
+      }
+    ],
+    "logs": "/mnt/sda1/xuetianyou-a40/agent-dispatch-experiments/idea1_continuity/idea3_full_jitserve_compare_20261027T121314Z_v1/stage73_v47max_cpu_dev_20261110_v1/CPU_attempt5"
+  },
+  "native": {
+    "gate": "PASS",
+    "GPU_used": false,
+    "tests": [
+      {
+        "name": "NATIVE_MAX_FAIRNESS",
+        "gate": "PASS",
+        "returncode": 0,
+        "result": {
+          "gate": "PASS",
+          "method": "v47pro",
+          "joint_and_pure_transition_fixture": true,
+          "actual_native_ToT_and_DR_tracking": {
+            "native_ToT_presence_matches_frozen_warmup": true,
+            "native_graph_route_and_progress_warmup": true
+          },
+          "effective_budget_and_shared_metadata": {
+            "fair_warmup_complete_budget_and_route_coverage": true,
+            "fair_warmup_native_routes_metadata_and_effective_budgets": true,
+            "fair_warmup_ToT_coverage_matches_frozen_workload": true,
+            "fair_warmup_DR_coverage_matches_frozen_workload": true,
+            "fair_warmup_observer_and_native_A_budget_identity": true,
+            "fair_warmup_Astar_ToT_adapter_presence": true
+          },
+          "real_native_requests_completed": 12,
+          "real_native_KV_freed": true,
+          "public_ToT_cap_survives_pure_rebuild": true,
+          "missing_ToT_adapter_negative_control": false,
+          "frozen_candidate_modules_exact": true,
+          "CUDA_context_initialized": false
+        }
+      },
+      {
+        "name": "SOCKET_AND_BUDGET",
+        "gate": "PASS",
+        "returncode": 0,
+        "result": {
+          "gate": "PASS",
+          "actual_uvicorn_inherited_FD_listener": true,
+          "port_cannot_be_stolen": true,
+          "actual_native_budget_clamped_to128": true,
+          "GPU_used": false
+        }
+      },
+      {
+        "name": "PURE200_GOLDEN",
+        "gate": "PASS",
+        "returncode": 0,
+        "result": {
+          "gate": "PASS",
+          "GPU_used": false,
+          "profiles": [
+            {
+              "GPU_blocks": 1024,
+              "roots": 200,
+              "calls": 1197,
+              "frames_equal": 5026,
+              "preemptions": 0,
+              "trace_sha256": "580808e6c17d9671446054c941e2d9685789dbc765590cc549e446c75de2f19d",
+              "all_KV_free": true
+            },
+            {
+              "GPU_blocks": 11357,
+              "roots": 200,
+              "calls": 1197,
+              "frames_equal": 5026,
+              "preemptions": 0,
+              "trace_sha256": "fd2c54b7b25b92a007ec9682e868ebf99dfa4e46749c32c12345c05f8cdd31ff",
+              "all_KV_free": true
+            }
+          ]
+        }
+      }
+    ],
+    "candidate_files": {
+      "assets/CHAIN_MODEL.json": "7d1d668028a01a9da525845e2d3e4320563b615ebac72125c9d3448cd6f761f7",
+      "programs/mixed_max.py": "b58f500c62c55b7c74f3bdf036cebb95b256606558dfdd9ad9a62f74736bd185",
+      "programs/native_tot_adapter.py": "062b50d57a41f452e6a719986522e5d64420af425daddc3324b46b2d411d7805",
+      "programs/test_install.py": "e0e4454abcfc3d23cd2d82e22f54f75289e965328fcbfd0fcb38eb4ce07d53f9",
+      "programs/install_v47max.py": "4a2bdc77c31fbb1dd25ff73f6e1f2e9f810adbc3f79c80f3b20de2c2278ecf62",
+      "programs/chain_admission.py": "ca9adee53804342fd827f82303412963ba7e9240a6769289ee868defa29ef61b",
+      "programs/check_pure200_equivalence.py": "8f07d3eeec0d1fc85d8986ff3ad43a4a04b36f0eadcc9e70aef456482a5e4652",
+      "programs/test_install_v47max.py": "ae8be870ef9ad3d618e2add31cdb0522b44ca174552e267ec64486883b20bb19",
+      "programs/service_model.py": "57236276cf9a72b3d6e3057b0fbbf0200b9d585d872a164d897a6cd486e34b86",
+      "programs/test_service_forecast.py": "1643436077a35a622c2287d2b9cd3cbd1089b5ffe6267304b24be83c5522c8cb",
+      "programs/pure_core_v47.py": "7dae31433d2a295c3698999c98772496ff235ee40fe16365e7f67b910d999e84",
+      "programs/token_reward.py": "721ab407bd4cfaf42a18fb0a493a3bd8d8050a609f698b8842d4e42271dbf995",
+      "programs/test_native_runtime.py": "a0e9cdb91155e00caf46d817f386aa4bce74910611a792118c9f5eeb42329319",
+      "programs/mixed_joint.py": "05fc9e4b22ebc42d2acbf82d120ad61dc02f6829249dc923b30c9111c6d8ea3d",
+      "programs/install_comparison_runtime.py": "225c59a6073a728bc9fd06d1bd7192b1ac92b279de38dc0d65838701c5b14fa6",
+      "programs/chain_forecast.py": "1f3a1e34b226e22e296b33ba81d1e70d8b5ad1d17b06106f5855863bd7348ff0",
+      "programs/replan_events.py": "abb5b810a774ff4b12b806e26f5a14855fa5f5ce40782404cc1adcf4239ae3df",
+      "programs/joint_admission.py": "d7bf96fd3fded4a95ec64ab1bdda18d3845409f1da16eca7db511344825ae651",
+      "programs/shared_prediction.py": "437a5d9605272e62340eb61fb0448ed3349e0b1970854db40bdebe2c354c6feb",
+      "programs/native_chain.py": "df34d8bbd24b7119285d139970d897e3e5e8ba1c406a2cf1732d7712d0733805",
+      "programs/install_v47pro.py": "145acdf197e55da0a41289f12ca625942ebeb100936d2360fcb62bbbf52162ae",
+      "programs/test_pure_core_restore.py": "9c7d3b5e793cb6ca55d81ab3df488103fddcc5642c5c7cc83c5afd18eeef5722",
+      "programs/baseline_budget.py": "e3a0c9c307ee3d42985f4c41dc6e544797d6dbb29aeb39fc4f74ad0b3c30fbe2",
+      "programs/prediction_transport.py": "48f34e9721fa38131294ce8e47921c4323bf4a99ca57bd4233b471cf805b0d04",
+      "programs/execution_observation.py": "85a99cf861aa1f49cd5cd8c7d7442c2f6a0d83ff9498baedac7b206121099666",
+      "programs/protocol_paths.py": "97dd40457864779447689ab76f3dc0179f9a538e12ce3c73ce425103344c0f62",
+      "programs/test_v47max.py": "9caca828addb179e0369b6560a063f11871f990a454583d515b2d33d05f38684",
+      "programs/frozen_v47/chain_admission.py": "d61f32065e9bf0c5bb69b37d4158c5181de2d342c794bae8db0c5e63eeb1e3b4",
+      "programs/frozen_v47/token_reward.py": "721ab407bd4cfaf42a18fb0a493a3bd8d8050a609f698b8842d4e42271dbf995",
+      "programs/frozen_v47/PROVENANCE.json": "dbd351db6ac3361613acbeb10ac2c0544d5ae19cee8b105db99258e93b9b34ea",
+      "programs/frozen_v47/chain_forecast.py": "6f5b11c4adc8aa58a9f1d0a46a889edfb7da14af0adb92c7b5e5a3b74f6f898b",
+      "programs/frozen_v47/native_chain.py": "b721af09055b4d6258ceb42756f40eaecd0d4120346db99e66497730fd607ff4",
+      "programs/frozen_v47/__init__.py": "f88a0a2f3adc2104abe896b362db1f5497647c3036ae83fc265135849711ae75"
+    }
+  }
+}
